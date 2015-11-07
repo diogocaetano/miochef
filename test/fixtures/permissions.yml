@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entity_id: 
+  route: MyString
+  action_name: MyString
+
+two:
+  entity_id: 
+  route: MyString
+  action_name: MyString

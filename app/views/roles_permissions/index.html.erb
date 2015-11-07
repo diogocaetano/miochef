@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Roles Permissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Permissions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles_permissions.each do |roles_permission| %>
+      <tr>
+        <td><%= roles_permission.role %></td>
+        <td><%= roles_permission.permissions %></td>
+        <td><%= link_to 'Show', roles_permission %></td>
+        <td><%= link_to 'Edit', edit_roles_permission_path(roles_permission) %></td>
+        <td><%= link_to 'Destroy', roles_permission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roles permission', new_roles_permission_path %>

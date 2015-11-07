@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modules_categories_id: 
+  name: MyString
+  slug: MyString
+  controller: MyString
+  is_dev: false
+
+two:
+  modules_categories_id: 
+  name: MyString
+  slug: MyString
+  controller: MyString
+  is_dev: false

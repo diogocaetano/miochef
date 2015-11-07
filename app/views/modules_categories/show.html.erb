@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @modules_category.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @modules_category.icon %>
+</p>
+
+<%= link_to 'Edit', edit_modules_category_path(@modules_category) %> |
+<%= link_to 'Back', modules_categories_path %>
