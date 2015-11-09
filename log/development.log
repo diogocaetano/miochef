@@ -9002,3 +9002,97 @@ Processing by EntitiesController#index as HTML
   [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
   [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
 Completed 200 OK in 358ms (Views: 353.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/entities" for 127.0.0.1 at 2015-11-08 22:48:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by EntitiesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities`[0m
+  Rendered entities/index.html.erb within layouts/application (24.3ms)
+  [1m[35mModulesCategory Load (0.4ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+Completed 200 OK in 826ms (Views: 770.4ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/scaffolds.self-89543e270f1fbf8dd6837fccc8f40ecff9fda4ee34b552c0aa06230bacba2eef.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-0904e1ae850932d628343d2c338d9a0e9440d435bd68b2e161091bc1334f9fba.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/common-scripts.self-2c72c8924e7fc69789b059f9781a85b8cc8d911104899a941cf82068ca929443.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2015-11-08 22:48:30 -0300
