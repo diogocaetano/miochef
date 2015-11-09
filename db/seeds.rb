@@ -8,3 +8,16 @@
 
 Role.create(name: 'Dev')
 User.create(name: 'Develop', email: 'dev@dev.com', password: 'teste123', is_admin: true, is_representative: true, role_id: 1)
+
+ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
+ModulesCategory.create(name: 'Campeonatos', icon: 'fa fa-cogs')
+ModulesCategory.create(name: 'Financeiro', icon: 'fa fa-cogs')
+
+
+Entity.create(modules_category_id: 1, name: 'Perfis', slug: 'roles', controller: 'roles_controller', is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Usuários', slug: 'users', controller: 'users_controller', is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Permissões', slug: 'permissions', controller: 'permissions_controller', is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Módulos', slug: 'entities', controller: 'entities_controller', is_dev: false)
+Entity.create(modules_category_id: 2, name: 'Partidas', slug: 'matches', controller: 'matches_controller', is_dev: false)
+Entity.create(modules_category_id: 2, name: 'Times', slug: 'teams', controller: 'teams_controller', is_dev: false)
+Entity.create(modules_category_id: 3, name: 'Apostas', slug: 'betting', controller: 'betting_controller', is_dev: false)

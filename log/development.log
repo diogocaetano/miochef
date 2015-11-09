@@ -8342,3 +8342,663 @@ Processing by DashboardController#index as HTML
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
   Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 298ms (Views: 295.5ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `roles` (`name`, `created_at`, `updated_at`) VALUES ('Dev', '2015-11-09 01:30:12', '2015-11-09 01:30:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dev@dev.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Controle de Acesso', 'fa fa-cogs', '2015-11-09 01:30:13', '2015-11-09 01:30:13')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Campeonatos', 'fa fa-cogs', '2015-11-09 01:30:13', '2015-11-09 01:30:13')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (36.8ms)[0m  [1mINSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Financeiro', 'fa fa-cogs', '2015-11-09 01:30:13', '2015-11-09 01:30:13')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (142.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (206.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateModulesCategories (20151107011145)
+  [1m[35m (193.0ms)[0m  CREATE TABLE `modules_categories` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `icon` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011145')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEntities (20151107011445)
+  [1m[35m (190.9ms)[0m  CREATE TABLE `entities` (`id` int(11) auto_increment PRIMARY KEY, `modules_category_id` int(11), `name` varchar(255), `slug` varchar(255), `controller` varchar(255), `is_dev` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011445')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRoles (20151107011514)
+  [1m[35m (182.1ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011514')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePermissions (20151107011902)
+  [1m[35m (177.2ms)[0m  CREATE TABLE `permissions` (`id` int(11) auto_increment PRIMARY KEY, `entity_id` int(11), `route` varchar(255), `action_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_permissions_on_entity_id`  (`entity_id`) ) ENGINE=InnoDB
+  [1m[36m (205.1ms)[0m  [1mALTER TABLE `permissions` ADD CONSTRAINT `fk_rails_9282298177`
+FOREIGN KEY (`entity_id`)
+  REFERENCES `entities` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107011902')[0m
+  [1m[35m (1.3ms)[0m  COMMIT
+Migrating to CreateRolesPermissions (20151107011923)
+  [1m[36m (150.6ms)[0m  [1mCREATE TABLE `roles_permissions` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `permission_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107011923')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateUsers (20151107024104)
+  [1m[36m (147.7ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `name` varchar(255), `is_admin` tinyint(1), `is_representative` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_role_id`  (`role_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (264.6ms)[0m  ALTER TABLE `users` ADD CONSTRAINT `fk_rails_642f17018b`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107024104')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddDeviseToUsers (20151107024222)
+  [1m[35m (189.6ms)[0m  ALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (218.6ms)[0m  [1mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (244.8ms)[0m  ALTER TABLE `users` ADD `reset_password_token` varchar(255)
+  [1m[36m (259.9ms)[0m  [1mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  [1m[35m (231.1ms)[0m  ALTER TABLE `users` ADD `remember_created_at` datetime
+  [1m[36m (210.6ms)[0m  [1mALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL[0m
+  [1m[35m (237.2ms)[0m  ALTER TABLE `users` ADD `current_sign_in_at` datetime
+  [1m[36m (211.7ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_at` datetime[0m
+  [1m[35m (224.8ms)[0m  ALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)
+  [1m[36m (211.1ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)[0m
+  [1m[35m (201.0ms)[0m  CREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) 
+  [1m[36m (210.2ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107024222')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'entities'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `entities`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'modules_categories'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `modules_categories`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'permissions'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `permissions`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'roles'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'roles_permissions'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roles_permissions`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `roles` (`name`, `created_at`, `updated_at`) VALUES ('Dev', '2015-11-09 01:31:18', '2015-11-09 01:31:18')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dev@dev.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `is_admin`, `is_representative`, `role_id`, `created_at`, `updated_at`) VALUES ('Develop', 'dev@dev.com', '$2a$10$xOAOnj3K76bgC7SEHjC1ge7vpuz3SQDfl9NLHEjVDOu256ji4kfHW', 1, 1, 1, '2015-11-09 01:31:19', '2015-11-09 01:31:19')[0m
+  [1m[35m (7.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Controle de Acesso', 'fa fa-cogs', '2015-11-09 01:31:19', '2015-11-09 01:31:19')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Campeonatos', 'fa fa-cogs', '2015-11-09 01:31:19', '2015-11-09 01:31:19')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Financeiro', 'fa fa-cogs', '2015-11-09 01:31:19', '2015-11-09 01:31:19')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Perfis', 'roles', 'roles_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Permissões', 'permissions', 'permissions_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Módulos', 'entities', 'entities_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (2, 'Partidas', 'matches', 'matches_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (2, 'Times', 'teams', 'teams_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (3, 'Apostas', 'betting', 'betting_controller', 0, '2015-11-09 01:31:19', '2015-11-09 01:31:19')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:42:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 94ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:42:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 1049ms (Views: 1046.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:42:34 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ytw8W1WfKNqEQ2qphw9o2L0iWvGiEYYa0GCj/5eebAR9DlKAQgA/Oih4MhPkTJ4Oid340v/0MVO/Ekmwq76GoA==", "user"=>{"email"=>"danilo@danilo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'danilo@danilo.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.6ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ytw8W1WfKNqEQ2qphw9o2L0iWvGiEYYa0GCj/5eebAR9DlKAQgA/Oih4MhPkTJ4Oid340v/0MVO/Ekmwq76GoA==", "user"=>{"email"=>"danilo@danilo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendered devise/sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 405ms (Views: 316.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:42:38 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgQd+AT1tfe/ZX+16bMcoFJo0El3jRecZgo7nQXd0frd1nMjE2qiFxNeJw+K8Op2ZpdyaipooNUJeNHSOf07Xg==", "user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'teste@teste.com.br'  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgQd+AT1tfe/ZX+16bMcoFJo0El3jRecZgo7nQXd0frd1nMjE2qiFxNeJw+K8Op2ZpdyaipooNUJeNHSOf07Xg==", "user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendered devise/sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 362ms (Views: 284.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:42:46 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Uc6QBOX26iH5B0roMkKLWUzMEz/sZQRX3bfbf7VXuihOHP7f8mn9wVU8ElJRAX2PeDOxHLGAsx6yxTEwiXdQjA==", "user"=>{"email"=>"dev@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dev@dev.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-11-09 01:42:46', `current_sign_in_at` = '2015-11-09 01:42:46', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2015-11-09 01:42:46' WHERE `users`.`id` = 1[0m
+  [1m[35m (15.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 128ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:42:46 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    194: 	          <div id="sidebar"  class="nav-collapse ">
+    195: 	              <!-- sidebar menu start-->
+    196: 	              	<ul class="sidebar-menu" id="nav-accordion">
+    197: 	                  	<% @categories.each do |category| %>
+    198: 		                  	<% if category.entities.any? %>
+    199: 			                  	<li class="sub-menu">
+    200: 			                      	<a href="javascript:;" >
+  app/views/layouts/application.html.erb:197:in `_app_views_layouts_application_html_erb___820428910278394706_70319151106880'
+  app/controllers/dashboard_controller.rb:3:in `index'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (92.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (60.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (171.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:43:56 -0300
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    194: 	          <div id="sidebar"  class="nav-collapse ">
+    195: 	              <!-- sidebar menu start-->
+    196: 	              	<ul class="sidebar-menu" id="nav-accordion">
+    197: 	                  	<% @categories.each do |category| %>
+    198: 		                  	<% if category.entities.any? %>
+    199: 			                  	<li class="sub-menu">
+    200: 			                      	<a href="javascript:;" >
+  app/views/layouts/application.html.erb:197:in `_app_views_layouts_application_html_erb___820428910278394706_70319151106880'
+  app/controllers/dashboard_controller.rb:3:in `index'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (84.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+Completed 200 OK in 431ms (Views: 376.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/scaffolds.self-89543e270f1fbf8dd6837fccc8f40ecff9fda4ee34b552c0aa06230bacba2eef.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-0904e1ae850932d628343d2c338d9a0e9440d435bd68b2e161091bc1334f9fba.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/common-scripts.self-2c72c8924e7fc69789b059f9781a85b8cc8d911104899a941cf82068ca929443.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2015-11-08 22:44:18 -0300
+  [1m[36m (119.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (191.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateModulesCategories (20151107011145)
+  [1m[35m (174.0ms)[0m  CREATE TABLE `modules_categories` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `icon` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011145')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEntities (20151107011445)
+  [1m[35m (159.7ms)[0m  CREATE TABLE `entities` (`id` int(11) auto_increment PRIMARY KEY, `modules_category_id` int(11), `name` varchar(255), `slug` varchar(255), `controller` varchar(255), `is_dev` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011445')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRoles (20151107011514)
+  [1m[35m (152.5ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107011514')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePermissions (20151107011902)
+  [1m[35m (164.3ms)[0m  CREATE TABLE `permissions` (`id` int(11) auto_increment PRIMARY KEY, `entity_id` int(11), `route` varchar(255), `action_name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_permissions_on_entity_id`  (`entity_id`) ) ENGINE=InnoDB
+  [1m[36m (174.1ms)[0m  [1mALTER TABLE `permissions` ADD CONSTRAINT `fk_rails_9282298177`
+FOREIGN KEY (`entity_id`)
+  REFERENCES `entities` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107011902')[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateRolesPermissions (20151107011923)
+  [1m[36m (166.3ms)[0m  [1mCREATE TABLE `roles_permissions` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `permission_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107011923')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateUsers (20151107024104)
+  [1m[36m (164.1ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `name` varchar(255), `is_admin` tinyint(1), `is_representative` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_role_id`  (`role_id`) ) ENGINE=InnoDB[0m
+  [1m[35m (172.9ms)[0m  ALTER TABLE `users` ADD CONSTRAINT `fk_rails_642f17018b`
+FOREIGN KEY (`role_id`)
+  REFERENCES `roles` (`id`)
+
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151107024104')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to AddDeviseToUsers (20151107024222)
+  [1m[35m (173.9ms)[0m  ALTER TABLE `users` ADD `email` varchar(255) DEFAULT '' NOT NULL
+  [1m[36m (224.2ms)[0m  [1mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (233.8ms)[0m  ALTER TABLE `users` ADD `reset_password_token` varchar(255)
+  [1m[36m (211.9ms)[0m  [1mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  [1m[35m (201.4ms)[0m  ALTER TABLE `users` ADD `remember_created_at` datetime
+  [1m[36m (210.8ms)[0m  [1mALTER TABLE `users` ADD `sign_in_count` int(11) DEFAULT 0 NOT NULL[0m
+  [1m[35m (214.0ms)[0m  ALTER TABLE `users` ADD `current_sign_in_at` datetime
+  [1m[36m (223.7ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_at` datetime[0m
+  [1m[35m (233.0ms)[0m  ALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)
+  [1m[36m (213.3ms)[0m  [1mALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)[0m
+  [1m[35m (234.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) 
+  [1m[36m (188.6ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20151107024222')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'entities'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `entities`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'modules_categories'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `modules_categories`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'permissions'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `permissions`[0m
+  [1m[35m (0.3ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'roles'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'roles_permissions'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `roles_permissions`[0m
+  [1m[35m (0.2ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'futebol_development'
+  AND fk.table_name = 'users'
+
+  [1m[36m (0.2ms)[0m  [1mSHOW CREATE TABLE `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `roles` (`name`, `created_at`, `updated_at`) VALUES ('Dev', '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'dev@dev.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `is_admin`, `is_representative`, `role_id`, `created_at`, `updated_at`) VALUES ('Develop', 'dev@dev.com', '$2a$10$89l3.Z0ce7XUdIDnIGvaGubC9jdPeKxFJpx15JzaHZnAiTYcb000.', 1, 1, 1, '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (7.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Controle de Acesso', 'fa fa-cogs', '2015-11-09 01:45:12', '2015-11-09 01:45:12')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Campeonatos', 'fa fa-cogs', '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `modules_categories` (`name`, `icon`, `created_at`, `updated_at`) VALUES ('Financeiro', 'fa fa-cogs', '2015-11-09 01:45:12', '2015-11-09 01:45:12')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Perfis', 'roles', 'roles_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Usuários', 'users', 'users_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Permissões', 'permissions', 'permissions_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (1, 'Módulos', 'entities', 'entities_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (2, 'Partidas', 'matches', 'matches_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (2, 'Times', 'teams', 'teams_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `entities` (`modules_category_id`, `name`, `slug`, `controller`, `is_dev`, `created_at`, `updated_at`) VALUES (3, 'Apostas', 'betting', 'betting_controller', 0, '2015-11-09 01:45:12', '2015-11-09 01:45:12')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:45:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 38ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:45:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  Rendered devise/sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 663ms (Views: 647.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/scaffolds.self-89543e270f1fbf8dd6837fccc8f40ecff9fda4ee34b552c0aa06230bacba2eef.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-0904e1ae850932d628343d2c338d9a0e9440d435bd68b2e161091bc1334f9fba.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/common-scripts.self-2c72c8924e7fc69789b059f9781a85b8cc8d911104899a941cf82068ca929443.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2015-11-08 22:45:19 -0300
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-08 22:45:24 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7dMxqh9IyC78etIYdJSMYBrEGiwgP24uyMxwfTH9AG+ad7YzGo4WUTjTY8a4aVN+exbJxmWWuB3Mzy2lxrgfuA==", "user"=>{"email"=>"dev@dev.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'dev@dev.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-11-09 01:45:24', `current_sign_in_at` = '2015-11-09 01:45:24', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2015-11-09 01:45:24' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-08 22:45:24 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mModulesCategory Load (0.4ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.5ms)
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+Completed 200 OK in 371ms (Views: 362.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/entities" for 127.0.0.1 at 2015-11-08 22:45:53 -0300
+Processing by EntitiesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities`[0m
+  Rendered entities/index.html.erb within layouts/application (25.3ms)
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+Completed 200 OK in 358ms (Views: 353.0ms | ActiveRecord: 2.8ms)
