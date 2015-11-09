@@ -1,3 +1,3 @@
 class Entity < ActiveRecord::Base
-  belongs_to :modules_categories
+  belongs_to :modules_category
 end

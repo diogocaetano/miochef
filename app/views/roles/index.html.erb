@@ -1,27 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Roles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @roles.each do |role| %>
-      <tr>
-        <td><%= role.name %></td>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Role', new_role_path %>
+<div class="row">
+    <div class="col-lg-12">
+        <a href="/roles/new">
+            <button type="button" class="btn btn-primary">Adicionar</button>
+        </a>
+        <div class="panel"></div>
+        <section class="panel">
+            <% if notice %>
+              <div class="alert alert-block alert-success fade in">
+                  <%= notice %>
+              </div>
+            <% end %>
+            <header class="panel-heading">
+                Perfis
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                    <table class="table table-bmoduleed table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>                                
+                                <th colspan='3'>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @roles.each do |role| %>
+                                <tr>
+                                  <td><%= role.name %></td>                                  
+                                  <td><%= link_to 'Visualizar', role %></td>
+                                  <td><%= link_to 'Editar', edit_role_path(role) %></td>
+                                  <td><%= link_to 'Remover', role, method: :delete, data: { confirm: 'Deseja Remover o Perfil?' } %></td>
+                                </div>
+                            <% end %>
+                        </tbody>
+                    </table>                     
+                </section>
+            </div>
+        </section>
+    </div>
+</div>

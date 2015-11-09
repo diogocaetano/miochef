@@ -1,33 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Role</th>
-      <th>Name</th>
-      <th>Is admin</th>
-      <th>Is representative</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.role %></td>
-        <td><%= user.name %></td>
-        <td><%= user.is_admin %></td>
-        <td><%= user.is_representative %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+<div class="row">
+    <div class="col-lg-12">
+        <a href="/users/sign_up">
+            <button type="button" class="btn btn-primary">Adicionar</button>
+        </a>
+        <div class="panel"></div>
+        <section class="panel">
+            <% if notice %>
+              <div class="alert alert-block alert-success fade in">
+                  <%= notice %>
+              </div>
+            <% end %>
+            <header class="panel-heading">
+                Usuários
+            </header>
+            <div class="panel-body">
+                <section id="unseen">
+                    <table class="table table-bmoduleed table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Perfil</th>
+                                <th>Nome</th>
+                                <th>Admin</th>
+                                <th>Representante</th>
+                                <th colspan='3'>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @users.each do |user| %>
+                                <tr>
+                                  <td><%= user.role.name %></td>
+                                  <td><%= user.name %></td>
+                                  <td><%= user.is_admin ? 'Sim' : 'Não' %></td>
+                                  <td><%= user.is_representative ? 'Sim' : 'Não' %></td>
+                                  <td><%= link_to 'Visualizar', user %></td>
+                                  <td><%= link_to 'Editar', edit_user_path(user) %></td>
+                                  <td><%= link_to 'Remover', user, method: :delete, data: { confirm: 'Deseja Remover o Usuário?' } %></td>
+                                </div>
+                            <% end %>
+                        </tbody>
+                    </table>                     
+                </section>
+            </div>
+        </section>
+    </div>
+</div>

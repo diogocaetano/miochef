@@ -40,17 +40,17 @@ ActiveRecord::Schema.define(version: 20151107024222) do
 
   add_index "permissions", ["entity_id"], name: "index_permissions_on_entity_id", using: :btree
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "roles_permissions", force: :cascade do |t|
+  create_table "permissions_roles", force: :cascade do |t|
     t.integer  "role_id",       limit: 4
     t.integer  "permission_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

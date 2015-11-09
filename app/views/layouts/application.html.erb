@@ -162,9 +162,9 @@
 	            <div class="top-nav ">
 	                <!--search & user info start-->
 	                <ul class="nav pull-right top-menu">
-	                    <li>
+	                    <!-- <li>
 	                        <input type="text" class="form-control search" placeholder="Search">
-	                    </li>
+	                    </li> -->
 	                    <!-- user login dropdown start-->
 	                    <li class="dropdown">
 	                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -194,26 +194,29 @@
 	          <div id="sidebar"  class="nav-collapse ">
 	              <!-- sidebar menu start-->
 	              	<ul class="sidebar-menu" id="nav-accordion">
+	              		<li>
+                      		<a class="active" href="#">
+                          		<i class="fa fa-dashboard"></i>
+                          		<span>Dashboard</span>
+                      		</a>
+                  		</li>
 	                  	<% @categories.each do |category| %>
 		                  	<% if category.entities.any? %>
-			                  	<li class="sub-menu">
-			                      	<a href="javascript:;" >
-			                          	<i class="fa fa-laptop"></i>
-			                          	<span><%= category.name %></span>
-			                      	</a>
-			                      	<% category.entities.each do |entity|%>
-				                      	<ul class="sub">
-				                          	<li><a  href="/<%= entity.slug %>"><%= entity.name %></a></li>
-				                      	</ul>
-				                    <% end %>
-			                  	</li>
-			                <% else %>
-			                  	<li>
-			                      	<a class="active" href="#">
-			                          	<i class="fa fa-dashboard"></i>
-			                          	<span><%= category.name %></span>
-			                      	</a>
-			                  	</li>
+		                  		<% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
+				                  	<li class="sub-menu">
+				                      	<a href="javascript:;" >
+				                          	<i class="fa fa-laptop"></i>
+				                          	<span><%= category.name %></span>
+				                      	</a>
+				                      	<% category.entities.each do |entity|%>
+				                      		<% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
+					                      		<ul class="sub">
+					                          		<li><a  href="/<%= entity.slug %>"><%= entity.name %></a></li>
+					                      		</ul>
+					                      	<% end %>
+					                    <% end %>
+				                  	</li>
+			                	<% end %>
 			                <% end %>
 			            <% end %>
 	              	</ul>
