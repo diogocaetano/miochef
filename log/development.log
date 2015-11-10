@@ -29734,3 +29734,924 @@ ActionController::RoutingError (No route matches [GET] "/users_admin/img/mail-av
   Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (119.5ms)
+
+
+Started POST "/users_admin" for 127.0.0.1 at 2015-11-10 11:14:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lCQmVTVvyn/2IuJlXYzZFUO3jc1CAk2N9CMBoTnWqjqg+86yJZ6nSuCk+DL4/Sq++bXAI12ouG73Vyw3t3Ix0w==", "user"=>{"role_id"=>"1", "email"=>"danilo@danilo.com", "password"=>"[FILTERED]", "name"=>"Danilo Soares", "is_admin"=>"1", "is_representative"=>"1"}, "commit"=>"Create User"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.4ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'create'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  Rendered errors/error_403.html.erb within layouts/application (369.7ms)
+  [1m[36mModulesCategory Load (0.4ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.9ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+Filter chain halted as :user_has_permission_to_action? rendered or redirected
+Completed 200 OK in 968ms (Views: 899.4ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-10 11:15:02 -0300
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.3ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+Completed 200 OK in 399ms (Views: 368.8ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/users_admin" for 127.0.0.1 at 2015-11-10 11:15:05 -0300
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.6ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+Completed 200 OK in 345ms (Views: 335.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users_admin/new" for 127.0.0.1 at 2015-11-10 11:15:07 -0300
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.4ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'new'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  Rendered users/_form.html.erb (24.9ms)
+  Rendered users/new.html.erb within layouts/application (32.6ms)
+  [1m[36mModulesCategory Load (0.4ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+Completed 200 OK in 362ms (Views: 354.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users_admin/img/chat-avatar2.jpg" for 127.0.0.1 at 2015-11-10 11:15:08 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/chat-avatar2.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (174.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (131.4ms)
+
+
+Started GET "/users_admin/img/chat-avatar.jpg" for 127.0.0.1 at 2015-11-10 11:15:08 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/chat-avatar.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (126.5ms)
+
+
+Started GET "/users_admin/img/pro-ac-1.png" for 127.0.0.1 at 2015-11-10 11:15:09 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/pro-ac-1.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (172.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (129.4ms)
+
+
+Started GET "/users_admin/img/avatar1.jpg" for 127.0.0.1 at 2015-11-10 11:15:09 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/avatar1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.9ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (160.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (125.3ms)
+
+
+Started GET "/users_admin/img/mail-avatar.jpg" for 127.0.0.1 at 2015-11-10 11:15:09 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/mail-avatar.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (155.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.3ms)
+
+
+Started POST "/users_admin" for 127.0.0.1 at 2015-11-10 11:15:14 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MnlNabuRoOLAPXEo5uQscjEsl8cOaFL5ZoBL1v4KniUGpqWOq2DN19a7a39Dld/Ziy7aKRHCpxpl9GZAcK4FzA==", "user"=>{"role_id"=>"1", "email"=>"danilo@danilo.com", "password"=>"[FILTERED]", "name"=>"Danilo Soares", "is_admin"=>"1", "is_representative"=>"1"}, "commit"=>"Create User"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.4ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'create'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  Rendered errors/error_403.html.erb (152.6ms)
+Filter chain halted as :user_has_permission_to_action? rendered or redirected
+Completed 200 OK in 169ms (Views: 162.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-10 11:15:18 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.3ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+Completed 200 OK in 307ms (Views: 303.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users_admin" for 127.0.0.1 at 2015-11-10 11:15:24 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPermission Load (0.4ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+Completed 200 OK in 342ms (Views: 334.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users_admin" for 127.0.0.1 at 2015-11-10 11:15:57 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  Rendered users/index.html.erb within layouts/application (13.2ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPermission Load (0.4ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+Completed 200 OK in 397ms (Views: 344.1ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/scaffolds.self-89543e270f1fbf8dd6837fccc8f40ecff9fda4ee34b552c0aa06230bacba2eef.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-0904e1ae850932d628343d2c338d9a0e9440d435bd68b2e161091bc1334f9fba.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/common-scripts.self-2c72c8924e7fc69789b059f9781a85b8cc8d911104899a941cf82068ca929443.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2015-11-10 11:15:58 -0300
+
+
+Started GET "/users_admin/new" for 127.0.0.1 at 2015-11-10 11:16:00 -0300
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'new'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  Rendered users/_form.html.erb (5.6ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+  [1m[35mModulesCategory Load (0.4ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.3ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+Completed 200 OK in 321ms (Views: 314.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users_admin/img/chat-avatar2.jpg" for 127.0.0.1 at 2015-11-10 11:16:00 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/chat-avatar2.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (172.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (113.3ms)
+
+
+Started GET "/users_admin/img/chat-avatar.jpg" for 127.0.0.1 at 2015-11-10 11:16:01 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/chat-avatar.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (158.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (120.6ms)
+
+
+Started GET "/users_admin/img/pro-ac-1.png" for 127.0.0.1 at 2015-11-10 11:16:01 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/pro-ac-1.png"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (152.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (53.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (117.9ms)
+
+
+Started GET "/users_admin/img/avatar1.jpg" for 127.0.0.1 at 2015-11-10 11:16:01 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/avatar1.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (177.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (54.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (116.4ms)
+
+
+Started GET "/users_admin/img/mail-avatar.jpg" for 127.0.0.1 at 2015-11-10 11:16:02 -0300
+
+ActionController::RoutingError (No route matches [GET] "/users_admin/img/mail-avatar.jpg"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:8:in `require'
+  bin/rails:8:in `<top (required)>'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.4.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.4.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.4.0) lib/spring/client.rb:28:in `run'
+  spring (1.4.0) bin/spring:49:in `<top (required)>'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.4.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  bin/spring:13:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (157.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (51.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (113.6ms)
+
+
+Started POST "/users_admin" for 127.0.0.1 at 2015-11-10 11:16:10 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aaa/s33tnqAQsDGCTCYr3hWqcPvudbGg+0wq66ECxYBdeVdUbRzzlQY2K9XpV9h1r6g9FfHfREP4OAd9L6ZeaQ==", "user"=>{"role_id"=>"1", "email"=>"danilo@danilo.com", "password"=>"[FILTERED]", "name"=>"Danilo Soares", "is_admin"=>"1", "is_representative"=>"1"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'users'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 2 AND `permissions`.`action` = 'create'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  Rendered errors/error_403.html.erb (148.1ms)
+Filter chain halted as :user_has_permission_to_action? rendered or redirected
+Completed 200 OK in 163ms (Views: 158.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-10 11:16:13 -0300
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+Completed 200 OK in 314ms (Views: 309.9ms | ActiveRecord: 1.8ms)

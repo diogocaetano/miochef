@@ -15,9 +15,8 @@ class ApplicationController < ActionController::Base
       if not params[:controller] == 'dashboard'
         @module = Entity.where(controller: params[:controller]).first
         @permission = Permission.where(entity_id: @module.id).where(action: params[:action]).first
-        if @permission.nil?
-          flash[:alert] = 'Você não tem permissão para executar esta ação!'
-          redirect_to :back
+        if @permission.nil?          
+          render "errors/error_403", :layout => false
         end
       end
     end
