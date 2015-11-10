@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <a href="/users/new">
+        <a href="/users_admin/new">
             <button type="button" class="btn btn-primary">Adicionar</button>
         </a>
         <div class="panel"></div>
@@ -37,9 +37,9 @@
                                   <td><%= user.name %></td>
                                   <td><%= user.is_admin ? 'Sim' : 'Não' %></td>
                                   <td><%= user.is_representative ? 'Sim' : 'Não' %></td>
-                                  <td><%= link_to 'Visualizar', user %></td>
-                                  <td><%= link_to 'Editar', edit_user_path(user) %></td>
-                                  <td><%= link_to 'Remover', user, method: :delete, data: { confirm: 'Deseja Remover o Usuário?' } %></td>
+                                  <td><%= link_to 'Visualizar', users_admin_path(user) %></td>
+                                  <td><%= link_to 'Editar', edit_users_admin_path(user) %></td>
+                                  <td><%= link_to 'Remover', users_admin_path(user), method: :delete, data: { confirm: 'Deseja Remover o Usuário?' } %></td>
                                 </div>
                             <% end %>
                         </tbody>

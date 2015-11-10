@@ -11,10 +11,10 @@ User.create(name: 'Develop', email: 'dev@dev.com', password: 'teste123', is_admi
 
 ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 
-Entity.create(modules_category_id: 1, name: 'Perfis', slug: 'roles',is_dev: false)
-Entity.create(modules_category_id: 1, name: 'Usuários', slug: 'users',is_dev: false)
-Entity.create(modules_category_id: 1, name: 'Permissões', slug: 'permissions',is_dev: false)
-Entity.create(modules_category_id: 1, name: 'Módulos', slug: 'entities',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'permissions',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: false)
 
 Permission.create(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 1, action_name: 'Criar', action: 'new')
