@@ -1,5 +1,5 @@
 /vendor/*
-/tmp
+/tmp/*
 /bower_components
-/log
+/log/*
 /config/enviroments/development.rb
