@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20151107024222) do
 
   create_table "permissions", force: :cascade do |t|
     t.integer  "entity_id",   limit: 4
-    t.string   "route",       limit: 255
     t.string   "action_name", limit: 255
+    t.string   "action",      limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
