@@ -34,10 +34,12 @@
                                   <td><%= entity.slug %></td>
                                   <td><%= entity.controller %></td>
                                   <td><%= entity.is_dev ? 'Sim' : 'Não' %></td>
-                                  <td><%= link_to 'Visualizar', entity %></td>
-                                  <td><%= link_to 'Editar', edit_entity_path(entity) %></td>
-                                  <td><%= link_to 'Remover', entity, method: :delete, data: { confirm: 'Deseja Remover o Módulo?' } %></td>
-                                </div>
+                                  <td>
+                                    <a href="/entities/<%=entity.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+                                    <a href="/entities/<%=entity.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>
+                                    <a href="/entities/<%=entity.id%>" class="btn btn-danger" method="delete" data-confirm="Deseja Remover o Módulo?"><i class="fa fa-trash-o"></i></button></a>
+                                  </td>
+                                </tr>
                             <% end %>
                         </tbody>
                     </table>                     

@@ -1,37 +1,47 @@
-<%= form_for(@entity) do |f| %>
-  <% if @entity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+<div class="col-lg-12">
+    <a href="/entities">
+        <button type="button" class="btn btn-default">Voltar</button>
+    </a>
+    <div class="panel"></div>
+    <section class="panel">
+        <% if @entity.errors.any? %>
+            <div class="alert alert-danger">
+                <% @entity.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+            </div>
+        <% end %>
+        <div class="panel-body">
+            <%= form_for(@entity) do |f| %>
+                <div class="form-group">
+                    <%= f.label 'Categoria do Módulo' %><br>
+                    <%= f.select :modules_category_id, ModulesCategory.all.collect {|category| [ category.name, category.id ] }, { prompt: 'Selecione a Categoria do Módulo' }, :class => 'form-control m-bot15' %>
+                </div>
 
-      <ul>
-      <% @entity.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                <div class="form-group">
+                    <%= f.label 'Nome do Módulo' %><br>
+                    <%= f.text_field :name, 'class' => 'form-control' %>
+                </div>
 
-  <div class="field">
-    <%= f.label :modules_category_id %><br>
-    <%= f.text_field :modules_category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :controller %><br>
-    <%= f.text_field :controller %>
-  </div>
-  <div class="field">
-    <%= f.label :is_dev %><br>
-    <%= f.check_box :is_dev %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+                <div class="form-group">
+                    <%= f.label 'Slug' %><br>
+                    <%= f.text_field :slug, 'class' => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :controller %><br>
+                    <%= f.text_field :controller, 'class' => 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :is_dev %><br>
+                    <%= f.check_box :is_dev %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+                </div>
+            <% end %>
+        </div>
+    </section>
+</div>

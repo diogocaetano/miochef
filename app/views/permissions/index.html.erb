@@ -19,21 +19,23 @@
                         <thead>
                             <tr>
                                 <th>Módulo</th>
-                                <th>Rota</th>
-                                <th>Ação</th>                                
+                                <th>Ação</th>
+                                <th>Nome da Ação</th>
                                 <th colspan='3'>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <% @permissions.each do |permission| %>
                                 <tr>
-                                  <td><%= permission.entity.name %></td>
-                                  <td><%= permission.route %></td>
-                                  <td><%= permission.action_name %></td>                                  
-                                  <td><%= link_to 'Visualizar', permission %></td>
-                                  <td><%= link_to 'Editar', edit_permission_path(permission) %></td>
-                                  <td><%= link_to 'Remover', permission, method: :delete, data: { confirm: 'Deseja Remover a Permissão?' } %></td>
-                                </div>
+                                  <td><%= permission.entity.name %></td>                                  
+                                  <td><%= permission.action %></td>
+                                  <td><%= permission.action_name %></td>
+                                  <td>
+                                    <a href="/permissions/<%=permission.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+                                    <a href="/permissions/<%=permission.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>
+                                    <a href="/permissions/<%=permission.id%>" class="btn btn-danger" method="delete" data-confirm="Deseja Remover a Permissão?"><i class="fa fa-trash-o"></i></button></a>
+                                  </td>
+                                </tr>
                             <% end %>
                         </tbody>
                     </table>                     

@@ -1,29 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Modules categories:</strong>
-  <%= @entity.modules_categories %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @entity.name %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @entity.slug %>
-</p>
-
-<p>
-  <strong>Controller:</strong>
-  <%= @entity.controller %>
-</p>
-
-<p>
-  <strong>Is dev:</strong>
-  <%= @entity.is_dev %>
-</p>
-
-<%= link_to 'Edit', edit_entity_path(@entity) %> |
-<%= link_to 'Back', entities_path %>
+<div class="col-lg-12">
+    <a href="/entities">
+        <button type="button" class="btn btn-default">Voltar</button>
+    </a>
+    <div class="panel"></div>
+  <section class="panel">
+      <div class="panel-heading">
+          <div class="panel-title">Detalhes</div>
+      </div>
+      <div class="panel-body form-horizontal">
+          <div class="form-group">
+              <label for="number" class="control-label col-lg-3">Categoria do Módulo</label>
+              <div class="col-lg-9">
+                  <label for="number" class="form-control-static"><%= @entity.modules_category.name %></label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="number" class="control-label col-lg-3">Nome</label>
+              <div class="col-lg-9">
+                  <label for="number" class="form-control-static"><%= @entity.name %></label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="number" class="control-label col-lg-3">Slug</label>
+              <div class="col-lg-9">
+                  <label for="number" class="form-control-static"><%= @entity.slug %></label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="number" class="control-label col-lg-3">Controlador</label>
+              <div class="col-lg-9">
+                  <label for="number" class="form-control-static"><%= @entity.controller %></label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="number" class="control-label col-lg-3">DEV?</label>
+              <div class="col-lg-9">
+                  <label for="number" class="form-control-static"><%= @entity.is_dev ? 'Sim' : '
+                  Não' %></label>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>

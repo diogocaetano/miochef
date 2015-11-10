@@ -12,11 +12,13 @@ class ApplicationController < ActionController::Base
 
   def user_has_permission_to_action?
     if user_signed_in?
-      if not params[:controller] == 'dashboard'
-        @module = Entity.where(controller: params[:controller]).first
-        @permission = Permission.where(entity_id: @module.id).where(action: params[:action]).first
-        if @permission.nil?          
-          render "errors/error_403", :layout => false
+      if not current_user.is_dev        
+        if not params[:controller] == 'dashboard'
+          @module = Entity.where(controller: params[:controller]).first
+          @permission = Permission.where(entity_id: @module.id).where(action: params[:action]).first
+          if @permission.nil?          
+            render "errors/error_403", :layout => false
+          end
         end
       end
     end
