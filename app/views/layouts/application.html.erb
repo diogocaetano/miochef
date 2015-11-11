@@ -78,23 +78,32 @@
 	              <!-- sidebar menu start-->
 	              	<ul class="sidebar-menu" id="nav-accordion">
 	              		<li>
-                      		<a class="active" href="/">
-                          		<i class="fa fa-dashboard"></i>
-                          		<span>Dashboard</span>
-                      		</a>
+	              			<% if @module_active == 'dashboard' %>
+                      			<a class="active" href="/">
+                          			<i class="fa fa-dashboard"></i>
+                          			<span>Dashboard</span>
+                      			</a>
+                      		<% else %>
+                      			<a class="" href="/">
+                          			<i class="fa fa-dashboard"></i>
+                          			<span>Dashboard</span>
+                      			</a>
+                      		<% end %>
                   		</li>
 	                  	<% @categories.each do |category| %>
 		                  	<% if category.entities.any? %>
 		                  		<% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
-				                  	<li class="sub-menu">
-				                      	<a href="javascript:;" >
+				                  	<li class="sub-menu">				                      	
+				                      	<a class="<%= MenuHelper::is_active_menu(category,nil,@module_active)%>" href="javascript:;" >
 				                          	<i class="fa fa-laptop"></i>
 				                          	<span><%= category.name %></span>
 				                      	</a>
-				                      	<% category.entities.each do |entity|%>
+				                      	<% category.entities.each do |entity| %>
 				                      		<% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
 					                      		<ul class="sub">
-					                          		<li><a  href="/<%= entity.slug %>"><%= entity.name %></a></li>
+					                          		<li class="<%= MenuHelper::is_active_menu(category,entity,@module_active)%>" >
+					                          			<a href="/<%= entity.slug %>"><%= entity.name %></a>
+					                          		</li>
 					                      		</ul>
 					                      	<% end %>
 					                    <% end %>
@@ -149,7 +158,7 @@
   	<%= javascript_include_tag 'bootstrap-timepicker', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'jquery.multi-select', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'jquery.quicksearch', 'data-turbolinks-track' => true %>
-   	<%= javascript_include_tag 'common-scripts', 'data-turbolinks-track' => true %>
+   	<%#= javascript_include_tag 'common-scripts', 'data-turbolinks-track' => true %>
 
 	<%= javascript_include_tag 'advanced-form-components', 'data-turbolinks-track' => true %>
 	

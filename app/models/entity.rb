@@ -6,4 +6,7 @@ class Entity < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :slug
   validates_presence_of :controller
+
+  validates :name, uniqueness: true
+  validates :controller, uniqueness: true
 end

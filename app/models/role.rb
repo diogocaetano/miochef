@@ -3,4 +3,5 @@ class Role < ActiveRecord::Base
 	has_many :users, dependent: :restrict_with_exception
 	
 	validates_presence_of :name
+	validates :name, uniqueness: true
 end

@@ -17,4 +17,18 @@ module MenuHelper
 
 		false
 	end
+
+	def self.is_active_menu(category, entity=nil, module_active)		
+        if not entity.nil?
+            if entity.controller == module_active
+                return "active"
+            end
+        else
+        	category.entities.each do |entity|
+                if entity.controller == module_active
+                    return "active"
+                end
+            end
+        end
+    end
 end
