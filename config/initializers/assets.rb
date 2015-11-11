@@ -12,7 +12,9 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( 
 	jquery.js
 	bootstrap.min.js
+	advanced-form-components.js
 	jquery.dcjqaccordion.2.7.js
+	bootstrap-datetimepicker.js
 	jquery.scrollTo.min.js
 	jquery.nicescroll.js
 	jquery.sparkline.js
@@ -25,6 +27,23 @@ Rails.application.config.assets.precompile += %w(
 	sparkline-chart.js
 	easy-pie-chart.js
 	count.js
+	jquery.multi-select.js
+	jquery.quicksearch.js
+	
+	bootstrap-timepicker.js
+	spinner.min.js
+	bootstrap-fileupload.js
+	wysihtml5-0.3.0.js
+	bootstrap-wysihtml5.js
+	bootstrap-datepicker.js
+  	bootstrap-datetimepicker.js
+  	moment.min.js
+  	daterangepicker.js
+  	bootstrap-colorpicker.js
+  	bootstrap-timepicker.js
+  	jquery.multi-select.js
+  	jquery.quicksearch.js
+   	common-scripts.js
 
   	bootstrap.min.css
   	bootstrap-reset.css
@@ -34,4 +53,12 @@ Rails.application.config.assets.precompile += %w(
   	slidebars.css
   	style.css
   	style-responsive.css
+  	multi-select.css
+	bootstrap-fileupload.css
+	bootstrap-wysihtml5.css
+	datepicker.css
+	timepicker.css
+	colorpicker.css
+	daterangepicker-bs3.css
+	datetimepicker.css
 )
