@@ -62,7 +62,7 @@ class RolesController < ApplicationController
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to roles_url, notice: 'O Perfil não pode ser excluído. Existem associações ao registro.' }
+      format.html { redirect_to roles_url, alert: 'O Perfil não pode ser excluído. Existem associações ao registro.' }
       format.json { head :no_content }
     end
   end

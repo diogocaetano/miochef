@@ -61,7 +61,7 @@ class PermissionsController < ApplicationController
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to permissions_url, notice: 'Permissão não foi removida. Existem associações para o registro.' }
+      format.html { redirect_to permissions_url, alert: 'Permissão não foi removida. Existem associações para o registro.' }
       format.json { head :no_content }
     end
   end

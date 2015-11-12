@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to users_admin_index_path, notice: 'O Usuário não foi removido. Existem associações para o registro.' }
+      format.html { redirect_to users_admin_index_path, alert: 'O Usuário não foi removido. Existem associações para o registro.' }
       format.json { head :no_content }
     end
   end

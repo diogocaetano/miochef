@@ -9,7 +9,12 @@
               <div class="alert alert-block alert-success fade in">
                   <%= notice %>
               </div>
-            <% end %>            
+            <% end %>
+            <% if alert %>
+              <div class="alert alert-block alert-danger fade in">
+                  <%= alert %>
+              </div>
+            <% end %>
             <header class="panel-heading">
                 Usuários
             </header>

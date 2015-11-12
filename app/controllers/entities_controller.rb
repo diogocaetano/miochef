@@ -61,7 +61,7 @@ class EntitiesController < ApplicationController
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Módulo não foi removido. Existem associações para o registro.' }
+      format.html { redirect_to entities_url, alert: 'Módulo não foi removido. Existem associações para o registro.' }
       format.json { head :no_content }
     end
   end
