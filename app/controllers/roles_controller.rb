@@ -55,17 +55,15 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.json
   def destroy
-    begin
-      @role.destroy
-      respond_to do |format|
-        format.html { redirect_to roles_url, notice: 'Perfil Removido com Sucesso.' }
-        format.json { head :no_content }
-      end
-    rescue
-      respond_to do |format|
-        format.html { redirect_to roles_url, notice: 'O Perfil não pode ser excluído. Existem associações ao registro.' }
-        format.json { head :no_content }
-      end
+    @role.destroy
+    respond_to do |format|
+      format.html { redirect_to roles_url, notice: 'Perfil Removido com Sucesso.' }
+      format.json { head :no_content }
+    end
+  rescue
+    respond_to do |format|
+      format.html { redirect_to roles_url, notice: 'O Perfil não pode ser excluído. Existem associações ao registro.' }
+      format.json { head :no_content }
     end
   end
 

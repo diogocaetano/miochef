@@ -12,5 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require jquery.dcjqaccordion.2.7
+//= require jquery.scrollTo.min
+//= require jquery.nicescroll
+//= require jquery.sparkline
+//= require jquery.easy-pie-chart
+//= require owl.carousel
+//= require jquery.customSelect.min
+//= require respond.min
+//= require slidebars.min
+//= require common-scripts
+//= require sparkline-chart
+//= require easy-pie-chart
+//= require count
+//= require bootstrap-fileupload	
+//= require bootstrap-datepicker
+//= require bootstrap-datetimepicker
+//= require moment.min
+//= require daterangepicker
+//= require bootstrap-colorpicker
+//= require bootstrap-timepicker
+//= require jquery.multi-select
+//= require jquery.quicksearch
+//= require advanced-form-components
+

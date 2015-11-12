@@ -28,9 +28,10 @@
                                   <td><%= role.name %></td>                                  
                                   <td>
                                     <a href="/roles/<%=role.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
-                                    <a href="/roles/<%=role.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>
-                                    <a href="/roles/<%=role.id%>" class="btn btn-danger" method="delete" data-confirm="Deseja Remover o Perfil?"><i class="fa fa-trash-o"></i></button></a>
+                                    <a href="/roles/<%=role.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>                                    
+                                    <a href="/roles/<%=role.id%>" class="btn btn-danger" data-method="delete" data-confirm="Deseja Remover o Perfil?"><i class="fa fa-trash-o"></i></button></a>
                                     </td>
+                                </tr>
                             <% end %>
                         </tbody>
                     </table>                     

@@ -57,9 +57,9 @@
 	                        </a>
 	                        <ul class="dropdown-menu extended logout">
 	                            <div class="log-arrow-up"></div>
-	                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-	                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-	                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+	                            <li><a href="/users_admin/<%=current_user.id%>/edit"><i class=" fa fa-suitcase"></i>Perfil</a></li>
+	                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+	                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li> -->
 	                           	<li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
 	                        </ul>
 	                    </li>
@@ -131,34 +131,7 @@
 		<% end %>
 	</body>
 
-	<%= javascript_include_tag 'jquery', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.dcjqaccordion.2.7', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.scrollTo.min', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.nicescroll', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.sparkline', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.easy-pie-chart', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'owl.carousel', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'jquery.customSelect.min', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'respond.min', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'slidebars.min', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'common-scripts', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'sparkline-chart', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'easy-pie-chart', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'count', 'data-turbolinks-track' => true %>
-
-	<!-- Advanced Form Components -->	
-	<%= javascript_include_tag 'bootstrap-fileupload', 'data-turbolinks-track' => true %>	
-	<%= javascript_include_tag 'bootstrap-datepicker', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'bootstrap-datetimepicker', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'moment.min', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'daterangepicker', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'bootstrap-colorpicker', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'bootstrap-timepicker', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'jquery.multi-select', 'data-turbolinks-track' => true %>
-  	<%= javascript_include_tag 'jquery.quicksearch', 'data-turbolinks-track' => true %>
-
-	<%= javascript_include_tag 'advanced-form-components', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	
   	<script>
 
