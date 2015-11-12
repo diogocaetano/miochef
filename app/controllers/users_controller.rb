@@ -59,6 +59,11 @@ class UsersController < ApplicationController
       format.html { redirect_to users_admin_index_path, notice: 'O Usuário foi removido com sucesso.' }
       format.json { head :no_content }
     end
+  rescue
+    respond_to do |format|
+      format.html { redirect_to users_admin_index_path, notice: 'O Usuário não foi removido. Existem associações para o registro.' }
+      format.json { head :no_content }
+    end
   end
 
   private
