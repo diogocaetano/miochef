@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.is_dev
+      return @users = User.all
+    end
+    @users = User.where.not(id: 1).collect {|user| user }    
   end
 
   # GET /users/1

@@ -4,7 +4,10 @@ class RolesController < ApplicationController
   # GET /roles
   # GET /roles.json
   def index
-    @roles = Role.all
+    if current_user.is_dev
+      return @roles = Role.all
+    end
+    @roles = Role.where.not(id: 1).collect {|role| role }
   end
 
   # GET /roles/1

@@ -57,8 +57,6 @@ ActiveRecord::Schema.define(version: 20151107024222) do
     t.integer  "role_id",                limit: 4
     t.string   "name",                   limit: 255
     t.boolean  "is_dev",                             default: false
-    t.boolean  "is_admin"
-    t.boolean  "is_representative"
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.string   "email",                  limit: 255, default: "",    null: false

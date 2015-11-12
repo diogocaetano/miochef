@@ -7,7 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Role.create(name: 'Dev')
-User.create(name: 'Develop', email: 'dev@dev.com', password: 'teste123', is_dev: true, is_admin: true, is_representative: true, role_id: 1)
+Role.create(name: 'Teste')
+User.create(name: 'Develop', email: 'dev@dev.com', password: 'teste123', is_dev: true, role_id: 1)
+User.create(name: 'Teste', email: 'teste@teste.com', password: 'teste123', role_id: 2)
 
 ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 
@@ -23,6 +25,7 @@ Permission.create(entity_id: 1, action_name: 'Salvar', action: 'create')
 Permission.create(entity_id: 1, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 1, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 1, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 1, action_name: 'Remover', action: 'destroy')
 
 Permission.create(entity_id: 2, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 2, action_name: 'Criar', action: 'new')
@@ -30,6 +33,7 @@ Permission.create(entity_id: 2, action_name: 'Salvar', action: 'create')
 Permission.create(entity_id: 2, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 2, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 2, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 2, action_name: 'Remover', action: 'destroy')
 
 Permission.create(entity_id: 3, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 3, action_name: 'Criar', action: 'new')
@@ -37,6 +41,7 @@ Permission.create(entity_id: 3, action_name: 'Salvar', action: 'create')
 Permission.create(entity_id: 3, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 3, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 3, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 3, action_name: 'Remover', action: 'destroy')
 
 Permission.create(entity_id: 4, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 4, action_name: 'Criar', action: 'new')
@@ -44,6 +49,7 @@ Permission.create(entity_id: 4, action_name: 'Salvar', action: 'create')
 Permission.create(entity_id: 4, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 4, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 4, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 4, action_name: 'Remover', action: 'destroy')
 
 Permission.create(entity_id: 5, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 5, action_name: 'Criar', action: 'new')
@@ -51,7 +57,11 @@ Permission.create(entity_id: 5, action_name: 'Salvar', action: 'create')
 Permission.create(entity_id: 5, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 5, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 5, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 5, action_name: 'Remover', action: 'destroy')
 
 Permission.all.each do |permission|
 	PermissionsRoles.create(role_id: 1, permission_id: permission.id)
+	if not permission.entity.is_dev
+		PermissionsRoles.create(role_id: 2, permission_id: permission.id)
+	end
 end
