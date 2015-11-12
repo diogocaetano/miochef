@@ -95,7 +95,7 @@
 		                  		<% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
 				                  	<li class="sub-menu">				                      	
 				                      	<a class="<%= MenuHelper::is_active_menu(category,nil,@module_active)%>" href="javascript:;" >
-				                          	<i class="fa fa-laptop"></i>
+				                          	<i class="<%= category.icon %>"></i>
 				                          	<span><%= category.name %></span>
 				                      	</a>
 				                      	<% category.entities.each do |entity| %>
