@@ -25,12 +25,22 @@
                         <label class="control-label col-md-3"></label>
                         <div class="col-md-9">
                             <select multiple="multiple" class="multi-select" id="my_multi_select2" name="permission_ids[]">
-                                <% Entity.all.each do |entity| %>
+                                <% if current_user.is_dev %>
+                                  <% Entity.all.each do |entity| %>
                                     <optgroup label="<%= entity.name %>">
                                         <% entity.permissions.each do |permission| %>
                                             <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
                                         <% end %>
                                     </optgroup>
+                                  <% end %>
+                                <% else %>
+                                  <% Entity.where.not(is_dev: true).collect { |entity| entity }.each do |entity| %>
+                                    <optgroup label="<%= entity.name %>">
+                                        <% entity.permissions.each do |permission| %>
+                                            <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
+                                        <% end %>
+                                    </optgroup>
+                                  <% end %>
                                 <% end %>
                             </select>
                         </div>
