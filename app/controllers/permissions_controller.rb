@@ -28,7 +28,7 @@ class PermissionsController < ApplicationController
 
     respond_to do |format|
       if @permission.save
-        format.html { redirect_to @permission, notice: 'Permissão criada com sucesso.' }
+        format.html { redirect_to permissions_url, notice: 'Permissão criada com sucesso.' }
         format.json { render :show, status: :created, location: @permission }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PermissionsController < ApplicationController
   def update
     respond_to do |format|
       if @permission.update(permission_params)
-        format.html { redirect_to @permission, notice: 'Permissão atualizada com sucesso.' }
+        format.html { redirect_to permissions_url, notice: 'Permissão atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @permission }
       else
         format.html { render :edit }

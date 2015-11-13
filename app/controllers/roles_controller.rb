@@ -31,7 +31,7 @@ class RolesController < ApplicationController
     @role.permission_ids = params[:permission_ids]
     respond_to do |format|
       if @role.save
-        format.html { redirect_to @role, notice: 'Perfil Criado com Sucesso.' }
+        format.html { redirect_to roles_url, notice: 'Perfil Criado com Sucesso.' }
         format.json { render :show, status: :created, location: @role }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class RolesController < ApplicationController
     @role.permission_ids = params[:permission_ids]
     respond_to do |format|
       if @role.update(role_params)
-        format.html { redirect_to @role, notice: 'Perfil Atualizado com Sucesso.' }
+        format.html { redirect_to roles_url, notice: 'Perfil Atualizado com Sucesso.' }
         format.json { render :show, status: :ok, location: @role }
       else
         format.html { render :edit }

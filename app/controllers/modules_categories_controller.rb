@@ -28,7 +28,7 @@ class ModulesCategoriesController < ApplicationController
 
     respond_to do |format|
       if @modules_category.save
-        format.html { redirect_to @modules_category, notice: 'Modules category was successfully created.' }
+        format.html { redirect_to modules_categories_url, notice: 'Categoria de Módulos criada com sucesso.' }
         format.json { render :show, status: :created, location: @modules_category }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ModulesCategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @modules_category.update(modules_category_params)
-        format.html { redirect_to @modules_category, notice: 'Modules category was successfully updated.' }
+        format.html { redirect_to modules_categories_url, notice: 'Categoria de Módulos atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @modules_category }
       else
         format.html { render :edit }
@@ -56,7 +56,12 @@ class ModulesCategoriesController < ApplicationController
   def destroy
     @modules_category.destroy
     respond_to do |format|
-      format.html { redirect_to modules_categories_url, notice: 'Modules category was successfully destroyed.' }
+      format.html { redirect_to modules_categories_url, notice: 'Categoria de Módulos removida com sucesso.' }
+      format.json { head :no_content }
+    end
+  rescue
+    respond_to do |format|
+      format.html { redirect_to modules_categories_url, notice: 'Categoria de Módulos não foi removida. Existem associações ao registro.' }
       format.json { head :no_content }
     end
   end
