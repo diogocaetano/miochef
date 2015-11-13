@@ -44,11 +44,15 @@
                                                         <h4 class="modal-title">Remover Categoria de Módulo</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                    Deseja Realmente Remover a Categoria de Módulo?
+                                                      <div class="text-center">
+                                                        Deseja Realmente Remover a Categoria de Módulo?
+                                                      </div>
                                                     </div>
-                                                    <div class="modal-footer">                              
-                                                        <a href="/modules_categories/<%=category.id%>" class="btn btn-warning" data-method="delete">Confirmar</a>
-                                                        <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                    <div class="modal-footer">
+                                                        <div class="pull-left">
+                                                          <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                                                        </div>
+                                                        <a href="/modules_categories/<%=category.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
                                                     </div>
                                                 </div>
                                             </div>
