@@ -205,3 +205,25 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  activerecord:
+    models:
+      user: Usuário
+      entity: 'Módulo'
+      permission: 'Permissão'
+      role: 'Perfil'
+      modules_category: 'Categoria de Módulos'
+    attributes:
+      user:
+        name: "Nome"
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Senha Confirmação"
+      role:
+        name: "Nome"
+      permission: 
+        entity_id: "Módulo"
+        action_name: "Nome da Ação"
+        action: "Ação"
+      modules_category:
+        name: "Nome"
+        icon: "Ícone"
