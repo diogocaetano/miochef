@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
         if not params[:controller] == 'dashboard'
           @module = Entity.where(controller: params[:controller]).first
           @permission = Permission.where(entity_id: @module.id).where(action: params[:action]).first
-          if @permission.nil?          
+          @permission_role = PermissionsRoles.where(permission_id: @permission.id).where(role_id: current_user.role_id)          
+          if @permission_role.empty?
             render "errors/error_403", :layout => false
           end
         end
