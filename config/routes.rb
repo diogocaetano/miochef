@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources  :users_admin, :controller => 'users'
   devise_for :users
-  resources :users_admin, :controller => 'users'
   
   resources :roles_permissions
   resources :permissions

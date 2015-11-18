@@ -1,6 +1,6 @@
 /vendor/*
 /tmp/*
 /bower_components
-log/*
+/log/*
 /config/enviroments/development.rb
 /public/assets/*
