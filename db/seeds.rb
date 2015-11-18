@@ -9,7 +9,7 @@
 Role.create(name: 'Dev')
 Role.create(name: 'Teste')
 User.create(name: 'Develop', email: 'dev@dev.com', password: 'teste123', is_dev: true, role_id: 1)
-User.create(name: 'Teste', email: 'teste@teste.com', password: 'teste123', role_id: 2)
+User.create(name: 'Teste', email: 'teste@teste.com.br', password: 'teste123', role_id: 2)
 
 ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 
