@@ -12,7 +12,7 @@
           </div>
       <% end %>
       <div class="panel-body">
-          <%= form_for @user, url: users_admin_index_path(@user)  do |f| %> 
+          <%= form_for @user, url: users_admin_path(@user)  do |f| %> 
               <div class="form-group">
                   <%= f.label 'Perfil' %><br>
                   <%= f.select :role_id, Role.where.not(id: [1]).collect {|role| [ role.name, role.id ] }, { prompt: 'Selecione o Perfil do Usuário' }, :class => 'form-control m-bot15' %>
