@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107024222) do
+ActiveRecord::Schema.define(version: 20160114131743) do
+
+  create_table "api_keys", force: :cascade do |t|
+    t.string   "access_token", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "entities", force: :cascade do |t|
     t.integer  "modules_category_id", limit: 4
@@ -57,6 +63,8 @@ ActiveRecord::Schema.define(version: 20151107024222) do
     t.integer  "role_id",                limit: 4
     t.string   "name",                   limit: 255
     t.boolean  "is_dev",                             default: false
+    t.datetime "token_expiration_time"
+    t.string   "access_token",           limit: 255
     t.datetime "created_at",                                         null: false
     t.datetime "updated_at",                                         null: false
     t.string   "email",                  limit: 255, default: "",    null: false

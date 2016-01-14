@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :role
 
   validates_presence_of :role_id, :name
+
+  def access_token_expired?  	
+  	self.token_expiration_time + 2.hours >= DateTime.now.in_time_zone
+  end
 end

@@ -12,6 +12,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root to: "dashboard#index"
+
+  #api
+  namespace :api do
+    namespace :v1 do
+      post 'login' => 'sessions#login'
+    end
+  end
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
