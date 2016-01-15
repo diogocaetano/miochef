@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114171946) do
+ActiveRecord::Schema.define(version: 20160114182050) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token", limit: 255
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20160114171946) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string   "license_plate", limit: 255
-    t.string   "tire",          limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+  create_table "dogs", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "age",        limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "entities", force: :cascade do |t|

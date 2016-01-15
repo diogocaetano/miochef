@@ -1,4 +1,44 @@
 Rails.application.routes.draw do
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
+  resources :dogs
   resources  :users_admin, :controller => 'users'
   devise_for :users
   
