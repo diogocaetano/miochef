@@ -13,6 +13,7 @@ User.create(name: 'Teste', email: 'teste@teste.com.br', password: 'teste123', ro
 
 ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 ModulesCategory.create(name: 'Localização', icon: 'fa fa-location-arrow')
+ModulesCategory.create(name: 'Chefes', icon: 'fa fa-coffee')
 
 Entity.create(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false)
 Entity.create(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false)
@@ -20,6 +21,7 @@ Entity.create(modules_category_id: 1, name: 'Permissões', controller: 'permissi
 Entity.create(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: true)
 Entity.create(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true)
 Entity.create(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false)
+Entity.create(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false)
 
 Permission.create(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 1, action_name: 'Criar', action: 'new')
@@ -68,6 +70,14 @@ Permission.create(entity_id: 6, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 6, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 6, action_name: 'Visualizar', action: 'show')
 Permission.create(entity_id: 6, action_name: 'Remover', action: 'destroy')
+
+Permission.create(entity_id: 7, action_name: 'Listar', action: 'index')
+Permission.create(entity_id: 7, action_name: 'Criar', action: 'new')
+Permission.create(entity_id: 7, action_name: 'Salvar', action: 'create')
+Permission.create(entity_id: 7, action_name: 'Editar', action: 'edit')
+Permission.create(entity_id: 7, action_name: 'Atualizar', action: 'update')
+Permission.create(entity_id: 7, action_name: 'Visualizar', action: 'show')
+Permission.create(entity_id: 7, action_name: 'Remover', action: 'destroy')
 
 Permission.all.each do |permission|
 	PermissionsRoles.create(role_id: 1, permission_id: permission.id)

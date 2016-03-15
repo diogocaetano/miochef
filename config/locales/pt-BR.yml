@@ -230,6 +230,10 @@ pt-BR:
       country:
         name: "Nome"
         initials: "Iniciais"
+      badge:
+        name: "Nome"
+        description: "Descrição"
+        image: "Imagem"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
