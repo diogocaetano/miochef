@@ -24,7 +24,7 @@
                 <tr>
                                       <td><%= badge.name %></td>
                                       <td><%= badge.description %></td>
-                                      <td><%= image_tag badge.image.url(:thumb) %></td>
+                                      <td><%= image_tag(badge.image.url(:thumb), size: "34x34") %></td>
                                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), badge, :class => 'btn btn-primary' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_badge_path(badge), :class => 'btn btn-info' %>
