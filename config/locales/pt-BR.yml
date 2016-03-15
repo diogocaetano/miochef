@@ -227,6 +227,9 @@ pt-BR:
       modules_category:
         name: "Nome"
         icon: "Ícone"
+      country:
+        name: "Nome"
+        initials: "Iniciais"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

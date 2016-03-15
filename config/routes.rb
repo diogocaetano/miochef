@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :countries
   resources :dogs
   resources :dogs
   resources :dogs
