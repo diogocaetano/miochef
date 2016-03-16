@@ -213,6 +213,7 @@ pt-BR:
       role: 'Perfil'
       modules_category: 'Categoria de Módulos'
       ingredient: 'Ingrediente'
+      plate_type: 'Tipo de Prato'
     attributes:
       user:
         name: "Nome"
@@ -236,6 +237,8 @@ pt-BR:
         description: "Descrição"
         image: "Imagem"
       ingredient:
+        name: "Nome"
+      plate_type:
         name: "Nome"
   devise:
     confirmations:

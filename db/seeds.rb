@@ -109,15 +109,15 @@ Permission.find_or_create_by(entity_id: ingredientsCategory.id, action_name: 'At
 Permission.find_or_create_by(entity_id: ingredientsCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: ingredientsCategory.id, action_name: 'Remover', action: 'destroy')
 
-Entity.find_or_create_by(controller: 'plateBadges') do |badgeEntity|
+Entity.find_or_create_by(controller: 'plate_badges') do |badgeEntity|
 	badgeEntity.modules_category_id = pratosCategory.id
 	badgeEntity.name = 'Badges de Prato'
-	badgeEntity.slug = 'plateBadges'
-	badgeEntity.controller = 'plateBadges'
+	badgeEntity.slug = 'plate_badges'
+	badgeEntity.controller = 'plate_badges'
 	badgeEntity.is_dev = false
 end
 
-badgesCategory = Entity.find_by(controller: 'plateBadges')
+badgesCategory = Entity.find_by(controller: 'plate_badges')
 Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Criar', action: 'new')
 Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Salvar', action: 'create')
@@ -127,15 +127,15 @@ Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Visuali
 Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Remover', action: 'destroy')
 
 
-Entity.find_or_create_by(controller: 'plateTypes') do |typeEntity|
+Entity.find_or_create_by(controller: 'plate_types') do |typeEntity|
 	typeEntity.modules_category_id = pratosCategory.id
 	typeEntity.name = 'Tipos'
-	typeEntity.slug = 'plateTypes'
-	typeEntity.controller = 'plateTypes'
+	typeEntity.slug = 'plate_types'
+	typeEntity.controller = 'plate_types'
 	typeEntity.is_dev = false
 end
 
-typesCategory = Entity.find_by(controller: 'plateTypes')
+typesCategory = Entity.find_by(controller: 'plate_types')
 Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Criar', action: 'new')
 Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Salvar', action: 'create')
@@ -144,15 +144,15 @@ Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Atualiza
 Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Remover', action: 'destroy')
 
-Entity.find_or_create_by(controller: 'plateAccompaniments') do |accompanimentsEntity|
+Entity.find_or_create_by(controller: 'plate_accompaniments') do |accompanimentsEntity|
 	accompanimentsEntity.modules_category_id = pratosCategory.id
 	accompanimentsEntity.name = 'Acompanhamentos'
-	accompanimentsEntity.slug = 'plateAccompaniments'
-	accompanimentsEntity.controller = 'plateAccompaniments'
+	accompanimentsEntity.slug = 'plate_accompaniments'
+	accompanimentsEntity.controller = 'plate_accompaniments'
 	accompanimentsEntity.is_dev = false
 end
 
-accompanimentsCategory = Entity.find_by(controller: 'plateAccompaniments')
+accompanimentsCategory = Entity.find_by(controller: 'plate_accompaniments')
 Permission.find_or_create_by(entity_id: accompanimentsCategory.id, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: accompanimentsCategory.id, action_name: 'Criar', action: 'new')
 Permission.find_or_create_by(entity_id: accompanimentsCategory.id, action_name: 'Salvar', action: 'create')
