@@ -214,6 +214,7 @@ pt-BR:
       modules_category: 'Categoria de Módulos'
       ingredient: 'Ingrediente'
       plate_type: 'Tipo de Prato'
+      plate_accompaniment: 'Acompanhamento'
     attributes:
       user:
         name: "Nome"
@@ -237,6 +238,8 @@ pt-BR:
         description: "Descrição"
         image: "Imagem"
       ingredient:
+        name: "Nome"
+      plate_accompaniment:
         name: "Nome"
       plate_type:
         name: "Nome"
