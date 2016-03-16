@@ -212,6 +212,7 @@ pt-BR:
       permission: 'Permissão'
       role: 'Perfil'
       modules_category: 'Categoria de Módulos'
+      ingredient: 'Ingrediente'
     attributes:
       user:
         name: "Nome"
@@ -234,6 +235,8 @@ pt-BR:
         name: "Nome"
         description: "Descrição"
         image: "Imagem"
+      ingredient:
+        name: "Nome"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
