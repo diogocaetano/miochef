@@ -214,6 +214,8 @@ pt-BR:
       modules_category: 'Categoria de Módulos'
       ingredient: 'Ingrediente'
       plate_type: 'Tipo de Prato'
+      plate_accompaniment: 'Acompanhamento'
+      plate_badge: 'Badge'
     attributes:
       user:
         name: "Nome"
@@ -238,8 +240,14 @@ pt-BR:
         image: "Imagem"
       ingredient:
         name: "Nome"
+      plate_accompaniment:
+        name: "Nome"
       plate_type:
         name: "Nome"
+      plate_badge:
+        name: "Nome"
+        description: "Descrição"
+        image: "Imagem"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
