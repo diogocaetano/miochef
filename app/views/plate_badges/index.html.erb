@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-lg-12">
+    <a href="/plate_badges/new">
+        <button type="button" class="btn btn-primary">Adicionar Badge do Prato</button>
+    </a>
+    <div class="panel"></div>
+    <section class="panel">
+      <header class="panel-heading">
+          Badge do Prato
+      </header>
+      <div class="panel-body">
+        <section id="unseen">
+          <table class="table table-bmoduleed table-striped table-condensed">
+            <thead>
+              <tr>
+                                  <th>Nome</th>
+                                  <th>Descrição</th>
+                                  <th>Imagem</th>
+                                <th colspan='3'>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @plate_badges.each do |plate_badge| %>
+                <tr>
+                                      <td><%= plate_badge.name %></td>
+                                      <td><%= plate_badge.description %></td>
+                                      <td><%= image_tag(plate_badge.image.url(:thumb), size: "34x34") %></td>
+                                    <td>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate_badge, :class => 'btn btn-primary' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_badge_path(plate_badge), :class => 'btn btn-info' %>
+                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_badge_'+plate_badge.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                  </td>
+                </tr>
+                <div class="modal fade modal-dialog-center in" id="delete_plate_badge_<%= plate_badge.id.to_s %>"
+                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;">
+                </div>
+                <div class="modal-dialog ">
+                  <div class="modal-content-wrap">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          <h4 class="modal-title">Remover Badge do Prato</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="text-center">
+                          Deseja Realmente Remover o Badge do Prato
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="pull-left">
+                          <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                        </div>
+                        <%= link_to raw("Confirmar"), plate_badge, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end -%>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>

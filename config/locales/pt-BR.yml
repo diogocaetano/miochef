@@ -215,6 +215,7 @@ pt-BR:
       ingredient: 'Ingrediente'
       plate_type: 'Tipo de Prato'
       plate_accompaniment: 'Acompanhamento'
+      plate_badge: 'Badge'
     attributes:
       user:
         name: "Nome"
@@ -243,6 +244,10 @@ pt-BR:
         name: "Nome"
       plate_type:
         name: "Nome"
+      plate_badge:
+        name: "Nome"
+        description: "Descrição"
+        image: "Imagem"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
