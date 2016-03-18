@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317195715) do
+ActiveRecord::Schema.define(version: 20160318134631) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token", limit: 255
@@ -103,24 +103,33 @@ ActiveRecord::Schema.define(version: 20160317195715) do
   end
 
   create_table "plates", force: :cascade do |t|
-    t.string   "title",                  limit: 255
-    t.text     "description",            limit: 65535
-    t.decimal  "price",                                precision: 10, scale: 2
-    t.integer  "available_quantity",     limit: 4
-    t.string   "photo",                  limit: 255
-    t.integer  "active",                 limit: 4,                              default: 1
-    t.integer  "plate_type_id",          limit: 4
-    t.integer  "plate_badge_id",         limit: 4
-    t.integer  "ingredient_id",          limit: 4
-    t.integer  "plate_accompaniment_id", limit: 4
-    t.datetime "created_at",                                                                null: false
-    t.datetime "updated_at",                                                                null: false
+    t.string   "title",              limit: 255
+    t.text     "description",        limit: 65535
+    t.decimal  "price",                            precision: 10, scale: 2
+    t.integer  "available_quantity", limit: 4
+    t.string   "photo",              limit: 255
+    t.integer  "active",             limit: 4
+    t.integer  "plate_type_id",      limit: 4
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
   end
 
-  add_index "plates", ["ingredient_id"], name: "index_plates_on_ingredient_id", using: :btree
-  add_index "plates", ["plate_accompaniment_id"], name: "index_plates_on_plate_accompaniment_id", using: :btree
-  add_index "plates", ["plate_badge_id"], name: "index_plates_on_plate_badge_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
+
+  create_table "plates_accompaniments", id: false, force: :cascade do |t|
+    t.integer "plate_id",         limit: 4
+    t.integer "accompaniment_id", limit: 4
+  end
+
+  create_table "plates_badges", id: false, force: :cascade do |t|
+    t.integer "plate_id", limit: 4
+    t.integer "badge_id", limit: 4
+  end
+
+  create_table "plates_ingredients", id: false, force: :cascade do |t|
+    t.integer "plate_id",      limit: 4
+    t.integer "ingredient_id", limit: 4
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -153,9 +162,6 @@ ActiveRecord::Schema.define(version: 20160317195715) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "permissions", "entities"
-  add_foreign_key "plates", "ingredients"
-  add_foreign_key "plates", "plate_accompaniments"
-  add_foreign_key "plates", "plate_badges"
   add_foreign_key "plates", "plate_types"
   add_foreign_key "users", "roles"
 end
