@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318192444) do
+ActiveRecord::Schema.define(version: 20160318200707) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token", limit: 255
@@ -52,6 +52,11 @@ ActiveRecord::Schema.define(version: 20160318192444) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "ingredients_plates", id: false, force: :cascade do |t|
+    t.integer "plate_id",      limit: 4
+    t.integer "ingredient_id", limit: 4
   end
 
   create_table "modules_categories", force: :cascade do |t|
@@ -96,6 +101,11 @@ ActiveRecord::Schema.define(version: 20160318192444) do
     t.datetime "image_updated_at"
   end
 
+  create_table "plate_badges_plates", id: false, force: :cascade do |t|
+    t.integer "plate_id",       limit: 4
+    t.integer "plate_badge_id", limit: 4
+  end
+
   create_table "plate_types", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -123,16 +133,6 @@ ActiveRecord::Schema.define(version: 20160318192444) do
   create_table "plates_accompaniments", id: false, force: :cascade do |t|
     t.integer "plate_id",         limit: 4
     t.integer "accompaniment_id", limit: 4
-  end
-
-  create_table "plates_ingredients", id: false, force: :cascade do |t|
-    t.integer "plate_id",      limit: 4
-    t.integer "ingredient_id", limit: 4
-  end
-
-  create_table "plates_plates_badges", id: false, force: :cascade do |t|
-    t.integer "plate_id",       limit: 4
-    t.integer "plate_badge_id", limit: 4
   end
 
   create_table "roles", force: :cascade do |t|

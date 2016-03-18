@@ -45,6 +45,7 @@ class PlatesController < ApplicationController
   # PATCH/PUT /plates/1
   # PATCH/PUT /plates/1.json
   def update
+    abort(plate_params.to_s)
     respond_to do |format|
       if @plate.update(plate_params)
         format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
@@ -76,6 +77,6 @@ class PlatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [])
+      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [], :ingredient_ids => [])
     end
 end
