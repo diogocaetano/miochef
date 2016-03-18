@@ -12,6 +12,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( 
 	jquery.js
 	bootstrap.min.js
+	summernote.js
+	summernote-pt-BR.js
 	advanced-form-components.js
 	jquery.dcjqaccordion.2.7.js
 	bootstrap-datetimepicker.js
@@ -46,6 +48,7 @@ Rails.application.config.assets.precompile += %w(
    	common-scripts.js
 
   	bootstrap.min.css
+  	summernote.css
   	bootstrap-reset.css
   	font-awesome.css
   	jquery.easy-pie-chart.css
@@ -59,6 +62,6 @@ Rails.application.config.assets.precompile += %w(
 	datepicker.css
 	timepicker.css
 	colorpicker.css
-	daterangepicker-bs3.css
+	daterangepicker.css
 	datetimepicker.css
 )

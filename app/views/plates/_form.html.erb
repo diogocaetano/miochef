@@ -12,55 +12,47 @@
       </div>
     <% end %>
     <div class="panel-body">
-      <%= form_for(@plate) do |f| %>
+      <%= form_for @plate, html: { multipart: true } do |f| %>
                   <div class="form-group">
             <%= f.label :title %><br>
             <%= f.text_field :title, :class => 'form-control' %>
           </div>
-                  <div class="form-group">
+          <div class="form-group">
             <%= f.label :description %><br>
-            <%= f.text_area :description, :class => 'form-control' %>
+            <%= f.text_area :description, :class => 'form-control summernote' %>
           </div>
-                  <div class="form-group">
-            <%= f.label :price %><br>
-            <%= f.text_field :price, :class => 'form-control' %>
-          </div>
-                  <div class="form-group">
-            <%= f.label :available_quantity %><br>
-            <%= f.number_field :available_quantity, :class => 'form-control' %>
-          </div>
-                  <div class="form-group">
+         
+          <div class="form-group">
             <%= f.label :photo %><br>
-            <%= f.text_field :photo, :class => 'form-control' %>
+            <%= f.file_field :photo, :class => 'form-control' %>
           </div>
-                  <div class="form-group">
-            <%= f.label :active %><br>
-            <%= f.number_field :active, :class => 'form-control' %>
+
+          <div class="form-group">
+            <%= f.label "Tipo" %><br>
+            <%= f.select :plate_type_id, @types.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
           </div>
-                  <div class="form-group">
-            <%= f.label :chef_id %><br>
-            <%= f.text_field :chef_id, :class => 'form-control' %>
+
+          <div class="form-group">
+            <%= f.label "Badges" %><br>
+            <% @badges.each do |badge| %>
+              <div class="col-md-3">
+                <%= image_tag badge.image.url(:thumb) %>
+                <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
+              </div>
+            <% end %>
           </div>
-                  <div class="form-group">
-            <%= f.label :plate_type_id %><br>
-            <%= f.text_field :plate_type_id, :class => 'form-control' %>
-          </div>
-                  <div class="form-group">
-            <%= f.label :plate_badge_id %><br>
-            <%= f.text_field :plate_badge_id, :class => 'form-control' %>
-          </div>
-                  <div class="form-group">
-            <%= f.label :ingredients_id %><br>
-            <%= f.text_field :ingredients_id, :class => 'form-control' %>
-          </div>
-                  <div class="form-group">
-            <%= f.label :plate_accompaniment_id %><br>
-            <%= f.text_field :plate_accompaniment_id, :class => 'form-control' %>
-          </div>
-                <div class="form-group">
+
+          <div class="form-group">
             <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
-        </div>
+          </div>
       <% end -%>
     </div>
   </section>
 </div>
+<script type="text/javascript">
+  window.addEventListener('load', function(){
+    $('.summernote').each(function(){
+      //$(this).summernote({height:300});
+    });
+  });
+</script>

@@ -44,34 +44,17 @@
             <label for="number" class="form-control-static"><%= @plate.active %></label>
           </div>
 	      </div>
-	    	      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Chefe</label>
-          <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.chef %></label>
-          </div>
-	      </div>
+	    	     
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Tipo do Prato</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.plate_type %></label>
+            <label for="number" class="form-control-static"><%= @plate.plate_type.name %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Badges</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.plate_badge %></label>
-          </div>
-	      </div>
-	    	      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Ingredientes</label>
-          <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.ingredients %></label>
-          </div>
-	      </div>
-	    	      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Acompanhamentos</label>
-          <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.plate_accompaniment %></label>
+            <%= @plate.plate_badges.count %>
           </div>
 	      </div>
 	        </div>

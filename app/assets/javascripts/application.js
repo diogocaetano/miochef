@@ -36,4 +36,5 @@
 //= require jquery.multi-select
 //= require jquery.quicksearch
 //= require advanced-form-components
-
+//= require bootstrap.min
+//= require summernote

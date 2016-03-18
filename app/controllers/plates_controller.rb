@@ -15,20 +15,25 @@ class PlatesController < ApplicationController
   # GET /plates/new
   def new
     @plate = Plate.new
+    @types = PlateType.all
+    @badges = PlateBadge.all
   end
 
   # GET /plates/1/edit
   def edit
+    @types = PlateType.all
   end
 
   # POST /plates
   # POST /plates.json
   def create
     @plate = Plate.new(plate_params)
+    @types = PlateType.all
+    @badges = PlateBadge.all
 
     respond_to do |format|
       if @plate.save
-        format.html { redirect_to @plate, notice: 'Plate was successfully created.' }
+        format.html { redirect_to @plate, notice: 'Prato criado com sucesso.' }
         format.json { render :show, status: :created, location: @plate }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class PlatesController < ApplicationController
   def update
     respond_to do |format|
       if @plate.update(plate_params)
-        format.html { redirect_to @plate, notice: 'Plate was successfully updated.' }
+        format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
         format.html { render :edit }
@@ -56,7 +61,7 @@ class PlatesController < ApplicationController
   def destroy
     @plate.destroy
     respond_to do |format|
-      format.html { redirect_to plates_url, notice: 'Plate was successfully destroyed.' }
+      format.html { redirect_to plates_url, notice: 'Prato removido com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -65,10 +70,12 @@ class PlatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_plate
       @plate = Plate.find(params[:id])
+      @types = PlateType.all
+      @badges = PlateBadge.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :plate_badge_id, :ingredients_id, :plate_accompaniment_id)
+      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [])
     end
 end
