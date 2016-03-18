@@ -7,10 +7,10 @@ class CreatePlates < ActiveRecord::Migration
       t.integer :available_quantity, default: nil
       t.string :photo
       t.integer :active, default: 1
-      t.references :chef, index: true, foreign_key: true
+      # t.references :chef, index: true, foreign_key: true
       t.references :plate_type, index: true, foreign_key: true
       t.references :plate_badge, index: true, foreign_key: true
-      t.references :ingredients, index: true, foreign_key: true
+      t.references :ingredient, index: true, foreign_key: true
       t.references :plate_accompaniment, index: true, foreign_key: true
 
       t.timestamps null: false
