@@ -256,6 +256,29 @@ pt-BR:
         available_quantity: "Quantidade Disponível"
         photo: "Foto"
         active: "Ativo"
+      chef:
+        name: "Nome"
+        description: "Descrição"
+        cpf: "CPF"
+        rg: "RG"
+        born_date: "Data de Nascimento"
+        country_id: "País"
+        email: "Email"
+        phone_one: "Telefone 1"
+        phone_two: "Telefone 2"
+        specialty: "Especialidade"
+        naturalness: "Naturalidade"
+        academic_education: "Formação Acadêmica"
+        university: "Universidade"
+        active: 'Ativo'
+      address:
+        public_place: "Logradouro"
+        number: "Número"
+        neighborhood: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        zip_code: "CEP"
+        complement: "Complemento"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :addresses
+  resources :chefs
   resources :plates
   resources :plate_badges
   resources :plate_accompaniments
