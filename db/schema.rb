@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321191929) do
+ActiveRecord::Schema.define(version: 20160321201141) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -154,20 +154,27 @@ ActiveRecord::Schema.define(version: 20160321191929) do
   end
 
   create_table "plates", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.text     "description",        limit: 65535
-    t.decimal  "price",                            precision: 10, scale: 2
-    t.integer  "available_quantity", limit: 4
-    t.string   "photo",              limit: 255
-    t.integer  "active",             limit: 4
-    t.integer  "plate_type_id",      limit: 4
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
-    t.integer  "photo_file_size",    limit: 4
+    t.string   "title",               limit: 255
+    t.text     "description",         limit: 65535
+    t.decimal  "price",                             precision: 10, scale: 2
+    t.integer  "available_quantity",  limit: 4
+    t.string   "photo",               limit: 255
+    t.integer  "active",              limit: 4
+    t.integer  "plate_type_id",       limit: 4
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+    t.string   "photo_file_name",     limit: 255
+    t.string   "photo_content_type",  limit: 255
+    t.integer  "photo_file_size",     limit: 4
     t.datetime "photo_updated_at"
-    t.integer  "chef_id",            limit: 4
+    t.integer  "chef_id",             limit: 4
+    t.integer  "sunday_available",    limit: 4
+    t.integer  "monday_available",    limit: 4
+    t.integer  "tuesday_available",   limit: 4
+    t.integer  "wednesday_available", limit: 4
+    t.integer  "thursday_available",  limit: 4
+    t.integer  "friday_available",    limit: 4
+    t.integer  "daturday_available",  limit: 4
   end
 
   add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
