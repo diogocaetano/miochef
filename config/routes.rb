@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :addresses
+  resources :chefs
   resources :plates
   resources :plate_badges
   resources :plate_accompaniments
@@ -6,46 +8,7 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :badges
   resources :countries
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
-  resources :dogs
+
   resources  :users_admin, :controller => 'users'
   devise_for :users
   

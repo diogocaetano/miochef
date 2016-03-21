@@ -10,8 +10,22 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+ActiveRecord::Schema.define(version: 20160320193400) do
 
-ActiveRecord::Schema.define(version: 20160318200707) do
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "chef_id",      limit: 4
+    t.string   "public_place", limit: 255
+    t.string   "number",       limit: 255
+    t.string   "neighborhood", limit: 255
+    t.string   "city",         limit: 255
+    t.string   "state",        limit: 255
+    t.string   "zip_code",     limit: 255
+    t.string   "complement",   limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "addresses", ["chef_id"], name: "index_addresses_on_chef_id", using: :btree
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "access_token", limit: 255
@@ -30,6 +44,26 @@ ActiveRecord::Schema.define(version: 20160318200707) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
   end
+
+  create_table "chefs", force: :cascade do |t|
+    t.string   "name",               limit: 255
+    t.text     "description",        limit: 65535
+    t.string   "cpf",                limit: 255
+    t.string   "rg",                 limit: 255
+    t.date     "born_date"
+    t.integer  "country_id",         limit: 4
+    t.string   "email",              limit: 255
+    t.string   "phone_one",          limit: 255
+    t.string   "phone_two",          limit: 255
+    t.string   "specialty",          limit: 255
+    t.string   "naturalness",        limit: 255
+    t.string   "academic_education", limit: 255
+    t.string   "university",         limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "chefs", ["country_id"], name: "index_chefs_on_country_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -135,6 +169,16 @@ ActiveRecord::Schema.define(version: 20160318200707) do
     t.integer "accompaniment_id", limit: 4
   end
 
+  create_table "plates_badges", id: false, force: :cascade do |t|
+    t.integer "plate_id", limit: 4
+    t.integer "badge_id", limit: 4
+  end
+
+  create_table "plates_ingredients", id: false, force: :cascade do |t|
+    t.integer "plate_id",      limit: 4
+    t.integer "ingredient_id", limit: 4
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -165,6 +209,8 @@ ActiveRecord::Schema.define(version: 20160318200707) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
+  add_foreign_key "addresses", "chefs"
+  add_foreign_key "chefs", "countries"
   add_foreign_key "permissions", "entities"
   add_foreign_key "plates", "plate_types"
   add_foreign_key "users", "roles"

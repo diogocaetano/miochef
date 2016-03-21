@@ -31,6 +31,8 @@ Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: '
 Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true)
 Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'chefs', is_dev: false)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'addresses', is_dev: false)
 
 Permission.find_or_create_by(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 1, action_name: 'Criar', action: 'new')
@@ -87,6 +89,22 @@ Permission.find_or_create_by(entity_id: 7, action_name: 'Editar', action: 'edit'
 Permission.find_or_create_by(entity_id: 7, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: 7, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: 7, action_name: 'Remover', action: 'destroy')
+
+Permission.find_or_create_by(entity_id: 8, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: 8, action_name: 'Remover', action: 'destroy')
+
+Permission.find_or_create_by(entity_id: 9, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: 9, action_name: 'Remover', action: 'destroy')
 
 # Pratos - 16/03/2016
 ModulesCategory.find_or_create_by(name: 'Pratos', icon: 'fa fa-spoon')
