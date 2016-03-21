@@ -24,6 +24,9 @@
          
           <div class="form-group">
             <%= f.label :photo %><br>
+            <% if @plate.photo.exists? %>
+              <%= image_tag @plate.photo.url(:thumb) %><br><br>
+            <% end %>
             <%= f.file_field :photo, :class => 'form-control' %>
           </div>
 
