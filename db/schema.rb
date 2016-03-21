@@ -10,7 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 20160320193400) do
 
   create_table "addresses", force: :cascade do |t|
@@ -89,6 +88,11 @@ ActiveRecord::Schema.define(version: 20160320193400) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "ingredients_plates", id: false, force: :cascade do |t|
+    t.integer "plate_id",      limit: 4
+    t.integer "ingredient_id", limit: 4
+  end
+
   create_table "modules_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "icon",       limit: 255
@@ -129,6 +133,11 @@ ActiveRecord::Schema.define(version: 20160320193400) do
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
+  end
+
+  create_table "plate_badges_plates", id: false, force: :cascade do |t|
+    t.integer "plate_id",       limit: 4
+    t.integer "plate_badge_id", limit: 4
   end
 
   create_table "plate_types", force: :cascade do |t|
