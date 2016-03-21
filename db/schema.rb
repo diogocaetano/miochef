@@ -10,7 +10,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 20160320193400) do
+
+ActiveRecord::Schema.define(version: 20160321201141) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160320193400) do
     t.string   "naturalness",        limit: 255
     t.string   "academic_education", limit: 255
     t.string   "university",         limit: 255
+    t.boolean  "active"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
@@ -123,6 +125,11 @@ ActiveRecord::Schema.define(version: 20160320193400) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "plate_accompaniments_plates", id: false, force: :cascade do |t|
+    t.integer "plate_id",               limit: 4
+    t.integer "plate_accompaniment_id", limit: 4
+  end
+
   create_table "plate_badges", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.text     "description",        limit: 65535
@@ -147,37 +154,31 @@ ActiveRecord::Schema.define(version: 20160320193400) do
   end
 
   create_table "plates", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.text     "description",        limit: 65535
-    t.decimal  "price",                            precision: 10, scale: 2
-    t.integer  "available_quantity", limit: 4
-    t.string   "photo",              limit: 255
-    t.integer  "active",             limit: 4
-    t.integer  "plate_type_id",      limit: 4
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
-    t.integer  "photo_file_size",    limit: 4
+    t.string   "title",               limit: 255
+    t.text     "description",         limit: 65535
+    t.decimal  "price",                             precision: 10, scale: 2
+    t.integer  "available_quantity",  limit: 4
+    t.string   "photo",               limit: 255
+    t.integer  "active",              limit: 4
+    t.integer  "plate_type_id",       limit: 4
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+    t.string   "photo_file_name",     limit: 255
+    t.string   "photo_content_type",  limit: 255
+    t.integer  "photo_file_size",     limit: 4
     t.datetime "photo_updated_at"
+    t.integer  "chef_id",             limit: 4
+    t.integer  "sunday_available",    limit: 4
+    t.integer  "monday_available",    limit: 4
+    t.integer  "tuesday_available",   limit: 4
+    t.integer  "wednesday_available", limit: 4
+    t.integer  "thursday_available",  limit: 4
+    t.integer  "friday_available",    limit: 4
+    t.integer  "daturday_available",  limit: 4
   end
 
+  add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
-
-  create_table "plates_accompaniments", id: false, force: :cascade do |t|
-    t.integer "plate_id",         limit: 4
-    t.integer "accompaniment_id", limit: 4
-  end
-
-  create_table "plates_badges", id: false, force: :cascade do |t|
-    t.integer "plate_id", limit: 4
-    t.integer "badge_id", limit: 4
-  end
-
-  create_table "plates_ingredients", id: false, force: :cascade do |t|
-    t.integer "plate_id",      limit: 4
-    t.integer "ingredient_id", limit: 4
-  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -212,6 +213,7 @@ ActiveRecord::Schema.define(version: 20160320193400) do
   add_foreign_key "addresses", "chefs"
   add_foreign_key "chefs", "countries"
   add_foreign_key "permissions", "entities"
+  add_foreign_key "plates", "chefs"
   add_foreign_key "plates", "plate_types"
   add_foreign_key "users", "roles"
 end

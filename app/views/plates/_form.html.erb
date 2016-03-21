@@ -24,7 +24,15 @@
          
           <div class="form-group">
             <%= f.label :photo %><br>
+            <% if @plate.photo.exists? %>
+              <%= image_tag @plate.photo.url(:thumb) %><br><br>
+            <% end %>
             <%= f.file_field :photo, :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Chef" %><br>
+            <%= f.select :chef_id, @chefs.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
           </div>
 
           <div class="form-group">
@@ -33,31 +41,114 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Badges" %><br>
-            <% @badges.each do |badge| %>
-              <div class="col-md-3">
-                <%= image_tag badge.image.url(:thumb) %>
-                <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
-              </div>
-            <% end %>
-          </div>
-
-          <div class="form-group">
             <%= f.label "Ingredientes" %><br>
-            <%= f.text_field :ingredients, {class: 'form-control', "data-role": "tagsinput", value: '[{"value": 1, "text": "pedro"}, {"value": 2, "text": "gabriel"}]', name: 'plate[ingredient_ids][]'} %>
+            <%= f.text_field :ingredients, {class: '', "data-role": "ingredientsTags", value: '', name: 'plate[ingredient_ids][]'} %>
           </div>
 
           <div class="form-group">
-            <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+            <%= f.label "Acompanhamentos" %><br>
+            <%= f.text_field :plates_accompaniments, {class: '', "data-role": "accompanimentsTags", value: '', name: 'plate[plate_accompaniment_ids][]'} %>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <%= f.label "Badges" %><br>
+              <% @badges.each do |badge| %>
+                <div class="col-md-3">
+                  <%= image_tag badge.image.url(:thumb) %>
+                  <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <div class="row" style="padding-left: 10px;">
+            <div class="form-group">
+              <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+            </div>
           </div>
       <% end -%>
     </div>
   </section>
 </div>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
 <script type="text/javascript">
   window.addEventListener('load', function(){
     $('.summernote').each(function(){
       //$(this).summernote({height:300});
     });
+
+    /* INGREDIENTES */
+    var ingredientsList = <%= raw(@ingredients_list.to_json) %>;
+    var plateIngredientsList = <%= raw(@plate_ingredients_list.to_json) %>;
+
+    var tagsIngredients = $('[data-role="ingredientsTags"]');
+    tagsIngredients.tagsinput({
+      itemValue: 'value',
+      itemText: 'text',
+      allowDuplicates: false,
+      onTagExists: function(item, $tag) {
+        setTimeout(function(){
+          tagsIngredients.tagsinput('input').val('');
+        }, 50);
+      },
+      typeahead: {
+        name: 'ingredients',
+        displayKey: 'text',
+        valueKey: 'value',
+        source: ingredientsList
+      }
+    });
+
+    //adiciona os já existentes
+    plateIngredientsList.forEach( function(element, index) {
+      tagsIngredients.tagsinput('add', {value: element.value, text: element.text});
+    });
+
+    //callback para limpar o txt após inserir um valor
+    tagsIngredients.on('itemAdded', function(e) {
+        console.log(tagsIngredients.tagsinput('input').val());
+        setTimeout(function(){
+          tagsIngredients.tagsinput('input').val('');
+        }, 100);
+    });
+
+    /* ACOMPANHAMENTOS */
+    var accompanimentList = <%= raw(@accompaniments_list.to_json) %>;
+    var plateAccompanimentListList = <%= raw(@plate_accompaniments_list.to_json) %>;
+
+    var tagsAccompaniments = $('[data-role="accompanimentsTags"]');
+    tagsAccompaniments.tagsinput({
+      itemValue: 'value',
+      itemText: 'text',
+      allowDuplicates: false,
+      onTagExists: function(item, $tag) {
+        setTimeout(function(){
+          tagsAccompaniments.tagsinput('input').val('');
+        }, 50);
+      },
+      typeahead: {
+        name: 'accompaniments',
+        displayKey: 'text',
+        valueKey: 'value',
+        source: accompanimentList
+      }
+    });
+
+    //adiciona os já existentes
+    plateAccompanimentListList.forEach( function(element, index) {
+      tagsAccompaniments.tagsinput('add', {value: element.value, text: element.text});
+    });
+
+    //callback para limpar o txt após inserir um valor
+    tagsAccompaniments.on('itemAdded', function(e) {
+        console.log(tagsAccompaniments.tagsinput('input').val());
+        setTimeout(function(){
+          tagsAccompaniments.tagsinput('input').val('');
+        }, 100);
+    });
+
   });
 </script>
