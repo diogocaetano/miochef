@@ -39,4 +39,4 @@
 //= require bootstrap.min
 //= require summernote
 //= require bootstrap-tagsinput
-//= require typeahead.bundle
+//= require bootstrap3-typeahead

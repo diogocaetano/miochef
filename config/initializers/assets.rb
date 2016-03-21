@@ -47,7 +47,7 @@ Rails.application.config.assets.precompile += %w(
   	jquery.quicksearch.js
    	common-scripts.js
    	bootstrap-tagsinput.js
-   	typeahead.bundle.js
+   	bootstrap3-typeahead.js
 
   	bootstrap.min.css
   	summernote.css
@@ -67,4 +67,5 @@ Rails.application.config.assets.precompile += %w(
 	daterangepicker.css
 	datetimepicker.css
 	bootstrap-tagsinput.css
+	bootstrap-tagsinput-typeahead.css
 )
