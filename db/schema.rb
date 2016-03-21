@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321184043) do
+ActiveRecord::Schema.define(version: 20160321191929) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -167,8 +167,10 @@ ActiveRecord::Schema.define(version: 20160321184043) do
     t.string   "photo_content_type", limit: 255
     t.integer  "photo_file_size",    limit: 4
     t.datetime "photo_updated_at"
+    t.integer  "chef_id",            limit: 4
   end
 
+  add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
@@ -204,6 +206,7 @@ ActiveRecord::Schema.define(version: 20160321184043) do
   add_foreign_key "addresses", "chefs"
   add_foreign_key "chefs", "countries"
   add_foreign_key "permissions", "entities"
+  add_foreign_key "plates", "chefs"
   add_foreign_key "plates", "plate_types"
   add_foreign_key "users", "roles"
 end

@@ -72,6 +72,7 @@ class PlatesController < ApplicationController
       @plate = Plate.find(params[:id])
       @types = PlateType.all
       @badges = PlateBadge.all
+      @chefs = Chef.all
       @ingredients_list = Ingredient.all.map { |i| {text: i.name, value: i.id}}
       @plate_ingredients_list = @plate.ingredients.map { |i| {text: i.name, value: i.id} }
       @accompaniments_list = PlateAccompaniment.all.map { |p| {text: p.name, value: p.id}}

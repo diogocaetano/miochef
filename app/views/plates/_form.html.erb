@@ -31,18 +31,13 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Tipo" %><br>
-            <%= f.select :plate_type_id, @types.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
+            <%= f.label "Chef" %><br>
+            <%= f.select :chef_id, @chefs.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
           </div>
 
           <div class="form-group">
-            <%= f.label "Badges" %><br>
-            <% @badges.each do |badge| %>
-              <div class="col-md-3">
-                <%= image_tag badge.image.url(:thumb) %>
-                <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
-              </div>
-            <% end %>
+            <%= f.label "Tipo" %><br>
+            <%= f.select :plate_type_id, @types.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
           </div>
 
           <div class="form-group">
@@ -55,8 +50,24 @@
             <%= f.text_field :plates_accompaniments, {class: '', "data-role": "accompanimentsTags", value: '', name: 'plate[plate_accompaniment_ids][]'} %>
           </div>
 
-          <div class="form-group">
-            <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+          <div class="row">
+            <div class="form-group">
+              <%= f.label "Badges" %><br>
+              <% @badges.each do |badge| %>
+                <div class="col-md-3">
+                  <%= image_tag badge.image.url(:thumb) %>
+                  <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <div class="row" style="padding-left: 10px;">
+            <div class="form-group">
+              <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+            </div>
           </div>
       <% end -%>
     </div>
