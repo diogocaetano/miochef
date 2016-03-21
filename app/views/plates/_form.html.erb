@@ -88,6 +88,12 @@
     tagsIngredients.tagsinput({
       itemValue: 'value',
       itemText: 'text',
+      allowDuplicates: false,
+      onTagExists: function(item, $tag) {
+        setTimeout(function(){
+          tagsIngredients.tagsinput('input').val('');
+        }, 50);
+      },
       typeahead: {
         name: 'ingredients',
         displayKey: 'text',
@@ -105,9 +111,8 @@
     tagsIngredients.on('itemAdded', function(e) {
         console.log(tagsIngredients.tagsinput('input').val());
         setTimeout(function(){
-
-        tagsIngredients.tagsinput('input').val('');
-      }, 100);
+          tagsIngredients.tagsinput('input').val('');
+        }, 100);
     });
 
     /* ACOMPANHAMENTOS */
@@ -118,6 +123,12 @@
     tagsAccompaniments.tagsinput({
       itemValue: 'value',
       itemText: 'text',
+      allowDuplicates: false,
+      onTagExists: function(item, $tag) {
+        setTimeout(function(){
+          tagsAccompaniments.tagsinput('input').val('');
+        }, 50);
+      },
       typeahead: {
         name: 'accompaniments',
         displayKey: 'text',
@@ -135,9 +146,8 @@
     tagsAccompaniments.on('itemAdded', function(e) {
         console.log(tagsAccompaniments.tagsinput('input').val());
         setTimeout(function(){
-
-        tagsAccompaniments.tagsinput('input').val('');
-      }, 100);
+          tagsAccompaniments.tagsinput('input').val('');
+        }, 100);
     });
 
   });
