@@ -14,7 +14,7 @@ class CreateChefs < ActiveRecord::Migration
       t.string :naturalness
       t.string :academic_education
       t.string :university
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps null: false
     end

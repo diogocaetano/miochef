@@ -13,4 +13,5 @@ class Chef < ActiveRecord::Base
   validates :naturalness, presence: true
   validates :academic_education, presence: true
   validates :university, presence: true
+
 end
