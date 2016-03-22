@@ -17,6 +17,11 @@ class PlatesController < ApplicationController
     @plate = Plate.new
     @types = PlateType.all
     @badges = PlateBadge.all
+    @chefs = Chef.all
+    @ingredients_list = Ingredient.all.map { |i| {text: i.name, value: i.id}}
+    @plate_ingredients_list = @plate.ingredients.map { |i| {text: i.name, value: i.id} }
+    @accompaniments_list = PlateAccompaniment.all.map { |p| {text: p.name, value: p.id}}
+    @plate_accompaniments_list = @plate.plate_accompaniments.map { |p| {text: p.name, value: p.id} }
   end
 
   # GET /plates/1/edit
@@ -62,6 +67,26 @@ class PlatesController < ApplicationController
     @plate.destroy
     respond_to do |format|
       format.html { redirect_to plates_url, notice: 'Prato removido com sucesso.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def activate
+    @plate = Plate.find(params[:plate_id])
+    @plate.active = 1
+    @plate.save
+    respond_to do |format|
+      format.html { redirect_to @plate, notice: 'Prato ativado com sucesso.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def deactivate
+    @plate = Plate.find(params[:plate_id])
+    @plate.active = 0
+    @plate.save
+    respond_to do |format|
+      format.html { redirect_to @plate, notice: 'Prato desativado com sucesso.' }
       format.json { head :no_content }
     end
   end
