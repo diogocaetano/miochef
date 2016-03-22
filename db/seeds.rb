@@ -196,6 +196,24 @@ Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Atualiz
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Remover', action: 'destroy')
 
+chefsCategory = Entity.find_by(controller: 'chefs')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Remover', action: 'destroy')
+
+chefAddressCategory = Entity.find_by(controller: 'addresses')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Remover', action: 'destroy')
+
 
 Permission.all.each do |permission|
 	PermissionsRoles.find_or_create_by(role_id: 1, permission_id: permission.id)

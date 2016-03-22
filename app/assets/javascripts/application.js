@@ -38,3 +38,5 @@
 //= require advanced-form-components
 //= require bootstrap.min
 //= require summernote
+//= require bootstrap-tagsinput
+//= require bootstrap3-typeahead

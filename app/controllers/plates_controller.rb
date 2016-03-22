@@ -72,10 +72,15 @@ class PlatesController < ApplicationController
       @plate = Plate.find(params[:id])
       @types = PlateType.all
       @badges = PlateBadge.all
+      @chefs = Chef.all
+      @ingredients_list = Ingredient.all.map { |i| {text: i.name, value: i.id}}
+      @plate_ingredients_list = @plate.ingredients.map { |i| {text: i.name, value: i.id} }
+      @accompaniments_list = PlateAccompaniment.all.map { |p| {text: p.name, value: p.id}}
+      @plate_accompaniments_list = @plate.plate_accompaniments.map { |p| {text: p.name, value: p.id} }
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [])
+      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [], :ingredient_ids => [], :plate_accompaniment_ids => [])
     end
 end
