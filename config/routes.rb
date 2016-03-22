@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :addresses
   resources :chefs
-  resources :plates
+  resources :plates do
+    post :activate
+    post :deactivate
+  end
+
   resources :plate_badges
   resources :plate_accompaniments
   resources :plate_types
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   resources :roles
   resources :entities
   resources :modules_categories
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
