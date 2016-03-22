@@ -24,7 +24,7 @@
 	    	<div class="form-group">
           <label for="number" class="control-label col-lg-3">Preço</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.price %></label>
+            <label for="number" class="form-control-static"><%= number_to_currency(@plate.price, unit: "R$", separator: ",", delimiter: ".") %></label>
           </div>
 	      </div>
 

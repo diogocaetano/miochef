@@ -91,6 +91,23 @@ class PlatesController < ApplicationController
     end
   end
 
+  def daily_menu
+    @plate = Plate.find(params[:plate_id])
+    keys = ['sunday_available', 'monday_available', 'tuesday_available', 'wednesday_available', 
+      'thursday_available', 'friday_available', 'saturday_available', ]
+    keys.each { |k| params['plate'].has_key?(k) ? '' : params['plate'][k] = 0 }
+
+    respond_to do |format|
+      if @plate.update(params['plate'])
+        format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
+        format.json { render :show, status: :ok, location: @plate }
+      else
+        format.html { render :edit }
+        format.json { render json: @plate.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plate
@@ -106,6 +123,9 @@ class PlatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, :ingredients_id, :plate_accompaniment_id, :plate_badge_ids => [], :ingredient_ids => [], :plate_accompaniment_ids => [])
+      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, 
+        :ingredients_id, :plate_accompaniment_id, :sunday_available, :monday_available, :tuesday_available, :wednesday_available, 
+        :thursday_available, :friday_available, :saturday_available, :plate_badge_ids => [], :ingredient_ids => [], :plate_accompaniment_ids => []
+        )
     end
 end

@@ -256,6 +256,13 @@ pt-BR:
         available_quantity: "Quantidade Disponível"
         photo: "Foto"
         active: "Ativo"
+        sunday_available: "Domingo"
+        monday_available: "Segunda-feira"
+        tuesday_available: "Terça-feira"
+        wednesday_available: "Quarta-feira"
+        thursday_available: "Quinta-feira"
+        friday_available: "Sexta-feira"
+        saturday_available: "Sábado"
       chef:
         name: "Nome"
         description: "Descrição"
