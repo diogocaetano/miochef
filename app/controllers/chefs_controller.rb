@@ -4,6 +4,7 @@ class ChefsController < ApplicationController
   # GET /chefs
   # GET /chefs.json
   def index
+    @address = Address.new
     @chefs = Chef.all
   end
 
@@ -28,7 +29,7 @@ class ChefsController < ApplicationController
 
     respond_to do |format|
       if @chef.save
-        format.html { redirect_to @chef, notice: 'Chef was successfully created.' }
+        format.html { redirect_to @chef, notice: 'Chefe Criado com Sucesso' }
         format.json { render :show, status: :created, location: @chef }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class ChefsController < ApplicationController
   def update
     respond_to do |format|
       if @chef.update(chef_params)
-        format.html { redirect_to @chef, notice: 'Chef was successfully updated.' }
+        format.html { redirect_to @chef, notice: 'Chefe Atualizado com Sucesso' }
         format.json { render :show, status: :ok, location: @chef }
       else
         format.html { render :edit }
@@ -56,7 +57,7 @@ class ChefsController < ApplicationController
   def destroy
     @chef.destroy
     respond_to do |format|
-      format.html { redirect_to chefs_url, notice: 'Chef was successfully destroyed.' }
+      format.html { redirect_to chefs_url, notice: 'Chefe Removido com Sucesso' }
       format.json { head :no_content }
     end
   end

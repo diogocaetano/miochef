@@ -28,8 +28,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
-        format.json { render :show, status: :created, location: @address }
+        format.html { redirect_to chefs_url, notice: "Endereço Adicionado com Sucesso ao Chefe: #{@address.chef.name }." }
       else
         format.html { render :new }
         format.json { render json: @address.errors, status: :unprocessable_entity }

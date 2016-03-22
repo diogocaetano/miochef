@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20160321201141) do
     t.string   "naturalness",        limit: 255
     t.string   "academic_education", limit: 255
     t.string   "university",         limit: 255
-    t.boolean  "active"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "active",             default: true
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "chefs", ["country_id"], name: "index_chefs_on_country_id", using: :btree
