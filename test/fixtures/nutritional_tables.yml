@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  energetic_value: 9.99
+  carbohydrate: MyString
+  protein: MyString
+  total_fat: MyString
+  saturated_fat: MyString
+  trans_fat: MyString
+  sodium: MyString
+  iron: MyString
+
+two:
+  energetic_value: 9.99
+  carbohydrate: MyString
+  protein: MyString
+  total_fat: MyString
+  saturated_fat: MyString
+  trans_fat: MyString
+  sodium: MyString
+  iron: MyString

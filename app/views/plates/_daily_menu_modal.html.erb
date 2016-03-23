@@ -1,0 +1,74 @@
+<!-- MODAL DAILY MENU -->
+                  <div class="modal fade modal-dialog-center in" id="daily_menu_<%= plate.id.to_s %>"
+                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-backdrop fade in" style="height: 749px;">
+                    </div>
+                    <div class="modal-dialog ">
+                      <div class="modal-content-wrap">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <h4 class="modal-title">Adicionar ao Cardápio do Dia</h4>
+                          </div>
+                          <div class="modal-body">
+                            <div class="panel-body">
+                            <%= form_for plate, :url => plate_daily_menu_path(plate), :method => :post do |f| %>
+                              <div class="form-group">
+                                <%= f.label :price %><br>
+                                <%= f.text_field 'price_mask', :value => number_to_currency(plate.price, unit: "R$", separator: ",", delimiter: "."), :class => 'form-control currency', :data => { 'prefix' => 'R$ ', 'thousands' => '.', 'decimal' => ',', 'group' => 'group_plate_' + plate.id.to_s} %>
+                                <input type="hidden" id="plate[price]" name="plate[price]" value="<%= plate.price.to_s %>" data-group="group_plate_<%= plate.id %>" >
+                              </div>
+
+                              <div class="form-group">
+                                <%= f.label :available_quantity %>
+                                <%= number_field_tag 'plate[available_quantity]',  plate.available_quantity.to_s, class: 'form-control', min: 0 %>
+                              </div>
+
+                              <div class="form-group">
+                                <%= check_box_tag "plate[sunday_available]", 1, plate.sunday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :sunday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[monday_available]", 1, plate.monday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :monday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[tuesday_available]", 1, plate.tuesday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :tuesday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[wednesday_available]", 1, plate.wednesday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :wednesday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[thursday_available]", 1, plate.thursday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :thursday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[friday_available]", 1, plate.friday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :friday_available %>
+                              </div>
+                              <div class="form-group">
+                                <%= check_box_tag "plate[saturday_available]", 1, plate.saturday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
+                                <%= f.label :saturday_available %>
+                              </div>
+                              <div class="form-group">
+                                <input type="checkbox" class="deselecting_all" name="group_plate_<%= plate.id.to_s %>">
+                                <%= f.label "Desmarcar todos" %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <div class="pull-left">
+                              <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                            </div>
+                            <div class="form-group">
+                              <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+                            </div>
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- FIM MODAL DAILY MENU -->
