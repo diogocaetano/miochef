@@ -147,8 +147,14 @@
                               <div class="form-group">
                                 <%= f.label :price %><br>
                                 <%= f.text_field 'price_mask', :value => number_to_currency(plate.price, unit: "R$", separator: ",", delimiter: "."), :class => 'form-control currency', :data => { 'prefix' => 'R$ ', 'thousands' => '.', 'decimal' => ',', 'group' => 'group_plate_' + plate.id.to_s} %>
-                                <input type="hidden" id="plate[price]" name="plate[price]" value="<%= plate.price.to_s"> data-group="group_plate_<%= plate.id %>" >
+                                <input type="hidden" id="plate[price]" name="plate[price]" value="<%= plate.price.to_s %>" data-group="group_plate_<%= plate.id %>" >
                               </div>
+
+                              <div class="form-group">
+                                <%= f.label :available_quantity %>
+                                <%= number_field_tag 'plate[available_quantity]',  plate.available_quantity.to_s, class: 'form-control', min: 0 %>
+                              </div>
+
                               <div class="form-group">
                                 <%= check_box_tag "plate[sunday_available]", 1, plate.sunday_available == 1, {class: 'group_plate_' + plate.id.to_s} %>
                                 <%= f.label :sunday_available %>

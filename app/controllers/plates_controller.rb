@@ -96,9 +96,9 @@ class PlatesController < ApplicationController
     keys = ['sunday_available', 'monday_available', 'tuesday_available', 'wednesday_available', 
       'thursday_available', 'friday_available', 'saturday_available', ]
     keys.each { |k| params['plate'].has_key?(k) ? '' : params['plate'][k] = 0 }
-
+    params['plate'].delete(['price_mask'])
     respond_to do |format|
-      if @plate.update(params['plate'])
+      if @plate.update(plate_params)
         format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
