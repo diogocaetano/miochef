@@ -1,0 +1,74 @@
+class NutritionalTablesController < ApplicationController
+  before_action :set_nutritional_table, only: [:show, :edit, :update, :destroy]
+
+  # GET /nutritional_tables
+  # GET /nutritional_tables.json
+  def index
+    @nutritional_tables = NutritionalTable.all
+  end
+
+  # GET /nutritional_tables/1
+  # GET /nutritional_tables/1.json
+  def show
+  end
+
+  # GET /nutritional_tables/new
+  def new
+    @nutritional_table = NutritionalTable.new
+  end
+
+  # GET /nutritional_tables/1/edit
+  def edit
+  end
+
+  # POST /nutritional_tables
+  # POST /nutritional_tables.json
+  def create
+    @nutritional_table = NutritionalTable.new(nutritional_table_params)
+
+    respond_to do |format|
+      if @nutritional_table.save
+        format.html { redirect_to @nutritional_table, notice: 'Nutritional table was successfully created.' }
+        format.json { render :show, status: :created, location: @nutritional_table }
+      else
+        format.html { render :new }
+        format.json { render json: @nutritional_table.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /nutritional_tables/1
+  # PATCH/PUT /nutritional_tables/1.json
+  def update
+    respond_to do |format|
+      if @nutritional_table.update(nutritional_table_params)
+        format.html { redirect_to @nutritional_table, notice: 'Nutritional table was successfully updated.' }
+        format.json { render :show, status: :ok, location: @nutritional_table }
+      else
+        format.html { render :edit }
+        format.json { render json: @nutritional_table.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /nutritional_tables/1
+  # DELETE /nutritional_tables/1.json
+  def destroy
+    @nutritional_table.destroy
+    respond_to do |format|
+      format.html { redirect_to nutritional_tables_url, notice: 'Nutritional table was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_nutritional_table
+      @nutritional_table = NutritionalTable.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def nutritional_table_params
+      params.require(:nutritional_table).permit(:energetic_value, :carbohydrate, :protein, :total_fat, :saturated_fat, :trans_fat, :dietary_fiber, :sodium, :iron)
+    end
+end

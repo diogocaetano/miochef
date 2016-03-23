@@ -108,6 +108,23 @@ class PlatesController < ApplicationController
     end
   end
 
+  def nutritional_table
+    @plate = Plate.find(params[:plate_id])
+    respond_to do |format|
+      if @plate.nutritional_table.nil?
+        @nutritional_table = NutritionalTable.create(nutritional_table_params)
+        @plate.nutritional_table = @nutritional_table
+        @plate.save
+        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.json { render :show, status: :ok, location: @plate }
+      else
+        @plate.nutritional_table.update(nutritional_table_params)
+        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.json { render :show, status: :ok, location: @plate }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_plate
@@ -123,9 +140,13 @@ class PlatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plate_params
-      params.require(:plate).permit(:title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, 
-        :ingredients_id, :plate_accompaniment_id, :sunday_available, :monday_available, :tuesday_available, :wednesday_available, 
-        :thursday_available, :friday_available, :saturday_available, :plate_badge_ids => [], :ingredient_ids => [], :plate_accompaniment_ids => []
+      params.require(:plate).permit(:nutritional_table, :title, :description, :price, :available_quantity, :photo, :active, :chef_id, :plate_type_id, 
+        :ingredients_id, :plate_accompaniment_id, :sunday_available, :monday_available, :tuesday_available, :wednesday_available,
+        :thursday_available, :friday_available, :saturday_available, :plate_badge_ids => [], :ingredient_ids => [], :plate_accompaniment_ids => [],
         )
+    end
+
+    def nutritional_table_params
+      params.require(:nutritional_table).permit(:energetic_value, :carbohydrate, :protein, :total_fat, :saturated_fat, :trans_fat, :dietary_fiber, :sodium, :iron)
     end
 end

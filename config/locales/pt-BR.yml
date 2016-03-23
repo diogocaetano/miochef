@@ -217,6 +217,7 @@ pt-BR:
       plate_accompaniment: 'Acompanhamento'
       plate_badge: 'Badge'
       plate: 'Prato'
+      nutritional_table: 'Tabela Nutricional'
     attributes:
       user:
         name: "Nome"
@@ -286,6 +287,16 @@ pt-BR:
         state: "Estado"
         zip_code: "CEP"
         complement: "Complemento"
+      nutritional_table:
+        energetic_value: "Valor energético"
+        carbohydrate: "Carboidrato"
+        protein: "Proteína"
+        total_fat: "Gordura total"
+        saturated_fat: "Gordura saturada"
+        trans_fat: "Gordura trans"
+        sodium: "Sódio"
+        iron: "Ferro"
+        dietary_fiber: "Fibra alimentar"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

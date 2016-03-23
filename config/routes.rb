@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  # resources :nutritional_tables
   resources :addresses
   resources :chefs
   resources :plates do
+    post :nutritional_table
     post :activate
     post :deactivate
     post :daily_menu
