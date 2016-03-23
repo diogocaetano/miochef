@@ -48,6 +48,7 @@ Rails.application.config.assets.precompile += %w(
    	common-scripts.js
    	bootstrap-tagsinput.js
    	bootstrap3-typeahead.js
+   	jquery.maskMoney.min.js
 
   	bootstrap.min.css
   	summernote.css

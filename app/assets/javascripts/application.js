@@ -40,3 +40,4 @@
 //= require summernote
 //= require bootstrap-tagsinput
 //= require bootstrap3-typeahead
+//= require jquery.maskMoney.min

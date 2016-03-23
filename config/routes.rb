@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :plates do
     post :activate
     post :deactivate
+    post :daily_menu
   end
 
   resources :plate_badges
