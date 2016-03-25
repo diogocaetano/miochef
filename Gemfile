@@ -51,3 +51,11 @@ group :development do
   gem 'spring'
 end
 
+group :teste do
+  gem 'unicorn'
+end
+
+
+group :production do
+  gem 'unicorn'
+end
