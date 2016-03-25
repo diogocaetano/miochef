@@ -13,13 +13,20 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: root
+ 
   # socket: /tmp/mysql.sock
 
 development:
   <<: *default
+  username: root
+  password: root
   database: miochef_development
+
+teste:
+  <<: *default
+  database: miochef_teste
+  username: deployer
+  password: hpQNnA8DY8zSMPFc
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
