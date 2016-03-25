@@ -60,6 +60,6 @@ test:
 #
 production:
   <<: *default
-  database: miochef_production
+  database: miochef_teste
   username: deployer
-  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
+  password: hpQNnA8DY8zSMPFc
