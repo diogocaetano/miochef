@@ -70,6 +70,6 @@ class ChefsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chef_params
-      params.require(:chef).permit(:name, :description, :cpf, :rg, :born_date, :country_id, :email, :phone_one, :phone_two, :specialty, :naturalness, :academic_education, :university)
+      params.require(:chef).permit(:name, :description, :cpf, :rg, :born_date, :country_id, :email, :phone_one, :phone_two, :specialty, :naturalness, :academic_education, :university, :active, :photo, :chef_type_id)
     end
 end

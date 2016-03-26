@@ -41,3 +41,4 @@
 //= require bootstrap-tagsinput
 //= require bootstrap3-typeahead
 //= require jquery.maskMoney.min
+//= require jquery.maskedinput.js

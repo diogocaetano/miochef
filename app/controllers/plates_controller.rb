@@ -99,7 +99,7 @@ class PlatesController < ApplicationController
     params['plate'].delete(['price_mask'])
     respond_to do |format|
       if @plate.update(plate_params)
-        format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
+        format.html { redirect_to :back, notice: 'Prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
         format.html { render :edit }

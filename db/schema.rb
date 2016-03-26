@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325234446) do
+ActiveRecord::Schema.define(version: 20160326014910) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20160325234446) do
     t.datetime "image_updated_at"
   end
 
+  create_table "chef_types", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "chefs", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.text     "description",        limit: 65535
@@ -63,8 +69,14 @@ ActiveRecord::Schema.define(version: 20160325234446) do
     t.boolean  "active",                           default: true
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "photo_file_name",    limit: 255
+    t.string   "photo_content_type", limit: 255
+    t.integer  "photo_file_size",    limit: 4
+    t.datetime "photo_updated_at"
+    t.integer  "chef_type_id",       limit: 4
   end
 
+  add_index "chefs", ["chef_type_id"], name: "index_chefs_on_chef_type_id", using: :btree
   add_index "chefs", ["country_id"], name: "index_chefs_on_country_id", using: :btree
 
   create_table "countries", force: :cascade do |t|
@@ -232,6 +244,7 @@ ActiveRecord::Schema.define(version: 20160325234446) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "addresses", "chefs"
+  add_foreign_key "chefs", "chef_types"
   add_foreign_key "chefs", "countries"
   add_foreign_key "permissions", "entities"
   add_foreign_key "plates", "chefs"

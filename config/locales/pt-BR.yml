@@ -218,6 +218,7 @@ pt-BR:
       plate_badge: 'Badge'
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
+      daily_menu: 'Menu do Dia'
     attributes:
       user:
         name: "Nome"
@@ -264,6 +265,15 @@ pt-BR:
         thursday_available: "Quinta-feira"
         friday_available: "Sexta-feira"
         saturday_available: "Sábado"
+        energetic_value: "Valor energético"
+        carbohydrate: "Carboidrato"
+        protein: "Proteína"
+        total_fat: "Gordura total"
+        saturated_fat: "Gordura saturada"
+        trans_fat: "Gordura trans"
+        sodium: "Sódio"
+        iron: "Ferro"
+        dietary_fiber: "Fibra alimentar"
       chef:
         name: "Nome"
         description: "Descrição"
@@ -279,6 +289,17 @@ pt-BR:
         academic_education: "Formação Acadêmica"
         university: "Universidade"
         active: 'Ativo'
+        chef_type_id: 'Tipo do Chefe'
+      chef_type:
+        name: "Nome"
+      address:
+        public_place: "Logradouro"
+        number: "Número"
+        neighborhood: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        zip_code: "CEP"
+        complement: "Complemento"
       nutritional_table:
         energetic_value: "Valor energético"
         carbohydrate: "Carboidrato"
