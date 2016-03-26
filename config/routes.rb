@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :chef_types
-=======
   resources :daily_menus
->>>>>>> f03389a00d34bc695576859f84b907000a0bf85a
+
   # resources :nutritional_tables
   resources :addresses
   resources :chefs
