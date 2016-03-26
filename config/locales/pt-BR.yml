@@ -279,6 +279,9 @@ pt-BR:
         academic_education: "Formação Acadêmica"
         university: "Universidade"
         active: 'Ativo'
+        chef_type_id: 'Tipo do Chefe'
+      chef_type:
+        name: "Nome"
       address:
         public_place: "Logradouro"
         number: "Número"

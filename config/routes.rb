@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chef_types
   # resources :nutritional_tables
   resources :addresses
   resources :chefs

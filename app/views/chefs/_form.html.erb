@@ -12,12 +12,22 @@
       </div>
     <% end %>
     <div class="panel-body">
-      <%= form_for(@chef) do |f| %>
-                  <div class="form-group">
+      <%= form_for @chef, html: { multipart: true } do |f| %>
+          <div class="form-group">
+            <%= f.label 'Tipo do Chefe*' %><br>
+            <%= f.select :chef_type_id, ChefType.all.collect {|chef_type| [ chef_type.name, chef_type.id ] }, { prompt: 'Selecione o Tipo do Chefe' }, :class => 'form-control m-bot15' %>
+          </div>
+          <div class="form-group">
             <%= f.label 'Nome*' %><br>
             <%= f.text_field :name, :class => 'form-control' %>
           </div>
-                  <div class="form-group">
+            
+          <div class="form-group">
+            <%= f.label 'Foto*' %><br>
+            <%= f.file_field :photo, :class => 'form-control' %>
+          </div>
+
+          <div class="form-group">
             <%= f.label :description %><br>
             <%= f.text_area :description, :class => 'form-control' %>
           </div>
@@ -29,11 +39,11 @@
             <%= f.label 'RG*' %><br>
             <%= f.text_field :rg, :class => 'form-control' %>
           </div>
-                  <div class="form-group">
+          <div class="form-group">
             <%= f.label 'Data de Nascimento*' %><br>
-            <%= f.date_select :born_date, :class => 'form-control' %>
+            <%= f.text_field :born_date, :class => 'form-control input-medium default-date-picker' %>
           </div>
-                  <div class="form-group">
+          <div class="form-group">
             <%= f.label 'País*' %><br>
             <%= f.select :country_id, Country.all.collect {|country| [ country.name, country.id ] }, { prompt: 'Selecione o País' }, :class => 'form-control m-bot15' %>
           </div>

@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-lg-12">
     <a href="/chefs/new">
-        <button type="button" class="btn btn-primary">Adicionar Chef</button>
+        <button type="button" class="btn btn-primary">Adicionar Chefe</button>
     </a>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
-          Chefs
+          Chefes
       </header>
       <% if @address.errors.any? %>
         <div class="alert alert-danger">
@@ -25,6 +25,8 @@
           <table class="table table-bmoduleed table-striped table-condensed">
             <thead>
               <tr>
+                <th>Tipo do Chefe</th>
+                <th>Foto</th>
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>RG</th>
@@ -41,10 +43,12 @@
             <tbody>
               <% @chefs.each do |chef| %>
                 <tr>
+                      <td><%= chef.chef_type ? chef.chef_type.name : 'Não cadastrado' %></td>
+                      <td><%= image_tag chef.photo.url(:thumb) %></td>
                       <td><%= chef.name %></td>
                       <td><%= chef.cpf %></td>
                       <td><%= chef.rg %></td>
-                      <td><%= chef.born_date %></td>
+                      <td><%= I18n.l(chef.born_date) %></td>
                       <td><%= chef.country.name %></td>
                       <td><%= chef.email %></td>
                       <td><%= chef.specialty %></td>
@@ -54,9 +58,9 @@
                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info' %>
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-primary', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-info', :'data-toggle' => 'modal'  %>
 
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#edit_chef_status_'+chef.id.to_s, :class => 'btn btn-primary', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-check'></i>"), '#edit_chef_status_'+chef.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
 
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_chef_'+chef.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                   </td>
@@ -100,6 +104,7 @@
                           <%= render 'addresses/form', chef_id: chef.id %>
                         </div>
                         <div class="modal-footer">
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -142,13 +147,13 @@
                         <div class="modal-body">
                           <% if chef.active %>
                             <%= form_for(chef) do |f| %>
-                              <%= f.hidden_field :active, value: false, :class => 'form-control' %>
+                              <%= f.hidden_field :active, :value => false, :class => 'form-control' %>
                               <h4 class="modal-title">Desativar o Chefe - <%= chef.name %></h4>
                               <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
                             <% end %>
                           <% else %>
                             <%= form_for(chef) do |f| %>
-                              <%= f.hidden_field :active, value: true, :class => 'form-control' %>
+                              <%= f.hidden_field :active, :value => true, :class => 'form-control' %>
                               <h4 class="modal-title">Ativar o Chefe - <%= chef.name %></h4>
                               <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
                             <% end %>
