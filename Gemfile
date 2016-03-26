@@ -52,10 +52,10 @@ group :development do
 end
 
 group :teste do
-  gem 'unicorn'
+  gem 'puma'
 end
 
 
 group :production do
-  gem 'unicorn'
+  gem 'puma'
 end
