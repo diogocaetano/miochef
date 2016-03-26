@@ -14,6 +14,7 @@
                 <th>Chef</th>
                 <th>Preço</th>
                 <th>Qtd disponível</th>
+                <th>Acompanhamentos</th>
                 <th>Qtd de pedidos</th>
                 <th>Horário do último pedido</th>
                 <th colspan='3'>Ações</th>
@@ -26,14 +27,14 @@
                   <td><%= link_to plate.chef.name, edit_chef_path(plate.chef) %></td>
                   <td><%= number_to_currency(plate.price, unit: "R$", separator: ",", delimiter: ".") %></td>
                   <td><%= plate.available_quantity %></td>
+                  <td><%= plate.plate_accompaniments.collect { |a| a.name }.join(', ') %></td>
                   <td>---</td>
                   <td>---</td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate, :class => 'btn btn-primary' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_path(plate), :class => 'btn btn-info' %>
-                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_'+plate.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
                   </td>
                 </tr>
+                <%= render partial: 'plates/daily_menu_modal', locals: {plate: plate} %>
               <% end -%>
             </tbody>
           </table>
