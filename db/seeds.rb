@@ -224,6 +224,26 @@ Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Vi
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Remover', action: 'destroy')
 
 
+ModulesCategory.find_or_create_by(name: 'Cardápio do Dia', icon: 'fa fa-list')
+dailyMenuModule = ModulesCategory.find_by(name: 'Cardápio do Dia')
+Entity.find_or_create_by(controller: 'daily_menus') do |dailyMenuEntity|
+	dailyMenuEntity.modules_category_id = dailyMenuModule.id
+	dailyMenuEntity.name = 'Cardápio de Hoje'
+	dailyMenuEntity.slug = 'daily_menus'
+	dailyMenuEntity.controller = 'daily_menus'
+	dailyMenuEntity.is_dev = false
+end
+
+dailyMenuCategory = Entity.find_by(controller: 'daily_menus')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Remover', action: 'destroy')
+
+
 Permission.all.each do |permission|
 	PermissionsRoles.find_or_create_by(role_id: 1, permission_id: permission.id)
 	if not permission.entity.is_dev

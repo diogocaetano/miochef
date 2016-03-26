@@ -86,6 +86,11 @@ ActiveRecord::Schema.define(version: 20160326014910) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "daily_menus", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "entities", force: :cascade do |t|
     t.integer  "modules_category_id", limit: 4
     t.string   "name",                limit: 255
