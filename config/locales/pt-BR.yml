@@ -279,14 +279,6 @@ pt-BR:
         academic_education: "Formação Acadêmica"
         university: "Universidade"
         active: 'Ativo'
-      address:
-        public_place: "Logradouro"
-        number: "Número"
-        neighborhood: "Bairro"
-        city: "Cidade"
-        state: "Estado"
-        zip_code: "CEP"
-        complement: "Complemento"
       nutritional_table:
         energetic_value: "Valor energético"
         carbohydrate: "Carboidrato"
@@ -297,6 +289,14 @@ pt-BR:
         sodium: "Sódio"
         iron: "Ferro"
         dietary_fiber: "Fibra alimentar"
+      address:
+        public_place: "Logradouro"
+        number: "Número"
+        neighborhood: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        zip_code: "CEP"
+        complement: "Complemento"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

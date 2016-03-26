@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :daily_menus
   # resources :nutritional_tables
   resources :addresses
   resources :chefs
