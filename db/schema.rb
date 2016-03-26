@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323165034) do
+ActiveRecord::Schema.define(version: 20160325234446) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20160323165034) do
     t.string   "naturalness",        limit: 255
     t.string   "academic_education", limit: 255
     t.string   "university",         limit: 255
-    t.boolean  "active"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "active",                           default: true
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
 
   add_index "chefs", ["country_id"], name: "index_chefs_on_country_id", using: :btree
@@ -72,6 +72,11 @@ ActiveRecord::Schema.define(version: 20160323165034) do
     t.string   "initials",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "daily_menus", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "entities", force: :cascade do |t|
@@ -109,6 +114,7 @@ ActiveRecord::Schema.define(version: 20160323165034) do
     t.string   "total_fat",       limit: 255
     t.string   "saturated_fat",   limit: 255
     t.string   "trans_fat",       limit: 255
+    t.string   "dietary_fiber",   limit: 255
     t.string   "sodium",          limit: 255
     t.string   "iron",            limit: 255
     t.datetime "created_at",                                           null: false

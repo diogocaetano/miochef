@@ -17,8 +17,8 @@
                               <div class="panel-body">
                                 <div class="form-group">
                                   <%= nutritional_fields.label :energetic_value %>
-                                  <%= nutritional_fields.text_field 'energetic_value_mask', :value => number_to_currency(plate.nutritional_table.energetic_value, unit: "", separator: ",", delimiter: "."), class: 'form-control currency', :data => { 'prefix' => '', 'thousands' => '.', 'decimal' => ',', 'group' => 'group_nutritional_plate_' + plate.id.to_s} %>
-                                  <input type="hidden" id="nutritional_table[energetic_value]" name="nutritional_table[energetic_value]" value="<%= plate.nutritional_table.energetic_value.to_s %>" data-group="group_nutritional_plate_<%= plate.id %>" >
+                                  <%= nutritional_fields.text_field 'energetic_value_mask', :value => get_formatted_energetic_value(plate), class: 'form-control currency', :data => { 'prefix' => '', 'thousands' => '.', 'decimal' => ',', 'group' => 'group_nutritional_plate_' + plate.id.to_s} %>
+                                  <input type="hidden" id="nutritional_table[energetic_value]" name="nutritional_table[energetic_value]" value="<%= get_energetic_value(plate) %>" data-group="group_nutritional_plate_<%= plate.id %>" >
                                 </div>
                                 <div class="form-group">
                                   <%= nutritional_fields.label :carbohydrate %>
