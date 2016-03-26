@@ -5,6 +5,7 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus.json
   def index
     @daily_menus = DailyMenu.all
+    @plates = Plate.where(get_today_plate_tag.to_s, 1)
   end
 
   # GET /daily_menus/1
@@ -65,6 +66,12 @@ class DailyMenusController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_daily_menu
       @daily_menu = DailyMenu.find(params[:id])
+    end
+
+    def get_today_plate_tag
+      tags = [:sunday_available, :monday_available, :tuesday_available, :wednesday_available,
+        :thursday_available, :friday_available, :saturday_available]
+      tags[Date.today.wday]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

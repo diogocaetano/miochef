@@ -218,6 +218,7 @@ pt-BR:
       plate_badge: 'Badge'
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
+      daily_menu: 'Menu do Dia'
     attributes:
       user:
         name: "Nome"
