@@ -22,7 +22,7 @@
             <%= f.text_area :description, :class => 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :image %><br>
+            <%= f.label "Imagem*" %><br>
             <% if @badge.image.exists? %>
               <%= image_tag @badge.image.url(:thumb) %><br><br>
             <% end %>
