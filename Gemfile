@@ -51,11 +51,6 @@ group :development do
   gem 'spring'
 end
 
-group :teste do
-  gem 'puma'
-end
-
-
-group :production do
+group :production, :teste do
   gem 'puma'
 end
