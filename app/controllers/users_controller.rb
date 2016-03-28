@@ -69,6 +69,12 @@ class UsersController < ApplicationController
     end
   end
 
+  protected
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

@@ -32,16 +32,6 @@
             </div>
 
             <div class="form-group">
-                <%= f.label 'Senha' %><br>
-                <%= password_field_tag "user[password]", nil, id: "user_password", class: "form-control", placeholder: "Senha", autofocus: true, autocomplete: "off" %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label 'Confirmação de Senha' %><br />
-              <%= password_field_tag "user[password_confirmation]", nil, autocomplete: "off", class: "form-control" %>
-            </div>
-
-            <div class="form-group">
                 <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
             </div>
         <% end %>
