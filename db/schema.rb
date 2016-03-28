@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326014910) do
+ActiveRecord::Schema.define(version: 20160328024810) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20160326014910) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
   end
+
+  create_table "badges_chefs", force: :cascade do |t|
+    t.integer "badge_id", limit: 4
+    t.integer "chef_id",  limit: 4
+  end
+
+  add_index "badges_chefs", ["badge_id"], name: "index_badges_chefs_on_badge_id", using: :btree
+  add_index "badges_chefs", ["chef_id"], name: "index_badges_chefs_on_chef_id", using: :btree
 
   create_table "chef_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -244,6 +252,8 @@ ActiveRecord::Schema.define(version: 20160326014910) do
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   add_foreign_key "addresses", "chefs"
+  add_foreign_key "badges_chefs", "badges"
+  add_foreign_key "badges_chefs", "chefs"
   add_foreign_key "chefs", "chef_types"
   add_foreign_key "chefs", "countries"
   add_foreign_key "permissions", "entities"

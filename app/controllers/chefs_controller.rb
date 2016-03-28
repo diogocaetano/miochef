@@ -25,8 +25,9 @@ class ChefsController < ApplicationController
   # POST /chefs
   # POST /chefs.json
   def create
+    badges = Badge.where(id: params[:badge_ids])
     @chef = Chef.new(chef_params)
-
+    @chef.badges << badges
     respond_to do |format|
       if @chef.save
         format.html { redirect_to @chef, notice: 'Chefe Criado com Sucesso' }
@@ -70,6 +71,6 @@ class ChefsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chef_params
-      params.require(:chef).permit(:name, :description, :cpf, :rg, :born_date, :country_id, :email, :phone_one, :phone_two, :specialty, :naturalness, :academic_education, :university, :active, :photo, :chef_type_id)
+      params.require(:chef).permit(:name, :description, :cpf, :rg, :born_date, :country_id, :email, :phone_one, :phone_two, :specialty, :naturalness, :academic_education, :university, :active, :photo, :chef_type_id, { :badge_ids => [] })
     end
 end

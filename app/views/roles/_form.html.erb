@@ -21,30 +21,30 @@
                   <div class="panel-title">Permissões do Perfil</div>
               </div>
               <div class="panel-body">
-                  <div class="form-group">
-                        <label class="control-label col-md-3"></label>
-                        <div class="col-md-9">
-                            <select multiple="multiple" class="multi-select" id="my_multi_select2" name="permission_ids[]">
-                                <% if current_user.is_dev %>
-                                  <% Entity.all.each do |entity| %>
-                                    <optgroup label="<%= entity.name %>">
-                                        <% entity.permissions.each do |permission| %>
-                                            <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
-                                        <% end %>
-                                    </optgroup>
-                                  <% end %>
-                                <% else %>
-                                  <% Entity.where.not(is_dev: true).collect { |entity| entity }.each do |entity| %>
-                                    <optgroup label="<%= entity.name %>">
-                                        <% entity.permissions.each do |permission| %>
-                                            <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
-                                        <% end %>
-                                    </optgroup>
-                                  <% end %>
-                                <% end %>
-                            </select>
-                        </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3"></label>
+                    <div class="col-md-9">
+                      <select disabled multiple="multiple" class="multi-select" id="my_multi_select2" name="permission_ids[]">
+                        <% if current_user.is_dev %>
+                          <% Entity.all.each do |entity| %>
+                            <optgroup label="<%= entity.name %>">
+                              <% entity.permissions.each do |permission| %>
+                                <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
+                              <% end %>
+                            </optgroup>
+                          <% end %>
+                        <% else %>
+                          <% Entity.where.not(is_dev: true).collect { |entity| entity }.each do |entity| %>
+                            <optgroup label="<%= entity.name %>">
+                              <% entity.permissions.each do |permission| %>
+                                <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
+                              <% end %>
+                            </optgroup>
+                        <% end %>
+                        <% end %>
+                      </select>
                     </div>
+                </div>
               </div>
               
               <div class="form-group">

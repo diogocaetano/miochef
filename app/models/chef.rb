@@ -2,7 +2,7 @@ class Chef < ActiveRecord::Base
   belongs_to :country
   belongs_to :chef_type
   has_many :addresses
-  has_many :badges
+  has_and_belongs_to_many :badges
 
   validates :chef_type_id, presence: true
   validates :name, presence: true
