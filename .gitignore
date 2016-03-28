@@ -5,4 +5,3 @@
 /config/enviroments/development.rb
 /public/assets/*
 /public/system/*
-Gemfile.lock

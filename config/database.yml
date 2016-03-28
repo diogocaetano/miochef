@@ -19,7 +19,7 @@ default: &default
 development:
   <<: *default
   username: root
-  password: root
+  password: 
   database: miochef_development
 
 teste:

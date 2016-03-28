@@ -12,33 +12,38 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min
 //= require jquery.dcjqaccordion.2.7
 //= require jquery.scrollTo.min
 //= require jquery.nicescroll
 //= require jquery.sparkline
 //= require jquery.easy-pie-chart
-//= require owl.carousel
 //= require jquery.customSelect.min
+//= require jquery.maskMoney.min
+//= require jquery.maskedinput.js
+//= require jquery.multi-select
+//= require jquery.quicksearch
+
+//= require bootstrap.min
+//= require bootstrap-fileupload	
+//= require bootstrap-datepicker
+//= require bootstrap-datetimepicker
+//= require bootstrap-colorpicker
+//= require bootstrap-timepicker
+//= require bootstrap-tagsinput
+//= require bootstrap3-typeahead
+
+//= require owl.carousel
 //= require respond.min
 //= require slidebars.min
 //= require common-scripts
 //= require sparkline-chart
 //= require easy-pie-chart
 //= require count
-//= require bootstrap-fileupload	
-//= require bootstrap-datepicker
-//= require bootstrap-datetimepicker
 //= require moment.min
 //= require daterangepicker
-//= require bootstrap-colorpicker
-//= require bootstrap-timepicker
-//= require jquery.multi-select
-//= require jquery.quicksearch
-//= require advanced-form-components
-//= require bootstrap.min
+
 //= require summernote
-//= require bootstrap-tagsinput
-//= require bootstrap3-typeahead
-//= require jquery.maskMoney.min
-//= require jquery.maskedinput.js
+//= require maskedinput.call
+
+//= require spinner
+//= require advanced-form-components

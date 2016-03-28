@@ -47,25 +47,12 @@
             <%= image_tag @plate.photo.url(:thumb) %>
           </div>
 	      </div>
-	    	      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Ativo</label>
-          <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= get_plate_active_label @plate  %></label>
-          </div>
-	      </div>
-	    	     
-	    	<div class="form-group">
+        <div class="form-group">
           <label for="number" class="control-label col-lg-3">Tipo do Prato</label>
           <div class="col-lg-9">
             <label for="number" class="form-control-static"><%= @plate.plate_type.name %></label>
           </div>
-	      </div>
-	    	  <div class="form-group">
-            <label for="number" class="control-label col-lg-3">Badges</label>
-            <div class="col-lg-9">
-              <label for="number" class="form-control-static"><%= @plate.plate_badges.collect {|b| b.name}.join(', ') %></label>
-            </div>
-	      </div>
+        </div>
 
         <div class="form-group">
             <label for="number" class="control-label col-lg-3">Ingredientes</label>
@@ -73,6 +60,22 @@
               <label for="number" class="form-control-static"><%= @plate.ingredients.collect {|i| i.name}.join(', ') %></label>
             </div>
         </div>
-	        </div>
+
+        <div class="form-group">
+            <label for="number" class="control-label col-lg-3">Badges</label>
+            <div class="col-lg-9">
+                <% @plate.plate_badges.collect do |b| %>
+                  <%= image_tag b.image.url(:thumb) %>
+                <% end %>
+            </div>
+        </div>
+	      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Ativo</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= get_plate_active_label @plate  %></label>
+          </div>
+	      </div>
+	    	     
+      </div>
   </section>
 </div>

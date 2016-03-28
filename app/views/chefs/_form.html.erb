@@ -28,9 +28,9 @@
               <%= f.file_field :photo, :class => 'form-control' %>
             </div>
 
-                    <div class="form-group">
+            <div class="form-group">
               <%= f.label 'CPF*' %><br>
-              <%= f.text_field :cpf, :class => 'form-control' %>
+              <%= f.text_field :cpf, :class => 'form-control mask-cpf' %>
             </div>
                     <div class="form-group">
               <%= f.label 'RG*' %><br>
@@ -50,11 +50,11 @@
             </div>
             <div class="form-group">
               <%= f.label 'Telefone 1' %><br>
-              <%= f.text_field :phone_one, :class => 'form-control' %>
+              <%= f.text_field :phone_one, :class => 'form-control mask-cellphone' %>
             </div>
                     <div class="form-group">
               <%= f.label 'Telefone 2' %><br>
-              <%= f.text_field :phone_two, :class => 'form-control' %>
+              <%= f.text_field :phone_two, :class => 'form-control mask-cellphone' %>
             </div>
             <div class="form-group">
               <%= f.label 'Formação Acadêmica' %><br>

@@ -14,11 +14,11 @@
     <div class="panel-body">
       <%= form_for @badge, html: {multipart: true} do |f| %>
           <div class="form-group">
-            <%= f.label :name %><br>
+            <%= f.label "Nome*" %><br>
             <%= f.text_field :name, :class => 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :description %><br>
+            <%= f.label "Descrição*" %><br>
             <%= f.text_area :description, :class => 'form-control' %>
           </div>
           <div class="form-group">
