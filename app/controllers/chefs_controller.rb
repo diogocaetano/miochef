@@ -42,6 +42,8 @@ class ChefsController < ApplicationController
   # PATCH/PUT /chefs/1
   # PATCH/PUT /chefs/1.json
   def update
+    badges = Badge.where(id: params[:badge_ids])
+    @chef.badges << badges
     respond_to do |format|
       if @chef.update(chef_params)
         format.html { redirect_to @chef, notice: 'Chefe Atualizado com Sucesso' }

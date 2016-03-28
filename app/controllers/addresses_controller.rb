@@ -30,8 +30,8 @@ class AddressesController < ApplicationController
       if @address.save
         format.html { redirect_to chefs_url, notice: "Endereço Adicionado com Sucesso ao Chefe: #{@address.chef.name }." }
       else
-        format.html { render :new }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
+        @chefs = Chef.all
+        format.html { render :template => 'chefs/index' }
       end
     end
   end
@@ -41,7 +41,7 @@ class AddressesController < ApplicationController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to @address, notice: 'Address was successfully updated.' }
+        format.html { redirect_to @address, notice: 'Endereço atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit }
@@ -55,7 +55,7 @@ class AddressesController < ApplicationController
   def destroy
     @address.destroy
     respond_to do |format|
-      format.html { redirect_to addresses_url, notice: 'Address was successfully destroyed.' }
+      format.html { redirect_to addresses_url, notice: 'Endereço removido com sucesso' }
       format.json { head :no_content }
     end
   end
