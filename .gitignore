@@ -4,3 +4,4 @@
 /log/*
 /config/enviroments/development.rb
 /public/assets/*
+.rbenv-vars
