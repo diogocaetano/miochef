@@ -39,7 +39,11 @@ Rails.application.routes.draw do
   resources :dogs
   resources :dogs
   resources :dogs
-  resources  :users_admin, :controller => 'users'
+  resources  :users_admin, :controller => 'users', only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
+  end
   devise_for :users
   
   resources :roles_permissions
