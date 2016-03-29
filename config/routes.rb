@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :badges
   resources :countries
 
-  resources  :users_admin, :controller => 'users', only: [:edit] do
+  resources  :users_admin, :controller => 'users' do
     collection do
       patch 'update_password'
     end
