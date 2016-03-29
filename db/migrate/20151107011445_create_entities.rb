@@ -6,6 +6,7 @@ class CreateEntities < ActiveRecord::Migration
       t.string :slug
       t.string :controller
       t.boolean :is_dev
+      t.boolean :visible, default: true
 
       t.timestamps null: false
     end
