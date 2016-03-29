@@ -82,7 +82,7 @@
               <%= f.label 'Badges' %><br>
               <% Badge.all.each do |badge| %>
                 <%= image_tag badge.image.url(:thumb) %>
-                <input type="checkbox" name="badge_ids[]" value="<%=badge.id%>">
+                <input type="checkbox" name="badge_ids[]" value="<%=badge.id%>" <%= ChefsHelper::chef_have_this_badge?(badge, @chef) %>>
               <% end %>
             </div>
             <div class="form-group">
