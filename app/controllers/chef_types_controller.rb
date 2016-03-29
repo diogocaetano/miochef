@@ -28,7 +28,7 @@ class ChefTypesController < ApplicationController
 
     respond_to do |format|
       if @chef_type.save
-        format.html { redirect_to @chef_type, notice: 'Chef type was successfully created.' }
+        format.html { redirect_to @chef_type, notice: 'Tipo do chef foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @chef_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ChefTypesController < ApplicationController
   def update
     respond_to do |format|
       if @chef_type.update(chef_type_params)
-        format.html { redirect_to @chef_type, notice: 'Chef type was successfully updated.' }
+        format.html { redirect_to @chef_type, notice: 'Tipo do chef foi editado com sucesso.' }
         format.json { render :show, status: :ok, location: @chef_type }
       else
         format.html { render :edit }

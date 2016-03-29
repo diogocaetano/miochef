@@ -7,40 +7,34 @@
       <div class="panel-heading">
           <div class="panel-title">Detalhes</div>
       </div>
-      <div class="panel-body form-horizontal">
-          <div class="form-group">
-              <label for="name" class="control-label col-lg-3">Nome</label>
-              <div class="col-lg-9">
-                  <label for="name" class="form-control-static"><%= @role.name %></label>
-              </div>
-          </div>          
       <div class="panel-body">
-      <div class="panel-heading">
-        <div class="panel-title">Permissões do Perfil</div>
-      </div>
+        <div class="panel-heading">
+          <div class=" text-center">Nome do Perfil:<%= @role.name %></div>
+          <div class=" text-center">Permissões do Perfil</div>
+        </div>
       <br/>
       <div class="form-group">
-        <label class="control-label col-md-3"></label>
-          <div class="col-md-9">
-            <select disabled multiple="multiple" class="multi-select" name="permission_ids[]">
+          <label class="control-label col-md-3"></label>
+          <div class="col-md-12">
+            <ul class="list-group">
               <% if current_user.is_dev %>
                 <% Entity.all.each do |entity| %>
-                  <optgroup label="<%= entity.name %>">
+                  <li class="list-group-item active "><%= entity.name %></li>
                     <% entity.permissions.each do |permission| %>
-                      <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
-                    <% end %>
-                  </optgroup>
+                      <%= PermissionsHelper::render_permissions_selected_li(@role.permissions, permission) %>
+                    <% end %> 
                 <% end %>
               <% else %>
                 <% Entity.where.not(is_dev: true).collect { |entity| entity }.each do |entity| %>
-                  <optgroup label="<%= entity.name %>">
+                  <div class="col-md-3">
+                    <li class="list-group-item active"><%= entity.name %></li>
                     <% entity.permissions.each do |permission| %>
-                      <%= PermissionsHelper::render_permissions_multiSelect(@role.permissions, permission) %>
+                      <%= PermissionsHelper::render_permissions_selected_li(@role.permissions, permission) %>
                     <% end %>
-                  </optgroup>
+                  </div>
               <% end %>
             <% end %>
-            </select>
+          </ul>
           </div>
       </div>
     </div>
