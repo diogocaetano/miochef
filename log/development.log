@@ -46176,3 +46176,317 @@ Processing by DashboardController#index as HTML
   [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
   Rendered users/_change_password.html.erb (1.7ms)
 Completed 200 OK in 482ms (Views: 475.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-03-29 18:56:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb within layouts/application (6.0ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered users/_change_password.html.erb (52.2ms)
+Completed 200 OK in 3905ms (Views: 3820.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-8016b65180dadf75a32aecc48b52d3890e7654bd94c3d73f61e200855a7023a3.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datepicker.self-b9a615bbc407e42f5070fce9420a22176c88a2cca4ae6e9b9cf856f00c8d5598.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/timepicker.self-20f468867de78982fd7657597bbc12003f8089f43591af952e3c875e4b32f9b1.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/colorpicker.self-71235316e6f609f34773d12ba8171701a9fc09040d434f39ae49e81938e1bf1c.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-bda99765aabdda1e0287b4d88ef790e7586cea8b4ab12184c68060ee098de627.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datetimepicker.self-29e491806f68ffc232c1e7fd4541a64490a7fd2ba3d73fbf3784227c7584650a.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-147a0869bf784b88d4a50b22875b4c7b314bce3c4215e1e6d1bac478d23047c4.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multi-select.self-99ca3cdeb42251c37e97f4dd5c9b2a4dd56e5e869fe7abd9a8f58dbf59253c8f.css?body=1" for 10.0.2.2 at 2016-03-29 18:56:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.nicescroll.self-0904e1ae850932d628343d2c338d9a0e9440d435bd68b2e161091bc1334f9fba.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskMoney.min.self-ad5a265712799f25828d6b7789c6e0e71837be050b4c4b5db58b79fa472d23ca.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskedinput.self-1da73cedd7fce78d444ce87d63b379e3570d3ccb9c0e983bba2fe492d81c65d4.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.multi-select.self-5a42462623f4d5e99e9f6521e6b9e26435cd99d22f295a527ecbd117cdb1f376.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.quicksearch.self-68152e9984a4f2feb2de66a434073fb6d15f7c29e0f2c757823fa8293ef23e6b.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-7542672aef03a1ebd3fde11b2ac7c33b338dd4064aeba286ccff1fe00c7619f2.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datepicker.self-fed736edf3f3649f87a4c5c49fe87b5485cac7ebdfe9a48c5903e6e1bad4f10e.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datetimepicker.self-5a5b0585b8f4283364ad5a970b0a9f35d1ff978b0f0b9223155ce88f1f0a41a8.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-colorpicker.self-9d2dbdaf627ec1b588796d0ddee541ad0b0818cf3ea45f3cee2852077504a197.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-timepicker.self-d8cf7b9a676392b3383944c7e9373d6cca6b1edf9431fb764bbafa2217d71296.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-tagsinput.self-0a88b66b1068a6c7ae0da8802635ce6761e0803e67c2dc09f905ad3c81004a63.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap3-typeahead.self-3492fe65342f3a77c4b616397d066986bb86469efcd86f456a29c1f71e7289f0.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/common-scripts.self-2c72c8924e7fc69789b059f9781a85b8cc8d911104899a941cf82068ca929443.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-60b626ffb7896eae7f720c0fb27b3e1846f17ca6c0253a4da54a25ebb00e0a9b.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-75a1ee5b2e588ca2b587bf43bacfe808a0a033030bf84c15b76de403581fef48.js?body=1" for 10.0.2.2 at 2016-03-29 18:56:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/chefs" for 10.0.2.2 at 2016-03-29 18:56:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChefsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (2.3ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'chefs'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.6ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 8 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 50 AND `permissions_roles`.`role_id` = 2[0m
+  [1m[35mChef Load (1.1ms)[0m  SELECT `chefs`.* FROM `chefs`
+  Rendered chefs/index.html.erb within layouts/application (6.1ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered users/_change_password.html.erb (2.2ms)
+Completed 200 OK in 729ms (Views: 621.8ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/chefs/new" for 10.0.2.2 at 2016-03-29 18:57:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChefsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'chefs'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.3ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 8 AND `permissions`.`action` = 'new'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 51 AND `permissions_roles`.`role_id` = 2[0m
+  [1m[35mChefType Load (0.5ms)[0m  SELECT `chef_types`.* FROM `chef_types`
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mBadge Load (0.1ms)[0m  SELECT `badges`.* FROM `badges`
+  Rendered chefs/_form.html.erb (115.4ms)
+  Rendered chefs/new.html.erb within layouts/application (133.3ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered users/_change_password.html.erb (1.6ms)
+Completed 200 OK in 730ms (Views: 701.4ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/chefs" for 10.0.2.2 at 2016-03-29 18:57:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ChefsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WgqlxlN0KAfsLlJVcbG4eKJAewmMbcl39h3xmDpcn0cnEIPqg+G77k/Z3TBD5rILEv63bp6IWm0WCPKXF6kDFg==", "chef"=>{"chef_type_id"=>"", "name"=>"", "cpf"=>"", "rg"=>"", "born_date"=>"", "country_id"=>"", "email"=>"", "phone_one"=>"", "phone_two"=>"", "academic_education"=>"", "university"=>"", "naturalness"=>"", "specialty"=>"", "description"=>""}, "commit"=>"Salvar"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'chefs'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.5ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 8 AND `permissions`.`action` = 'create'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 52 AND `permissions_roles`.`role_id` = 2[0m
+  [1m[35mBadge Load (0.2ms)[0m  SELECT `badges`.* FROM `badges` WHERE `badges`.`id` IS NULL
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mChef Exists (0.3ms)[0m  SELECT  1 AS one FROM `chefs` WHERE `chefs`.`cpf` = BINARY '' LIMIT 1
+  [1m[36mChef Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `chefs` WHERE `chefs`.`rg` = BINARY '' LIMIT 1[0m
+  [1m[35mChef Exists (0.4ms)[0m  SELECT  1 AS one FROM `chefs` WHERE `chefs`.`email` = BINARY '' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mChefType Load (0.3ms)[0m  SELECT `chef_types`.* FROM `chef_types`
+  [1m[36mCountry Load (0.4ms)[0m  [1mSELECT `countries`.* FROM `countries`[0m
+  [1m[35mBadge Load (0.5ms)[0m  SELECT `badges`.* FROM `badges`
+  Rendered chefs/_form.html.erb (15.0ms)
+  Rendered chefs/new.html.erb within layouts/application (28.7ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.5ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.6ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered users/_change_password.html.erb (1.6ms)
+Completed 200 OK in 743ms (Views: 645.5ms | ActiveRecord: 10.4ms)

@@ -52,9 +52,9 @@
 
                      <!-- ATIVAR/DESATIVAR -->                    
                     <% if chef.active %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
                     <% else %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                     <% end %>
 
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_chef_'+chef.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
