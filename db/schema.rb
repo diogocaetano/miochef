@@ -74,9 +74,9 @@ ActiveRecord::Schema.define(version: 20160328024810) do
     t.string   "naturalness",        limit: 255
     t.string   "academic_education", limit: 255
     t.string   "university",         limit: 255
-    t.boolean  "active"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "active",                           default: true
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "photo_file_name",    limit: 255
     t.string   "photo_content_type", limit: 255
     t.integer  "photo_file_size",    limit: 4
@@ -134,11 +134,11 @@ ActiveRecord::Schema.define(version: 20160328024810) do
     t.string   "total_fat",       limit: 255
     t.string   "saturated_fat",   limit: 255
     t.string   "trans_fat",       limit: 255
+    t.string   "dietary_fiber",   limit: 255
     t.string   "sodium",          limit: 255
     t.string   "iron",            limit: 255
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
-    t.string   "dietary_fiber",   limit: 255
   end
 
   create_table "permissions", force: :cascade do |t|
