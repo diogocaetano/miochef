@@ -28,7 +28,7 @@ class PlateAccompanimentsController < ApplicationController
 
     respond_to do |format|
       if @plate_accompaniment.save
-        format.html { redirect_to @plate_accompaniment, notice: 'Plate accompaniment was successfully created.' }
+        format.html { redirect_to @plate_accompaniment, notice: 'Acompanhamento de prato salvo com sucesso.' }
         format.json { render :show, status: :created, location: @plate_accompaniment }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PlateAccompanimentsController < ApplicationController
   def update
     respond_to do |format|
       if @plate_accompaniment.update(plate_accompaniment_params)
-        format.html { redirect_to @plate_accompaniment, notice: 'Plate accompaniment was successfully updated.' }
+        format.html { redirect_to @plate_accompaniment, notice: 'Acompanhamento de prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate_accompaniment }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PlateAccompanimentsController < ApplicationController
   def destroy
     @plate_accompaniment.destroy
     respond_to do |format|
-      format.html { redirect_to plate_accompaniments_url, notice: 'Plate accompaniment was successfully destroyed.' }
+      format.html { redirect_to plate_accompaniments_url, notice: 'Acompanhamento de prato removido com sucesso.' }
       format.json { head :no_content }
     end
   end

@@ -28,7 +28,7 @@ class PlateBadgesController < ApplicationController
 
     respond_to do |format|
       if @plate_badge.save
-        format.html { redirect_to @plate_badge, notice: 'Plate badge was successfully created.' }
+        format.html { redirect_to @plate_badge, notice: 'Badge do prato criado com sucesso.' }
         format.json { render :show, status: :created, location: @plate_badge }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PlateBadgesController < ApplicationController
   def update
     respond_to do |format|
       if @plate_badge.update(plate_badge_params)
-        format.html { redirect_to @plate_badge, notice: 'Plate badge was successfully updated.' }
+        format.html { redirect_to @plate_badge, notice: 'Badge do prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate_badge }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PlateBadgesController < ApplicationController
   def destroy
     @plate_badge.destroy
     respond_to do |format|
-      format.html { redirect_to plate_badges_url, notice: 'Plate badge was successfully destroyed.' }
+      format.html { redirect_to plate_badges_url, notice: 'Badge do prato removido com sucesso.' }
       format.json { head :no_content }
     end
   end
