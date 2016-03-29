@@ -290,6 +290,7 @@ pt-BR:
         university: "Universidade"
         active: 'Ativo'
         chef_type_id: 'Tipo do Chefe'
+        photo: 'Foto'
       chef_type:
         name: "Nome"
       address:

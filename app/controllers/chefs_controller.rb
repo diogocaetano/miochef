@@ -46,7 +46,7 @@ class ChefsController < ApplicationController
     @chef.badges << badges
     respond_to do |format|
       if @chef.update(chef_params)
-        format.html { redirect_to @chef, notice: 'Chefe Atualizado com Sucesso' }
+        format.html { redirect_to chefs_url, notice: 'Chefe Atualizado com Sucesso' }
         format.json { render :show, status: :ok, location: @chef }
       else
         format.html { render :edit }

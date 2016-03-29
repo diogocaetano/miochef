@@ -59,6 +59,11 @@ class ChefTypesController < ApplicationController
       format.html { redirect_to chef_types_url, notice: 'Chef type was successfully destroyed.' }
       format.json { head :no_content }
     end
+  rescue
+    respond_to do |format|
+      format.html { redirect_to chef_types_url, alert: 'Tipo de Chefe não foi removido. Existem Associações ao Registro.' }
+      format.json { head :no_content }
+    end
   end
 
   private

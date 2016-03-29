@@ -15,6 +15,7 @@ class Chef < ActiveRecord::Base
   validates :naturalness, presence: true
   validates :academic_education, presence: true
   validates :university, presence: true
+  validates :photo, presence: true
 
   has_attached_file :photo, styles: { medium: "300x300>", thumb: "64x64>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/

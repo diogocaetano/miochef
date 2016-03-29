@@ -6,8 +6,18 @@
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
-          Countries
+          Países
       </header>
+      <% if alert %>
+        <div class="alert alert-danger">
+          <%= alert %>
+        </div>
+      <% end %>
+      <% if notice %>
+        <div class="alert alert-success">
+          <%= notice %>
+        </div>
+      <% end %>
       <div class="panel-body">
         <section id="unseen">
           <table class="table table-bmoduleed table-striped table-condensed">

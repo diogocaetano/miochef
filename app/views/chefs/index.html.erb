@@ -29,11 +29,9 @@
                 <th>Foto</th>
                 <th>Nome</th>
                 <th>CPF</th>
-                <th>Data de Nascimento</th>
                 <th>País</th>
                 <th>Email</th>
                 <th>Especialidade</th>
-                <th>Formação Acadêmica</th>
                 <th colspan='4'>Ações</th>
               </tr>
             </thead>
@@ -44,11 +42,9 @@
                       <td><%= image_tag chef.photo.url(:thumb) %></td>
                       <td><%= chef.name %></td>
                       <td><%= chef.cpf %></td>
-                      <td><%= I18n.l(chef.born_date) %></td>
                       <td><%= chef.country.name %></td>
                       <td><%= chef.email %></td>
                       <td><%= chef.specialty %></td>
-                      <td><%= chef.academic_education %></td>
                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info' %>
