@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :chef_types
   resources :daily_menus
 
@@ -19,7 +20,12 @@ Rails.application.routes.draw do
   resources :badges
   resources :countries
 
-  resources  :users_admin, :controller => 'users'
+  resources  :users_admin, :controller => 'users', only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
+  end
+
   devise_for :users
   
   resources :roles_permissions

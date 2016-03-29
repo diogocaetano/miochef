@@ -5,3 +5,4 @@
 /config/enviroments/development.rb
 /public/assets/*
 /public/system/*
+.rbenv-vars
