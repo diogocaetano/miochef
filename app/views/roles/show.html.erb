@@ -22,7 +22,7 @@
       <div class="form-group">
         <label class="control-label col-md-3"></label>
           <div class="col-md-9">
-            <select readonly multiple="multiple" class="multi-select" id="my_multi_select2" name="permission_ids[]">
+            <select disabled multiple="multiple" class="multi-select" name="permission_ids[]">
               <% if current_user.is_dev %>
                 <% Entity.all.each do |entity| %>
                   <optgroup label="<%= entity.name %>">
