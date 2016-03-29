@@ -69,6 +69,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update_with_password(user_params)
+      sign_in @user, :bypass => true
+      flash[:notice] = "Senha alterada com sucesso"
+      redirect_to root_path
+    else
+      flash[:notice] = "Erro ao editar senha"
+      redirect_to root_path
+    end
+  end
+
+  protected
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -77,6 +95,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:role_id, :name, :is_admin, :is_representative, :email, :password)
+      params.require(:user).permit(:role_id, :name, :is_admin, :is_representative, :email, :password, :password_confirmation, :current_password)
     end
 end

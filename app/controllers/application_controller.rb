@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def user_has_permission_to_action?
     if user_signed_in?
       if not current_user.is_dev        
-        if not params[:controller] == 'dashboard'
+        if not params[:controller] == 'dashboard' || params[:action] == 'update_password'
           @module = Entity.where(controller: params[:controller]).first
           @permission = Permission.where(entity_id: @module.id).where(action: params[:action]).first
           @permission_role = PermissionsRoles.where(permission_id: @permission.id).where(role_id: current_user.role_id)          

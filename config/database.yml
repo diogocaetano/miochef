@@ -13,13 +13,11 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
- 
-  # socket: /tmp/mysql.sock
+  username: <%= ENV['BASE_DATABASE_USER'] %>
+  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
-  username: root
-  password: root
   database: miochef_development
 
 teste:
@@ -28,15 +26,12 @@ teste:
   username: deployer
   password: hpQNnA8DY8zSMPFc
 
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: deployer
-  password: 704joAKaDD7483I
+  <<: *default
   database: miochef_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
