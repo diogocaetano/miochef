@@ -1,47 +1,49 @@
 Rails.application.routes.draw do
 
-  resources :chef_types
-  resources :daily_menus
+  scope '/admin' do
+    resources :chef_types
+    resources :daily_menus
 
-  # resources :nutritional_tables
-  resources :addresses
-  resources :chefs
+    # resources :nutritional_tables
+    resources :addresses
+    resources :chefs
 
-  get 'chef_addresses/:chef_id' => 'addresses#index'
+    get 'chef_addresses/:chef_id' => 'addresses#index'
 
-  resources :plates do
-    post :nutritional_table
-    post :activate
-    post :deactivate
-    post :daily_menu
-  end
-
-  resources :plate_badges
-  resources :plate_accompaniments
-  resources :plate_types
-  resources :ingredients
-  resources :badges
-  resources :countries
-
-  resources  :users_admin, :controller => 'users' do
-    collection do
-      patch 'update_password'
+    resources :plates do
+      post :nutritional_table
+      post :activate
+      post :deactivate
+      post :daily_menu
     end
+
+    resources :plate_badges
+    resources :plate_accompaniments
+    resources :plate_types
+    resources :ingredients
+    resources :badges
+    resources :countries
+
+    resources  :users_admin, :controller => 'users' do
+      collection do
+        patch 'update_password'
+      end
+    end
+
+    devise_for :users
+    
+    resources :roles_permissions
+    resources :permissions
+    resources :roles
+    resources :entities
+    resources :modules_categories
+
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
+
+    # You can have the root of your site routed with "root"
+    root to: "dashboard#index"
   end
-
-  devise_for :users
-  
-  resources :roles_permissions
-  resources :permissions
-  resources :roles
-  resources :entities
-  resources :modules_categories
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root to: "dashboard#index"
 
   #api
   namespace :api do

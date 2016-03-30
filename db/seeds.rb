@@ -24,16 +24,16 @@ ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-cogs'
 ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-location-arrow')
 ModulesCategory.find_or_create_by(name: 'Chefes', icon: 'fa fa-coffee')
 
-Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'permissions',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'admin/roles',is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'admin/users_admin',is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'admin/permissions',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'admin/entities',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'admin/modules_categories',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'admin/countries', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'admin/addresses', is_dev: false, visible: false)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'admin/chef_types', is_dev: false, visible: true)
 
 Permission.find_or_create_by(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 1, action_name: 'Criar', action: 'new')
@@ -123,7 +123,7 @@ Entity.find_or_create_by(controller: 'ingredients') do |entity|
 	entity.modules_category_id = pratosCategory.id
 	entity.controller = 'ingredients'
 	entity.name = 'Ingredientes'
-	entity.slug = 'ingredients'
+	entity.slug = 'admin/ingredients'
 	entity.is_dev = false
 end
 
@@ -139,7 +139,7 @@ Permission.find_or_create_by(entity_id: ingredientsCategory.id, action_name: 'Re
 Entity.find_or_create_by(controller: 'plate_badges') do |badgeEntity|
 	badgeEntity.modules_category_id = pratosCategory.id
 	badgeEntity.name = 'Badges de Prato'
-	badgeEntity.slug = 'plate_badges'
+	badgeEntity.slug = 'admin/plate_badges'
 	badgeEntity.controller = 'plate_badges'
 	badgeEntity.is_dev = false
 	badgeEntity.visible = true
@@ -158,7 +158,7 @@ Permission.find_or_create_by(entity_id: badgesCategory.id, action_name: 'Remover
 Entity.find_or_create_by(controller: 'plate_types') do |typeEntity|
 	typeEntity.modules_category_id = pratosCategory.id
 	typeEntity.name = 'Tipos'
-	typeEntity.slug = 'plate_types'
+	typeEntity.slug = 'admin/plate_types'
 	typeEntity.controller = 'plate_types'
 	typeEntity.is_dev = false
 	typeEntity.visible = true
@@ -176,7 +176,7 @@ Permission.find_or_create_by(entity_id: typesCategory.id, action_name: 'Remover'
 Entity.find_or_create_by(controller: 'plate_accompaniments') do |accompanimentsEntity|
 	accompanimentsEntity.modules_category_id = pratosCategory.id
 	accompanimentsEntity.name = 'Acompanhamentos'
-	accompanimentsEntity.slug = 'plate_accompaniments'
+	accompanimentsEntity.slug = 'admin/plate_accompaniments'
 	accompanimentsEntity.controller = 'plate_accompaniments'
 	accompanimentsEntity.is_dev = false
 	accompanimentsEntity.visible = true
@@ -194,7 +194,7 @@ Permission.find_or_create_by(entity_id: accompanimentsCategory.id, action_name: 
 Entity.find_or_create_by(controller: 'plates') do |platesEntity|
 	platesEntity.modules_category_id = pratosCategory.id
 	platesEntity.name = 'Pratos'
-	platesEntity.slug = 'plates'
+	platesEntity.slug = 'admin/plates'
 	platesEntity.controller = 'plates'
 	platesEntity.is_dev = false
 	platesEntity.visible = true
@@ -233,7 +233,7 @@ dailyMenuModule = ModulesCategory.find_by(name: 'Cardápio do Dia')
 Entity.find_or_create_by(controller: 'daily_menus') do |dailyMenuEntity|
 	dailyMenuEntity.modules_category_id = dailyMenuModule.id
 	dailyMenuEntity.name = 'Cardápio de Hoje'
-	dailyMenuEntity.slug = 'daily_menus'
+	dailyMenuEntity.slug = 'admin/daily_menus'
 	dailyMenuEntity.controller = 'daily_menus'
 	dailyMenuEntity.is_dev = false
 	dailyMenuEntity.visible = true
