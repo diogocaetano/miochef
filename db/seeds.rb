@@ -248,6 +248,9 @@ Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Atua
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Remover', action: 'destroy')
 
+usersCategory = Entity.find_by(name: 'Usuários')
+Permission.find_or_create_by(entity_id: usersCategory.id, action_name: 'Alterar Senha', action: 'update_password')
+
 
 Permission.all.each do |permission|
 	PermissionsRoles.find_or_create_by(role_id: 1, permission_id: permission.id)

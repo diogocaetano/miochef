@@ -224,7 +224,8 @@ pt-BR:
         name: "Nome"
         email: "E-mail"
         password: "Senha"
-        password_confirmation: "Senha Confirmação"
+        password_confirmation: "Confirmação de Senha"
+        role_id: "Perfil"
       role:
         name: "Nome"
       permission: 
