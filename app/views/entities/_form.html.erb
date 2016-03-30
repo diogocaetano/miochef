@@ -39,6 +39,11 @@
                 </div>
 
                 <div class="form-group">
+                    <%= f.label 'Visível' %><br>
+                    <%= f.check_box :visible %>
+                </div>
+
+                <div class="form-group">
                     <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
                 </div>
             <% end %>

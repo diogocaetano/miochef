@@ -12,7 +12,7 @@ module MenuHelper
 
 	def self.userHasPermissionToModule?(user,entity)
 		user.role.permissions.each do |permission|
-			return true if permission.entity_id == entity.id
+			return true if permission.entity_id == entity.id && entity.visible
 		end
 
 		false

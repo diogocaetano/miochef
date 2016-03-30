@@ -105,8 +105,9 @@ ActiveRecord::Schema.define(version: 20160328024810) do
     t.string   "slug",                limit: 255
     t.string   "controller",          limit: 255
     t.boolean  "is_dev"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.boolean  "visible",                         default: true
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   create_table "ingredients", force: :cascade do |t|
