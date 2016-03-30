@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # resources :nutritional_tables
   resources :addresses
   resources :chefs
+
+  get 'chef_addresses/:chef_id' => 'addresses#index'
+
   resources :plates do
     post :nutritional_table
     post :activate

@@ -56,7 +56,7 @@ class ChefTypesController < ApplicationController
   def destroy
     @chef_type.destroy
     respond_to do |format|
-      format.html { redirect_to chef_types_url, notice: 'Chef type was successfully destroyed.' }
+      format.html { redirect_to chef_types_url, notice: 'Tipo de Chefe removido com sucesso.' }
       format.json { head :no_content }
     end
   rescue

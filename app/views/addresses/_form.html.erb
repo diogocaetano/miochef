@@ -10,7 +10,7 @@
     <% end %>
     <div class="panel-body">
       <%= form_for(@address) do |f| %>  
-          <%= f.hidden_field :chef_id, value: chef_id, :class => 'form-control' %>
+          <%= f.hidden_field :chef_id, value: @chef ? @chef.id : chef_id, :class => 'form-control' %>
           <div class="form-group">
             <%= f.label 'Logradouro*' %><br>
             <%= f.text_field :public_place, :class => 'form-control' %>

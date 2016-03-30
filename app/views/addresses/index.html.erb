@@ -1,33 +1,31 @@
 <div class="row">
   <div class="col-lg-12">
-    <a href="/addresses/new">
-        <button type="button" class="btn btn-primary">Adicionar Address</button>
+    <a href="/chefs">
+        <button type="button" class="btn btn-default">Voltar</button>
     </a>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
-          Endereços de Chefes
+          Endereços do Chefe - <%= @chef.name %>
       </header>
       <div class="panel-body">
         <section id="unseen">
           <table class="table table-bmoduleed table-striped table-condensed">
             <thead>
               <tr>
-                                  <th>Chefe</th>
-                                  <th>Logradouro</th>
-                                  <th>Número</th>
-                                  <th>Bairro</th>
-                                  <th>Cidade</th>
-                                  <th>Estado</th>
-                                  <th>CEP</th>
-                                  <th>Complemento</th>
-                                <th colspan='3'>Ações</th>
+                  <th>Logradouro</th>
+                  <th>Número</th>
+                  <th>Bairro</th>
+                  <th>Cidade</th>
+                  <th>Estado</th>
+                  <th>CEP</th>
+                  <th>Complemento</th>
+                <th colspan='3'>Ações</th>
               </tr>
             </thead>
             <tbody>
               <% @addresses.each do |address| %>
                 <tr>
-                  <td><%= address.chef.name %></td>
                   <td><%= address.public_place %></td>
                   <td><%= address.number %></td>
                   <td><%= address.neighborhood %></td>
@@ -36,7 +34,7 @@
                   <td><%= address.zip_code %></td>
                   <td><%= address.complement %></td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), address, :class => 'btn btn-primary' %>
+                    <%#= link_to raw("<i class='fa fa-eye'></i>"), address, :class => 'btn btn-primary' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_address_path(address), :class => 'btn btn-info' %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_address_'+address.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                   </td>

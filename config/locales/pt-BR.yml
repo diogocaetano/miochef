@@ -301,6 +301,7 @@ pt-BR:
         state: "Estado"
         zip_code: "CEP"
         complement: "Complemento"
+        chef_id: "Chefe"
       nutritional_table:
         energetic_value: "Valor energético"
         carbohydrate: "Carboidrato"

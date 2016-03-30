@@ -1,5 +1,9 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_chef_addresses, only: [:index]
+  before_action :set_chef, only: [:index]
+  before_action :set_chef_from_address, only: [:edit]
+
 
   # GET /addresses
   # GET /addresses.json
@@ -39,9 +43,11 @@ class AddressesController < ApplicationController
   # PATCH/PUT /addresses/1
   # PATCH/PUT /addresses/1.json
   def update
+    @chef = Chef.find(address_params[:chef_id])
+    @chefs = Chef.all
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to @address, notice: 'Endereço atualizado com sucesso.' }
+        format.html { redirect_to chefs_url, notice: "Endereço Atualizado com Sucesso ao Chefe: #{@chef.name }." }
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit }
@@ -54,8 +60,9 @@ class AddressesController < ApplicationController
   # DELETE /addresses/1.json
   def destroy
     @address.destroy
+    chef = Chef.find(@address.chef_id)
     respond_to do |format|
-      format.html { redirect_to addresses_url, notice: 'Endereço removido com sucesso' }
+      format.html { redirect_to chefs_url, notice: "Endereço do chefe #{chef.name} removido com sucesso" }
       format.json { head :no_content }
     end
   end
@@ -64,6 +71,19 @@ class AddressesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_address
       @address = Address.find(params[:id])
+    end
+
+    def set_chef_addresses
+      @address = Address.where(chef_id: params[:chef_id])
+    end
+
+    def set_chef_from_address
+      address = Address.find(params[:id])
+      @chef = Chef.find(address.chef_id)
+    end
+
+    def set_chef
+      @chef = Chef.find(params[:chef_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

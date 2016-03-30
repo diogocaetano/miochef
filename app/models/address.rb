@@ -8,4 +8,5 @@ class Address < ActiveRecord::Base
   validates :state, presence: true
   validates :zip_code, presence: true
   validates :complement, presence: true
+  validates :chef_id, presence: true
 end
