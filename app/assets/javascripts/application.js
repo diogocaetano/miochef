@@ -43,7 +43,11 @@
 //= require daterangepicker
 
 //= require summernote
+//= require summernote-pt-BR
 //= require maskedinput.call
 
 //= require spinner
 //= require advanced-form-components
+
+//= require call
+
