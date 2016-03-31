@@ -31,7 +31,7 @@
         <div class="form-group">
           <label for="number" class="control-label col-lg-3">Chef</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @plate.chef.name %></label>
+            <label for="number" class="form-control-static"><%= @plate.chef.name if not @plate.chef.nil? %></label>
           </div>
         </div>
 
