@@ -31,7 +31,7 @@ class RolesController < ApplicationController
     @role.permission_ids = params[:permission_ids]
     respond_to do |format|
       if @role.save
-        format.html { redirect_to roles_url, notice: 'Perfil Criado com Sucesso.' }
+        format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi atualizado com sucesso.' } } 
         format.json { render :show, status: :created, location: @role }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class RolesController < ApplicationController
     @role.permission_ids = params[:permission_ids]
     respond_to do |format|
       if @role.update(role_params)
-        format.html { redirect_to roles_url, notice: 'Perfil Atualizado com Sucesso.' }
+        format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @role }
       else
         format.html { render :edit }
@@ -60,12 +60,12 @@ class RolesController < ApplicationController
   def destroy
     @role.destroy
     respond_to do |format|
-      format.html { redirect_to roles_url, notice: 'Perfil Removido com Sucesso.' }
+      format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi atualizado com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to roles_url, alert: 'O Perfil não pode ser excluído. Existem associações ao registro.' }
+      format.html { redirect_to roles_url, :flash =>{:danger => 'O Perfil não pode ser excluído. Existem associações ao registro.' } }
       format.json { head :no_content }
     end
   end

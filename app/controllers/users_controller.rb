@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_admin_index_path, notice: 'O usuário foi criado com sucesso.' }
+        format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O usuário foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_admin_index_path, notice: 'O usuário foi atualizado com sucesso.' }
+        format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O usuário foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -59,12 +59,12 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_admin_index_path, notice: 'O Usuário foi removido com sucesso.' }
+      format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O Usuário foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to users_admin_index_path, alert: 'O Usuário não foi removido. Existem associações para o registro.' }
+      format.html { redirect_to users_admin_index_path, :flash =>{:danger =>  'O Usuário não foi removido. Existem associações para o registro.' } }
       format.json { head :no_content }
     end
   end
@@ -73,10 +73,10 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
       sign_in @user, :bypass => true
-      flash[:notice] = "Senha alterada com sucesso"
+      flash[:success] = "Senha alterada com sucesso"
       redirect_to root_path
     else
-      flash[:notice] = "Erro ao editar senha"
+      flash[:danger] = "Erro ao editar senha"
       redirect_to root_path
     end
   end

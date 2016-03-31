@@ -31,7 +31,7 @@ Rails.application.config.assets.precompile += %w(
 	jquery.quicksearch.js
 	
 	bootstrap-timepicker.js
-	spinner.min.js
+	spinner.js
 	bootstrap-fileupload.js
 	wysihtml5-0.3.0.js
 	bootstrap-wysihtml5.js
@@ -59,6 +59,6 @@ Rails.application.config.assets.precompile += %w(
 	datepicker.css
 	timepicker.css
 	colorpicker.css
-	daterangepicker-bs3.css
+	daterangepicker.css
 	datetimepicker.css
 )

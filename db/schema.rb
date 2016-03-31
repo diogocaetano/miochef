@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20160114182050) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "dogs", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "age",        limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "entities", force: :cascade do |t|
     t.integer  "modules_category_id", limit: 4
     t.string   "name",                limit: 255

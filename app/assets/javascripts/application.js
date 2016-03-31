@@ -35,5 +35,6 @@
 //= require bootstrap-timepicker
 //= require jquery.multi-select
 //= require jquery.quicksearch
+//= require spinner
 //= require advanced-form-components
 

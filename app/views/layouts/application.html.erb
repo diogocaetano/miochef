@@ -17,7 +17,7 @@
     	<%= stylesheet_link_tag 'datepicker', media: 'all', 'data-turbolinks-track' => true %>
     	<%= stylesheet_link_tag 'timepicker', media: 'all', 'data-turbolinks-track' => true %>
     	<%= stylesheet_link_tag 'colorpicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'daterangepicker-bs3', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'daterangepicker', media: 'all', 'data-turbolinks-track' => true %>
     	<%= stylesheet_link_tag 'datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
 
 	  	<%= stylesheet_link_tag    'multi-select', media: 'all', 'data-turbolinks-track' => true %>		  	
@@ -120,6 +120,7 @@
 	      	<!--main content start-->
 	      	<section id="main-content">
 	          	<section class="wrapper">
+	          		<%= render 'layouts/messages' %>
 	              	<%= yield %>
 	          	</section>
 	      	</section>
@@ -128,6 +129,7 @@
       		<!-- Right Slidebar end -->
 		</section>
 		<% else %>
+			<%= render 'layouts/messages' %>
 			<%= yield %>
 		<% end %>
 	</body>
