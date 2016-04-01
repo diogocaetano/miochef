@@ -56,8 +56,13 @@ class PlateAccompanimentsController < ApplicationController
   def destroy
     @plate_accompaniment.destroy
     respond_to do |format|
-      format.html { redirect_to plate_accompaniments_url, notice: 'Acompanhamento de prato removido com sucesso.' }
-      format.json { head :no_content }
+      if not @plate_accompaniment.errors.any?
+        format.html { redirect_to plate_accompaniments_url, notice: 'Acompanhamento do prato removido com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to plate_accompaniments_url, alert: @plate_accompaniment.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 

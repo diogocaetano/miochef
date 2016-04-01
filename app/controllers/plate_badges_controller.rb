@@ -56,8 +56,13 @@ class PlateBadgesController < ApplicationController
   def destroy
     @plate_badge.destroy
     respond_to do |format|
-      format.html { redirect_to plate_badges_url, notice: 'Badge do prato removido com sucesso.' }
-      format.json { head :no_content }
+      if not @plate_badge.errors.any?
+        format.html { redirect_to plate_badges_url, notice: 'Badge do prato removido com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to plate_badges_url, alert: @plate_badge.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 

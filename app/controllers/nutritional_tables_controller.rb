@@ -28,7 +28,7 @@ class NutritionalTablesController < ApplicationController
 
     respond_to do |format|
       if @nutritional_table.save
-        format.html { redirect_to @nutritional_table, notice: 'Nutritional table was successfully created.' }
+        format.html { redirect_to @nutritional_table, notice: 'Tabela Nutricional foi criada com sucesso.' }
         format.json { render :show, status: :created, location: @nutritional_table }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class NutritionalTablesController < ApplicationController
   def update
     respond_to do |format|
       if @nutritional_table.update(nutritional_table_params)
-        format.html { redirect_to @nutritional_table, notice: 'Nutritional table was successfully updated.' }
+        format.html { redirect_to @nutritional_table, notice: 'Tabela Nutricional foi removida com sucesso.' }
         format.json { render :show, status: :ok, location: @nutritional_table }
       else
         format.html { render :edit }
@@ -56,8 +56,13 @@ class NutritionalTablesController < ApplicationController
   def destroy
     @nutritional_table.destroy
     respond_to do |format|
-      format.html { redirect_to nutritional_tables_url, notice: 'Nutritional table was successfully destroyed.' }
-      format.json { head :no_content }
+      if not @nutritional_table.errors.any?
+        format.html { redirect_to nutritional_tables_url, notice: 'Tabela Nutricional removida com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to nutritional_tables_url, alert: @nutritional_table.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 

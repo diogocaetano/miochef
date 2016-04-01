@@ -60,7 +60,7 @@ class PlateTypesController < ApplicationController
         format.html { redirect_to plate_types_url, notice: 'Tipo de Prato removido com sucesso.' }
         format.json { head :no_content }
       else
-        format.html { redirect_to plate_types_url, notice: 'Erro ao remover Tipo de Prato.' }
+        format.html { redirect_to plate_types_url, alert: @plate_type.errors.full_messages.join('<br>') }
         format.json { head :no_content }
       end
     end

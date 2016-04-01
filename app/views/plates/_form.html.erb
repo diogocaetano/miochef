@@ -14,11 +14,11 @@
     <div class="panel-body">
       <%= form_for @plate, html: { multipart: true } do |f| %>
                   <div class="form-group">
-            <%= f.label :title %><br>
+            <%= f.label 'Título*' %><br>
             <%= f.text_field :title, :class => 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :description %><br>
+            <%= f.label 'Descrição*' %><br>
             <%= f.text_area :description, :class => 'form-control summernote' %>
           </div>
          
@@ -36,7 +36,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Tipo" %><br>
+            <%= f.label "Tipo*" %><br>
             <%= f.select :plate_type_id, @types.collect {|type| [ type.name, type.id]}, {}, {:class => 'form-control'} %>
           </div>
 

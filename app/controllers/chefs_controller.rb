@@ -60,8 +60,13 @@ class ChefsController < ApplicationController
   def destroy
     @chef.destroy
     respond_to do |format|
-      format.html { redirect_to chefs_url, notice: 'Chefe Removido com Sucesso' }
-      format.json { head :no_content }
+      if not @chef.errors.any?
+        format.html { redirect_to chefs_url, notice: 'Chef removido com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to chefs_url, alert: @chef.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 

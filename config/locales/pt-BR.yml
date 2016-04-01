@@ -118,8 +118,8 @@ pt-BR:
       odd: deve ser ímpar
       record_invalid: 'A validação falhou: %{errors}'
       restrict_dependent_destroy:
-        one: Não é possível excluir o registro pois existe um %{record} dependente
-        many: Não é possível excluir o registro pois existem %{record} dependentes
+        one: Não é possível excluir o registro pois existe um dependente
+        many: Não é possível excluir o registro pois existem dependentes
       taken: já está em uso
       too_long: 'é muito longo (máximo: %{count} caracteres)'
       too_short: 'é muito curto (mínimo: %{count} caracteres)'
@@ -206,8 +206,11 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
   activerecord:
+    errors:
+      records:
+        plate: "Prato"
     models:
-      user: Usuário
+      user: 'Usuário'
       entity: 'Módulo'
       permission: 'Permissão'
       role: 'Perfil'
@@ -248,6 +251,7 @@ pt-BR:
         name: "Nome"
       plate_type:
         name: "Nome"
+        plate_id: "Pratos"
       plate_badge:
         name: "Nome"
         description: "Descrição"
