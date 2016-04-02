@@ -1,9 +1,13 @@
 <div class="col-lg-12">
+  <%= form_for(@plate_badge) do |f| %>
   <a href="/plate_badges">
       <button type="button" class="btn btn-default">Voltar</button>
   </a>
   <div class="panel"></div>
   <section class="panel">
+  <header class="panel-heading">
+    Badge do Prato
+  </header>
     <% if @plate_badge.errors.any? %>
       <div class="alert alert-danger">
         <% @plate_badge.errors.full_messages.each do |message| %>
@@ -12,7 +16,6 @@
       </div>
     <% end %>
     <div class="panel-body">
-      <%= form_for(@plate_badge) do |f| %>
                   <div class="form-group">
             <%= f.label 'Nome*' %><br>
             <%= f.text_field :name, :class => 'form-control' %>
@@ -28,10 +31,10 @@
             <% end %>
             <%= f.file_field :image %>
           </div>
-          <div class="form-group">
-            <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
-        </div>
-      <% end -%>
     </div>
   </section>
+    <div class="form-group">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+    </div>
+  <% end -%>
 </div>
