@@ -14,15 +14,15 @@
     <div class="panel-body">
       <%= form_for(@plate_badge) do |f| %>
                   <div class="form-group">
-            <%= f.label :name %><br>
+            <%= f.label 'Nome*' %><br>
             <%= f.text_field :name, :class => 'form-control' %>
           </div>
                   <div class="form-group">
-            <%= f.label :description %><br>
+            <%= f.label 'Descrição*' %><br>
             <%= f.text_area :description, :class => 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :image %><br>
+            <%= f.label 'Imagem*' %><br>
             <% if @plate_badge.image.exists? %>
               <%= image_tag @plate_badge.image.url(:thumb) %><br><br>
             <% end %>
