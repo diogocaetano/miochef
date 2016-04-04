@@ -1,4 +1,5 @@
 class Chef < ActiveRecord::Base
+  has_many :plates, dependent: :restrict_with_error
   belongs_to :country
   belongs_to :chef_type
   has_many :addresses

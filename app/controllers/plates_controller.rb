@@ -32,7 +32,7 @@ class PlatesController < ApplicationController
   # POST /plates
   # POST /plates.json
   def create
-    @plate = Plate.new(plate_params)
+    @plate = Plate.new(plate_params_with_ingredients_and_accompaniments)
     @types = PlateType.all
     @badges = PlateBadge.all
 
@@ -51,7 +51,7 @@ class PlatesController < ApplicationController
   # PATCH/PUT /plates/1.json
   def update
     respond_to do |format|
-      if @plate.update(plate_params)
+      if @plate.update(plate_params_with_ingredients_and_accompaniments)
         format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
@@ -148,5 +148,14 @@ class PlatesController < ApplicationController
 
     def nutritional_table_params
       params.require(:nutritional_table).permit(:energetic_value, :carbohydrate, :protein, :total_fat, :saturated_fat, :trans_fat, :dietary_fiber, :sodium, :iron)
+    end
+
+    def plate_params_with_ingredients_and_accompaniments
+      ingredient_ids = plate_params['ingredient_ids'][0].split(',')
+      plate_accompaniment_ids = plate_params['plate_accompaniment_ids'][0].split(',')
+      params = plate_params
+      params['ingredient_ids'] = ingredient_ids
+      params['plate_accompaniment_ids'] = plate_accompaniment_ids
+      return params
     end
 end

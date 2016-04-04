@@ -1,9 +1,13 @@
 <div class="col-lg-12">
+  <%= form_for(@plate_badge) do |f| %>
   <a href="/plate_badges">
       <button type="button" class="btn btn-default">Voltar</button>
   </a>
   <div class="panel"></div>
   <section class="panel">
+  <header class="panel-heading">
+    Badge do Prato
+  </header>
     <% if @plate_badge.errors.any? %>
       <div class="alert alert-danger">
         <% @plate_badge.errors.full_messages.each do |message| %>
@@ -12,26 +16,25 @@
       </div>
     <% end %>
     <div class="panel-body">
-      <%= form_for(@plate_badge) do |f| %>
                   <div class="form-group">
-            <%= f.label :name %><br>
+            <%= f.label 'Nome*' %><br>
             <%= f.text_field :name, :class => 'form-control' %>
           </div>
                   <div class="form-group">
-            <%= f.label :description %><br>
+            <%= f.label 'Descrição*' %><br>
             <%= f.text_area :description, :class => 'form-control' %>
           </div>
           <div class="form-group">
-            <%= f.label :image %><br>
+            <%= f.label 'Imagem*' %><br>
             <% if @plate_badge.image.exists? %>
               <%= image_tag @plate_badge.image.url(:thumb) %><br><br>
             <% end %>
             <%= f.file_field :image %>
           </div>
-          <div class="form-group">
-            <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
-        </div>
-      <% end -%>
     </div>
   </section>
+    <div class="form-group">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+    </div>
+  <% end -%>
 </div>

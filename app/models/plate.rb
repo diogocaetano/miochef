@@ -4,7 +4,7 @@ class Plate < ActiveRecord::Base
 	belongs_to :chef
 	belongs_to :nutritional_table
 	has_and_belongs_to_many :plate_badges
-	has_and_belongs_to_many  :ingredients
+	has_and_belongs_to_many  :ingredients, dependent: :restrict_with_error
 	has_and_belongs_to_many  :plate_accompaniments
 
 	validates :title, presence: true, uniqueness: true
@@ -15,4 +15,7 @@ class Plate < ActiveRecord::Base
 	validates_attachment_size :photo, less_than: 2.megabytes
 
 	accepts_nested_attributes_for :nutritional_table
+	accepts_nested_attributes_for :ingredients
+	accepts_nested_attributes_for :plate_badges
+	accepts_nested_attributes_for :plate_accompaniments
 end

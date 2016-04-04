@@ -56,8 +56,13 @@ class PlateTypesController < ApplicationController
   def destroy
     @plate_type.destroy
     respond_to do |format|
-      format.html { redirect_to plate_types_url, notice: 'Tipo de Prato removido com sucesso.' }
-      format.json { head :no_content }
+      if not @plate_type.errors.any?
+        format.html { redirect_to plate_types_url, notice: 'Tipo de Prato removido com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to plate_types_url, alert: @plate_type.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 

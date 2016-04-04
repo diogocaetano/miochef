@@ -56,8 +56,13 @@ class IngredientsController < ApplicationController
   def destroy
     @ingredient.destroy
     respond_to do |format|
-      format.html { redirect_to ingredients_url, notice: 'Ingrediente removido com sucesso.' }
-      format.json { head :no_content }
+      if not @ingredient.errors.any?
+        format.html { redirect_to ingredients_url, notice: 'Ingrediente removido com sucesso.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to ingredients_url, alert: @ingredient.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
     end
   end
 
