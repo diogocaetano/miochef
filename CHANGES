@@ -1,0 +1,54 @@
+Version 0.1.0
+ - ajustes de template do layout do scaffold e molharamento do show de roles
+ - adicionado ao template do scaffold ajustes de layout
+ - adicionado mensagens de alert padrao com o flash e fora das views
+ - tirando hardcoded do banco
+ - retirando o mói de cachorro
+ - correção ao acessar a lista de usuários
+ - adicoinada ação para alterar senha
+ - exibindo mensagem de erro ao logar
+ - ajustes para fazer update do user sem os campos de password
+ - corrigindo link para deletar usuário
+ - retirando flag de isdev no show de usuário
+ - automaticamente inicia o serve com 0.0.0.0, colocado variavel env de exemplo, mudado o database para receber da variavel
+ - Conclui template no scaffold
+ - Ajusta layout do scaffold
+ - Implementa template no scaffold
+ - implementa api base
+ - arquivos do template do scafolld
+ - Adiciona arquivo de configuração do nginx.
+ - Remove erro do form components js.
+ - Resolve problema do form de usuarios
+ - Corrige bug do formulario de usuarios.
+ - Adiciona .br no email do usuario teste no seed.
+ - Ajusta sistema de permissionamento.
+ - Adiciona tradução do devise.
+ - Adiciona internacionalização.
+ - Ajusta posição dos botões no modal de remover
+ - Ajusta modal de remover
+ - Ajusta icone de campeonatos
+ - Ajusta visualização de permissoes.
+ - Ajusta visualização de permissoes.
+ - remove is_representative do usuario
+ - Ajusta cor do alert
+ - Implementa base
+ - Resolve problemas de Assets
+ - Adiciona log ao gitignore
+ - Implementa menu ativo
+ - Implementa permissoes ao perfil.
+ - Ajusta link do dashboard
+ - Implementa template em todas as views.
+ - Ajusta redirecionamentos do cadastro de usuário
+ - Implementa permissionamento.
+ - Separa autenticação do cadastro de usuários.
+ - Implementa permissionamento.
+ - Implementa template nas indexes.
+ - Incrementa seeds
+ - Incrementa seeds
+ - Implementa layout do template e autenticação.Também cria os cruds do base (sem organização do layout.
+ - Adiciona arquivos do template.
+ - Adiciona gem mysql2 ao projeto.
+ - Adiciona gem thin.
+ - cria o projeto rails.
+ - Initial commit with contributors
+
