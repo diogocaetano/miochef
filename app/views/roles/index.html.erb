@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <a href="/roles/new">
+        <a href="/admin/roles/new">
             <button type="button" class="btn btn-primary">Adicionar Perfil</button>
         </a>
         <div class="panel"></div>
@@ -32,8 +32,8 @@
                                 <tr>
                                   <td><%= role.name %></td>                                  
                                   <td>
-                                    <a href="/roles/<%=role.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
-                                    <a href="/roles/<%=role.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>                                    
+                                    <a href="/admin/roles/<%=role.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
+                                    <a href="/admin/roles/<%=role.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>                                    
                                     <a data-toggle="modal" href="#delete_role_<%=role.id%>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
                                     </td>
                                 </tr>
@@ -54,7 +54,7 @@
                                                         <div class="pull-left">
                                                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                                                         </div>
-                                                        <a href="/roles/<%=role.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
+                                                        <a href="/admin/roles/<%=role.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
                                                     </div>
                                                 </div>
                                             </div>

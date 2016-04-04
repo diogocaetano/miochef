@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    @addresses = Address.all.order('main desc').order('created_at asc')
   end
 
   # GET /addresses/1
@@ -88,6 +88,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:chef_id, :public_place, :number, :neighborhood, :city, :state, :zip_code, :complement)
+      params.require(:address).permit(:chef_id, :public_place, :number, :neighborhood, :city, :state, :zip_code, :complement, :main)
     end
 end
