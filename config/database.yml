@@ -19,8 +19,8 @@ default: &default
 development:
   <<: *default
   database: miochef_development
-  username: homestead
-  password: secret
+  username: root
+  password: root
 
 teste:
   <<: *default

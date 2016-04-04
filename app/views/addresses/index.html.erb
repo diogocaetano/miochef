@@ -25,7 +25,11 @@
             </thead>
             <tbody>
               <% @addresses.each do |address| %>
-                <tr>
+                <% if address.main? %>
+                  <tr class='success'>
+                <% else %>
+                  <tr>
+                <% end %>
                   <td><%= address.public_place %></td>
                   <td><%= address.number %></td>
                   <td><%= address.neighborhood %></td>

@@ -9,4 +9,18 @@ class Address < ActiveRecord::Base
   validates :zip_code, presence: true
   validates :complement, presence: true
   validates :chef_id, presence: true
+
+  before_save :update_main_address
+
+  def main?
+  	self.main
+  end
+
+private
+  
+  def update_main_address
+    Address.update_all(main: false) if self.main
+    self.main = true
+  end
+
 end
