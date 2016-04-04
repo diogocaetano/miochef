@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <a href="/roles/new">
+        <a href="/admin/roles/new">
             <button type="button" class="btn btn-primary">Adicionar</button>
         </a>
         <div class="pull-right">
@@ -27,9 +27,9 @@
                                 <tr>
                                   <td><%= role.name %></td>                                  
                                   <td>
-                                    <a href="/roles/<%=role.id%>" class="btn btn-primary tooltips" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye"></i></button></a>
-                                    <a href="/roles/<%=role.id%>/edit" class="btn btn-info tooltips" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil"></i></button></a>                                    
-                                    <a data-toggle="modal" href="#delete_role_<%=role.id%>" class="btn btn-danger tooltips" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash-o"></i></button></a>
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), role, :class => 'btn btn-primary' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_role_path(role), :class => 'btn btn-info' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_role_'+role.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                                     </td>
                                 </tr>
                                 <div class="modal fade modal-dialog-center in" id="delete_role_<%=role.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;"></div>
