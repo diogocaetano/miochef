@@ -4,10 +4,19 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @term = params[:term]
     if current_user.is_dev
-      return @users = User.all.paginate(:page => params[:page], :per_page => 10)
+      if params[:term].present?
+        return @users = User.joins(:role).where('users.name LIKE ? OR roles.name LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      else
+        return @users = User.all.paginate(:page => params[:page], :per_page => 10)
+      end
     end
-    @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
+    if params[:term].present?
+      @users = User.joins(:role).where.not(id: 1).where('users.name LIKE ? OR roles.name LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+    else
+      @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   # GET /users/1

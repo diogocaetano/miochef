@@ -1,11 +1,15 @@
 <div class="row">
     <div class="col-lg-12">
-        <a href="/users_admin/new">
+        <a href="/admin/users_admin/new">
             <button type="button" class="btn btn-primary">Adicionar</button>
         </a>
+        <div class="pull-right">
+            <%= form_tag('/admin/users_admin', method: 'GET') do -%>
+                <input type="text" value="<%= @term %>"name="term" class="form-control search" placeholder="Digite o termo...">
+            <% end %>
+        </div>
         <div class="panel"></div>
         <section class="panel">
-           
             <header class="panel-heading">
                 Usuários
             </header>
@@ -27,8 +31,8 @@
                                   <td><%= user.name %></td>
                                   <td><%= user.email %></td>                                  
                                   <td>
-                                    <a href="/users_admin/<%=user.id%>" class="btn btn-primary tooltips" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye"></i></button></a>
-                                    <a href="/users_admin/<%=user.id%>/edit" class="btn btn-info tooltips" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil"></i></button></a>
+                                    <a href="/admin/users_admin/<%=user.id%>" class="btn btn-primary tooltips" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye"></i></button></a>
+                                    <a href="/admin/users_admin/<%=user.id%>/edit" class="btn btn-info tooltips" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil"></i></button></a>
                                     <a data-toggle="modal" href="#delete_user_<%=user.id%>" class="btn btn-danger tooltips" data-toggle="tooltip" data-placement="top" title="Deletar"><i class="fa fa-trash-o"></i></button></a>
                                     </td>
                                 </tr>
@@ -49,7 +53,7 @@
                                                         <div class="pull-left">
                                                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                                                         </div>
-                                                        <a href="/users_admin/<%=user.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
+                                                        <a href="/admin/users_admin/<%=user.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
                                                     </div>
                                                 </div>
                                             </div>

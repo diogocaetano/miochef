@@ -3,9 +3,13 @@
         <a href="/roles/new">
             <button type="button" class="btn btn-primary">Adicionar</button>
         </a>
+        <div class="pull-right">
+            <%= form_tag('/admin/roles', method: 'GET') do -%>
+                <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
+            <% end %>
+        </div>
         <div class="panel"></div>
         <section class="panel">
-           
             <header class="panel-heading">
                 Perfis
             </header>
