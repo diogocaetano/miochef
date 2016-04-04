@@ -4,10 +4,12 @@ class RolesController < ApplicationController
   # GET /roles
   # GET /roles.json
   def index
+    @term = params[:term]
     if current_user.is_dev
-      return @roles = Role.all
+      Role.where('name LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      return @roles = Role.all.paginate(:page => params[:page], :per_page => 10)
     end
-    @roles = Role.where.not(id: 1).collect {|role| role }
+    @roles = Role.where.not(id: 1).where('name LIKE ?', "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /roles/1

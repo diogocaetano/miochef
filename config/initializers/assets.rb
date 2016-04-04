@@ -61,4 +61,5 @@ Rails.application.config.assets.precompile += %w(
 	colorpicker.css
 	daterangepicker.css
 	datetimepicker.css
+	digg_pagination.css
 )

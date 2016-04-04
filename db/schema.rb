@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20160403233234) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "initials",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "entities", force: :cascade do |t|
     t.integer  "modules_category_id", limit: 4
     t.string   "name",                limit: 255

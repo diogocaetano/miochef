@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
-  resources  :users_admin, :controller => 'users' do
-    collection do
-      patch 'update_password'
-    end
-  end
-  devise_for :users
   
-  resources :roles_permissions
-  resources :permissions
-  resources :roles
-  resources :entities
-  resources :modules_categories
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  scope '/admin' do
+    resources  :users_admin, :controller => 'users' do
+      collection do
+        patch 'update_password'
+      end
+    end
+    devise_for :users
+    
+    resources :roles_permissions
+    resources :permissions
+    resources :roles
+    resources :entities
+    resources :modules_categories
+    # The priority is based upon order of creation: first created -> highest priority.
+    # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  root to: "dashboard#index"
-
+    # You can have the root of your site routed with "root"
+    root to: "dashboard#index"
+  end
   #api
   namespace :api do
     namespace :v1 do

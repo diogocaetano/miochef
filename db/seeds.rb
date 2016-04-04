@@ -13,11 +13,11 @@ User.create(name: 'Teste', email: 'teste@teste.com.br', password: 'teste123', ro
 
 ModulesCategory.create(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 
-Entity.create(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false)
-Entity.create(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false)
-Entity.create(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'permissions',is_dev: true)
-Entity.create(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: true)
-Entity.create(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true)
+Entity.create(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'admin/roles',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'admin/users_admin',is_dev: false)
+Entity.create(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'admin/permissions',is_dev: true)
+Entity.create(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'admin/entities',is_dev: true)
+Entity.create(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'admin/modules_categories',is_dev: true)
 
 Permission.create(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 1, action_name: 'Criar', action: 'new')
