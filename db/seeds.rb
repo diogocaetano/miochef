@@ -30,8 +30,8 @@ Entity.find_or_create_by(modules_category_id: 1, name: 'Permissões', controller
 Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'admin/entities',is_dev: true, visible: true)
 Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'admin/modules_categories',is_dev: true, visible: true)
 Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'admin/countries', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'admin/badges', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'admin/chefs', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'admin/addresses', is_dev: false, visible: false)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'admin/chef_types', is_dev: false, visible: true)
 
