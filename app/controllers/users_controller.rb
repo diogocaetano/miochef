@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     if current_user.is_dev
-      return @users = User.all
+      return @users = User.all.paginate(:page => params[:page], :per_page => 10)
     end
-    @users = User.where.not(id: 1).collect {|user| user }    
+    @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /users/1

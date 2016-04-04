@@ -58,6 +58,12 @@
                             <% end %>
                         </tbody>
                     </table>                     
+                    <div class="apple_pagination">
+                        <div class="page_info">
+                            <%= page_entries_info @users %>
+                        </div>
+                      <%= will_paginate @users %>
+                    </div>
                 </section>
             </div>
         </section>

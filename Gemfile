@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "paperclip", "~> 4.3"
 gem 'active_model_serializers', '0.9.2'
 gem 'sextant'
+gem 'will_paginate', '~> 3.0.6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
