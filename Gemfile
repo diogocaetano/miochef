@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,10 +16,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem "paperclip", "~> 4.3"
+gem "paperclip", "4.3"
 gem 'active_model_serializers', '0.9.2'
 gem 'sextant'
-gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate', '3.0.6'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

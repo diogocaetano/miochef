@@ -1,8 +1,6 @@
 <div class="row">
-  <div class="col-lg-12">
-    <a href="/<%= plural_table_name %>/new">
-        <button type="button" class="btn btn-primary">Adicionar <%= human_name %></button>
-    </a>
+  <div class="col-lg-12">    
+    <%%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar <%= human_name %></button>"), new_<%= singular_table_name %>_path %>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">

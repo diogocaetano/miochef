@@ -1,8 +1,6 @@
 <div class="col-lg-12">
   <%%= form_for(@<%= singular_table_name %>) do |f| %>  
-  <a href="/<%=plural_table_name%>">
-      <button type="button" class="btn btn-default">Voltar</button>
-  </a>
+  <%%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), <%= plural_table_name %>_path %>
   <div class="panel"></div>
   <section class="panel">
     <header class="panel-heading">

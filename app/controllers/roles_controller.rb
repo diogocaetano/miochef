@@ -33,7 +33,7 @@ class RolesController < ApplicationController
     @role.permission_ids = params[:permission_ids]
     respond_to do |format|
       if @role.save
-        format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi atualizado com sucesso.' } } 
+        format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @role }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class RolesController < ApplicationController
   def destroy
     @role.destroy
     respond_to do |format|
-      format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi atualizado com sucesso.' } } 
+      format.html { redirect_to roles_url, :flash =>{:success => 'O perfil foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue

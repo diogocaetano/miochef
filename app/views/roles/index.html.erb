@@ -1,8 +1,6 @@
 <div class="row">
-    <div class="col-lg-12">
-        <a href="/admin/roles/new">
-            <button type="button" class="btn btn-primary">Adicionar</button>
-        </a>
+    <div class="col-lg-12">       
+        <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar</button>"), new_role_path %>
         <div class="pull-right">
             <%= form_tag('/admin/roles', method: 'GET') do -%>
                 <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
@@ -49,7 +47,7 @@
                                                         <div class="pull-left">
                                                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                                                         </div>
-                                                        <a href="/roles/<%=role.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
+                                                        <%= link_to "Confirmar",  role_path(role), :class => 'btn btn-primary', :'data-method' => 'delete'  %>
                                                     </div>
                                                 </div>
                                             </div>

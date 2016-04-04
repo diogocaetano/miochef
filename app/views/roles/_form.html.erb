@@ -1,8 +1,6 @@
 <div class="col-lg-12">
   <%= form_for(@role) do |f| %> 
-  <a href="/roles">
-      <button type="button" class="btn btn-default">Voltar</button>
-  </a>
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), roles_path %>
   <div class="panel"></div>
   <section class="panel">
       <header class="panel-heading">
@@ -17,7 +15,7 @@
       <% end %>
       <div class="panel-body">
               <div class="form-group">
-                  <%= f.label 'Nome' %><br>
+                  <%= f.label 'Nome*' %><br>
                   <%= f.text_field :name, 'class' => 'form-control' %>
               </div>
               <div class="panel-heading">

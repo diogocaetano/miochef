@@ -42,7 +42,7 @@
 	                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
 	            </div>
 	            <!--logo start-->
-	            <a href="index.html" class="logo">Rails<span> Base</span></a>
+	            <a href="/" class="logo">Rails<span> Base</span></a>
 	            <!--logo end-->
 	            
 	            <div class="top-nav ">
@@ -61,7 +61,9 @@
 	                        </a>
 	                        <ul class="dropdown-menu extended logout">
 	                            <div class="log-arrow-up"></div>
-	                            <li><a href="/users_admin/<%=current_user.id%>/edit"><i class=" fa fa-suitcase"></i>Perfil</a></li>
+	                            <li>
+	                            	<%= link_to raw("<i class='fa fa-suitcase'></i> Perfil"), edit_users_admin_path(current_user) %>
+	                            </li>
 	                            <li><%= link_to raw("<i class='fa fa-cog'></i>Editar Senha"), '#modal-change-password', :'data-toggle' => 'modal' %></li>
 	                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
 	                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li> -->
@@ -84,15 +86,9 @@
 	              	<ul class="sidebar-menu" id="nav-accordion">
 	              		<li>
 	              			<% if @module_active == 'dashboard' %>
-                      			<a class="active" href="/">
-                          			<i class="fa fa-dashboard"></i>
-                          			<span>Dashboard</span>
-                      			</a>
+	              				<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path, class: 'active' %>
                       		<% else %>
-                      			<a class="" href="/">
-                          			<i class="fa fa-dashboard"></i>
-                          			<span>Dashboard</span>
-                      			</a>
+                      			<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path %>                      			
                       		<% end %>
                   		</li>
 	                  	<% @categories.each do |category| %>
@@ -107,7 +103,11 @@
 				                      		<% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
 					                      		<ul class="sub">
 					                          		<li class="<%= MenuHelper::is_active_menu(category,entity,@module_active)%>" >
-					                          			<a href="/<%= entity.slug %>"><%= entity.name %></a>
+					                          			<% if entity.slug == "users_admin" %>
+					                          				<%= link_to entity.name, users_admin_index_path %>
+					                          			<% else %>
+					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+					                          			<% end %>
 					                          		</li>
 					                      		</ul>
 					                      	<% end %>
