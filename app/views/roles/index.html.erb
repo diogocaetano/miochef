@@ -1,24 +1,22 @@
 <div class="row">
-    <div class="col-lg-12">
-        <a href="/admin/roles/new">
-            <button type="button" class="btn btn-primary">Adicionar Perfil</button>
-        </a>
+    <div class="col-lg-12">       
+        <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar</button>"), new_role_path %>
         <div class="panel"></div>
         <section class="panel">
-            <% if notice %>
-              <div class="alert alert-block alert-success fade in">
-                  <%= notice %>
-              </div>
-            <% end %>
-            <% if alert %>
-              <div class="alert alert-block alert-danger fade in">
-                  <%= alert %>
-              </div>
-            <% end %>
             <header class="panel-heading">
                 Perfis
+                 <% if @term %>
+                    <div class="pull-right">
+                      <%= link_to raw("<i class='fa fa-times'></i>"), roles_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+                    </div>
+                  <% end %>
             </header>
             <div class="panel-body">
+                <div class="pull-right">
+                    <%= form_tag(roles_path, method: 'GET') do -%>
+                        <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
+                    <% end %>
+                </div>
                 <section id="unseen">
                     <table class="table table-bmoduleed table-striped table-condensed">
                         <thead>
@@ -32,9 +30,10 @@
                                 <tr>
                                   <td><%= role.name %></td>                                  
                                   <td>
-                                    <a href="/admin/roles/<%=role.id%>" class="btn btn-primary"><i class="fa fa-eye"></i></button></a>
-                                    <a href="/admin/roles/<%=role.id%>/edit" class="btn btn-info"><i class="fa fa-pencil"></i></button></a>                                    
-                                    <a data-toggle="modal" href="#delete_role_<%=role.id%>" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a>
+
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), role, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_role_path(role), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_role_'+role.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Deletar'  %>
                                     </td>
                                 </tr>
                                 <div class="modal fade modal-dialog-center in" id="delete_role_<%=role.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;"></div>
@@ -54,7 +53,7 @@
                                                         <div class="pull-left">
                                                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                                                         </div>
-                                                        <a href="/admin/roles/<%=role.id%>" class="btn btn-primary" data-method="delete">Confirmar</a>
+                                                        <%= link_to "Confirmar",  role_path(role), :class => 'btn btn-primary', :'data-method' => 'delete'  %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +61,13 @@
                                     </div>
                             <% end %>
                         </tbody>
-                    </table>                     
+                    </table>
+                    <div class="apple_pagination">
+                        <div class="page_info">
+                            <%= page_entries_info @roles %>
+                        </div>
+                        <%= will_paginate @roles %>
+                    </div>
                 </section>
             </div>
         </section>

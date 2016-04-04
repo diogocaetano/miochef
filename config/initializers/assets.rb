@@ -33,7 +33,7 @@ Rails.application.config.assets.precompile += %w(
 	jquery.quicksearch.js
 	
 	bootstrap-timepicker.js
-	spinner.min.js
+	spinner.js
 	bootstrap-fileupload.js
 	wysihtml5-0.3.0.js
 	bootstrap-wysihtml5.js
@@ -69,4 +69,6 @@ Rails.application.config.assets.precompile += %w(
 	datetimepicker.css
 	bootstrap-tagsinput.css
 	bootstrap-tagsinput-typeahead.css
+
+	digg_pagination.css
 )

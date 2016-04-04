@@ -4,10 +4,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @term = params[:term]
+    @where = []    
+    @where << "users.name LIKE :term"     
+    @where << "roles.name LIKE :term"     
+    @where << "users.email LIKE :term"    
+    @where = @where.join(" OR ")
     if current_user.is_dev
-      return @users = User.all
+      if params[:term].present?
+        return @users = User.joins(:role).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      else
+        return @users = User.all.paginate(:page => params[:page], :per_page => 10)
+      end
+    else
+      if params[:term].present?
+        @users = User.joins(:role).where.not(id: 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      else
+        @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
+      end
     end
-    @users = User.where.not(id: 1).collect {|user| user }    
   end
 
   # GET /users/1
@@ -31,7 +46,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_admin_index_path, notice: 'O usuário foi criado com sucesso.' }
+        format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O usuário foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -45,7 +60,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_admin_index_path, notice: 'O usuário foi atualizado com sucesso.' }
+        format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O usuário foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -59,12 +74,12 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_admin_index_path, notice: 'O Usuário foi removido com sucesso.' }
+      format.html { redirect_to users_admin_index_path, :flash =>{:success => 'O Usuário foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to users_admin_index_path, alert: 'O Usuário não foi removido. Existem associações para o registro.' }
+      format.html { redirect_to users_admin_index_path, :flash =>{:danger =>  'O Usuário não foi removido. Existem associações para o registro.' } }
       format.json { head :no_content }
     end
   end
@@ -73,11 +88,11 @@ class UsersController < ApplicationController
     @user = User.find(user_params[:id])
     if @user.update_with_password(user_params)
       sign_in @user, :bypass => true
-      flash[:notice] = "Senha alterada com sucesso"
-      redirect_to :back
+      flash[:success] = "Senha alterada com sucesso"
+      redirect_to root_path
     else
-      flash[:notice] = "Erro ao editar senha"
-      redirect_to :back
+      flash[:danger] = "Erro ao editar senha"
+      redirect_to root_path
     end
   end
 

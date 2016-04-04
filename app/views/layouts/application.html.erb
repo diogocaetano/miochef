@@ -21,9 +21,12 @@
     	<%= stylesheet_link_tag 'datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
     	<%= stylesheet_link_tag 'summernote', media: 'all', 'data-turbolinks-track' => true %>
 
-	  	<%= stylesheet_link_tag    'multi-select', media: 'all', 'data-turbolinks-track' => true %>		  	
-
+	  	<%= stylesheet_link_tag	'multi-select', media: 'all', 'data-turbolinks-track' => true %>	
+	  	<%= stylesheet_link_tag	'digg_pagination', media: 'all', 'data-turbolinks-track' => true %>		  	
 	  	<%= csrf_meta_tags %>
+
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 	  	<!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
 	    	<!--[if lt IE 9]>
@@ -41,14 +44,16 @@
 	            </div>
 	            <!--logo start-->
 	            <a href="/admin" class="logo">Mio<span> Chef</span></a>
+
 	            <!--logo end-->
 	            
 	            <div class="top-nav ">
 	                <!--search & user info start-->
 	                <ul class="nav pull-right top-menu">
-	                    <!-- <li>
-	                        <input type="text" class="form-control search" placeholder="Search">
-	                    </li> -->
+	                    <li style="line-height: 37px;">
+	                        <i class="fa fa-laptop"></i>
+	                        <%= version %>
+	                    </li>
 	                    <!-- user login dropdown start-->
 	                    <li class="dropdown">
 	                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -58,7 +63,9 @@
 	                        </a>
 	                        <ul class="dropdown-menu extended logout">
 	                            <div class="log-arrow-up"></div>
-	                            <li><a href="/admin/users_admin/<%=current_user.id%>/edit"><i class=" fa fa-suitcase"></i>Perfil</a></li>
+	                            <li>
+	                            	<%= link_to raw("<i class='fa fa-suitcase'></i> Perfil"), edit_users_admin_path(current_user) %>
+	                            </li>
 	                            <li><%= link_to raw("<i class='fa fa-cog'></i>Editar Senha"), '#modal-change-password', :'data-toggle' => 'modal' %></li>
 	                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
 	                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li> -->
@@ -81,15 +88,9 @@
 	              	<ul class="sidebar-menu" id="nav-accordion">
 	              		<li>
 	              			<% if @module_active == 'dashboard' %>
-                      			<a class="active" href="admin">
-                          			<i class="fa fa-dashboard"></i>
-                          			<span>Dashboard</span>
-                      			</a>
+	              				<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path, class: 'active' %>
                       		<% else %>
-                      			<a class="" href="/admin">
-                          			<i class="fa fa-dashboard"></i>
-                          			<span>Dashboard</span>
-                      			</a>
+                      			<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path %>
                       		<% end %>
                   		</li>
 	                  	<% @categories.each do |category| %>
@@ -104,7 +105,11 @@
 				                      		<% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
 					                      		<ul class="sub">
 					                          		<li class="<%= MenuHelper::is_active_menu(category,entity,@module_active)%>" >
-					                          			<a href="/<%= entity.slug %>"><%= entity.name %></a>
+					                          			<% if entity.slug == "users_admin" %>
+					                          				<%= link_to entity.name, users_admin_index_path %>
+					                          			<% else %>
+					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+					                          			<% end %>
 					                          		</li>
 					                      		</ul>
 					                      	<% end %>
@@ -121,6 +126,7 @@
 	      	<!--main content start-->
 	      	<section id="main-content">
 	          	<section class="wrapper">
+	          		<%= render 'layouts/messages' %>
 	              	<%= yield %>
 	          	</section>
 	      	</section>
@@ -129,6 +135,7 @@
       		<!-- Right Slidebar end -->
 		</section>
 		<% else %>
+			<%= render 'layouts/messages' %>
 			<%= yield %>
 		<% end %>
 	</body>
