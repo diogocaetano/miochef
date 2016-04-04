@@ -4,7 +4,7 @@
   <div class="panel"></div>
   <section class="panel">
     <header class="panel-heading">
-       <%=plural_table_name%>
+       <%=plural_table_name.capitalize %>
     </header>
     <%% if @<%= singular_table_name %>.errors.any? %>
       <div class="alert alert-danger">

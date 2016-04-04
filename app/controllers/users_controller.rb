@@ -5,17 +5,23 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @term = params[:term]
+    @where = []    
+    @where << "users.name LIKE :term"     
+    @where << "roles.name LIKE :term"     
+    @where << "users.email LIKE :term"    
+    @where = @where.join(" OR ")
     if current_user.is_dev
       if params[:term].present?
-        return @users = User.joins(:role).where('users.name LIKE ? OR roles.name LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+        return @users = User.joins(:role).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
       else
         return @users = User.all.paginate(:page => params[:page], :per_page => 10)
       end
-    end
-    if params[:term].present?
-      @users = User.joins(:role).where.not(id: 1).where('users.name LIKE ? OR roles.name LIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
     else
-      @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
+      if params[:term].present?
+        @users = User.joins(:role).where.not(id: 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      else
+        @users = User.where.not(id: 1).paginate(:page => params[:page], :per_page => 10)
+      end
     end
   end
 

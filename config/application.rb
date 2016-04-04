@@ -27,5 +27,9 @@ module Base
     ActiveModel::Serializer.setup do |config|
         config.embed = :ids
     end
+
+    config.generators do |g|
+      g.scaffold_controller = "my_scaffold_controller"
+    end
   end
 end
