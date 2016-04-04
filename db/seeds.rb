@@ -116,7 +116,7 @@ Permission.find_or_create_by(entity_id: 10, action_name: 'Visualizar', action: '
 Permission.find_or_create_by(entity_id: 10, action_name: 'Remover', action: 'destroy')
 
 # Pratos - 16/03/2016
-ModulesCategory.find_or_create_by(name: 'Pratos', icon: 'fa fa-spoon')
+ModulesCategory.find_or_create_by(name: 'Pratos', icon: 'fa fa-cutlery')
 pratosCategory = ModulesCategory.find_by(name: 'Pratos')
 
 Entity.find_or_create_by(controller: 'ingredients') do |entity|
