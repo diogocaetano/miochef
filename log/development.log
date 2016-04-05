@@ -7446,3 +7446,493 @@ Processing by PlatesController#index as HTML
   Rendered layouts/_messages.html.erb (0.1ms)
   Rendered users/_change_password.html.erb (4.8ms)
 Completed 200 OK in 1570ms (Views: 1563.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admin/plate_types" for 192.168.50.1 at 2016-04-05 20:06:01 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateTypesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[36mPlateType Load (0.2ms)[0m  [1mSELECT `plate_types`.* FROM `plate_types`[0m
+  Rendered plate_types/index.html.erb within layouts/application (31.7ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.2ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.6ms)
+Completed 200 OK in 1034ms (Views: 1028.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/admin/plate_types" for 192.168.50.1 at 2016-04-05 20:07:58 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateTypesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[35mPlateType Load (0.4ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE (plate_types.name LIKE '%%') LIMIT 10 OFFSET 0
+  [1m[36mPlateType Load (0.7ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE (plate_types.name LIKE '%%')  ORDER BY `plate_types`.`id` ASC LIMIT 1 OFFSET 0[0m
+  Rendered plate_types/index.html.erb within layouts/application (41.0ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.1ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (5.2ms)
+Completed 200 OK in 1329ms (Views: 1238.3ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:01 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:01 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:02 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:02 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:03 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:03 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:04 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:04 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-8016b65180dadf75a32aecc48b52d3890e7654bd94c3d73f61e200855a7023a3.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:05 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datepicker.self-b9a615bbc407e42f5070fce9420a22176c88a2cca4ae6e9b9cf856f00c8d5598.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:05 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/timepicker.self-20f468867de78982fd7657597bbc12003f8089f43591af952e3c875e4b32f9b1.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:06 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/colorpicker.self-71235316e6f609f34773d12ba8171701a9fc09040d434f39ae49e81938e1bf1c.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:06 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-bda99765aabdda1e0287b4d88ef790e7586cea8b4ab12184c68060ee098de627.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:07 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datetimepicker.self-29e491806f68ffc232c1e7fd4541a64490a7fd2ba3d73fbf3784227c7584650a.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:07 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-a74db00bd8e2f1d0a7905f451c708a19e48951c8605025a7720528b61a5e24b0.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:08 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multi-select.self-99ca3cdeb42251c37e97f4dd5c9b2a4dd56e5e869fe7abd9a8f58dbf59253c8f.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:08 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/digg_pagination.self-a0a08ff012d4a4bead757d61270a3b08d26f9efc4d42032994d731cf52c94a6f.css?body=1" for 192.168.50.1 at 2016-04-05 20:08:09 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:09 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:10 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:10 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:11 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.nicescroll.self-7b953faea9dddefb8127454c2039c7835f473cf09862b678963aec043b682cd7.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:11 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:12 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:12 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:13 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskMoney.min.self-ad5a265712799f25828d6b7789c6e0e71837be050b4c4b5db58b79fa472d23ca.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:13 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskedinput.self-1da73cedd7fce78d444ce87d63b379e3570d3ccb9c0e983bba2fe492d81c65d4.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:14 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.multi-select.self-5a42462623f4d5e99e9f6521e6b9e26435cd99d22f295a527ecbd117cdb1f376.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:14 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.quicksearch.self-68152e9984a4f2feb2de66a434073fb6d15f7c29e0f2c757823fa8293ef23e6b.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:15 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:15 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-7542672aef03a1ebd3fde11b2ac7c33b338dd4064aeba286ccff1fe00c7619f2.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:16 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datepicker.self-fed736edf3f3649f87a4c5c49fe87b5485cac7ebdfe9a48c5903e6e1bad4f10e.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:16 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datetimepicker.self-5a5b0585b8f4283364ad5a970b0a9f35d1ff978b0f0b9223155ce88f1f0a41a8.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:17 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-colorpicker.self-9d2dbdaf627ec1b588796d0ddee541ad0b0818cf3ea45f3cee2852077504a197.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:17 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-timepicker.self-d8cf7b9a676392b3383944c7e9373d6cca6b1edf9431fb764bbafa2217d71296.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:18 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-tagsinput.self-0a88b66b1068a6c7ae0da8802635ce6761e0803e67c2dc09f905ad3c81004a63.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:18 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap3-typeahead.self-3492fe65342f3a77c4b616397d066986bb86469efcd86f456a29c1f71e7289f0.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:19 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:20 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:20 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:21 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/common-scripts.self-bb71a316a179041b000fa8bcc66f9e513d4b82e914e61939fa012d3189463e4e.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:21 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:22 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:22 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:23 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:23 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:24 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:24 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:25 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:25 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:26 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:26 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:27 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 192.168.50.1 at 2016-04-05 20:08:27 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admin/plate_accompaniments" for 192.168.50.1 at 2016-04-05 20:08:54 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateAccompanimentsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[35mPlateAccompaniment Load (0.2ms)[0m  SELECT `plate_accompaniments`.* FROM `plate_accompaniments`
+  Rendered plate_accompaniments/index.html.erb within layouts/application (28.9ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (1.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (2.6ms)
+Completed 200 OK in 1027ms (Views: 992.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/admin/plate_accompaniments" for 192.168.50.1 at 2016-04-05 20:10:56 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateAccompanimentsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb (0.7ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mPlateAccompaniment Load (1.0ms)[0m  SELECT  `plate_accompaniments`.* FROM `plate_accompaniments` WHERE (plate_acompaniments.name LIKE '%%') LIMIT 10 OFFSET 0
+Mysql2::Error: Unknown column 'plate_acompaniments.name' in 'where clause': SELECT  `plate_accompaniments`.* FROM `plate_accompaniments` WHERE (plate_acompaniments.name LIKE '%%') LIMIT 10 OFFSET 0
+  Rendered plate_accompaniments/index.html.erb within layouts/application (69.6ms)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 3.3ms)
+
+ActionView::Template::Error (undefined local variable or method `new_plate_acompaniment_path' for #<#<Class:0x0000000b40f730>:0x0000000b40dea8>):
+    1: <%= render file: 'dashboard/dashboard' %>
+    2: <div class="row">
+    3:   <div class="col-lg-12">
+    4:     <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar</button>"), new_plate_acompaniment_path %>
+    5:     <div class="panel"></div>
+    6:     <section class="panel">
+    7:       <header class="panel-heading">
+  app/views/plate_accompaniments/index.html.erb:4:in `_app_views_plate_accompaniments_index_html_erb__3959024942150102561_94396740'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.8ms)
+
+
+Started GET "/admin/plate_accompaniments" for 192.168.50.1 at 2016-04-05 20:11:32 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateAccompanimentsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[35mPlateAccompaniment Load (0.5ms)[0m  SELECT  `plate_accompaniments`.* FROM `plate_accompaniments` WHERE (plate_accompaniments.name LIKE '%%') LIMIT 10 OFFSET 0
+  [1m[36mPlateAccompaniment Load (0.4ms)[0m  [1mSELECT  `plate_accompaniments`.* FROM `plate_accompaniments` WHERE (plate_accompaniments.name LIKE '%%')  ORDER BY `plate_accompaniments`.`id` ASC LIMIT 1 OFFSET 0[0m
+  Rendered plate_accompaniments/index.html.erb within layouts/application (41.9ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.2ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (2.5ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (1.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (14.3ms)
+Completed 200 OK in 2028ms (Views: 1890.6ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:35 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:36 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:36 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:37 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:37 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:38 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:38 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:39 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-8016b65180dadf75a32aecc48b52d3890e7654bd94c3d73f61e200855a7023a3.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:39 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datepicker.self-b9a615bbc407e42f5070fce9420a22176c88a2cca4ae6e9b9cf856f00c8d5598.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:40 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/timepicker.self-20f468867de78982fd7657597bbc12003f8089f43591af952e3c875e4b32f9b1.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:40 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/colorpicker.self-71235316e6f609f34773d12ba8171701a9fc09040d434f39ae49e81938e1bf1c.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:41 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-bda99765aabdda1e0287b4d88ef790e7586cea8b4ab12184c68060ee098de627.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:41 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/datetimepicker.self-29e491806f68ffc232c1e7fd4541a64490a7fd2ba3d73fbf3784227c7584650a.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:42 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-a74db00bd8e2f1d0a7905f451c708a19e48951c8605025a7720528b61a5e24b0.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:42 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/multi-select.self-99ca3cdeb42251c37e97f4dd5c9b2a4dd56e5e869fe7abd9a8f58dbf59253c8f.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:43 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/digg_pagination.self-a0a08ff012d4a4bead757d61270a3b08d26f9efc4d42032994d731cf52c94a6f.css?body=1" for 192.168.50.1 at 2016-04-05 20:11:44 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:44 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:45 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:45 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:46 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.nicescroll.self-7b953faea9dddefb8127454c2039c7835f473cf09862b678963aec043b682cd7.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:46 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:47 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:47 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:48 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskMoney.min.self-ad5a265712799f25828d6b7789c6e0e71837be050b4c4b5db58b79fa472d23ca.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:48 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.maskedinput.self-1da73cedd7fce78d444ce87d63b379e3570d3ccb9c0e983bba2fe492d81c65d4.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:49 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.multi-select.self-5a42462623f4d5e99e9f6521e6b9e26435cd99d22f295a527ecbd117cdb1f376.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:49 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.quicksearch.self-68152e9984a4f2feb2de66a434073fb6d15f7c29e0f2c757823fa8293ef23e6b.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:50 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:50 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datepicker.self-fed736edf3f3649f87a4c5c49fe87b5485cac7ebdfe9a48c5903e6e1bad4f10e.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:51 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-fileupload.self-7542672aef03a1ebd3fde11b2ac7c33b338dd4064aeba286ccff1fe00c7619f2.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:51 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-datetimepicker.self-5a5b0585b8f4283364ad5a970b0a9f35d1ff978b0f0b9223155ce88f1f0a41a8.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:52 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-colorpicker.self-9d2dbdaf627ec1b588796d0ddee541ad0b0818cf3ea45f3cee2852077504a197.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:52 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-timepicker.self-d8cf7b9a676392b3383944c7e9373d6cca6b1edf9431fb764bbafa2217d71296.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:53 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap-tagsinput.self-0a88b66b1068a6c7ae0da8802635ce6761e0803e67c2dc09f905ad3c81004a63.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:53 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/bootstrap3-typeahead.self-3492fe65342f3a77c4b616397d066986bb86469efcd86f456a29c1f71e7289f0.js?body=1" for 192.168.50.1 at 2016-04-05 20:11:54 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
