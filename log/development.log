@@ -3931,3 +3931,1021 @@ Processing by Devise::SessionsController#new as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"0/bmCKJ+VrLBTMfMpurvML39v+zri6TobkuT9+pdMuJJaX07jSiZ4jwHfJkVtI3gtk4X1qid6xnn957GurEMfQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
   Rendered devise/sessions/new.html.erb within layouts/application (0.9ms)
 Completed 200 OK in 572ms (Views: 570.4ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (12.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'addresses'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `addresses`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'api_keys'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `api_keys`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'badges'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `badges`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'badges_chefs'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `badges_chefs`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'chef_types'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `chef_types`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'chefs'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `chefs`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'countries'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `countries`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'daily_menus'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `daily_menus`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'entities'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `entities`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'ingredients'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `ingredients`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'ingredients_plates'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `ingredients_plates`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'modules_categories'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `modules_categories`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'nutritional_tables'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `nutritional_tables`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'permissions'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `permissions`
+  [1m[36m (0.7ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'permissions_roles'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `permissions_roles`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plate_accompaniments'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `plate_accompaniments`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plate_accompaniments_plates'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `plate_accompaniments_plates`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plate_badges'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `plate_badges`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plate_badges_plates'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `plate_badges_plates`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plate_types'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `plate_types`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'plates'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `plates`
+  [1m[36m (0.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'roles'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `roles`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'miochef_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 20:42:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-04-04 20:43:01 -0300
+Processing by DashboardController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 49ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/users/sign_in" for 127.0.0.1 at 2016-04-04 20:43:01 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 2095ms (Views: 2082.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/users/sign_in" for 127.0.0.1 at 2016-04-04 20:43:05 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mp8iLQx+uGmL9bgbUgJf6R7gaABq96r/k+NisMuVMzXHk1lAdTPknEFqM2M8wEUBvNBn3c5/vsno7V/Da5i6eQ==", "user"=>{"email"=>"teste@teste.com.br", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'teste@teste.com.br'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (7.1ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2016-04-04 20:43:05', `sign_in_count` = 2, `updated_at` = '2016-04-04 20:43:05' WHERE `users`.`id` = 2[0m
+  [1m[35m (2.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 133ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-04-04 20:43:05 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.4ms)
+  [1m[35mModulesCategory Load (4.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (1.7ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 12.3ms)
+
+ActionView::Template::Error (undefined method `admin/roles_path' for #<Module:0x007fc0bc32fc38>):
+    108: 					                          			<% if entity.slug == "users_admin" %>
+    109: 					                          				<%= link_to entity.name, users_admin_index_path %>
+    110: 					                          			<% else %>
+    111: 					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+    112: 					                          			<% end %>
+    113: 					                          		</li>
+    114: 					                      		</ul>
+  app/views/layouts/application.html.erb:111:in `block (2 levels) in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:104:in `block in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:96:in `_app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/controllers/dashboard_controller.rb:3:in `index'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (26.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.9ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (150.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-04-04 20:50:24 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (1.1ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 2.8ms)
+
+ActionView::Template::Error (undefined method `admin/users_admin_path' for #<Module:0x007fc0bc32fc38>):
+    108: 					                          			<% if entity.slug == "users_admin" %>
+    109: 					                          				<%= link_to entity.name, users_admin_index_path %>
+    110: 					                          			<% else %>
+    111: 					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+    112: 					                          			<% end %>
+    113: 					                          		</li>
+    114: 					                      		</ul>
+  app/views/layouts/application.html.erb:111:in `block (2 levels) in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:104:in `block in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:96:in `_app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/controllers/dashboard_controller.rb:3:in `index'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (133.6ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-04-04 20:52:03 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[35mModulesCategory Load (0.4ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (0.8ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 3.4ms)
+
+ActionView::Template::Error (undefined method `admin/countries_path' for #<Module:0x007fc0bc32fc38>):
+    108: 					                          			<% if entity.slug == "users_admin" %>
+    109: 					                          				<%= link_to entity.name, users_admin_index_path %>
+    110: 					                          			<% else %>
+    111: 					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+    112: 					                          			<% end %>
+    113: 					                          		</li>
+    114: 					                      		</ul>
+  app/views/layouts/application.html.erb:111:in `block (2 levels) in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:104:in `block in _app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/views/layouts/application.html.erb:96:in `_app_views_layouts_application_html_erb___3631664472729049793_70232877143100'
+  app/controllers/dashboard_controller.rb:3:in `index'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (75.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.5ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2016-04-04 20:52:42 -0300
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb within layouts/application (0.1ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (0.9ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (16.0ms)
+Completed 200 OK in 306ms (Views: 298.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-fileupload.self-8016b65180dadf75a32aecc48b52d3890e7654bd94c3d73f61e200855a7023a3.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/datepicker.self-b9a615bbc407e42f5070fce9420a22176c88a2cca4ae6e9b9cf856f00c8d5598.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/timepicker.self-20f468867de78982fd7657597bbc12003f8089f43591af952e3c875e4b32f9b1.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/colorpicker.self-71235316e6f609f34773d12ba8171701a9fc09040d434f39ae49e81938e1bf1c.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/daterangepicker.self-bda99765aabdda1e0287b4d88ef790e7586cea8b4ab12184c68060ee098de627.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/datetimepicker.self-29e491806f68ffc232c1e7fd4541a64490a7fd2ba3d73fbf3784227c7584650a.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/summernote.self-a74db00bd8e2f1d0a7905f451c708a19e48951c8605025a7720528b61a5e24b0.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/multi-select.self-99ca3cdeb42251c37e97f4dd5c9b2a4dd56e5e869fe7abd9a8f58dbf59253c8f.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/digg_pagination.self-a0a08ff012d4a4bead757d61270a3b08d26f9efc4d42032994d731cf52c94a6f.css?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-7b953faea9dddefb8127454c2039c7835f473cf09862b678963aec043b682cd7.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.maskMoney.min.self-ad5a265712799f25828d6b7789c6e0e71837be050b4c4b5db58b79fa472d23ca.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.maskedinput.self-1da73cedd7fce78d444ce87d63b379e3570d3ccb9c0e983bba2fe492d81c65d4.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.multi-select.self-5a42462623f4d5e99e9f6521e6b9e26435cd99d22f295a527ecbd117cdb1f376.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/jquery.quicksearch.self-68152e9984a4f2feb2de66a434073fb6d15f7c29e0f2c757823fa8293ef23e6b.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-fileupload.self-7542672aef03a1ebd3fde11b2ac7c33b338dd4064aeba286ccff1fe00c7619f2.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-datepicker.self-fed736edf3f3649f87a4c5c49fe87b5485cac7ebdfe9a48c5903e6e1bad4f10e.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-datetimepicker.self-5a5b0585b8f4283364ad5a970b0a9f35d1ff978b0f0b9223155ce88f1f0a41a8.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-colorpicker.self-9d2dbdaf627ec1b588796d0ddee541ad0b0818cf3ea45f3cee2852077504a197.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-timepicker.self-d8cf7b9a676392b3383944c7e9373d6cca6b1edf9431fb764bbafa2217d71296.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap-tagsinput.self-0a88b66b1068a6c7ae0da8802635ce6761e0803e67c2dc09f905ad3c81004a63.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/bootstrap3-typeahead.self-3492fe65342f3a77c4b616397d066986bb86469efcd86f456a29c1f71e7289f0.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/common-scripts.self-bb71a316a179041b000fa8bcc66f9e513d4b82e914e61939fa012d3189463e4e.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 127.0.0.1 at 2016-04-04 20:52:43 -0300
+
+
+Started GET "/admin/chefs" for 127.0.0.1 at 2016-04-04 21:04:32 -0300
+Processing by ChefsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'chefs'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.5ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 8 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 50 AND `permissions_roles`.`role_id` = 2
+  [1m[36mChef Load (0.5ms)[0m  [1mSELECT `chefs`.* FROM `chefs`[0m
+  [1m[35mChefType Load (0.4ms)[0m  SELECT  `chef_types`.* FROM `chef_types` WHERE `chef_types`.`id` = 1 LIMIT 1
+  [1m[36mCountry Load (0.8ms)[0m  [1mSELECT  `countries`.* FROM `countries` WHERE `countries`.`id` = 1 LIMIT 1[0m
+  Rendered chefs/_activate_deactivate_chef_modal.html (1.7ms)
+  Rendered addresses/_form.html.erb (8.8ms)
+  Rendered chefs/index.html.erb within layouts/application (60.1ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (1.2ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+  [1m[36mEntity Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.8ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (3.9ms)
+Completed 200 OK in 503ms (Views: 401.4ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/admin/chef_addresses/1" for 127.0.0.1 at 2016-04-04 21:04:34 -0300
+Processing by AddressesController#index as HTML
+  Parameters: {"chef_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 57 AND `permissions_roles`.`role_id` = 2
+  [1m[36mChef Load (0.3ms)[0m  [1mSELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT `addresses`.* FROM `addresses`  ORDER BY main desc, created_at asc
+  Rendered addresses/index.html.erb within layouts/application (3.3ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.8ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (1.6ms)
+Completed 200 OK in 263ms (Views: 250.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/admin/addresses/3/edit" for 127.0.0.1 at 2016-04-04 21:04:38 -0300
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.5ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'edit'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 60 AND `permissions_roles`.`role_id` = 2[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1[0m  [["id", "3"]]
+  [1m[35mChef Load (0.3ms)[0m  SELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1
+  Rendered addresses/_form.html.erb (6.8ms)
+  Rendered addresses/edit.html.erb within layouts/application (8.5ms)
+  [1m[36mModulesCategory Load (0.3ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.6ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (1.1ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (1.8ms)
+Completed 200 OK in 288ms (Views: 272.8ms | ActiveRecord: 7.5ms)
+
+
+Started PATCH "/admin/addresses/3" for 127.0.0.1 at 2016-04-04 21:04:41 -0300
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rafz1e7SQc60MSlOC/P0Q3sn64L7KfwxFleLFkrJ+2OAjQ03XdNKwSyPLPbbPGQ0Ax4tSpOSn1TnEH9JOj5mQ==", "address"=>{"chef_id"=>"1", "public_place"=>"Rua Luis Carlos da Fonseca", "number"=>"8", "neighborhood"=>"Timbi", "city"=>"Camaragibe", "state"=>"PE", "zip_code"=>"54786-130", "complement"=>"Céu Azul", "main"=>"1"}, "commit"=>"Salvar", "id"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mEntity Load (0.4ms)[0m  [1mSELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1[0m
+  [1m[35mPermission Load (0.5ms)[0m  SELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'update'  ORDER BY `permissions`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 61 AND `permissions_roles`.`role_id` = 2[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1
+  [1m[36mChef Load (0.4ms)[0m  [1mSELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `addresses` SET `addresses`.`main` = 0[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.7ms)
+
+NoMethodError (undefined method `where' for 3:Fixnum):
+  app/models/address.rb:22:in `update_main_address'
+  app/controllers/addresses_controller.rb:49:in `block in update'
+  app/controllers/addresses_controller.rb:48:in `update'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.5ms)
+
+
+Started PATCH "/admin/addresses/3" for 127.0.0.1 at 2016-04-04 21:05:02 -0300
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rafz1e7SQc60MSlOC/P0Q3sn64L7KfwxFleLFkrJ+2OAjQ03XdNKwSyPLPbbPGQ0Ax4tSpOSn1TnEH9JOj5mQ==", "address"=>{"chef_id"=>"1", "public_place"=>"Rua Luis Carlos da Fonseca", "number"=>"8", "neighborhood"=>"Timbi", "city"=>"Camaragibe", "state"=>"PE", "zip_code"=>"54786-130", "complement"=>"Céu Azul", "main"=>"1"}, "commit"=>"Salvar", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'update'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 61 AND `permissions_roles`.`role_id` = 2
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1[0m
+  [1m[35mChef Load (0.3ms)[0m  SELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 7.1ms)
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/address.rb:22:in `update_main_address'
+  app/controllers/addresses_controller.rb:49:in `block in update'
+  app/controllers/addresses_controller.rb:48:in `update'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.3ms)
+
+
+Started PATCH "/admin/addresses/3" for 127.0.0.1 at 2016-04-04 21:06:40 -0300
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rafz1e7SQc60MSlOC/P0Q3sn64L7KfwxFleLFkrJ+2OAjQ03XdNKwSyPLPbbPGQ0Ax4tSpOSn1TnEH9JOj5mQ==", "address"=>{"chef_id"=>"1", "public_place"=>"Rua Luis Carlos da Fonseca", "number"=>"8", "neighborhood"=>"Timbi", "city"=>"Camaragibe", "state"=>"PE", "zip_code"=>"54786-130", "complement"=>"Céu Azul", "main"=>"1"}, "commit"=>"Salvar", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'update'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 61 AND `permissions_roles`.`role_id` = 2
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1[0m
+  [1m[35mChef Load (0.3ms)[0m  SELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 7.3ms)
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/address.rb:22:in `update_main_address'
+  app/controllers/addresses_controller.rb:49:in `block in update'
+  app/controllers/addresses_controller.rb:48:in `update'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.1ms)
+
+
+Started PATCH "/admin/addresses/3" for 127.0.0.1 at 2016-04-04 21:06:51 -0300
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rafz1e7SQc60MSlOC/P0Q3sn64L7KfwxFleLFkrJ+2OAjQ03XdNKwSyPLPbbPGQ0Ax4tSpOSn1TnEH9JOj5mQ==", "address"=>{"chef_id"=>"1", "public_place"=>"Rua Luis Carlos da Fonseca", "number"=>"8", "neighborhood"=>"Timbi", "city"=>"Camaragibe", "state"=>"PE", "zip_code"=>"54786-130", "complement"=>"Céu Azul", "main"=>"1"}, "commit"=>"Salvar", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'update'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 61 AND `permissions_roles`.`role_id` = 2
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1[0m
+  [1m[35mChef Load (0.3ms)[0m  SELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 7.4ms)
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/models/address.rb:22:in `update_main_address'
+  app/controllers/addresses_controller.rb:49:in `block in update'
+  app/controllers/addresses_controller.rb:48:in `update'
+
+
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.2ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.9ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/danilosoares/.rvm/gems/ruby-2.2.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (141.1ms)
+
+
+Started PATCH "/admin/addresses/3" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Rafz1e7SQc60MSlOC/P0Q3sn64L7KfwxFleLFkrJ+2OAjQ03XdNKwSyPLPbbPGQ0Ax4tSpOSn1TnEH9JOj5mQ==", "address"=>{"chef_id"=>"1", "public_place"=>"Rua Luis Carlos da Fonseca", "number"=>"8", "neighborhood"=>"Timbi", "city"=>"Camaragibe", "state"=>"PE", "zip_code"=>"54786-130", "complement"=>"Céu Azul", "main"=>"1"}, "commit"=>"Salvar", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.4ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'update'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 61 AND `permissions_roles`.`role_id` = 2
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 3 LIMIT 1[0m
+  [1m[35mChef Load (0.4ms)[0m  SELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `addresses` SET `addresses`.`main` = 0 WHERE `addresses`.`chef_id` = 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `addresses` SET `main` = 1, `updated_at` = '2016-04-04 21:07:34' WHERE `addresses`.`id` = 3[0m
+  [1m[35m (3.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/chefs
+Completed 302 Found in 121ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/admin/chefs" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+Processing by ChefsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'chefs'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.5ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 8 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 50 AND `permissions_roles`.`role_id` = 2
+  [1m[36mChef Load (0.4ms)[0m  [1mSELECT `chefs`.* FROM `chefs`[0m
+  [1m[35mChefType Load (0.3ms)[0m  SELECT  `chef_types`.* FROM `chef_types` WHERE `chef_types`.`id` = 1 LIMIT 1
+  [1m[36mCountry Load (0.3ms)[0m  [1mSELECT  `countries`.* FROM `countries` WHERE `countries`.`id` = 1 LIMIT 1[0m
+  Rendered chefs/_activate_deactivate_chef_modal.html (0.7ms)
+  Rendered addresses/_form.html.erb (4.9ms)
+  Rendered chefs/index.html.erb within layouts/application (34.1ms)
+  [1m[35mModulesCategory Load (0.3ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1[0m
+  [1m[35mPermission Load (1.2ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.4ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.3ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (4.8ms)
+Completed 200 OK in 357ms (Views: 338.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/bootstrap.min.self-ee3b4c1a50ba2f8b8d71962e03eef4f020b58bcb1fd439362b00f286c4829c5b.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/bootstrap-reset.self-0041ea5f17340ffa78420a970f87010aea0c7feb8eb2901587cfe4787420c439.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/font-awesome.self-c7663af81686af441cc9e4cc9d14bd386f6301f864a621c0d5a848c59a6eb97c.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-2588df1cccc4e3d65334f2fe09456f7944b5ef22a67b7bf1ff0eb6e9e7025937.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/owl.carousel.self-cc206969bbf0a02eead4dafe3487a8f00b538fb53674b9c842aa5c38b61db59f.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/slidebars.self-3e4a062f1e0f91770ad6aebc991436d97b3313e8b28e465f0c05d7fec3e2da39.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/style.self-6654766980724504f0591bab45beb66b6a4587f7b6399978f9e49fc161877cc5.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/style-responsive.self-d54682cb298899b53e68e7316a2b89adb93929d4c1aaf2a52a48eae33db01c2f.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/bootstrap-fileupload.self-8016b65180dadf75a32aecc48b52d3890e7654bd94c3d73f61e200855a7023a3.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/datepicker.self-b9a615bbc407e42f5070fce9420a22176c88a2cca4ae6e9b9cf856f00c8d5598.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/timepicker.self-20f468867de78982fd7657597bbc12003f8089f43591af952e3c875e4b32f9b1.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/daterangepicker.self-bda99765aabdda1e0287b4d88ef790e7586cea8b4ab12184c68060ee098de627.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/datetimepicker.self-29e491806f68ffc232c1e7fd4541a64490a7fd2ba3d73fbf3784227c7584650a.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:34 -0300
+
+
+Started GET "/assets/summernote.self-a74db00bd8e2f1d0a7905f451c708a19e48951c8605025a7720528b61a5e24b0.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/colorpicker.self-71235316e6f609f34773d12ba8171701a9fc09040d434f39ae49e81938e1bf1c.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/multi-select.self-99ca3cdeb42251c37e97f4dd5c9b2a4dd56e5e869fe7abd9a8f58dbf59253c8f.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/digg_pagination.self-a0a08ff012d4a4bead757d61270a3b08d26f9efc4d42032994d731cf52c94a6f.css?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.self-3b980a22cc7f1242cdc4eb4dc9fbdd7912920de0fac9d556369c02f85d2db918.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.dcjqaccordion.2.7.self-ec24442953405a2d84bdb74ef3335eaa53a71af703374ef51afedebeb9e52284.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.scrollTo.min.self-34f6bc7d9d78eaa806b5fc879062f800b416c6e6fce3ee94357af16a965b8a95.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.nicescroll.self-7b953faea9dddefb8127454c2039c7835f473cf09862b678963aec043b682cd7.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.sparkline.self-4d672eb38f9a5e8604b36dc36aa191cf24389db6f37187816e9d8b10fbe9aa45.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.easy-pie-chart.self-4169023a4699a83798d1bcd6153dffc8dea1b42bd0cbd8d733047e0de1c986e3.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.customSelect.min.self-3e263ca25714853fe667892f4af75d3043f16e7267309c413f93b30c3eeff810.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.maskMoney.min.self-ad5a265712799f25828d6b7789c6e0e71837be050b4c4b5db58b79fa472d23ca.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.maskedinput.self-1da73cedd7fce78d444ce87d63b379e3570d3ccb9c0e983bba2fe492d81c65d4.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.multi-select.self-5a42462623f4d5e99e9f6521e6b9e26435cd99d22f295a527ecbd117cdb1f376.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/jquery.quicksearch.self-68152e9984a4f2feb2de66a434073fb6d15f7c29e0f2c757823fa8293ef23e6b.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap.min.self-07b979e5023f465c961e1617dc66732d7a25480900cdff80c9a7842f1307d65e.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-fileupload.self-7542672aef03a1ebd3fde11b2ac7c33b338dd4064aeba286ccff1fe00c7619f2.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-datepicker.self-fed736edf3f3649f87a4c5c49fe87b5485cac7ebdfe9a48c5903e6e1bad4f10e.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-datetimepicker.self-5a5b0585b8f4283364ad5a970b0a9f35d1ff978b0f0b9223155ce88f1f0a41a8.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-colorpicker.self-9d2dbdaf627ec1b588796d0ddee541ad0b0818cf3ea45f3cee2852077504a197.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-timepicker.self-d8cf7b9a676392b3383944c7e9373d6cca6b1edf9431fb764bbafa2217d71296.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap-tagsinput.self-0a88b66b1068a6c7ae0da8802635ce6761e0803e67c2dc09f905ad3c81004a63.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/bootstrap3-typeahead.self-3492fe65342f3a77c4b616397d066986bb86469efcd86f456a29c1f71e7289f0.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/respond.min.self-6cec2f9b27ca3fae77c7375a98cdd5e269a359c5fa36f31de08c7acbae586619.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/slidebars.min.self-a731648edc7b76d08364bfc0019c0ba865dd53ecf6786214b22a581de9c81711.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/common-scripts.self-bb71a316a179041b000fa8bcc66f9e513d4b82e914e61939fa012d3189463e4e.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/sparkline-chart.self-604adc471594b605eef1c2c95eab100e2639b451cbff3fc76d010146c09475ba.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/easy-pie-chart.self-45cace5bbe9d4bd0512bebb7acb354376f3eba53c66b42eacd4328c876787785.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/count.self-a60c47bbe262e41fa76e0cf09d7a31b023f5be3c3b83c9c0b8ffd8b0a607642d.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 127.0.0.1 at 2016-04-04 21:07:35 -0300
+
+
+Started GET "/admin/chef_addresses/1" for 127.0.0.1 at 2016-04-04 21:07:41 -0300
+Processing by AddressesController#index as HTML
+  Parameters: {"chef_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mEntity Load (0.5ms)[0m  SELECT  `entities`.* FROM `entities` WHERE `entities`.`controller` = 'addresses'  ORDER BY `entities`.`id` ASC LIMIT 1
+  [1m[36mPermission Load (0.5ms)[0m  [1mSELECT  `permissions`.* FROM `permissions` WHERE `permissions`.`entity_id` = 9 AND `permissions`.`action` = 'index'  ORDER BY `permissions`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `permissions_roles` WHERE `permissions_roles`.`permission_id` = 57 AND `permissions_roles`.`role_id` = 2
+  [1m[36mChef Load (0.4ms)[0m  [1mSELECT  `chefs`.* FROM `chefs` WHERE `chefs`.`id` = 1 LIMIT 1[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT `addresses`.* FROM `addresses`  ORDER BY main desc, created_at asc
+  Rendered addresses/index.html.erb within layouts/application (2.4ms)
+  [1m[36mModulesCategory Load (0.4ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.5ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 2 LIMIT 1
+  [1m[36mPermission Load (0.6ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.3ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.0ms)
+Completed 200 OK in 270ms (Views: 255.2ms | ActiveRecord: 7.3ms)
