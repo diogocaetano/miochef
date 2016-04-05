@@ -7136,3 +7136,313 @@ Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0
 
 Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:35 +0000
 Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admin/plate_types" for 192.168.50.1 at 2016-04-05 19:59:20 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateTypesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[36mPlateType Load (0.2ms)[0m  [1mSELECT `plate_types`.* FROM `plate_types`[0m
+  Rendered plate_types/index.html.erb within layouts/application (29.3ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.1ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.0ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (2.3ms)
+Completed 200 OK in 1099ms (Views: 1064.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/plates" for 192.168.50.1 at 2016-04-05 20:02:46 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mPlate Load (1.2ms)[0m  SELECT  `plates`.* FROM `plates` WHERE (plates.name LIKE '%%') LIMIT 10 OFFSET 0
+Mysql2::Error: Unknown column 'plates.name' in 'where clause': SELECT  `plates`.* FROM `plates` WHERE (plates.name LIKE '%%') LIMIT 10 OFFSET 0
+  Rendered plates/index.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'plates.name' in 'where clause': SELECT  `plates`.* FROM `plates` WHERE (plates.name LIKE '%%') LIMIT 10 OFFSET 0):
+    30:                                 <th colspan='3'>Ações</th>
+    31:               </tr>
+    32:             </thead>
+    33:             <tbody>
+    34:               <% @plates.each do |plate| %>
+    35:                 <tr>
+    36:                                       <td><%= plate.title %></td>
+  app/views/plates/index.html.erb:33:in `_app_views_plates_index_html_erb___1795823344553282097_95339360'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/admin/plates" for 192.168.50.1 at 2016-04-05 20:02:59 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mPlate Load (0.4ms)[0m  SELECT  `plates`.* FROM `plates` WHERE (plates.title LIKE '%%') LIMIT 10 OFFSET 0
+  [1m[36mPlateType Load (0.1ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (1.2ms)
+  Rendered plates/_daily_menu_modal.html.erb (7.0ms)
+  Rendered plates/_nutritional_table_modal.html.erb (7.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.4ms)
+  Rendered plates/_daily_menu_modal.html.erb (5.6ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (3.9ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.6ms)
+  [1m[35mPlate Load (0.4ms)[0m  SELECT  `plates`.* FROM `plates` WHERE (plates.title LIKE '%%')  ORDER BY `plates`.`id` ASC LIMIT 1 OFFSET 0
+  Rendered plates/index.html.erb within layouts/application (414.2ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.2ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (7.1ms)
+Completed 200 OK in 1776ms (Views: 1667.7ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:02 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:02 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:03 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:03 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:04 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:04 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:05 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:05 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:06 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 192.168.50.1 at 2016-04-05 20:03:06 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admin/plates" for 192.168.50.1 at 2016-04-05 20:04:48 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  [1m[35mUser Load (2.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mPlate Load (0.5ms)[0m  [1mSELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%%' OR plates.description LIKE '%%' OR plates.price LIKE '%%' OR plates.available_quantity LIKE '%%' OR plate_types.name LIKE '%%') LIMIT 10 OFFSET 0[0m
+  [1m[35mPlateType Load (0.2ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.4ms)
+  Rendered plates/_daily_menu_modal.html.erb (6.3ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.5ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.7ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.4ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.2ms)
+  [1m[36mPlate Load (0.9ms)[0m  [1mSELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%%' OR plates.description LIKE '%%' OR plates.price LIKE '%%' OR plates.available_quantity LIKE '%%' OR plate_types.name LIKE '%%')  ORDER BY `plates`.`id` ASC LIMIT 1 OFFSET 0[0m
+  Rendered plates/index.html.erb within layouts/application (407.6ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.3ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.2ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (6.0ms)
+Completed 200 OK in 1919ms (Views: 1740.4ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:51 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:52 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:52 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:53 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:53 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:54 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:54 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:55 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:55 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 192.168.50.1 at 2016-04-05 20:04:56 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/admin/plates?utf8=%E2%9C%93&term=01" for 192.168.50.1 at 2016-04-05 20:04:57 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"01"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mPlate Load (0.5ms)[0m  SELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%01%' OR plates.description LIKE '%01%' OR plates.price LIKE '%01%' OR plates.available_quantity LIKE '%01%' OR plate_types.name LIKE '%01%') LIMIT 10 OFFSET 0
+  [1m[36mPlateType Load (0.2ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (5.0ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.2ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.8ms)
+  Rendered plates/_nutritional_table_modal.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (5.0ms)
+  Rendered plates/_nutritional_table_modal.html.erb (4.1ms)
+  [1m[35mPlate Load (1.4ms)[0m  SELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%01%' OR plates.description LIKE '%01%' OR plates.price LIKE '%01%' OR plates.available_quantity LIKE '%01%' OR plate_types.name LIKE '%01%')  ORDER BY `plates`.`id` ASC LIMIT 1 OFFSET 0
+  Rendered plates/index.html.erb within layouts/application (265.1ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.2ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.0ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.8ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.2ms)
+Completed 200 OK in 1299ms (Views: 1291.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/admin/plates?utf8=%E2%9C%93&term=asd" for 192.168.50.1 at 2016-04-05 20:05:08 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  Parameters: {"utf8"=>"✓", "term"=>"asd"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mPlate Load (0.5ms)[0m  [1mSELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%asd%' OR plates.description LIKE '%asd%' OR plates.price LIKE '%asd%' OR plates.available_quantity LIKE '%asd%' OR plate_types.name LIKE '%asd%') LIMIT 10 OFFSET 0[0m
+  [1m[35mPlateType Load (0.1ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.0ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.2ms)
+  [1m[36mPlate Load (0.7ms)[0m  [1mSELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%asd%' OR plates.description LIKE '%asd%' OR plates.price LIKE '%asd%' OR plates.available_quantity LIKE '%asd%' OR plate_types.name LIKE '%asd%')  ORDER BY `plates`.`id` ASC LIMIT 1 OFFSET 0[0m
+  Rendered plates/index.html.erb within layouts/application (85.3ms)
+  [1m[35mModulesCategory Load (0.2ms)[0m  SELECT `modules_categories`.* FROM `modules_categories`
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.2ms)[0m  SELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2
+  [1m[36mEntity Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3
+  [1m[36mEntity Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4
+  [1m[36mEntity Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1[0m
+  [1m[35mEntity Load (0.1ms)[0m  SELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.4ms)
+Completed 200 OK in 1053ms (Views: 1046.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/plates" for 192.168.50.1 at 2016-04-05 20:05:11 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlatesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mPlate Load (0.2ms)[0m  SELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%%' OR plates.description LIKE '%%' OR plates.price LIKE '%%' OR plates.available_quantity LIKE '%%' OR plate_types.name LIKE '%%') LIMIT 10 OFFSET 0
+  [1m[36mPlateType Load (0.1ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (5.2ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.3ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.3ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `plate_types`.* FROM `plate_types` WHERE `plate_types`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered plates/_activate_deactivate_plate_modal.html.erb (0.2ms)
+  Rendered plates/_daily_menu_modal.html.erb (4.1ms)
+  Rendered plates/_nutritional_table_modal.html.erb (3.2ms)
+  [1m[35mPlate Load (0.3ms)[0m  SELECT  `plates`.* FROM `plates` INNER JOIN `plate_types` ON `plate_types`.`id` = `plates`.`plate_type_id` WHERE (plates.title LIKE '%%' OR plates.description LIKE '%%' OR plates.price LIKE '%%' OR plates.available_quantity LIKE '%%' OR plate_types.name LIKE '%%')  ORDER BY `plates`.`id` ASC LIMIT 1 OFFSET 0
+  Rendered plates/index.html.erb within layouts/application (284.3ms)
+  [1m[36mModulesCategory Load (0.0ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.5ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.2ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.2ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (4.8ms)
+Completed 200 OK in 1570ms (Views: 1563.8ms | ActiveRecord: 3.3ms)

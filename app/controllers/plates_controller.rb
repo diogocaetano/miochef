@@ -4,7 +4,16 @@ class PlatesController < ApplicationController
   # GET /plates
   # GET /plates.json
   def index
-    @plates = Plate.all
+    @term = params[:term]
+    @where = []    
+    @where << "plates.title LIKE :term"    
+    @where << "plates.description LIKE :term"    
+    @where << "plates.price LIKE :term"    
+    @where << "plates.available_quantity LIKE :term"    
+    @where << "plate_types.name LIKE :term"    
+    @where = @where.join(" OR ")
+
+    @plates = Plate.joins(:plate_type).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /plates/1
