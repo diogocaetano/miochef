@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  modules_categories_id: 
+  modules_category_id: 1
   name: MyString
   slug: MyString
   controller: MyString
   is_dev: false
 
 two:
-  modules_categories_id: 
+  modules_category_id: 2
   name: MyString
   slug: MyString
   controller: MyString

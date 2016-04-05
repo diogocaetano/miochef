@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  role_id: 
-  name: MyString
-  is_admin: false
-  is_representative: false
+  role_id: 1
+  name: Teste
+  email: teste@teste.com.br
+  is_dev: false
 
 two:
-  role_id: 
-  name: MyString
-  is_admin: false
-  is_representative: false
+  role_id: 2
+  name: Diogo
+  email: diogo@diogo.com.br
+  is_dev: false

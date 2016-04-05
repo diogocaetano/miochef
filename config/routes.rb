@@ -23,9 +23,7 @@ Rails.application.routes.draw do
     resources :ingredients
     resources :badges
     resources :countries
-
   
-  scope '/admin' do
     resources  :users_admin, :controller => 'users' do
       collection do
         patch 'update_password'

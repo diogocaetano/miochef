@@ -13,14 +13,14 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: homestead
-  password: secret
+  username: <%= ENV['BASE_DATABASE_USER'] %>
+  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
+  # username: root
+  # password: root
 
 development:
   <<: *default
   database: miochef_development
-  username: root
-  password: root
 
 teste:
   <<: *default

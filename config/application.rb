@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+    require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
@@ -33,6 +33,9 @@ module Base
 
     config.generators do |g|
       g.scaffold_controller = "my_scaffold_controller"
+      g.test_framework  :rspec
+      g.stylesheets  false
+      g.javascripts  false
     end
   end
 end

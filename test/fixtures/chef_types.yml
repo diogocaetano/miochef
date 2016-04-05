@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  chef_id: 
   name: MyString
 
 two:
-  chef_id: 
   name: MyString

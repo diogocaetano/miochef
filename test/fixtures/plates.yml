@@ -7,11 +7,8 @@ one:
   available_quantity: 1
   photo: MyString
   active: 1
-  chef_id: 
-  plate_type_id: 
-  plate_badge_id: 
-  ingredients_id: 
-  plate_accompaniment_id: 
+  chef_id: 1
+  plate_type_id: 1
 
 two:
   title: MyString
@@ -20,8 +17,5 @@ two:
   available_quantity: 1
   photo: MyString
   active: 1
-  chef_id: 
-  plate_type_id: 
-  plate_badge_id: 
-  ingredients_id: 
-  plate_accompaniment_id: 
+  chef_id: 2
+  plate_type_id: 2
