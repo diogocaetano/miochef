@@ -6994,3 +6994,145 @@ Processing by IngredientsController#show as HTML
   Rendered layouts/_messages.html.erb (0.3ms)
   Rendered users/_change_password.html.erb (2.1ms)
 Completed 200 OK in 1030ms (Views: 1022.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/admin/plate_badges" for 192.168.50.1 at 2016-04-05 19:54:14 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateBadgesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[35mPlateBadge Load (0.1ms)[0m  SELECT `plate_badges`.* FROM `plate_badges`
+  Rendered plate_badges/index.html.erb within layouts/application (34.6ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.7ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.8ms)
+Completed 200 OK in 988ms (Views: 950.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/admin/ingredients" for 192.168.50.1 at 2016-04-05 19:56:00 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by IngredientsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  `ingredients`.* FROM `ingredients` WHERE (ingredients.name LIKE '%%') LIMIT 10 OFFSET 0[0m
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  `ingredients`.* FROM `ingredients` WHERE (ingredients.name LIKE '%%')  ORDER BY `ingredients`.`id` ASC LIMIT 1 OFFSET 0
+  Rendered ingredients/index.html.erb within layouts/application (5.8ms)
+  [1m[36mModulesCategory Load (0.1ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.4ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered users/_change_password.html.erb (2.2ms)
+Completed 200 OK in 960ms (Views: 954.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/plate_badges" for 192.168.50.1 at 2016-04-05 19:57:14 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateBadgesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[36mPlateBadge Load (0.2ms)[0m  [1mSELECT `plate_badges`.* FROM `plate_badges`[0m
+  Rendered plate_badges/index.html.erb within layouts/application (63.4ms)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `total_pages' for #<PlateBadge::ActiveRecord_Relation:0x0000000aca8f00>):
+    68:             </tbody>
+    69:           </table>
+    70:           <div class="apple_pagination">
+    71:             <div class="page_info">
+    72:                 <%= page_entries_info @plate_badges %>
+    73:             </div>
+    74:           <%= will_paginate @plate_badges %>
+  app/views/plate_badges/index.html.erb:71:in `_app_views_plate_badges_index_html_erb__1276096969378126705_85415500'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.2ms)
+
+
+Started GET "/admin/plate_badges" for 192.168.50.1 at 2016-04-05 19:58:28 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PlateBadgesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered dashboard/dashboard.html.erb (0.1ms)
+  [1m[36mPlateBadge Load (0.4ms)[0m  [1mSELECT  `plate_badges`.* FROM `plate_badges` WHERE (plate_badges.name LIKE '%%' OR plate_badges.description LIKE '%%') LIMIT 10 OFFSET 0[0m
+  [1m[35mPlateBadge Load (0.4ms)[0m  SELECT  `plate_badges`.* FROM `plate_badges` WHERE (plate_badges.name LIKE '%%' OR plate_badges.description LIKE '%%')  ORDER BY `plate_badges`.`id` ASC LIMIT 1 OFFSET 0
+  Rendered plate_badges/index.html.erb within layouts/application (39.7ms)
+  [1m[36mModulesCategory Load (0.2ms)[0m  [1mSELECT `modules_categories`.* FROM `modules_categories`[0m
+  [1m[35mEntity Exists (0.1ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 1 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT `permissions`.* FROM `permissions` INNER JOIN `permissions_roles` ON `permissions`.`id` = `permissions_roles`.`permission_id` WHERE `permissions_roles`.`role_id` = 1[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 2 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 2[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 3 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 3[0m
+  [1m[35mEntity Exists (0.2ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 4 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 4[0m
+  [1m[35mEntity Exists (0.3ms)[0m  SELECT  1 AS one FROM `entities` WHERE `entities`.`modules_category_id` = 5 LIMIT 1
+  [1m[36mEntity Load (0.1ms)[0m  [1mSELECT `entities`.* FROM `entities` WHERE `entities`.`modules_category_id` = 5[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered users/_change_password.html.erb (4.7ms)
+Completed 200 OK in 1331ms (Views: 1239.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/assets/moment.min.self-15c54be4767f080665b788b2dea957a11659dfa85f1e713288a10d942d68da9e.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:30 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/owl.carousel.self-daed1ef3679c23175c94dfc19995b272d31f13258041b4390f004b3e2c2c48c3.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:31 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/daterangepicker.self-7e812f036cd6b5fc2ba163885ada96f4b5f43cebfc512586f15aee47f7a4d92f.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:31 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote.self-12a93f5afecabbf7fed7835bc37e1eb80974e10e32604e99cc6f113a119ef8b9.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:32 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/summernote-pt-BR.self-8de6264ae405bb05ad2b4d68d44b7e7f0c56788e455f93a7d732e7f1b3703c74.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:32 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/maskedinput.call.self-a4665d87baf6f80bad9edf1fa9eaabf8aed7556a69805850220e4d52fdf59bfd.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:33 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/spinner.self-58a0d06372ba2e431c3386b2110677fcf18b33f062d72059e15ac8504fbcb3fb.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:33 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/advanced-form-components.self-10b8f3654f961a71cb87b0aec0c311fbbd5228c24ed91111892e0449382f35e5.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:34 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/call.self-66cfca03fa167b93ee46473e50682bf3a07d6688e1f10a4e8824d0a797e6fddf.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:34 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3bb8d0a0aa63811766854683dc3329bad3a15ee182fa34966cfc2424b04e2cb7.js?body=1" for 192.168.50.1 at 2016-04-05 19:58:35 +0000
+Cannot render console from 192.168.50.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255

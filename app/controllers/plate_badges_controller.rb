@@ -4,7 +4,13 @@ class PlateBadgesController < ApplicationController
   # GET /plate_badges
   # GET /plate_badges.json
   def index
-    @plate_badges = PlateBadge.all
+    @term = params[:term]
+    @where = []    
+    @where << "plate_badges.name LIKE :term"    
+    @where << "plate_badges.description LIKE :term"    
+    @where = @where.join(" OR ")
+
+    @plate_badges = PlateBadge.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /plate_badges/1
