@@ -4,7 +4,12 @@ class PlateAccompanimentsController < ApplicationController
   # GET /plate_accompaniments
   # GET /plate_accompaniments.json
   def index
-    @plate_accompaniments = PlateAccompaniment.all
+    @term = params[:term]
+    @where = []    
+    @where << "plate_accompaniments.name LIKE :term"    
+    @where = @where.join(" OR ")
+
+    @plate_accompaniments = PlateAccompaniment.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /plate_accompaniments/1
