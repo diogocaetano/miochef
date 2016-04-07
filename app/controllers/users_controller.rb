@@ -85,7 +85,9 @@ class UsersController < ApplicationController
   end
 
   def update_password
-    @user = User.find(params['user'][:id])
+    id = params['user'][:id];
+    id ||= current_user.id
+    @user = User.find(id)
     if @user.update_with_password(user_params)
       if @user.id == current_user.id 
         sign_in @user, :bypass => true
