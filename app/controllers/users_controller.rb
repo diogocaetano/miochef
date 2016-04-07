@@ -85,15 +85,21 @@ class UsersController < ApplicationController
   end
 
   def update_password
-    @user = User.find(current_user.id)
+    @user = User.find(params['user'][:id])
     if @user.update_with_password(user_params)
-      sign_in @user, :bypass => true
+      if @user.id == current_user.id 
+        sign_in @user, :bypass => true
+      end
       flash[:success] = "Senha alterada com sucesso"
-      redirect_to root_path
+      redirect_to :back
     else
       flash[:danger] = "Erro ao editar senha"
-      redirect_to root_path
+      redirect_to :back
     end
+  end
+
+  def update_all_passwords
+    update_password
   end
 
   protected
