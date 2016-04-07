@@ -44,6 +44,7 @@ class PlatesController < ApplicationController
     @plate = Plate.new(plate_params_with_ingredients_and_accompaniments)
     @types = PlateType.all
     @badges = PlateBadge.all
+    @chefs = Chef.all
 
     respond_to do |format|
       if @plate.save
