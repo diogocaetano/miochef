@@ -97,6 +97,7 @@
 
 <script type="text/javascript">
   window.addEventListener('load', function(){
+
     $('.currency').maskMoney();
 
     $('.currency').keyup(function(e){
@@ -115,6 +116,7 @@
     $('.btn-clear').on('click', function(){
       var group = $(this).data('group');
       $('input.' + group + '[type=text]').val('');
+      $('input[type="hidden"][data-group="' + group + '"]').val('');
     });
   });
 </script>

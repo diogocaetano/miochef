@@ -125,11 +125,11 @@ class PlatesController < ApplicationController
         @nutritional_table = NutritionalTable.create(nutritional_table_params)
         @plate.nutritional_table = @nutritional_table
         @plate.save
-        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
         @plate.nutritional_table.update(nutritional_table_params)
-        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       end
     end
