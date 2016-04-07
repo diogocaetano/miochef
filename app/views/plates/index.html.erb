@@ -34,7 +34,7 @@
               <% @plates.each do |plate| %>
                 <tr>
                                       <td><%= plate.title %></td>
-                                      <td><%= plate.description %></td>
+                                      <td><%= sanitize plate.description %></td>
                                       <td><%= number_to_currency(plate.price, unit: "R$", separator: ",", delimiter: ".") %></td>
                                       <td><%= plate.available_quantity %></td>
                                       <td><%= image_tag(plate.photo.url(:thumb), size: "34x34") %></td>
