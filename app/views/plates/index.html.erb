@@ -41,11 +41,7 @@
                                       <td><%= plate.plate_type.name %></td>
                                     <td>
                     <!-- ATIVAR/DESATIVAR -->
-                    <% if plate.active == 1 %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_plate_'+plate.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
-                    <% else %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_plate_'+plate.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
-                    <% end %>
+                    <%= get_activate_or_deactivate_action_button plate %>
                     <!-- FIM ATIVAR/DESATIVAR -->
                     <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
                     <%= link_to raw("<i class='fa fa-list'></i>"), '#nutritional_table_'+plate.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
