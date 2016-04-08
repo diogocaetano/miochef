@@ -34,6 +34,7 @@ Permission.create(entity_id: 2, action_name: 'Editar', action: 'edit')
 Permission.create(entity_id: 2, action_name: 'Atualizar', action: 'update')
 Permission.create(entity_id: 2, action_name: 'Visualizar', action: 'show')
 Permission.create(entity_id: 2, action_name: 'Remover', action: 'destroy')
+Permission.create(entity_id: 2, action_name: 'Editar Todas as Senhas', action: 'update_all_passwords')
 
 Permission.create(entity_id: 3, action_name: 'Listar', action: 'index')
 Permission.create(entity_id: 3, action_name: 'Criar', action: 'new')
