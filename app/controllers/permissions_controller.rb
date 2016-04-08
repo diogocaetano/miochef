@@ -4,7 +4,12 @@ class PermissionsController < ApplicationController
   # GET /permissions
   # GET /permissions.json
   def index
-    @permissions = Permission.all
+    @term = params[:term]
+    @where = []    
+    @where << "permissions.action_name LIKE :term"
+    @where << "permissions.action LIKE :term"
+    @where = @where.join(" OR ")
+    @permissions = Permission.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /permissions/1

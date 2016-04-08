@@ -1,15 +1,23 @@
 <%= render file: 'dashboard/dashboard' %>
 <div class="row">
   <div class="col-lg-12">
-    <a href="/admin/plate_badges/new">
-        <button type="button" class="btn btn-primary">Adicionar Badge do Prato</button>
-    </a>
+    <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar</button>"), new_plate_badge_path %>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
           Badge do Prato
+          <% if @term %>
+            <div class="pull-right">
+              <%= link_to raw("<i class='fa fa-times'></i>"), plate_badges_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+            </div>
+          <% end %>
       </header>
       <div class="panel-body">
+        <div class="pull-right">
+            <%= form_tag(plate_badges_path, method: 'GET') do -%>
+                <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
+            <% end %>
+        </div>
         <section id="unseen">
           <table class="table table-bmoduleed table-striped table-condensed">
             <thead>
@@ -27,9 +35,9 @@
                                       <td><%= plate_badge.description %></td>
                                       <td><%= image_tag(plate_badge.image.url(:thumb), size: "34x34") %></td>
                                     <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate_badge, :class => 'btn btn-primary' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_badge_path(plate_badge), :class => 'btn btn-info' %>
-                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_badge_'+plate_badge.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate_badge, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_badge_path(plate_badge), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_badge_'+plate_badge.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>
                 <div class="modal fade modal-dialog-center in" id="delete_plate_badge_<%= plate_badge.id.to_s %>"
@@ -59,6 +67,12 @@
               <% end -%>
             </tbody>
           </table>
+          <div class="apple_pagination">
+              <div class="page_info">
+                  <%= page_entries_info @plate_badges %>
+              </div>
+              <%= will_paginate @plate_badges %>
+          </div>
         </section>
       </div>
     </section>

@@ -4,7 +4,11 @@ class BadgesController < ApplicationController
   # GET /badges
   # GET /badges.json
   def index
-    @badges = Badge.all
+    @term = params[:term]
+    @where = []    
+    @where << "badges.name LIKE :term"
+    @where = @where.join(" OR ")
+    @badges = Badge.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /badges/1

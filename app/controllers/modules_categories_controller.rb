@@ -4,7 +4,11 @@ class ModulesCategoriesController < ApplicationController
   # GET /modules_categories
   # GET /modules_categories.json
   def index
-    @modules_categories = ModulesCategory.all
+    @term = params[:term]
+    @where = []    
+    @where << "modules_categories.name LIKE :term"
+    @where = @where.join(" OR ")
+    @modules_categories = ModulesCategory.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /modules_categories/1

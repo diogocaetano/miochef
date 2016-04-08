@@ -6,7 +6,7 @@ class RolesController < ApplicationController
   def index
     @term = params[:term]
     @where = []    
-    @where << "roles.name LIKE :term"     
+    @where << "roles.name LIKE :term"
     @where = @where.join(" OR ")
     if current_user.is_dev
       Role.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
