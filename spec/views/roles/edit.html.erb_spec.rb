@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "roles/edit", type: :view do
   before(:each) do
-    @role = assign(:role, Role.create!())
+    @role = create(:role)
+  	assign(:role, @role)   
+  	@user = create(:user, :role_id => @role.id)
+  	sign_in @user
   end
 
   it "renders the edit role form" do
