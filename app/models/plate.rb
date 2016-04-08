@@ -10,6 +10,8 @@ class Plate < ActiveRecord::Base
 	validates :title, presence: true, uniqueness: true
 	validates :plate_type_id, presence: true
 	validates :description, presence: true, uniqueness: true
+	validates :chef_id, presence: true
+	validates :photo, presence: true
 	has_attached_file :photo, styles: { medium: "300x300>", thumb: "64x64>" }
 	validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 	validates_attachment_size :photo, less_than: 2.megabytes

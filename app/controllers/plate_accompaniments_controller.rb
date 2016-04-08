@@ -6,8 +6,10 @@ class PlateAccompanimentsController < ApplicationController
   def index
     @term = params[:term]
     @where = []    
-    @where << "plate_accompaniments.name LIKE :term"
+
+    @where << "plate_accompaniments.name LIKE :term"    
     @where = @where.join(" OR ")
+
     @plate_accompaniments = PlateAccompaniment.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 

@@ -6,11 +6,15 @@ class PlatesController < ApplicationController
   def index
     @term = params[:term]
     @where = []    
-    @where << "plates.title LIKE :term"
-    @where << "plates.description LIKE :term"
-    @where << "plates.price LIKE :term"
+
+    @where << "plates.title LIKE :term"    
+    @where << "plates.description LIKE :term"    
+    @where << "plates.price LIKE :term"    
+    @where << "plates.available_quantity LIKE :term"    
+    @where << "plate_types.name LIKE :term"    
     @where = @where.join(" OR ")
-    @plates = Plate.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+
+    @plates = Plate.joins(:plate_type).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /plates/1
@@ -41,6 +45,7 @@ class PlatesController < ApplicationController
     @plate = Plate.new(plate_params_with_ingredients_and_accompaniments)
     @types = PlateType.all
     @badges = PlateBadge.all
+    @chefs = Chef.all
 
     respond_to do |format|
       if @plate.save
@@ -121,11 +126,11 @@ class PlatesController < ApplicationController
         @nutritional_table = NutritionalTable.create(nutritional_table_params)
         @plate.nutritional_table = @nutritional_table
         @plate.save
-        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       else
         @plate.nutritional_table.update(nutritional_table_params)
-        format.html { redirect_to @plate, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @plate }
       end
     end

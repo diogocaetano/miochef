@@ -208,6 +208,10 @@ Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Editar'
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Ativar Prato', action: 'activate')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Desativar Prato', action: 'deactivate')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Cardápio do Dia', action: 'daily_menu')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Tabela Nutricional', action: 'nutritional_table')
 
 chefsCategory = Entity.find_by(controller: 'chef_types')
 Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Listar', action: 'index')
