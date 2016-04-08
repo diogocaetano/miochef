@@ -25,11 +25,6 @@
       <% end %>
       <div class="panel-body">
         <div class="pull-right">
-            <%= form_tag(chefs_path, method: 'GET') do -%>
-                <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
-            <% end %>
-        </div>
-        <div class="pull-right">
           <%= form_tag(chefs_path, method: 'GET') do -%>
               <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
           <% end %>
