@@ -6,8 +6,18 @@
            
             <header class="panel-heading">
                 Módulos
+                <% if @term %>
+                    <div class="pull-right">
+                      <%= link_to raw("<i class='fa fa-times'></i>"), entities_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+                    </div>
+                  <% end %>
             </header>
             <div class="panel-body">
+                <div class="pull-right">
+                    <%= form_tag(entities_path, method: 'GET') do -%>
+                        <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
+                    <% end %>
+                </div>
                 <section id="unseen">
                     <table class="table table-bmoduleed table-striped table-condensed">
                         <thead>
@@ -29,9 +39,9 @@
                                   <td><%= entity.controller %></td>
                                   <td><%= entity.is_dev ? 'Sim' : 'Não' %></td>
                                   <td>
-                                    <%= link_to raw("<i class='fa fa-eye'></i>"), entity, :class => 'btn btn-primary' %>
-                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_entity_path(entity), :class => 'btn btn-info' %>
-                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_entity_'+entity.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>                                   
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), entity, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_entity_path(entity), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_entity_'+entity.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>                                   
                                 </tr>
                                 <div class="modal fade modal-dialog-center in" id="delete_entity_<%=entity.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;"></div>
                                         <div class="modal-dialog ">
@@ -58,7 +68,13 @@
                                     </div>
                             <% end %>
                         </tbody>
-                    </table>                     
+                    </table>  
+                    <div class="apple_pagination">
+                        <div class="page_info">
+                            <%= page_entries_info @entities %>
+                        </div>
+                        <%= will_paginate @entities %>
+                    </div>                   
                 </section>
             </div>
         </section>

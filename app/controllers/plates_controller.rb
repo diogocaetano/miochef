@@ -6,6 +6,7 @@ class PlatesController < ApplicationController
   def index
     @term = params[:term]
     @where = []    
+
     @where << "plates.title LIKE :term"    
     @where << "plates.description LIKE :term"    
     @where << "plates.price LIKE :term"    

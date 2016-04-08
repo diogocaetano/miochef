@@ -5,7 +5,17 @@ class ChefsController < ApplicationController
   # GET /chefs.json
   def index
     @address = Address.new
-    @chefs = Chef.all
+    @term = params[:term]
+    @where = []    
+    @where << "chefs.name LIKE :term"
+    @where << "chefs.cpf LIKE :term"
+    @where << "chefs.rg LIKE :term"
+    @where << "chefs.email LIKE :term"
+    @where << "chefs.phone_one LIKE :term"
+    @where << "chefs.specialty LIKE :term"
+    @where << "chefs.naturalness LIKE :term"
+    @where = @where.join(" OR ")
+    @chefs = Chef.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /chefs/1

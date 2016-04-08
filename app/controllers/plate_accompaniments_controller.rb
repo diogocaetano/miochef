@@ -6,6 +6,7 @@ class PlateAccompanimentsController < ApplicationController
   def index
     @term = params[:term]
     @where = []    
+
     @where << "plate_accompaniments.name LIKE :term"    
     @where = @where.join(" OR ")
 

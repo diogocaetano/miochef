@@ -1,7 +1,5 @@
 <div class="col-lg-12">
-  <a href="/admin/permissions">
-      <button type="button" class="btn btn-default">Voltar</button>
-  </a>
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), permissions_path %>
   <div class="panel"></div>
   <section class="panel">
       <% if @permission.errors.any? %>

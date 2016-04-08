@@ -1,8 +1,6 @@
 <div class="col-lg-12">
   <%= form_for(@plate_badge) do |f| %>
-  <a href="/admin/plate_badges">
-      <button type="button" class="btn btn-default">Voltar</button>
-  </a>
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), plate_badges_path %>
   <div class="panel"></div>
   <section class="panel">
   <header class="panel-heading">

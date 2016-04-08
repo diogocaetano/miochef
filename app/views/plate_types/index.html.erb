@@ -16,7 +16,7 @@
       <div class="panel-body">
         <div class="pull-right">
             <%= form_tag(plate_types_path, method: 'GET') do -%>
-                <input type="text" value="<%= @term %>"name="term" class="form-control search" placeholder="Digite o termo...">
+                <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
             <% end %>
         </div>
         <section id="unseen">
@@ -32,9 +32,9 @@
                 <tr>
                                       <td><%= plate_type.name %></td>
                                     <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate_type, :class => 'btn btn-primary' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_type_path(plate_type), :class => 'btn btn-info' %>
-                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_type_'+plate_type.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate_type, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_type_path(plate_type), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_type_'+plate_type.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>
                 <div class="modal fade modal-dialog-center in" id="delete_plate_type_<%= plate_type.id.to_s %>"
@@ -68,7 +68,7 @@
               <div class="page_info">
                   <%= page_entries_info @plate_types %>
               </div>
-            <%= will_paginate @plate_types %>
+              <%= will_paginate @plate_types %>
           </div>
         </section>
       </div>

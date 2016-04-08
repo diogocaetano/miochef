@@ -1,8 +1,6 @@
 <div class="col-lg-12">
-<%= form_for @badge, html: {multipart: true} do |f| %>
-  <a href="/admin/badges">
-      <button type="button" class="btn btn-default">Voltar</button>
-  </a>
+  <%= form_for @badge, html: {multipart: true} do |f| %>
+    <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), badges_path %>
   <div class="panel"></div>
   <section class="panel">
     <header class="panel-heading">

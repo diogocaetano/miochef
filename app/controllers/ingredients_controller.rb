@@ -8,7 +8,7 @@ class IngredientsController < ApplicationController
     @where = []    
     @where << "ingredients.name LIKE :term"    
     @where = @where.join(" OR ")
-
+    
     @ingredients = Ingredient.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 

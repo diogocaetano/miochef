@@ -4,7 +4,11 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.all
+    @term = params[:term]
+    @where = []    
+    @where << "countries.name LIKE :term"
+    @where = @where.join(" OR ")
+    @countries = Country.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /countries/1

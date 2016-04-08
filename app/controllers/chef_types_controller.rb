@@ -4,7 +4,11 @@ class ChefTypesController < ApplicationController
   # GET /chef_types
   # GET /chef_types.json
   def index
-    @chef_types = ChefType.all
+    @term = params[:term]
+    @where = []    
+    @where << "chef_types.name LIKE :term"
+    @where = @where.join(" OR ")
+    @chef_types = ChefType.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /chef_types/1

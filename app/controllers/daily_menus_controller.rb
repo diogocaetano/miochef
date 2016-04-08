@@ -5,7 +5,6 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus.json
   def index
     @daily_menus = DailyMenu.all
-    #@plates = Plate.where(get_today_plate_tag.to_s, 1).where(:active, 1)
     @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
   end
 

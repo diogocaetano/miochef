@@ -4,7 +4,19 @@ class NutritionalTablesController < ApplicationController
   # GET /nutritional_tables
   # GET /nutritional_tables.json
   def index
-    @nutritional_tables = NutritionalTable.all
+    @term = params[:term]
+    @where = []    
+    @where << "nutritional_tables.energetic_value LIKE :term"
+    @where << "nutritional_tables.carbohydrate LIKE :term"
+    @where << "nutritional_tables.protein LIKE :term"
+    @where << "nutritional_tables.total_fat LIKE :term"
+    @where << "nutritional_tables.saturated_fat LIKE :term"
+    @where << "nutritional_tables.trans_fat LIKE :term"
+    @where << "nutritional_tables.dietary_fiber LIKE :term"
+    @where << "nutritional_tables.sodium LIKE :term"
+    @where << "nutritional_tables.iron LIKE :term"
+    @where = @where.join(" OR ")
+    @nutritional_tables = NutritionalTable.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /nutritional_tables/1

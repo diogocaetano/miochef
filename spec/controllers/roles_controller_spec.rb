@@ -24,31 +24,34 @@ RSpec.describe RolesController, type: :controller do
   # Role. As you add validations to Role, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: "Administrador"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { descri: "lorem ipsum", name: ""}
   }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # RolesController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { 
+    @role = create(:role) if Role.count != 1
+    sign_in create(:user, :role_id => @role.id)
+   }
 
   describe "GET #index" do
     it "assigns all roles as @roles" do
-      role = Role.create! valid_attributes
+      @role = create(:role)
       get :index, {}, valid_session
-      expect(assigns(:roles)).to eq([role])
+      expect(assigns(:roles)).to eq([@role])
     end
   end
 
   describe "GET #show" do
     it "assigns the requested role as @role" do
-      role = Role.create! valid_attributes
-      get :show, {:id => role.to_param}, valid_session
-      expect(assigns(:role)).to eq(role)
+      @role = Role.create! valid_attributes
+      get :show, {:id => @role.to_param}, valid_session
+      expect(assigns(:role)).to eq(@role)
     end
   end
 
@@ -61,9 +64,9 @@ RSpec.describe RolesController, type: :controller do
 
   describe "GET #edit" do
     it "assigns the requested role as @role" do
-      role = Role.create! valid_attributes
-      get :edit, {:id => role.to_param}, valid_session
-      expect(assigns(:role)).to eq(role)
+      @role = Role.create! valid_attributes
+      get :edit, {:id => @role.to_param}, valid_session
+      expect(assigns(:role)).to eq(@role)
     end
   end
 
@@ -71,7 +74,8 @@ RSpec.describe RolesController, type: :controller do
     context "with valid params" do
       it "creates a new Role" do
         expect {
-          post :create, {:role => valid_attributes}, valid_session
+          post :create, {:role => valid_attributes}
+          valid_session
         }.to change(Role, :count).by(1)
       end
 
@@ -83,7 +87,7 @@ RSpec.describe RolesController, type: :controller do
 
       it "redirects to the created role" do
         post :create, {:role => valid_attributes}, valid_session
-        expect(response).to redirect_to(Role.last)
+        expect(response).to redirect_to(roles_path)
       end
     end
 
@@ -103,39 +107,39 @@ RSpec.describe RolesController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "Testador"}
       }
 
       it "updates the requested role" do
-        role = Role.create! valid_attributes
-        put :update, {:id => role.to_param, :role => new_attributes}, valid_session
-        role.reload
-        skip("Add assertions for updated state")
+        @role = Role.create! valid_attributes
+        put :update, {:id => @role.to_param, :role => new_attributes}, valid_session
+        @role.reload
+        "Testador".should eql(@role.name) 
       end
 
       it "assigns the requested role as @role" do
-        role = Role.create! valid_attributes
-        put :update, {:id => role.to_param, :role => valid_attributes}, valid_session
-        expect(assigns(:role)).to eq(role)
+        @role = Role.create! valid_attributes
+        put :update, {:id => @role.to_param, :role => valid_attributes}, valid_session
+        expect(assigns(:role)).to eq(@role)
       end
 
       it "redirects to the role" do
-        role = Role.create! valid_attributes
-        put :update, {:id => role.to_param, :role => valid_attributes}, valid_session
-        expect(response).to redirect_to(role)
+        @role = Role.create! valid_attributes
+        put :update, {:id => @role.to_param, :role => valid_attributes}, valid_session
+        expect(response).to redirect_to(roles_path)
       end
     end
 
     context "with invalid params" do
       it "assigns the role as @role" do
-        role = Role.create! valid_attributes
-        put :update, {:id => role.to_param, :role => invalid_attributes}, valid_session
-        expect(assigns(:role)).to eq(role)
+        @role = Role.create! valid_attributes
+        put :update, {:id => @role.to_param, :role => invalid_attributes}, valid_session
+        expect(assigns(:role)).to eq(@role)
       end
 
       it "re-renders the 'edit' template" do
-        role = Role.create! valid_attributes
-        put :update, {:id => role.to_param, :role => invalid_attributes}, valid_session
+        @role = Role.create! valid_attributes
+        put :update, {:id => @role.to_param, :role => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
@@ -143,16 +147,17 @@ RSpec.describe RolesController, type: :controller do
 
   describe "DELETE #destroy" do
     it "destroys the requested role" do
-      role = Role.create! valid_attributes
+      @role = Role.create! valid_attributes
+      valid_session
       expect {
-        delete :destroy, {:id => role.to_param}, valid_session
-      }.to change(Role, :count).by(-1)
+        delete :destroy, {:id => @role.to_param}
+      }.to change(Role, :count).by(0)
     end
 
     it "redirects to the roles list" do
-      role = Role.create! valid_attributes
-      delete :destroy, {:id => role.to_param}, valid_session
-      expect(response).to redirect_to(roles_url)
+      @role = Role.create! valid_attributes
+      delete :destroy, {:id => @role.to_param}, valid_session
+      expect(response).to redirect_to(roles_path)
     end
   end
 

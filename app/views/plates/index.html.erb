@@ -13,9 +13,9 @@
       </header>
       <div class="panel-body">
         <div class="pull-right">
-            <%= form_tag(plates_path, method: 'GET') do -%>
-                <input type="text" value="<%= @term %>"name="term" class="form-control search" placeholder="Digite o termo...">
-            <% end %>
+          <%= form_tag(plates_path, method: 'GET') do -%>
+              <input type="text" value="<%= @term %>" name="term" class="form-control search" placeholder="Digite o termo...">
+          <% end %>
         </div>
         <section id="unseen">
           <table class="table table-bmoduleed table-striped table-condensed">
@@ -43,11 +43,11 @@
                     <!-- ATIVAR/DESATIVAR -->
                     <%= get_activate_or_deactivate_action_button plate %>
                     <!-- FIM ATIVAR/DESATIVAR -->
-                    <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
-                    <%= link_to raw("<i class='fa fa-list'></i>"), '#nutritional_table_'+plate.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate, :class => 'btn btn-primary' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_path(plate), :class => 'btn btn-info' %>
-                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_'+plate.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning tooltips', :'data-toggle' => 'modal', 'data-toggle': 'tooltip', title: 'Prato do dia' %>
+                    <%= link_to raw("<i class='fa fa-list'></i>"), '#nutritional_table_'+plate.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', 'data-toggle': 'tooltip', title: 'Tabela nutricional' %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), plate, :class => 'btn btn-primary tooltips' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_plate_path(plate), :class => 'btn btn-info tooltips' %>
+                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_plate_'+plate.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal',   title: 'Deletar'  %>
                   </td>
                 </tr>
                 <!-- MODAL DELETE -->
@@ -85,9 +85,9 @@
           </table>
           <div class="apple_pagination">
               <div class="page_info">
-                  <%= page_entries_info @ingredients %>
+                  <%= page_entries_info @plates %>
               </div>
-            <%= will_paginate @ingredients %>
+              <%= will_paginate @plates %>
           </div>
         </section>
       </div>

@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all.order('main desc').order('created_at asc')
+    @addresses = Address.where(chef_id: @chef.id).order('main desc').order('created_at asc')
   end
 
   # GET /addresses/1

@@ -5,7 +5,7 @@ class PlateBadgesController < ApplicationController
   # GET /plate_badges.json
   def index
     @term = params[:term]
-    @where = []    
+    @where = []
     @where << "plate_badges.name LIKE :term"    
     @where << "plate_badges.description LIKE :term"    
     @where = @where.join(" OR ")
