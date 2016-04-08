@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources  :users_admin, :controller => 'users' do
       collection do
         patch 'update_password'
+        patch 'update_all_passwords'
       end
     end
 

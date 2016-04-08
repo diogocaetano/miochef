@@ -35,11 +35,13 @@
                                   <td><%= user.email %></td>                                  
                                   <td>
 
-                                    <%= link_to raw("<i class='fa fa-eye'></i>"), users_admin_path(user), :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_users_admin_path(user), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
-                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_user_'+user.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Deletar'  %>
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), users_admin_path(user), :class => 'btn btn-primary tooltips',  'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_users_admin_path(user), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_user_'+user.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
+                                    <%= put_edit_all_users_password_action user %>
                                     </td>
                                 </tr>
+                                <%= render partial:'change_password_action', locals: { user: user } %>
                                 <div class="modal fade modal-dialog-center in" id="delete_user_<%=user.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;"></div>
                                         <div class="modal-dialog ">
                                             <div class="modal-content-wrap">
