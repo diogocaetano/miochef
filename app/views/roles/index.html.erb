@@ -30,8 +30,8 @@
                                 <tr>
                                   <td><%= role.name %></td>                                  
                                   <td>
-                                    <%= link_to raw("<i class='fa fa-eye'></i>"), role, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_role_path(role), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), role, :class => 'btn btn-primary tooltips',  'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_role_path(role), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
                                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_role_'+role.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                                     </td>
                                 </tr>

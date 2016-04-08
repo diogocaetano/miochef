@@ -34,9 +34,9 @@
                     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
                   <% end -%>
                   <td>
-                    <%%= link_to raw("<i class='fa fa-eye'></i>"), <%= singular_table_name %>, :<%= "class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar'"%> %>
-                    <%%= link_to raw("<i class='fa fa-pencil'></i>"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :<%= "class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar'"%> %>
-                    <%%= link_to raw("<i class='fa fa-trash-o '></i>"), <%= "'#delete_"%><%=singular_table_name %><%="_'"%>+<%=singular_table_name %><%=".id.to_s"%>, :<%= "class => 'btn btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Deletar'"%>, :<%= "'data-toggle' => 'modal'"%>  %>
+                    <%%= link_to raw("<i class='fa fa-eye'></i>"), <%= singular_table_name %>, :<%= "class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar'"%> %>
+                    <%%= link_to raw("<i class='fa fa-pencil'></i>"), edit_<%= singular_table_name %>_path(<%= singular_table_name %>), :<%= "class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar'"%> %>
+                    <%%= link_to raw("<i class='fa fa-trash-o '></i>"), <%= "'#delete_"%><%=singular_table_name %><%="_'"%>+<%=singular_table_name %><%=".id.to_s"%>, :<%= "class => 'btn btn-danger tooltips', 'data-placement': 'top', title: 'Deletar'"%>, :<%= "'data-toggle' => 'modal'"%>  %>
                   </td>
                 </tr>
                 <div class="modal fade modal-dialog-center in" id="<%= "delete_" + singular_table_name + "_" %><%%= <%=singular_table_name + ".id.to_s"%> %>"

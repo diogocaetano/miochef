@@ -34,9 +34,9 @@
                                   <td><%= user.name %></td>
                                   <td><%= user.email %></td>                                  
                                   <td>
-                                    <%= link_to raw("<i class='fa fa-eye'></i>"), users_admin_path(user), :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_users_admin_path(user), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
-                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_user_'+user.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Deletar'  %>
+                                    <%= link_to raw("<i class='fa fa-eye'></i>"), users_admin_path(user), :class => 'btn btn-primary tooltips',  'data-placement': 'top', title: 'Visualizar' %>
+                                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_users_admin_path(user), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
+                                    <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_user_'+user.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                                     <%= put_edit_all_users_password_action user %>
                                     </td>
                                 </tr>
