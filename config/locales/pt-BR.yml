@@ -222,6 +222,7 @@ pt-BR:
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
       daily_menu: 'Menu do Dia'
+      request_status: 'Status do Pedido'
     attributes:
       user:
         name: "Nome"
@@ -325,6 +326,8 @@ pt-BR:
         state: "Estado"
         zip_code: "CEP"
         complement: "Complemento"
+      request_status:
+        name: 'Nome'
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

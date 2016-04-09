@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404012602) do
+ActiveRecord::Schema.define(version: 20160409152324) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -222,6 +222,28 @@ ActiveRecord::Schema.define(version: 20160404012602) do
   add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
   add_index "plates", ["nutritional_table_id"], name: "index_plates_on_nutritional_table_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
+
+  create_table "request_statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "client_id",         limit: 4
+    t.integer  "client_address_id", limit: 4
+    t.string   "payment_code",      limit: 255
+    t.datetime "request_date"
+    t.datetime "delivery_date"
+    t.string   "delivery_window",   limit: 255
+    t.integer  "request_status_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "requests", ["client_address_id"], name: "index_requests_on_client_address_id", using: :btree
+  add_index "requests", ["client_id"], name: "index_requests_on_client_id", using: :btree
+  add_index "requests", ["request_status_id"], name: "index_requests_on_request_status_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255

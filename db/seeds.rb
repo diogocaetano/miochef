@@ -255,6 +255,46 @@ Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Remo
 usersCategory = Entity.find_by(name: 'Usuários')
 Permission.find_or_create_by(entity_id: usersCategory.id, action_name: 'Alterar Senha', action: 'update_password')
 
+# PEDIDOS
+ModulesCategory.find_or_create_by(name: 'Pedidos', icon: 'fa fa-shopping-cart')
+requestModule = ModulesCategory.find_by(name: 'Pedidos')
+Entity.find_or_create_by(controller: 'requests') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Pedidos'
+	requestEntity.slug = 'requests'
+	requestEntity.controller = 'requests'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+requestsCategory = Entity.find_by(controller: 'requests')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Remover', action: 'destroy')
+
+#Status dos Pedidos
+Entity.find_or_create_by(controller: 'request_statuses') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Status do Pedido'
+	requestEntity.slug = 'request_statuses'
+	requestEntity.controller = 'request_statuses'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+requestStatusesCategory = Entity.find_by(controller: 'request_statuses')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Remover', action: 'destroy')
+
 
 
 Permission.all.each do |permission|

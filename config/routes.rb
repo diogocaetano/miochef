@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :request_statuses
   resources :requests
   scope '/admin' do
     resources :chef_types
