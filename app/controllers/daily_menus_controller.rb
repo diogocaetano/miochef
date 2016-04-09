@@ -4,7 +4,7 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus
   # GET /daily_menus.json
   def index
-    @daily_menus = DailyMenu.all
+    @daily_menus = DailyMenu.all.paginate(:page => params[:page], :per_page => 10)
     @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
   end
 

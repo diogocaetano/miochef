@@ -65,6 +65,7 @@
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>
+
                 <%= render partial: 'chefs/activate_deactivate_chef_modal', locals: {chef: chef} %>
 
                 <div class="modal fade modal-dialog-center in" id="delete_chef_<%= chef.id.to_s %>">
@@ -103,7 +104,7 @@
                           <h4 class="modal-title">Adicionar Endereço para o Chefe - <%= chef.name %></h4>
                         </div>
                         <div class="modal-body">
-                          <%= render 'addresses/form', chef_id: chef.id %>
+                          <%= render 'addresses/form', chef: chef %>
                         </div>
                         <div class="modal-footer">
                         </div>

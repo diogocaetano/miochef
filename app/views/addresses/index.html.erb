@@ -36,11 +36,16 @@
                   <td><%= address.zip_code %></td>
                   <td><%= address.complement %></td>
                   <td>
-                    <%#= link_to raw("<i class='fa fa-eye'></i>"), address, :class => 'btn btn-primary' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_address_path(address), :class => 'btn btn-info' %>
+                    <% if address.main? %>
+                      <%= link_to raw("<i class='fa fa-check'></i>"), '#main_address_'+address.id.to_s, :class => 'btn btn-success tooltips', title: 'Endereço Principal'  %>
+                    <% else %>
+                      <%= link_to raw("<i class='fa fa-check'></i>"), '#main_address_'+address.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', title: 'Tornar Principal'  %>
+                    <% end %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_address_'+address.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                   </td>
                 </tr>
+                <%= render partial: 'addresses/main_nomain_address_modal', locals: {address: address, chef_id: @chef.id } %>
                 <div class="modal fade modal-dialog-center in" id="delete_address_<%= address.id.to_s %>"
                   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;">
                 </div>

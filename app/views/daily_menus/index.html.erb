@@ -41,7 +41,7 @@
                   <td>---</td>
                   <td>---</td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
+                    <%= link_to raw("<i class='fa fa-calendar'></i>"), '#daily_menu_'+plate.id.to_s, :class => 'btn btn-warning tooltips', :'data-toggle' => 'modal', title: 'Adicionar ao Cardápio do dia'  %>
                   </td>
                 </tr>
                 <%= render partial: 'plates/daily_menu_modal', locals: {plate: plate} %>
