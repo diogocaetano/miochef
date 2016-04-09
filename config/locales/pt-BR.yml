@@ -223,6 +223,7 @@ pt-BR:
       nutritional_table: 'Tabela Nutricional'
       daily_menu: 'Menu do Dia'
       request: 'Pedido'
+      window_request: 'Janela de Entrega'
       request_status: 'Status do Pedido'
     attributes:
       user:
@@ -337,6 +338,9 @@ pt-BR:
         request_status_id: "Status do Pedido"
       request_status:
         name: 'Nome'
+      window_request:
+        initial_time: 'Horário Inicial'
+        final_time: 'Horário Final'
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

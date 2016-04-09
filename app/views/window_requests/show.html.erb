@@ -7,15 +7,15 @@
     </div>
     <div class="panel-body form-horizontal">
     		      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Initial time</label>
+          <label for="number" class="control-label col-lg-3">Horário Inicial</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @window_request.initial_time %></label>
+            <label for="number" class="form-control-static"><%= @window_request.initial_time.to_s(:time) %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
-          <label for="number" class="control-label col-lg-3">Final time</label>
+          <label for="number" class="control-label col-lg-3">Horário Final</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @window_request.final_time %></label>
+            <label for="number" class="form-control-static"><%= @window_request.final_time.to_s(:time) %></label>
           </div>
 	      </div>
 	        </div>

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :window_requests
-  resources :request_statuses
-  resources :requests
   scope '/admin' do
+    resources :window_requests
+    resources :request_statuses
+    resources :requests
+    
     resources :chef_types
     resources :daily_menus
 

@@ -4,7 +4,7 @@
   <div class="panel"></div>
   <section class="panel">
     <header class="panel-heading">
-       Window_requests
+       Janela de Entrega
     </header>
     <% if @window_request.errors.any? %>
       <div class="alert alert-danger">
@@ -15,12 +15,12 @@
     <% end %>
     <div class="panel-body">
                   <div class="form-group">
-            <%= f.label :initial_time %><br>
-            <%= f.time_select :initial_time, :class => 'form-control' %>
+            <%= f.label 'Horário Inicial*' %><br>
+            <%= f.text_field :initial_time, :class => 'form-control input-medium timepicker-24 initial_pick' %>
           </div>
                   <div class="form-group">
-            <%= f.label :final_time %><br>
-            <%= f.time_select :final_time, :class => 'form-control' %>
+            <%= f.label 'Horário Final*' %><br>
+            <%= f.text_field :final_time, :class => 'form-control input-medium timepicker-24 final_pick' %>
           </div>
             </div>
   </section>
@@ -29,3 +29,10 @@
   </div>
   <% end -%>
 </div>
+
+<script type="text/javascript">
+  window.addEventListener('load', function(){
+    $('.initial_pick').data('timepicker').setTime('<%= get_initial_timepicker_value @window_request %>');
+    $('.final_pick').data('timepicker').setTime('<%= get_final_timepicker_value@window_request %>');
+  });
+</script>

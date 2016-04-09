@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-lg-12">    
-    <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar Window request</button>"), new_window_request_path %>
+    <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar Janela de Entrega</button>"), new_window_request_path %>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
-          Window Requests
+          Janelas de Entrega
           <% if @term %>
             <div class="pull-right">
               <%= link_to raw("<i class='fa fa-times'></i>"), window_requests_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
@@ -21,16 +21,16 @@
           <table class="table table-bmoduleed table-striped table-condensed">
             <thead>
               <tr>
-                                  <th>Initial time</th>
-                                  <th>Final time</th>
+                                  <th>Horário Inicial</th>
+                                  <th>Horário Final</th>
                                 <th colspan='3'>Ações</th>
               </tr>
             </thead>
             <tbody>
               <% @window_requests.each do |window_request| %>
                 <tr>
-                                      <td><%= window_request.initial_time %></td>
-                                      <td><%= window_request.final_time %></td>
+                                      <td><%= window_request.initial_time.to_s(:time) %></td>
+                                      <td><%= window_request.final_time.to_s(:time) %></td>
                                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), window_request, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_window_request_path(window_request), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
@@ -45,11 +45,11 @@
                     <div class="modal-content">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                          <h4 class="modal-title">Remover Window Request</h4>
+                          <h4 class="modal-title">Remover Janela de Entrega</h4>
                       </div>
                       <div class="modal-body">
                         <div class="text-center">
-                          Deseja Realmente Remover o Window Request
+                          Deseja Realmente Remover o Janela de Entrega
                         </div>
                       </div>
                       <div class="modal-footer">

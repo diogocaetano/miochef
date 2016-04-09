@@ -13,9 +13,9 @@ class WindowRequestsController < ApplicationController
     @where = @where.join(" OR ")
     
     if params[:term].present?
-      @window_requests = Window_request.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+      @window_requests = WindowRequest.where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
     else
-      @window_requests = Window_request.paginate(:page => params[:page], :per_page => 10)
+      @window_requests = WindowRequest.paginate(:page => params[:page], :per_page => 10)
     end
   
   end
@@ -38,7 +38,7 @@ class WindowRequestsController < ApplicationController
     @window_request = WindowRequest.new(window_request_params)
 
     if @window_request.save
-      redirect_to window_requests_path, :flash =>{:success => 'Window request foi criado com sucesso.' }
+      redirect_to window_requests_path, :flash =>{:success => 'Janela de Entrega foi criada com sucesso.' }
     else
       render :new
     end
@@ -47,7 +47,7 @@ class WindowRequestsController < ApplicationController
   # PATCH/PUT /window_requests/1
   def update
     if @window_request.update(window_request_params)
-      redirect_to window_requests_path, :flash =>{:success => 'Window request foi atualizado com sucesso.' }
+      redirect_to window_requests_path, :flash =>{:success => 'Janela de Entrega foi atualizada com sucesso.' }
     else
       render :edit
     end
@@ -56,7 +56,7 @@ class WindowRequestsController < ApplicationController
   # DELETE /window_requests/1
   def destroy
     @window_request.destroy
-    redirect_to window_requests_path, :flash =>{:success => 'Window request foi removido com sucesso.' }
+    redirect_to window_requests_path, :flash =>{:success => 'Janela de Entrega foi removida com sucesso.' }
   end
 
   private
