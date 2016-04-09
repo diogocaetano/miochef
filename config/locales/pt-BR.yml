@@ -222,6 +222,7 @@ pt-BR:
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
       daily_menu: 'Menu do Dia'
+      request: 'Pedido'
       request_status: 'Status do Pedido'
     attributes:
       user:
@@ -326,6 +327,14 @@ pt-BR:
         state: "Estado"
         zip_code: "CEP"
         complement: "Complemento"
+      request:
+        client_id: "Cliente"
+        client_address_id: "Endereço do Cliente"
+        payment_code: "Código de Pagamento"
+        request_date: "Data do Pedido"
+        delivery_date: "Data da Entrega"
+        delivery_window: "Janela da Entrega"
+        request_status_id: "Status do Pedido"
       request_status:
         name: 'Nome'
   devise:

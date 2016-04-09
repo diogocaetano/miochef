@@ -48,7 +48,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
 
     if @request.save
-      redirect_to requests_path, :flash =>{:success => 'Request foi criado com sucesso.' }
+      redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
     else
       render :new
     end
@@ -57,7 +57,7 @@ class RequestsController < ApplicationController
   # PATCH/PUT /requests/1
   def update
     if @request.update(request_params)
-      redirect_to requests_path, :flash =>{:success => 'Request foi atualizado com sucesso.' }
+      redirect_to requests_path, :flash =>{:success => 'Pedido foi atualizado com sucesso.' }
     else
       render :edit
     end
@@ -66,7 +66,7 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   def destroy
     @request.destroy
-    redirect_to requests_path, :flash =>{:success => 'Request foi removido com sucesso.' }
+    redirect_to requests_path, :flash =>{:success => 'Pedido foi removido com sucesso.' }
   end
 
   private
