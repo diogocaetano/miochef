@@ -6,6 +6,13 @@ class DailyMenusController < ApplicationController
   def index
     @daily_menus = DailyMenu.all.paginate(:page => params[:page], :per_page => 10)
     @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
+    
+    @term = params[:term]
+    @where = []    
+    @where << "plates.title LIKE :term"
+    @where = @where.join(" OR ")
+    @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+
   end
 
   # GET /daily_menus/1

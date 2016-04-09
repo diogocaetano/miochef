@@ -7,7 +7,7 @@
           Países
           <% if @term %>
             <div class="pull-right">
-              <%= link_to raw("<i class='fa fa-times'></i>"), countries_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+              <%= link_to raw("<i class='fa fa-times'></i>"), countries_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
             </div>
           <% end %>
       </header>
@@ -32,8 +32,8 @@
                   <td><%= country.name %></td>
                   <td><%= country.initials %></td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), country, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_country_path(country), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), country, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_country_path(country), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_country_'+country.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>

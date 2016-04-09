@@ -105,16 +105,19 @@ class PlatesController < ApplicationController
 
   def daily_menu
     @plate = Plate.find(params[:plate_id])
+    set_relations
+
     keys = ['sunday_available', 'monday_available', 'tuesday_available', 'wednesday_available', 
       'thursday_available', 'friday_available', 'saturday_available', ]
     keys.each { |k| params['plate'].has_key?(k) ? '' : params['plate'][k] = 0 }
     params['plate'].delete(['price_mask'])
+
     respond_to do |format|
       if @plate.update(plate_params)
         format.html { redirect_to :back, :flash =>{:success => 'O prato foi atualizado com sucesso.' } }
         format.json { render :show, status: :ok, location: @plate }
       else
-        format.html { render :edit }
+        format.html { redirect_to :back, :flash =>{:alert => 'Erro ao salvar o Cardápio do Dia'} }
         format.json { render json: @plate.errors, status: :unprocessable_entity }
       end
     end
@@ -141,6 +144,10 @@ class PlatesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_plate
       @plate = Plate.find(params[:id])
+      set_relations
+    end
+
+    def set_relations
       @types = PlateType.all
       @badges = PlateBadge.all
       @chefs = Chef.all

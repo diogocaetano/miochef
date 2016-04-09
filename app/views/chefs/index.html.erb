@@ -7,7 +7,7 @@
           Chefes
           <% if @term %>
             <div class="pull-right">
-              <%= link_to raw("<i class='fa fa-times'></i>"), chefs_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+              <%= link_to raw("<i class='fa fa-times'></i>"), chefs_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
             </div>
           <% end %>
       </header>
@@ -49,18 +49,15 @@
                       <td><%= chef.email %></td>
                       <td><%= chef.specialty %></td>
                     <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
-
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-warning tooltips', :'data-toggle' => 'modal', title: 'Adicionar Endereço'  %>
-
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), "chef_addresses/#{chef.id}", :class => 'btn btn-default tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar Endereços' %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-primary tooltips', :'data-toggle' => 'modal', title: 'Adicionar Endereço'  %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), "chef_addresses/#{chef.id}", :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Visualizar Endereços' %>
                      <!-- ATIVAR/DESATIVAR -->                    
                     <% if chef.active %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', title: 'Desativar Chefe'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', title: 'Desativar Chef'  %>
                     <% else %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', title: 'Ativar Chefe'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', title: 'Ativar Chef'  %>
                     <% end %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>

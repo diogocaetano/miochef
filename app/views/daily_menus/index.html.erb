@@ -6,7 +6,7 @@
           Pratos do Dia - <%= I18n.t(:"date.day_names")[Date.today.wday].to_s %>
           <% if @term %>
             <div class="pull-right">
-              <%= link_to raw("<i class='fa fa-times'></i>"), daily_menus_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+              <%= link_to raw("<i class='fa fa-times'></i>"), daily_menus_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
             </div>
           <% end %>
       </header>
@@ -50,9 +50,9 @@
           </table>
           <div class="apple_pagination">
               <div class="page_info">
-                  <%= page_entries_info @daily_menus %>
+                  <%= page_entries_info @plates %>
               </div>
-              <%= will_paginate @daily_menus %>
+              <%= will_paginate @plates %>
           </div>
         </section>
       </div>
