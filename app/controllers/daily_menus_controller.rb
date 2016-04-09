@@ -4,8 +4,14 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus
   # GET /daily_menus.json
   def index
+    @term = params[:term]
+    @where = []    
+    @where << "plates.title LIKE :term"
+    @where = @where.join(" OR ")
+    @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
+
     @daily_menus = DailyMenu.all
-    @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
+    #@plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
   end
 
   # GET /daily_menus/1
