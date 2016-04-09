@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409200449) do
+ActiveRecord::Schema.define(version: 20160409203523) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -198,6 +198,17 @@ ActiveRecord::Schema.define(version: 20160409200449) do
     t.integer "plate_id",       limit: 4
     t.integer "plate_badge_id", limit: 4
   end
+
+  create_table "plate_ratings", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.integer  "plate_id",   limit: 4
+    t.integer  "score",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "plate_ratings", ["client_id"], name: "index_plate_ratings_on_client_id", using: :btree
+  add_index "plate_ratings", ["plate_id"], name: "index_plate_ratings_on_plate_id", using: :btree
 
   create_table "plate_types", force: :cascade do |t|
     t.string   "name",       limit: 255

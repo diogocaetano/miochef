@@ -226,6 +226,7 @@ pt-BR:
       window_request: 'Janela de Entrega'
       request_status: 'Status do Pedido'
       chef_rating: 'Rating de Chefe'
+      plate_rating: 'Rating de Prato'
     attributes:
       user:
         name: "Nome"
@@ -345,6 +346,9 @@ pt-BR:
       chef_rating:
         client_id: 'Cliente'
         chef_id: 'Chefe'
+      plate_rating:
+        client_id: 'Cliente'
+        plate_id: 'Prato'
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
