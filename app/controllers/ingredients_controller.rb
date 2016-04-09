@@ -33,7 +33,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Ingrediente criado com sucesso.' }
+        format.html { redirect_to ingredients_url, :flash =>{:success => 'O ingrediente foi criado com sucesso.' } }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: 'Ingrediente atualizado com sucesso.' }
+        format.html { redirect_to ingredients_url, :flash =>{:success => 'O ingrediente foi atualizado com sucesso.' } }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
     respond_to do |format|
       if not @ingredient.errors.any?
-        format.html { redirect_to ingredients_url, notice: 'Ingrediente removido com sucesso.' }
+        format.html { redirect_to ingredients_url, :flash =>{:success => 'O ingrediente foi removido com sucesso.' } }
         format.json { head :no_content }
       else
         format.html { redirect_to ingredients_url, alert: @ingredient.errors.full_messages.join('<br>') }

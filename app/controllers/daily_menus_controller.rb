@@ -29,7 +29,7 @@ class DailyMenusController < ApplicationController
 
     respond_to do |format|
       if @daily_menu.save
-        format.html { redirect_to @daily_menu, notice: 'Daily menu was successfully created.' }
+        format.html { redirect_to daily_menus_url, :flash =>{:success => 'O menu diário foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @daily_menu }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class DailyMenusController < ApplicationController
   def update
     respond_to do |format|
       if @daily_menu.update(daily_menu_params)
-        format.html { redirect_to @daily_menu, notice: 'Daily menu was successfully updated.' }
+        format.html { redirect_to daily_menus_url, :flash =>{:success => 'O menu diário foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @daily_menu }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class DailyMenusController < ApplicationController
   def destroy
     @daily_menu.destroy
     respond_to do |format|
-      format.html { redirect_to daily_menus_url, notice: 'Daily menu was successfully destroyed.' }
+      format.html { redirect_to daily_menus_url, :flash =>{:success => 'O menu diário foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   end

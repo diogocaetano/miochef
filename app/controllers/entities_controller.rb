@@ -34,7 +34,7 @@ class EntitiesController < ApplicationController
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to @entity, notice: 'Módulo criado com sucesso.' }
+        format.html { redirect_to entities_url, :flash =>{:success => 'O módulo foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class EntitiesController < ApplicationController
   def update
     respond_to do |format|
       if @entity.update(entity_params)
-        format.html { redirect_to @entity, notice: 'Módulo atualizado com sucesso.' }
+        format.html { redirect_to entities_url, :flash =>{:success => 'O módulo foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @entity }
       else
         format.html { render :edit }
@@ -62,12 +62,12 @@ class EntitiesController < ApplicationController
   def destroy
     @entity.destroy
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Módulo removido com sucesso.' }
+      format.html { redirect_to entities_url, :flash =>{:success => 'O módulo foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to entities_url, alert: 'Módulo não foi removido. Existem associações para o registro.' }
+      format.html { redirect_to entities_url, :flash =>{:danger =>  'O módulo não foi removido. Existem associações para o registro.' } }
       format.json { head :no_content }
     end
   end

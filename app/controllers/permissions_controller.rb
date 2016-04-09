@@ -33,7 +33,7 @@ class PermissionsController < ApplicationController
 
     respond_to do |format|
       if @permission.save
-        format.html { redirect_to permissions_url, success: 'Permissão criada com sucesso.' }
+        format.html { redirect_to permissions_url, :flash =>{:success => 'A permissão foi criada com sucesso.' } }
         format.json { render :show, status: :created, location: @permission }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class PermissionsController < ApplicationController
   def update
     respond_to do |format|
       if @permission.update(permission_params)
-        format.html { redirect_to permissions_url, success: 'Permissão atualizada com sucesso..' }
+        format.html { redirect_to permissions_url, :flash =>{:success => 'A permissão foi atualizada com sucesso.' } }
         format.json { render :show, status: :ok, location: @permission }
       else
         format.html { render :edit }
@@ -61,12 +61,12 @@ class PermissionsController < ApplicationController
   def destroy
     @permission.destroy
     respond_to do |format|
-      format.html { redirect_to permissions_url, success: 'Permissão removida com sucesso.' }
+      format.html { redirect_to permissions_url, :flash =>{:success => 'A permissão foi removida com sucesso.' } }
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to permissions_url, alert: 'Permissão não foi removida. Existem associações para o registro.' }
+      format.html { redirect_to permissions_url, :flash =>{:danger =>  'A permissão não foi removida. Existem associações para o registro.' } }
       format.json { head :no_content }
     end
   end
