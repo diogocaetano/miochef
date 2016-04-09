@@ -7,7 +7,7 @@
           Ingredientes
           <% if @term %>
             <div class="pull-right">
-              <%= link_to raw("<i class='fa fa-times'></i>"), ingredients_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+              <%= link_to raw("<i class='fa fa-times'></i>"), ingredients_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
             </div>
           <% end %>
       </header>
@@ -30,8 +30,8 @@
                 <tr>
                                       <td><%= ingredient.name %></td>
                                     <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), ingredient, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                      <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_ingredient_path(ingredient), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), ingredient, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
+                      <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_ingredient_path(ingredient), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
                       <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_ingredient_'+ingredient.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>

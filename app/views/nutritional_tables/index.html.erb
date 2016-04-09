@@ -7,7 +7,7 @@
           Nutritional Tables
           <% if @term %>
             <div class="pull-right">
-              <%= link_to raw("<i class='fa fa-times'></i>"), nutritional_tables_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+              <%= link_to raw("<i class='fa fa-times'></i>"), nutritional_tables_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
             </div>
           <% end %>
       </header>
@@ -44,8 +44,8 @@
                                       <td><%= nutritional_table.sodium %></td>
                                       <td><%= nutritional_table.iron %></td>
                                     <td>
-                    <%= link_to raw("<i class='fa fa-eye'></i>"), nutritional_table, :class => 'btn btn-primary tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Visualizar' %>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_nutritional_table_path(nutritional_table), :class => 'btn btn-info tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), nutritional_table, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_nutritional_table_path(nutritional_table), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_role_'+nutritional_table.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
                 </tr>
