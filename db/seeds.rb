@@ -256,6 +256,7 @@ usersCategory = Entity.find_by(name: 'Usuários')
 Permission.find_or_create_by(entity_id: usersCategory.id, action_name: 'Alterar Senha', action: 'update_password')
 
 
+
 Permission.all.each do |permission|
 	PermissionsRoles.find_or_create_by(role_id: 1, permission_id: permission.id)
 	if not permission.entity.is_dev
