@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :requests
   scope '/admin' do
     resources :chef_types
     resources :daily_menus
