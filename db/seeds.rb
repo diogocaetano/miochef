@@ -276,7 +276,7 @@ Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Atual
 Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Remover', action: 'destroy')
 
-#Status dos Pedidos
+# Status dos Pedidos
 Entity.find_or_create_by(controller: 'request_statuses') do |requestEntity|
 	requestEntity.modules_category_id = requestModule.id
 	requestEntity.name = 'Status do Pedido'
@@ -294,6 +294,25 @@ Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name:
 Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Remover', action: 'destroy')
+
+# Janela de Entrega
+Entity.find_or_create_by(controller: 'window_requests') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Janela de Entrega'
+	requestEntity.slug = 'window_requests'
+	requestEntity.controller = 'window_requests'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+windowRequestsCategory = Entity.find_by(controller: 'window_requests')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Remover', action: 'destroy')
 
 
 
