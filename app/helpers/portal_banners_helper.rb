@@ -1,0 +1,2 @@
+module PortalBannersHelper
+end

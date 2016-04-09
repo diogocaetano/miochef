@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :plate_ratings
   scope '/admin' do
+    resources :portal_banners
+    resources :plate_ratings
     resources :chef_ratings
     resources :window_requests
     resources :request_statuses

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409203523) do
+ActiveRecord::Schema.define(version: 20160409221025) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -244,6 +244,18 @@ ActiveRecord::Schema.define(version: 20160409203523) do
   add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
   add_index "plates", ["nutritional_table_id"], name: "index_plates_on_nutritional_table_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
+
+  create_table "portal_banners", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "image",              limit: 255
+    t.string   "link",               limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
 
   create_table "request_statuses", force: :cascade do |t|
     t.string   "name",       limit: 255

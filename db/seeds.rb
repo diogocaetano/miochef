@@ -356,6 +356,28 @@ Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Atualiz
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Remover', action: 'destroy')
 
+# BANNERS
+# Portal
+ModulesCategory.find_or_create_by(name: 'Banners', icon: 'fa fa-file-image-o')
+bannersCategory = ModulesCategory.find_by(name: 'Banners')
+
+Entity.find_or_create_by(controller: 'portal_banners') do |entity|
+	entity.modules_category_id = bannersCategory.id
+	entity.controller = 'portal_banners'
+	entity.name = 'Portal'
+	entity.slug = 'portal_banners'
+	entity.is_dev = false
+end
+
+portalBannerCategory = Entity.find_by(slug: 'portal_banners')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Remover', action: 'destroy')
+
 
 
 Permission.all.each do |permission|
