@@ -314,6 +314,27 @@ Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 
 Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Remover', action: 'destroy')
 
+# CHEFS
+# Rating de Chefs
+chefsModule = ModulesCategory.find_by(name: 'Chefes')
+Entity.find_or_create_by(controller: 'chef_ratings') do |requestEntity|
+	requestEntity.modules_category_id = chefsModule.id
+	requestEntity.name = 'Rating de Chefe'
+	requestEntity.slug = 'chef_ratings'
+	requestEntity.controller = 'chef_ratings'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+chefsCategory = Entity.find_by(controller: 'chef_ratings')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Remover', action: 'destroy')
+
 
 
 Permission.all.each do |permission|

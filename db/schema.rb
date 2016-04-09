@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409163434) do
+ActiveRecord::Schema.define(version: 20160409200449) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160409163434) do
 
   add_index "badges_chefs", ["badge_id"], name: "index_badges_chefs_on_badge_id", using: :btree
   add_index "badges_chefs", ["chef_id"], name: "index_badges_chefs_on_chef_id", using: :btree
+
+  create_table "chef_ratings", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.integer  "chef_id",    limit: 4
+    t.integer  "score",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "chef_ratings", ["chef_id"], name: "index_chef_ratings_on_chef_id", using: :btree
+  add_index "chef_ratings", ["client_id"], name: "index_chef_ratings_on_client_id", using: :btree
 
   create_table "chef_types", force: :cascade do |t|
     t.string   "name",       limit: 255

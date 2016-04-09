@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   scope '/admin' do
+    resources :chef_ratings
     resources :window_requests
     resources :request_statuses
     resources :requests

@@ -225,6 +225,7 @@ pt-BR:
       request: 'Pedido'
       window_request: 'Janela de Entrega'
       request_status: 'Status do Pedido'
+      chef_rating: 'Rating de Chefe'
     attributes:
       user:
         name: "Nome"
@@ -341,6 +342,9 @@ pt-BR:
       window_request:
         initial_time: 'Horário Inicial'
         final_time: 'Horário Final'
+      chef_rating:
+        client_id: 'Cliente'
+        chef_id: 'Chefe'
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
