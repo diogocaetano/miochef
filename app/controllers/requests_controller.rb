@@ -6,9 +6,9 @@ class RequestsController < ApplicationController
     @term = params[:term]
     @where = []
     
-    @where << "requests" + '.' + "references" + ' LIKE :term' 
+    @where << "requests" + '.' + "client_id" + ' LIKE :term' 
     
-    @where << "requests" + '.' + "references" + ' LIKE :term' 
+    @where << "requests" + '.' + "client_address_id" + ' LIKE :term' 
     
     @where << "requests" + '.' + "payment_code" + ' LIKE :term' 
     
@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
     
     @where << "requests" + '.' + "delivery_window" + ' LIKE :term' 
     
-    @where << "requests" + '.' + "references" + ' LIKE :term' 
+    @where << "requests" + '.' + "request_status_id" + ' LIKE :term' 
     
     @where = @where.join(" OR ")
     
@@ -77,6 +77,6 @@ class RequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def request_params
-      params.require(:request).permit(:references, :references, :payment_code, :request_date, :delivery_date, :delivery_window, :references)
+      params.require(:request).permit(:client_id, :client_address_id, :payment_code, :request_date, :delivery_date, :delivery_window, :request_status_id)
     end
 end

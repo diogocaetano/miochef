@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :request do
-    references ""
-    references ""
+    client nil
+    client_address nil
     payment_code "MyString"
-    request_date "2016-04-09 14:51:37"
-    delivery_date "2016-04-09 14:51:37"
+    request_date "2016-04-09 14:57:52"
+    delivery_date "2016-04-09 14:57:52"
     delivery_window "MyString"
-    references ""
+    request_status nil
   end
 end

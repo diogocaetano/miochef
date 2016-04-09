@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe "requests/show", type: :view do
   before(:each) do
     @request = assign(:request, Request.create!(
-      :references => "",
-      :references => "",
+      :client => nil,
+      :client_address => nil,
       :payment_code => "Payment Code",
       :delivery_window => "Delivery Window",
-      :references => ""
+      :request_status => nil
     ))
   end
 
