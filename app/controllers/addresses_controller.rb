@@ -32,7 +32,7 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to chefs_url, notice: "Endereço Adicionado com Sucesso ao Chefe: #{@address.chef.name }." }
+        format.html { redirect_to chefs_url, :flash =>{:success => "O endereço adicionado com sucesso ao chefe: #{@address.chef.name }." } } 
       else
         @chefs = Chef.all
         format.html { render :template => 'chefs/index' }
@@ -47,7 +47,7 @@ class AddressesController < ApplicationController
     @chefs = Chef.all
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to chefs_url, notice: "Endereço Atualizado com Sucesso ao Chefe: #{@chef.name }." }
+        format.html { redirect_to chefs_url, :flash =>{:success => "O endereço foi adicionado com sucesso ao chefe: #{@address.chef.name }." } } 
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class AddressesController < ApplicationController
     @address.destroy
     chef = Chef.find(@address.chef_id)
     respond_to do |format|
-      format.html { redirect_to chefs_url, notice: "Endereço do chefe #{chef.name} removido com sucesso" }
+      format.html { redirect_to chefs_url, :flash =>{:success => "O endereço removido com sucesso ao chefe: #{@address.chef.name }." } } 
       format.json { head :no_content }
     end
   end

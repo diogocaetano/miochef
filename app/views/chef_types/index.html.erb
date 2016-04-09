@@ -11,16 +11,6 @@
             </div>
           <% end %>
       </header>
-      <% if alert %>
-        <div class="alert alert-danger">
-          <%= alert %>
-        </div>
-      <% end %>
-      <% if notice %>
-        <div class="alert alert-success">
-          <%= notice %>
-        </div>
-      <% end %>
       <div class="panel-body">
         <div class="pull-right">
           <%= form_tag(chef_types_path, method: 'GET') do -%>

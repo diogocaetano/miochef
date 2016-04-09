@@ -21,9 +21,9 @@ module PlatesHelper
 
 	def get_activate_or_deactivate_action_button plate
 		if plate.active == 1 
-          return link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_plate_'+plate.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  
+          return link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_plate_'+plate.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', title: 'Desativar'  
         else 
-          return link_to raw("<i class='fa fa-power-off'></i>"), '#activate_plate_'+plate.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  
+          return link_to raw("<i class='fa fa-power-off'></i>"), '#activate_plate_'+plate.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', title: 'Ativar'   
         end 
 	end
 end

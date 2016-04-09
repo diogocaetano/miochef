@@ -19,8 +19,10 @@ class Address < ActiveRecord::Base
 private
   
   def update_main_address
-    Address.where(chef_id: self.chef_id).update_all(main: false) if self.main
-    self.main = true
+    if self.main
+      Address.where(chef_id: self.chef_id).update_all(main: false)
+      self.main = true
+    end
   end
 
 end

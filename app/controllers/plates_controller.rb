@@ -49,7 +49,8 @@ class PlatesController < ApplicationController
 
     respond_to do |format|
       if @plate.save
-        format.html { redirect_to @plate, notice: 'Prato criado com sucesso.' }
+        format.html { redirect_to plates_url, :flash =>{:success => 'O prato foi criado com sucesso.' } }
+
         format.json { render :show, status: :created, location: @plate }
       else
         format.html { render :new }
@@ -63,7 +64,7 @@ class PlatesController < ApplicationController
   def update
     respond_to do |format|
       if @plate.update(plate_params_with_ingredients_and_accompaniments)
-        format.html { redirect_to @plate, notice: 'Prato atualizado com sucesso.' }
+        format.html { redirect_to plates_url, :flash =>{:success => 'O prato foi atualizado com sucesso.' } }
         format.json { render :show, status: :ok, location: @plate }
       else
         format.html { render :edit }
@@ -77,7 +78,7 @@ class PlatesController < ApplicationController
   def destroy
     @plate.destroy
     respond_to do |format|
-      format.html { redirect_to plates_url, notice: 'Prato removido com sucesso.' }
+      format.html { redirect_to plates_url, :flash =>{:success => 'O prato foi removido com sucesso.' } }
       format.json { head :no_content }
     end
   end
@@ -87,7 +88,7 @@ class PlatesController < ApplicationController
     @plate.active = 1
     @plate.save
     respond_to do |format|
-      format.html { redirect_to @plate, notice: 'Prato ativado com sucesso.' }
+      format.html { redirect_to :back, :flash =>{:success => 'O prato foi ativado com sucesso.' } }
       format.json { head :no_content }
     end
   end
@@ -97,7 +98,7 @@ class PlatesController < ApplicationController
     @plate.active = 0
     @plate.save
     respond_to do |format|
-      format.html { redirect_to @plate, notice: 'Prato desativado com sucesso.' }
+      format.html { redirect_to back, :flash =>{:success => 'O prato foi desativado com sucesso.' } }
       format.json { head :no_content }
     end
   end
@@ -110,7 +111,7 @@ class PlatesController < ApplicationController
     params['plate'].delete(['price_mask'])
     respond_to do |format|
       if @plate.update(plate_params)
-        format.html { redirect_to :back, notice: 'Prato atualizado com sucesso.' }
+        format.html { redirect_to :back, :flash =>{:success => 'O prato foi atualizado com sucesso.' } }
         format.json { render :show, status: :ok, location: @plate }
       else
         format.html { render :edit }
@@ -126,11 +127,11 @@ class PlatesController < ApplicationController
         @nutritional_table = NutritionalTable.create(nutritional_table_params)
         @plate.nutritional_table = @nutritional_table
         @plate.save
-        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, :flash =>{:success => 'A tabela nutricional foi atualizada com sucesso.' } }
         format.json { render :show, status: :ok, location: @plate }
       else
         @plate.nutritional_table.update(nutritional_table_params)
-        format.html { redirect_to :back, notice: 'Tabela nutricional atualizada com sucesso.' }
+        format.html { redirect_to :back, :flash =>{:success => 'O tabela nutricional foi atualizada com sucesso.' } }
         format.json { render :show, status: :ok, location: @plate }
       end
     end

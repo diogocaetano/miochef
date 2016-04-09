@@ -40,7 +40,7 @@ class ChefsController < ApplicationController
     @chef.badges << badges
     respond_to do |format|
       if @chef.save
-        format.html { redirect_to @chef, notice: 'Chefe Criado com Sucesso' }
+        format.html { redirect_to chefs_url, :flash =>{:success => 'O chef foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @chef }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class ChefsController < ApplicationController
     @chef.badges << badges
     respond_to do |format|
       if @chef.update(chef_params)
-        format.html { redirect_to chefs_url, notice: 'Chefe Atualizado com Sucesso' }
+        format.html { redirect_to chefs_url, :flash =>{:success => 'O chef foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @chef }
       else
         format.html { render :edit }
@@ -71,7 +71,7 @@ class ChefsController < ApplicationController
     @chef.destroy
     respond_to do |format|
       if not @chef.errors.any?
-        format.html { redirect_to chefs_url, notice: 'Chef removido com sucesso.' }
+        format.html { redirect_to chefs_url, :flash =>{:success => 'O chef foi removido com sucesso.' } } 
         format.json { head :no_content }
       else
         format.html { redirect_to chefs_url, alert: @chef.errors.full_messages.join('<br>') }

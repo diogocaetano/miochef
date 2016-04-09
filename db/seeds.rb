@@ -21,7 +21,7 @@ User.find_or_create_by(name: 'Teste') do |user|
 end
 
 ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-cogs')
-ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-location-arrow')
+ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
 ModulesCategory.find_or_create_by(name: 'Chefes', icon: 'fa fa-coffee')
 
 Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'admin/roles',is_dev: false, visible: true)

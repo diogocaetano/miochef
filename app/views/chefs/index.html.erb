@@ -18,11 +18,6 @@
           <% end %>
         </div>
       <% end %>
-      <% if notice %>
-        <div class="alert alert-success">
-          <%= notice %>
-        </div>
-      <% end %>
       <div class="panel-body">
         <div class="pull-right">
           <%= form_tag(chefs_path, method: 'GET') do -%>
@@ -56,13 +51,13 @@
                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-warning', :'data-toggle' => 'modal'  %>
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), "chef_addresses/#{chef.id}", :class => 'btn btn-default' %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-warning tooltips', :'data-toggle' => 'modal', title: 'Adicionar Endereço'  %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), "chef_addresses/#{chef.id}", :class => 'btn btn-default tooltips', 'data-placement': 'top', title: 'Visualizar Endereços' %>
                      <!-- ATIVAR/DESATIVAR -->                    
                     <% if chef.active %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success', :'data-toggle' => 'modal'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', title: 'Desativar Chef'  %>
                     <% else %>
-                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
+                      <%= link_to raw("<i class='fa fa-power-off'></i>"), '#activate_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', title: 'Ativar Chef'  %>
                     <% end %>
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_chef_'+chef.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>
                   </td>
