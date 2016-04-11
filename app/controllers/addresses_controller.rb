@@ -27,7 +27,10 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
+    ap = address_params
+    ap[:chef_id] = params[:chef_id]
+    @address = Address.new(ap)
+
     @chefs = Chef.all.paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
       if @address.save
