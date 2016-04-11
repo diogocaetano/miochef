@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'home' => 'home#index'
   scope '/admin' do
     resources :portal_banners
     resources :plate_ratings

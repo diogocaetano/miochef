@@ -7,10 +7,10 @@ class Address < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
-  validates :complement, presence: true
   validates :chef_id, presence: true
 
   before_save :update_main_address
+  before_destroy :allow_destroy?
 
   def main?
   	self.main
@@ -20,9 +20,15 @@ private
   
   def update_main_address
     if self.main
-      Address.where(chef_id: self.chef_id).update_all(main: false)
-      self.main = true
+      Address.where(chef_id: self.chef_id).where.not(id: self.id).update_all(main: false)
     end
+  end
+
+  def allow_destroy?
+    if self.main 
+      errors.add('-', 'Não é possível remover um endereço principal.')
+      return false
+    end 
   end
 
 end
