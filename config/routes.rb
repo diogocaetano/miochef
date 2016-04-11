@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     resources :daily_menus
 
     # resources :nutritional_tables
+    resources :chefs do 
+      resources :addresses
+    end
+    
     resources :addresses
-    resources :chefs
 
     get 'chef_addresses/:chef_id' => 'addresses#index'
 

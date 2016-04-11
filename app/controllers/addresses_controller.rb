@@ -1,12 +1,12 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
   before_action :set_chef_from_address, only: [:edit]
+  before_action :set_chef
 
 
   # GET /addresses
   # GET /addresses.json
   def index
-    @chef = Chef.find(params[:chef_id])
     @addresses = Address.where(chef_id: @chef.id).order('main desc').order('created_at asc')
   end
 
@@ -27,16 +27,13 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    ap = address_params
-    ap[:chef_id] = params[:chef_id]
-    @address = Address.new(ap)
-
-    @chefs = Chef.all.paginate(:page => params[:page], :per_page => 10)
+    @address = Address.new(address_params)
+    @addresses = Address.where(chef_id: params[:chef_id]).order('main desc').order('created_at asc')
     respond_to do |format|
       if @address.save
-        format.html { redirect_to chefs_url, :flash =>{:success => "O endereço adicionado com sucesso ao chefe: #{@address.chef.name }." } } 
+        format.html { redirect_to chef_addresses_path, :flash =>{:success => "O endereço foi criado com sucesso." } }
       else
-        format.html { render :template => 'chefs/index' }
+        format.html { redirect_to chefs_url, :flash =>{:warning => @address.errors.full_messages.join('<br>') } }
       end
     end
   end
@@ -44,12 +41,10 @@ class AddressesController < ApplicationController
   # PATCH/PUT /addresses/1
   # PATCH/PUT /addresses/1.json
   def update
-    @chef = Chef.find(params[:chef_id])
     @addresses = Address.where(chef_id: @chef.id).order('main desc').order('created_at asc')
     respond_to do |format|
-      # p address_params
       if @address.update(address_params)
-        format.html { redirect_to chefs_url, :flash =>{:success => "O endereço foi atualizado com sucesso ao chefe: #{@address.chef.name }." } } 
+        format.html { redirect_to chef_addresses_path, :flash =>{:success => "O endereço foi atualizado com sucesso." } }
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit }
@@ -61,15 +56,15 @@ class AddressesController < ApplicationController
   # DELETE /addresses/1
   # DELETE /addresses/1.json
   def destroy
-    @chef = Chef.find(@address.chef_id)
+    @addresses = Address.where(chef_id: @chef.id).order('main desc').order('created_at asc')
     if @address.destroy
       respond_to do |format|
-        format.html { redirect_to chefs_url, :flash =>{:success => "O endereço removido com sucesso ao chefe: #{@address.chef.name }." } } 
+        format.html { redirect_to chef_addresses_path, :flash =>{:success => "O endereço removido com sucesso." } } 
         format.json { head :no_content }
       end
     else
       respond_to do |format|
-        format.html { redirect_to chefs_url, :flash =>{:warning => @address.errors.full_messages.join('<br>') } } 
+        format.html { redirect_to chef_addresses_path, :flash =>{:warning => @address.errors.full_messages.join('<br>') } } 
         format.json { head :no_content }
       end
     end
@@ -79,6 +74,10 @@ class AddressesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_address
       @address = Address.find(params[:id])
+    end
+
+    def set_chef
+      @chef = Chef.find(params[:chef_id])
     end
 
     def set_chef_addresses

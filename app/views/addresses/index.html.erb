@@ -36,7 +36,7 @@
                   <td><%= address.zip_code %></td>
                   <td><%= address.complement %></td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_address_path(address), :class => 'btn btn-info' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_address_path(@chef, address), :class => 'btn btn-info' %>
                     <% if address.main? %>
                       <%= link_to raw("<i class='fa fa-check'></i>"), '#main_address_'+address.id.to_s, :class => 'btn btn-success tooltips', title: 'Endereço Principal'  %>
                     <% else %>
@@ -65,7 +65,7 @@
                         <div class="pull-left">
                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                         </div>
-                        <%= link_to raw("Confirmar"), address, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        <%= link_to raw("Confirmar"), chef_address_path(@chef, address), :class => 'btn btn-primary', :'data-method' => 'delete' %>
                       </div>
                     </div>
                   </div>
