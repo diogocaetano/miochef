@@ -33,7 +33,7 @@ class AddressesController < ApplicationController
       if @address.save
         format.html { redirect_to chef_addresses_path, :flash =>{:success => "O endereço foi criado com sucesso." } }
       else
-        format.html { redirect_to chefs_url, :flash =>{:warning => @address.errors.full_messages.join('<br>') } }
+        format.html { render :new, :flash =>{:danger => @address.errors.full_messages.join('<br>') } }
       end
     end
   end
