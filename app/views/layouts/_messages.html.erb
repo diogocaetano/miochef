@@ -2,7 +2,7 @@
 	<% key, value = flash.first %>	
 	<% alert_class = key %>
 	<% alert_class = "danger" if alert_class == "error" %>
-	<% alert_class = "warning" if alert_class == "alert" %>
+	<% alert_class = "danger" if alert_class == "alert" %>
 	<% alert_class = "success" if alert_class == "notice" %>
 	<% key, value = flash.first %>
 	<div class="alert alert-<%= alert_class %>">

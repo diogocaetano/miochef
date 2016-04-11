@@ -98,7 +98,7 @@ class PlatesController < ApplicationController
     @plate.active = 0
     @plate.save
     respond_to do |format|
-      format.html { redirect_to back, :flash =>{:success => 'O prato foi desativado com sucesso.' } }
+      format.html { redirect_to :back, :flash =>{:success => 'O prato foi desativado com sucesso.' } }
       format.json { head :no_content }
     end
   end
