@@ -42,6 +42,11 @@
           <%= f.label 'Complemento' %><br>
           <%= f.text_field :complement, :class => 'form-control' %>
         </div>
+        <% if @address %>
+          <%= f.hidden_field :main, :value => @address.main %>
+        <% else %>
+          <%= f.hidden_field :main, :value => false %>
+        <% end %>
   </section>
   <div class="form-group">
     <%= f.submit 'Salvar', :class => 'btn btn-primary' %>

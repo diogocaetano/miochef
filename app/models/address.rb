@@ -20,8 +20,7 @@ private
   
   def update_main_address
     if self.main
-      Address.where(chef_id: self.chef_id).update_all(main: false)
-      self.main = true
+      Address.where(chef_id: self.chef_id).where.not(id: self.id).update_all(main: false)
     end
   end
 

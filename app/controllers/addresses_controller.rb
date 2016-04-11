@@ -47,6 +47,7 @@ class AddressesController < ApplicationController
     @chef = Chef.find(params[:chef_id])
     @addresses = Address.where(chef_id: @chef.id).order('main desc').order('created_at asc')
     respond_to do |format|
+      # p address_params
       if @address.update(address_params)
         format.html { redirect_to chefs_url, :flash =>{:success => "O endereço foi atualizado com sucesso ao chefe: #{@address.chef.name }." } } 
         format.json { render :show, status: :ok, location: @address }
