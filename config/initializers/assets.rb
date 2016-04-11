@@ -49,7 +49,12 @@ Rails.application.config.assets.precompile += %w(
    	bootstrap-tagsinput.js
    	bootstrap3-typeahead.js
    	jquery.maskMoney.min.js
+	front.js
 
+   	theme.css
+   	jquery.fancybox.css
+   	superfish.css
+   	superfish-vertical.css
   	bootstrap.min.css
   	summernote.css
   	bootstrap-reset.css
@@ -58,6 +63,8 @@ Rails.application.config.assets.precompile += %w(
   	owl.carousel.css
   	slidebars.css
   	style.css
+  	front-style.css
+  	front-style-responsive.css
   	style-responsive.css
   	multi-select.css
 	bootstrap-fileupload.css
