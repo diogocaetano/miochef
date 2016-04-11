@@ -1,3 +1,7 @@
+<%= form_tag(addresses_path, method: 'GET') do -%>
+  <%= hidden_field_tag :chef_id, @chef ? @chef.id : chef.id, :class => 'form-control' %>
+  <%= link_to raw("<button type='submit' class='btn btn-default'>Voltar</button>"), addresses_path %>
+<% end %>
 <header class="panel-heading">
 	Novo Endereço Para o Chefe - <%= @chef.name %>
 </header>

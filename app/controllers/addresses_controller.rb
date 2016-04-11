@@ -28,12 +28,11 @@ class AddressesController < ApplicationController
   # POST /addresses.json
   def create
     @address = Address.new(address_params)
-
+    @chefs = Chef.all.paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
       if @address.save
         format.html { redirect_to chefs_url, :flash =>{:success => "O endereço adicionado com sucesso ao chefe: #{@address.chef.name }." } } 
       else
-        @chefs = Chef.all
         format.html { render :template => 'chefs/index' }
       end
     end
