@@ -27,7 +27,7 @@ class PlatesController < ApplicationController
     @plate = Plate.new
     @types = PlateType.all
     @badges = PlateBadge.all
-    @chefs = Chef.all
+    @chefs = Chef.where('active = 1')
     @ingredients_list = Ingredient.all.map { |i| {text: i.name, value: i.id}}
     @plate_ingredients_list = @plate.ingredients.map { |i| {text: i.name, value: i.id} }
     @accompaniments_list = PlateAccompaniment.all.map { |p| {text: p.name, value: p.id}}
@@ -45,7 +45,7 @@ class PlatesController < ApplicationController
     @plate = Plate.new(plate_params_with_ingredients_and_accompaniments)
     @types = PlateType.all
     @badges = PlateBadge.all
-    @chefs = Chef.all
+    @chefs = Chef.where('active = 1')
 
     respond_to do |format|
       if @plate.save
@@ -150,7 +150,7 @@ class PlatesController < ApplicationController
     def set_relations
       @types = PlateType.all
       @badges = PlateBadge.all
-      @chefs = Chef.all
+      @chefs = Chef.where('active = 1')
       @ingredients_list = Ingredient.all.map { |i| {text: i.name, value: i.id}}
       @plate_ingredients_list = @plate.ingredients.map { |i| {text: i.name, value: i.id} }
       @accompaniments_list = PlateAccompaniment.all.map { |p| {text: p.name, value: p.id}}
