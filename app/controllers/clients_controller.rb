@@ -42,7 +42,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to clients_path, :flash =>{:success => 'Client foi criado com sucesso.' }
+      redirect_to clients_path, :flash =>{:success => 'Cliente foi criado com sucesso.' }
     else
       render :new
     end
@@ -51,7 +51,7 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   def update
     if @client.update(client_params)
-      redirect_to clients_path, :flash =>{:success => 'Client foi atualizado com sucesso.' }
+      redirect_to clients_path, :flash =>{:success => 'Cliente foi atualizado com sucesso.' }
     else
       render :edit
     end
@@ -60,7 +60,7 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   def destroy
     @client.destroy
-    redirect_to clients_path, :flash =>{:success => 'Client foi removido com sucesso.' }
+    redirect_to clients_path, :flash =>{:success => 'Cliente foi removido com sucesso.' }
   end
 
   private
