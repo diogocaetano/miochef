@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'home' => 'home#index'
+  # get 'view' => 'home#view'
   scope '/admin' do
     resources :chef_types
     resources :daily_menus
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
     resources :ingredients
     resources :badges
     resources :countries
-    
+
     resources  :users_admin, :controller => 'users' do
       collection do
         patch 'update_password'
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
     end
 
     devise_for :users
-    
+
     resources :roles_permissions
     resources :permissions
     resources :roles
@@ -49,7 +50,7 @@ Rails.application.routes.draw do
       post 'login' => 'sessions#login'
     end
   end
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
