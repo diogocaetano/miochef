@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       resources :addresses
     end
     
+    resources :clients do 
+      resources :addresses
+    end
+    
     resources :addresses
 
     get 'chef_addresses/:chef_id' => 'addresses#index'

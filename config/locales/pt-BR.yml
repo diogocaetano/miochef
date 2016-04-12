@@ -222,6 +222,9 @@ pt-BR:
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
       daily_menu: 'Menu do Dia'
+      chef: 'Chefe'
+      client: 'Cliente'
+      address: 'Endereço'
     attributes:
       user:
         name: "Nome"
@@ -307,6 +310,7 @@ pt-BR:
         zip_code: "CEP"
         complement: "Complemento"
         chef_id: "Chefe"
+        client_id: "Cliente"
       nutritional_table:
         energetic_value: "Valor energético"
         carbohydrate: "Carboidrato"
@@ -317,14 +321,11 @@ pt-BR:
         sodium: "Sódio"
         iron: "Ferro"
         dietary_fiber: "Fibra alimentar"
-      address:
-        public_place: "Logradouro"
-        number: "Número"
-        neighborhood: "Bairro"
-        city: "Cidade"
-        state: "Estado"
-        zip_code: "CEP"
-        complement: "Complemento"
+      client:
+        name: "Nome"
+        last_name: "Sobre Nome"
+        cep: "CEP"
+        email: "Email"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'
