@@ -225,6 +225,7 @@ pt-BR:
       chef: 'Chefe'
       client: 'Cliente'
       address: 'Endereço'
+      settings: 'Configurações'
     attributes:
       user:
         name: "Nome"
@@ -326,6 +327,10 @@ pt-BR:
         last_name: "Sobre Nome"
         cep: "CEP"
         email: "Email"
+      setting:
+        key: "Chave"
+        name: "Nome"
+        value: "Valor"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

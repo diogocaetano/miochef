@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :settings
   get 'home' => 'home#index'
   scope '/admin' do
     resources :chef_types
