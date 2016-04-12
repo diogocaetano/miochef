@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404012602) do
+ActiveRecord::Schema.define(version: 20160412023727) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20160404012602) do
     t.string   "state",        limit: 255
     t.string   "zip_code",     limit: 255
     t.string   "complement",   limit: 255
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.boolean  "main",                     default: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.boolean  "main"
+    t.integer  "client_id",    limit: 4
   end
 
   add_index "addresses", ["chef_id"], name: "index_addresses_on_chef_id", using: :btree
@@ -87,6 +88,15 @@ ActiveRecord::Schema.define(version: 20160404012602) do
 
   add_index "chefs", ["chef_type_id"], name: "index_chefs_on_chef_type_id", using: :btree
   add_index "chefs", ["country_id"], name: "index_chefs_on_country_id", using: :btree
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "last_name",  limit: 255
+    t.string   "email",      limit: 255
+    t.string   "cep",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -225,6 +235,14 @@ ActiveRecord::Schema.define(version: 20160404012602) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "key",        limit: 255
+    t.string   "name",       limit: 255
+    t.string   "value",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

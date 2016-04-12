@@ -51,9 +51,9 @@
                     <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), chef, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_path(chef), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), '#add_chef_address_'+chef.id.to_s, :class => 'btn btn-primary tooltips', :'data-toggle' => 'modal', title: 'Adicionar Endereço'  %>
-                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), "chef_addresses/#{chef.id}", :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Visualizar Endereços' %>
-                     <!-- ATIVAR/DESATIVAR -->                    
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), new_chef_address_path(chef), :class => 'btn btn-primary tooltips',  'data-placement': 'top', title: 'Adicionar Endereço' %>
+                    <%= link_to raw("<i class='fa fa-location-arrow'></i>"), chef_addresses_path(chef), :class => 'btn btn-info tooltips',  'data-placement': 'top', title: 'Visualizar Endereços' %>
+                     <!-- ATIVAR/DESATIVAR -->
                     <% if chef.active %>
                       <%= link_to raw("<i class='fa fa-power-off'></i>"), '#deactivate_chef_'+chef.id.to_s, :class => 'btn btn-success tooltips', :'data-toggle' => 'modal', title: 'Desativar Chef'  %>
                     <% else %>
@@ -85,25 +85,6 @@
                             <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                           </div>
                           <%= link_to raw("Confirmar"), chef, :class => 'btn btn-primary', :'data-method' => 'delete' %>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade modal-dialog-center in" id="add_chef_address_<%= chef.id.to_s %>">
-                    tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                  <div class="modal-backdrop fade in" style="height: 749px;"></div>
-                  <div class="modal-dialog ">
-                    <div class="modal-content-wrap">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                          <h4 class="modal-title">Adicionar Endereço para o Chefe - <%= chef.name %></h4>
-                        </div>
-                        <div class="modal-body">
-                          <%= render 'addresses/form', chef: chef %>
-                        </div>
-                        <div class="modal-footer">
                         </div>
                       </div>
                     </div>

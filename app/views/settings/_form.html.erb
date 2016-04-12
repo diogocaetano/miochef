@@ -1,0 +1,35 @@
+<div class="col-lg-12">
+  <%= form_for(@setting) do |f| %>  
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), settings_path %>
+  <div class="panel"></div>
+  <section class="panel">
+    <header class="panel-heading">
+       Configuração
+    </header>
+    <% if @setting.errors.any? %>
+      <div class="alert alert-danger">
+        <% @setting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="panel-body">
+          <div class="form-group">
+            <%= f.label :key %><br>
+            <%= f.text_field :key, :readonly => true, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :name %><br>
+            <%= f.text_field :name, :readonly => true, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :value %><br>
+            <%= f.text_field :value, :class => 'form-control' %>
+          </div>
+            </div>
+  </section>
+  <div class="form-group">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+  <% end -%>
+</div>

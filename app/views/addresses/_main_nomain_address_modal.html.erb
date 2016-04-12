@@ -18,9 +18,8 @@
           <div class="pull-left">
             <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
           </div>
-         <%= form_for(address) do |f| %>
+          <%= form_for [@object, address] do |f| %>
             <%= f.hidden_field :main, :value => true, :class => 'form-control' %>
-            <%= hidden_field_tag :chef_id, chef_id, :class => 'form-control' %>
             <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
           <% end %>
         </div>

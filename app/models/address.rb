@@ -1,5 +1,6 @@
 class Address < ActiveRecord::Base
   belongs_to :chef
+  belongs_to :client
 
   validates :public_place, presence: true
   validates :number, presence: true
@@ -7,7 +8,8 @@ class Address < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :zip_code, presence: true
-  validates :chef_id, presence: true
+  validates :chef_id, presence: true, if: Proc.new { |a| a.client_id.blank? }
+  validates :client_id, presence: true, if: Proc.new { |a| a.chef_id.blank? }
 
   before_save :update_main_address
   before_destroy :allow_destroy?
@@ -20,7 +22,11 @@ private
   
   def update_main_address
     if self.main
-      Address.where(chef_id: self.chef_id).where.not(id: self.id).update_all(main: false)
+      if not self.chef_id.blank?
+        Address.where(chef_id: self.chef_id).where.not(id: self.id).update_all(main: false)
+      elsif not self.client_id.blank?
+        Address.where(client_id: self.client_id).where.not(id: self.id).update_all(main: false)
+      end
     end
   end
 
@@ -30,5 +36,4 @@ private
       return false
     end 
   end
-
 end

@@ -1,0 +1,29 @@
+<div class="col-lg-12">  
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), settings_path %>
+  <div class="panel"></div>
+	<section class="panel">
+    <div class="panel-heading">
+        <div class="panel-title">Detalhes</div>
+    </div>
+    <div class="panel-body form-horizontal">
+    		      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Key</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @setting.key %></label>
+          </div>
+	      </div>
+	    	      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Name</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @setting.name %></label>
+          </div>
+	      </div>
+	    	      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Value</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @setting.value %></label>
+          </div>
+	      </div>
+	        </div>
+  </section>
+</div>

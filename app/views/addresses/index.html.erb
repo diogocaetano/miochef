@@ -1,10 +1,15 @@
 <div class="row">
   <div class="col-lg-12">
-    <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), chefs_path %>
+    <% if @chef %>
+      <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), chefs_path %>
+    <% end %>
+    <% if @client %>
+      <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), clients_path %>
+    <% end %>
     <div class="panel"></div>
     <section class="panel">
       <header class="panel-heading">
-          Endereços do Chefe - <%= @chef.name %>
+          Endereços do <%= @chef ? 'Chefe' : 'Cliente' %> - <%= @chef ? @chef.name : @client.name %>
       </header>
       <div class="panel-body">
         <section id="unseen">
@@ -36,7 +41,12 @@
                   <td><%= address.zip_code %></td>
                   <td><%= address.complement %></td>
                   <td>
-                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_address_path(address), :class => 'btn btn-info' %>
+                    <% if @chef %>
+                      <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_chef_address_path(@chef, address), :class => 'btn btn-info' %>
+                    <% end %>
+                    <% if @client %>
+                      <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_client_address_path(@client, address), :class => 'btn btn-info' %>
+                    <% end %>
                     <% if address.main? %>
                       <%= link_to raw("<i class='fa fa-check'></i>"), '#main_address_'+address.id.to_s, :class => 'btn btn-success tooltips', title: 'Endereço Principal'  %>
                     <% else %>
@@ -45,7 +55,11 @@
                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_address_'+address.id.to_s, :class => 'btn btn-danger', :'data-toggle' => 'modal'  %>
                   </td>
                 </tr>
-                <%= render partial: 'addresses/main_nomain_address_modal', locals: {address: address, chef_id: @chef.id } %>
+                <% if @chef %>
+                  <%= render partial: 'addresses/main_nomain_address_modal', locals: {address: address, chef_id: @object.id } %>
+                <% else %>
+                  <%= render partial: 'addresses/main_nomain_address_modal', locals: {address: address, client_id: @object.id } %>
+                <% end %>
                 <div class="modal fade modal-dialog-center in" id="delete_address_<%= address.id.to_s %>"
                   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;">
                 </div>
@@ -65,7 +79,11 @@
                         <div class="pull-left">
                           <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
                         </div>
-                        <%= link_to raw("Confirmar"), address, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        <% if @chef %>
+                          <%= link_to raw("Confirmar"), chef_address_path(@chef, address), :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        <% else %>
+                          <%= link_to raw("Confirmar"), client_address_path(@client, address), :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        <% end %>
                       </div>
                     </div>
                   </div>
