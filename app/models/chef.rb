@@ -26,4 +26,10 @@ class Chef < ActiveRecord::Base
     return 'Sim' if self.active
     'Não'
   end
+  def age
+    dob = self.born_date
+    today = Date.today
+    d = Date.new(today.year, dob.month, dob.day)
+    age = d.year - dob.year - (d > today ? 1 : 0)
+  end
 end

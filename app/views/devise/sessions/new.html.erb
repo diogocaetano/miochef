@@ -1,6 +1,8 @@
 <div class="container">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-signin'}) do |f| %>      
-    <h2 class="form-signin-heading">MioChef</h2>
+    <div class="text-center">
+      <%= image_tag("logo.png", :alt => "logo miochef", width: "120", heigth: "120", class: "form-signin-heading") %>
+    </div> 
     <div class="login-wrap">
       <%= text_field_tag "user[email]", nil, id: "user_email", class: "form-control", placeholder: 'E-mail', autofocus: true %>
       <%= password_field_tag "user[password]", nil, id: "user_password", class: "form-control", placeholder: "Senha", autofocus: true, autocomplete: "off" %>

@@ -21,7 +21,7 @@
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Descrição</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @chef.description %></label>
+            <label for="number" class="form-control-static"><%= @chef.description.html_safe %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
@@ -39,7 +39,7 @@
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Data de Nascimento</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= I18n.l(@chef.born_date) %></label>
+            <label for="number" class="form-control-static"><%= I18n.l(@chef.born_date) + " - " + @chef.age.to_s + " anos" %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
@@ -90,13 +90,14 @@
             <label for="number" class="form-control-static"><%= @chef.university %></label>
           </div>
 	      </div>
-
         <div class="form-group">
           <label for="number" class="control-label col-lg-3">Badges</label>
           <div class="col-lg-9">
-            <% @chef.badges.collect do |b| %>
-              <%= image_tag b.image.url(:thumb) %>
-            <% end %>
+            <div class="row">
+              <% @chef.badges.collect do |b| %>
+                  <%= render '/badges/badges', b: b   %>
+              <% end %>
+            </div>            
           </div>
         </div>
         <div class="form-group">

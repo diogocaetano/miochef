@@ -1,0 +1,12 @@
+<% unless b.nil? %>
+    <div class="col-xs-6 col-md-2">
+      <div href="#" class="thumbnail tooltips" data-placement='top' title="<%= b.name + ' - ' +b.description %>">
+        <%= image_tag b.image.url(:thumb) %>
+        <% if defined? input %>
+        	<p class="text-center">     		
+        		<input type="checkbox" name="badge_ids[]" value="<%=b.id%>" <%= ChefsHelper::chef_have_this_badge?(b, @chef) %>>
+        	</p>
+        <% end %>       
+      </div>
+    </div>     
+<% end %>
