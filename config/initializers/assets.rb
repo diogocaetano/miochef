@@ -45,21 +45,21 @@ Rails.application.config.assets.precompile += %w(
   	jquery.quicksearch.js
    	common-scripts.js
 
-  	bootstrap.min.css
-  	bootstrap-reset.css
-  	font-awesome.css
-  	jquery.easy-pie-chart.css
-  	owl.carousel.css
-  	slidebars.css
-  	style.css
-  	style-responsive.css
-  	multi-select.css
-	bootstrap-fileupload.css
-	bootstrap-wysihtml5.css
-	datepicker.css
-	timepicker.css
-	colorpicker.css
-	daterangepicker.css
-	datetimepicker.css
-	digg_pagination.css
+  	template/bootstrap.min.css
+  	template/bootstrap-reset.css
+  	template/font-awesome.css
+  	template/jquery.easy-pie-chart.css
+  	template/owl.carousel.css
+  	template/slidebars.css
+  	template/style.css
+  	template/style-responsive.css
+  	template/multi-select.css
+	template/bootstrap-fileupload.css
+	template/bootstrap-wysihtml5.css
+	template/datepicker.css
+	template/timepicker.css
+	template/colorpicker.css
+	template/daterangepicker.css
+	template/datetimepicker.css
+	template/digg_pagination.css
 )
