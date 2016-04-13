@@ -4,4 +4,7 @@ class HomeController < ActionController::Base
 	def index
 		render "home"
 	end
+  def view
+    # render "view"
+  end
 end

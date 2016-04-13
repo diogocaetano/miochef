@@ -228,6 +228,10 @@ pt-BR:
       chef_rating: 'Rating de Chefe'
       plate_rating: 'Rating de Prato'
       portal_banner: 'Rating de Prato'
+      chef: 'Chefe'
+      client: 'Cliente'
+      address: 'Endereço'
+      settings: 'Configurações'
     attributes:
       user:
         name: "Nome"
@@ -313,6 +317,7 @@ pt-BR:
         zip_code: "CEP"
         complement: "Complemento"
         chef_id: "Chefe"
+        client_id: "Cliente"
       nutritional_table:
         energetic_value: "Valor energético"
         carbohydrate: "Carboidrato"
@@ -353,6 +358,15 @@ pt-BR:
       portal_banner:
         image: 'Imagem'
         title: 'Título'
+      client:
+        name: "Nome"
+        last_name: "Sobre Nome"
+        cep: "CEP"
+        email: "Email"
+      setting:
+        key: "Chave"
+        name: "Nome"
+        value: "Valor"
   devise:
     confirmations:
       confirmed: 'Sua conta foi confirmada com sucesso. Você está logado.'

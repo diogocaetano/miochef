@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :clients
+
+  authenticated :client do
+    root 'home#index', as: :authenticated_client
+  end
+
   get 'home' => 'home#index'
+
   scope '/admin' do
     resources :portal_banners
     resources :plate_ratings
@@ -11,10 +18,18 @@ Rails.application.routes.draw do
     
     resources :chef_types
     resources :daily_menus
+    resources :settings
 
     # resources :nutritional_tables
+    resources :chefs do
+      resources :addresses
+    end
+
+    resources :clients do
+      resources :addresses
+    end
+
     resources :addresses
-    resources :chefs
 
     get 'chef_addresses/:chef_id' => 'addresses#index'
 
@@ -31,7 +46,7 @@ Rails.application.routes.draw do
     resources :ingredients
     resources :badges
     resources :countries
-    
+
     resources  :users_admin, :controller => 'users' do
       collection do
         patch 'update_password'
@@ -40,7 +55,7 @@ Rails.application.routes.draw do
     end
 
     devise_for :users
-    
+
     resources :roles_permissions
     resources :permissions
     resources :roles
@@ -56,7 +71,7 @@ Rails.application.routes.draw do
       post 'login' => 'sessions#login'
     end
   end
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_action :user_has_permission_to_action?, unless: :devise_controller?
 
   def get_modules_category
-  	@categories = ModulesCategory.all    
+  	@categories = ModulesCategory.all
   end
 
   def get_module_active    

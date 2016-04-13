@@ -41,6 +41,7 @@
 
 .sb-slidebar {
 	height: 100%;
+    overflow-x: hidden;
 	overflow-y: auto; /* Enable vertical scrolling on Slidebars when needed. */
 	position: fixed;
 	top: 0;
