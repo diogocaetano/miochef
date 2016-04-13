@@ -1,17 +1,24 @@
 Rails.application.routes.draw do
 
-  resources :settings
+  devise_for :clients
+
+  authenticated :client do
+    root 'home#index', as: :authenticated_client
+  end
+
   get 'home' => 'home#index'
+  
   scope '/admin' do
     resources :chef_types
     resources :daily_menus
+    resources :settings
 
     # resources :nutritional_tables
     resources :chefs do 
       resources :addresses
     end
     
-    resources :clients do 
+    resources :clients do
       resources :addresses
     end
     
