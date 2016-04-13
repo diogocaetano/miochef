@@ -78,5 +78,5 @@ Rails.application.config.assets.precompile += %w(
   template/bootstrap-tagsinput-typeahead.css
   template/digg_pagination.css
 
-  application.css
+  application.scss
 )

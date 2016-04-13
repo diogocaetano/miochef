@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160412023727) do
     t.string   "state",        limit: 255
     t.string   "zip_code",     limit: 255
     t.string   "complement",   limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.boolean  "main"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "main",                     default: false
     t.integer  "client_id",    limit: 4
   end
 
