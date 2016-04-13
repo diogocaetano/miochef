@@ -65,9 +65,9 @@
 
                 <%= render partial: 'chefs/activate_deactivate_chef_modal', locals: {chef: chef} %>
 
-                <div class="modal fade modal-dialog-center in" id="delete_chef_<%= chef.id.to_s %>">
+                <div class="modal fade modal-dialog-center in" id="delete_chef_<%= chef.id.to_s %>"
                   tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                  <div class="modal-backdrop fade in"></div>
+                  
                   <div class="modal-dialog ">
                     <div class="modal-content-wrap">
                       <div class="modal-content">
