@@ -1,60 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<%= render 'layouts/front/head' %>
-<body>
-	<%= render 'layouts/front/header' %>
-  	<%= yield %>
-	<%= render 'layouts/front/footer' %>
-	<%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>
-	  <script>
-
-
-      $(window).load(function() {
-          $('[data-zlname = reverse-effect]').mateHover({
-              position: 'y-reverse',
-              overlayStyle: 'rolling',
-              overlayBg: '#fff',
-              overlayOpacity: 0.7,
-              overlayEasing: 'easeOutCirc',
-              rollingPosition: 'top',
-              popupEasing: 'easeOutBack',
-              popup2Easing: 'easeOutBack'
-          });
-      });
-
-      $(window).load(function() {
-          $('.flexslider').flexslider({
-              animation: "slide",
-              start: function(slider) {
-                  $('body').removeClass('loading');
-              }
-          });
-      });
-
-      //    fancybox
-      jQuery(".fancybox").fancybox();
-
-      $(function() {
-          var $container = $('#gallery');
-          $container.isotope({
-              itemSelector: '.item',
-              animationOptions: {
-                  duration: 750,
-                  easing: 'linear',
-                  queue: false
-              }
-          });
-
-          // filter items when filter link is clicked
-          $('#filters a').click(function() {
-              var selector = $(this).attr('data-filter');
-              $container.isotope({filter: selector});
-              return false;
-          });
-      });
-
-
-
-  </script>
-</body>
+  <body>
+  	<%= render 'layouts/front/header' %>
+    	<%= yield %>
+  	<%= render 'layouts/front/footer' %>
+  	<%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>	 
+  </body>
 </html>
