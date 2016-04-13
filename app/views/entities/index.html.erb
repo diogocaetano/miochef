@@ -43,7 +43,8 @@
                                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_entity_path(entity), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
                                     <%= link_to raw("<i class='fa fa-trash-o'></i>"), '#delete_entity_'+entity.id.to_s, :class => 'btn btn-danger tooltips', :'data-toggle' => 'modal', 'data-placement': 'top', title: 'Deletar'  %>                                   
                                 </tr>
-                                <div class="modal fade modal-dialog-center in" id="delete_entity_<%=entity.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" ></div>
+
+                                <div class="modal fade modal-dialog-center in" id="delete_entity_<%=entity.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                         <div class="modal-dialog ">
                                             <div class="modal-content-wrap">
                                                 <div class="modal-content">
