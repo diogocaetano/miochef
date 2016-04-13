@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'home' => 'home#index'
 
   scope '/admin' do
+    get 'addresses/get_client_addresses/:client_id' => 'addresses#get_client_addresses'
+
     resources :portal_banners
     resources :plate_ratings
     resources :chef_ratings

@@ -20,7 +20,7 @@
           </div>
                   <div class="form-group">
             <%= f.label 'Endereço do Cliente*' %><br>
-            <%= f.text_field :client_address_id, :class => 'form-control' %>
+             <%= f.select :client_address_id, [], {:prompt => 'Selecione o Endereço'}, {:class => 'form-control'} %>
           </div>
                   <div class="form-group">
             <%= f.label 'Código de Pagamento*' %><br>
@@ -49,3 +49,28 @@
   </div>
   <% end -%>
 </div>
+
+<script type="text/javascript">
+  window.addEventListener('load', function(){
+    $('[name="request[client_id]"]').on('change', function(){
+        $.ajax({
+          url: 'addresses/get_client_addresses/' + $('[name="request[client_id]"] option:selected').val(),
+          type: 'GET',
+          dataType: 'json',
+          data: {
+            client_id: $('[name="request[client_id]"] option:selected').val()
+          }, 
+        })
+        .done(function(data){
+          $('[name="request[client_address_id]"]').empty();
+          $('[name="request[client_address_id]"]').append('<option value="">Selecione o Endereço</option>');
+          for (var i = 0; i < data.length; i++) {
+            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + '>' + data[i][0] + '</option>');
+          }
+        })
+        .fail(function(){
+          console.log('erro');
+        });
+    });
+  });
+</script>
