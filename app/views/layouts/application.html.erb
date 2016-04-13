@@ -3,26 +3,26 @@
 	<head>
 	  	<title>Miochef</title>
 	  	<%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'bootstrap-reset', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'font-awesome', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'jquery.easy-pie-chart', media: 'all', 'data-turbolinks-track' => true %>	  	
-	  	<%= stylesheet_link_tag    'owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'slidebars', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'style-responsive', media: 'all', 'data-turbolinks-track' => true %>
-	  	
-	  	<!-- Advanced Form Components -->
-	  	<%= stylesheet_link_tag 'bootstrap-fileupload', media: 'all', 'data-turbolinks-track' => true %>    	
-    	<%= stylesheet_link_tag 'datepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'timepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'colorpicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'daterangepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'summernote', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/bootstrap-reset', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/font-awesome', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/jquery.easy-pie-chart', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/slidebars', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/style', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag    'template/style-responsive', media: 'all', 'data-turbolinks-track' => true %>
 
-	  	<%= stylesheet_link_tag	'multi-select', media: 'all', 'data-turbolinks-track' => true %>	
-	  	<%= stylesheet_link_tag	'digg_pagination', media: 'all', 'data-turbolinks-track' => true %>		  	
+	  	<!-- Advanced Form Components -->
+	  	<%= stylesheet_link_tag 'template/bootstrap-fileupload', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/datepicker', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/timepicker', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/colorpicker', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/daterangepicker', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
+    	<%= stylesheet_link_tag 'template/summernote', media: 'all', 'data-turbolinks-track' => true %>
+
+	  	<%= stylesheet_link_tag	'template/multi-select', media: 'all', 'data-turbolinks-track' => true %>
+	  	<%= stylesheet_link_tag	'template/digg_pagination', media: 'all', 'data-turbolinks-track' => true %>
 	  	<%= csrf_meta_tags %>
 
 	  	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +46,7 @@
 	            <a href="/admin" class="logo">Mio<span> Chef</span></a>
 
 	            <!--logo end-->
-	            
+
 	            <div class="top-nav ">
 	                <!--search & user info start-->
 	                <ul class="nav pull-right top-menu">
@@ -96,7 +96,7 @@
 	                  	<% @categories.each do |category| %>
 		                  	<% if category.entities.any? %>
 		                  		<% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
-				                  	<li class="sub-menu">				                      	
+				                  	<li class="sub-menu">
 				                      	<a class="<%= MenuHelper::is_active_menu(category,nil,@module_active)%>" href="javascript:;" >
 				                          	<i class="<%= category.icon %>"></i>
 				                          	<span><%= category.name %></span>
@@ -131,7 +131,7 @@
 	          	</section>
 	      	</section>
 	      	<!--main content end-->
-	      	<!-- Right Slidebar start -->      		
+	      	<!-- Right Slidebar start -->
       		<!-- Right Slidebar end -->
 		</section>
 		<% else %>
@@ -145,7 +145,7 @@
 	<% end %>
 
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	
+
   	<script>
 
       //owl carousel
