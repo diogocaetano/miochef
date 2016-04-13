@@ -30,7 +30,7 @@
             <tbody>
               <% @plate_ratings.each do |plate_rating| %>
                 <tr>
-                                      <td><%= plate_rating.client_id %></td>
+                                      <td><%= plate_rating.client.name %></td>
                                       <td><%= plate_rating.plate.title %></td>
                                       <td><%= plate_rating.score %></td>
                                     <td>

@@ -30,6 +30,7 @@ class PlateRatingsController < ApplicationController
   def new
     @plate_rating = PlateRating.new
     @plates = Plate.all
+    @clients = Client.all
   end
 
   # GET /plate_ratings/1/edit
@@ -40,6 +41,7 @@ class PlateRatingsController < ApplicationController
   def create
     @plate_rating = PlateRating.new(plate_rating_params)
     @plates = Plate.all
+    @clients = Client.all
 
     if @plate_rating.save
       redirect_to plate_ratings_path, :flash =>{:success => 'Rating de Prato foi criado com sucesso.' }
@@ -68,6 +70,7 @@ class PlateRatingsController < ApplicationController
     def set_plate_rating
       @plate_rating = PlateRating.find(params[:id])
       @plates = Plate.all
+      @clients = Client.all
     end
 
     # Only allow a trusted parameter "white list" through.
