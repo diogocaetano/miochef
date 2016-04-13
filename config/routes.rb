@@ -16,7 +16,10 @@ Rails.application.routes.draw do
     resources :chef_ratings
     resources :window_requests
     resources :request_statuses
-    resources :requests
+
+    resources :requests do
+      post :update_status
+    end
     
     resources :chef_types
     resources :daily_menus

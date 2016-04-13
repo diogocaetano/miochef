@@ -9,13 +9,13 @@
     		      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Cliente</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @request.client %></label>
+            <label for="number" class="form-control-static"><%= @request.client.name %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Endereço do Cliente</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @request.client_address %></label>
+            <label for="number" class="form-control-static"><%= @request.client_address.public_place %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
@@ -27,13 +27,13 @@
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Data do Pedido</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @request.request_date %></label>
+            <label for="number" class="form-control-static"><%= @request.request_date.strftime('%d/%m/%Y') %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Data da Entrega</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @request.delivery_date %></label>
+            <label for="number" class="form-control-static"><%= @request.delivery_date.strftime('%d/%m/%Y') %></label>
           </div>
 	      </div>
 	    	      <div class="form-group">
@@ -45,7 +45,7 @@
 	    	      <div class="form-group">
           <label for="number" class="control-label col-lg-3">Status do Pedido</label>
           <div class="col-lg-9">
-            <label for="number" class="form-control-static"><%= @request.request_status %></label>
+            <label for="number" class="form-control-static"><%= @request.request_status.name %></label>
           </div>
 	      </div>
 	        </div>

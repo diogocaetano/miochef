@@ -3,6 +3,7 @@ class RequestsController < ApplicationController
 
   # GET /requests
   def index    
+    @statuses = RequestStatus.all
     @term = params[:term]
     @where = []
     
@@ -73,6 +74,16 @@ class RequestsController < ApplicationController
   def destroy
     @request.destroy
     redirect_to requests_path, :flash =>{:success => 'Pedido foi removido com sucesso.' }
+  end
+
+  def update_status
+    @request = Request.find(params[:request_id])
+    @request.request_status_id = params['request'][:request_status_id]
+    @request.save
+    respond_to do |format|
+      format.html { redirect_to :back, :flash =>{:success => 'Status do Pedido atualizado com sucesso.' } }
+      format.json { head :no_content }
+    end
   end
 
   private
