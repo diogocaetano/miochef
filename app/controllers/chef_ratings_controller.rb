@@ -30,6 +30,7 @@ class ChefRatingsController < ApplicationController
   def new
     @chef_rating = ChefRating.new
     @chefs = Chef.all
+    @clients = Client.all
   end
 
   # GET /chef_ratings/1/edit
@@ -40,6 +41,7 @@ class ChefRatingsController < ApplicationController
   def create
     @chef_rating = ChefRating.new(chef_rating_params)
     @chefs = Chef.all
+    @clients = Client.all
 
     if @chef_rating.save
       redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chefe foi criado com sucesso.' }
@@ -68,6 +70,7 @@ class ChefRatingsController < ApplicationController
     def set_chef_rating
       @chef_rating = ChefRating.find(params[:id])
       @chefs = Chef.all
+      @clients = Client.all
     end
 
     # Only allow a trusted parameter "white list" through.

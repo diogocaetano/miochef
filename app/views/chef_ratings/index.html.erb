@@ -30,7 +30,7 @@
             <tbody>
               <% @chef_ratings.each do |chef_rating| %>
                 <tr>
-                                      <td><%= chef_rating.client_id %></td>
+                                      <td><%= chef_rating.client.name %></td>
                                       <td><%= chef_rating.chef.name %></td>
                                       <td><%= chef_rating.score %></td>
                                     <td>

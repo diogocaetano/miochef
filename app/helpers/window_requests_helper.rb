@@ -14,4 +14,8 @@ module WindowRequestsHelper
 			window_request.final_time.to_s(:time)
 		end
 	end
+
+	def get_time_string window_request
+		get_initial_timepicker_value(window_request) + ' - ' + get_final_timepicker_value(window_request)
+	end
 end

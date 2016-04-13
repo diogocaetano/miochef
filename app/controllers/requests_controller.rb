@@ -37,6 +37,9 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
+    @windows = WindowRequest.all
+    @clients = Client.all
+    @statuses = RequestStatus.all
   end
 
   # GET /requests/1/edit
@@ -46,6 +49,9 @@ class RequestsController < ApplicationController
   # POST /requests
   def create
     @request = Request.new(request_params)
+    @windows = WindowRequest.all
+    @clients = Client.all
+    @statuses = RequestStatus.all
 
     if @request.save
       redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
@@ -73,6 +79,9 @@ class RequestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
+      @windows = WindowRequest.all
+      @clients = Client.all
+      @statuses = RequestStatus.all
     end
 
     # Only allow a trusted parameter "white list" through.
