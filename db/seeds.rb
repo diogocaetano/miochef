@@ -20,7 +20,7 @@ User.find_or_create_by(name: 'Teste') do |user|
 	user.role_id = 2
 end
 
-ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-cogs')
+ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-user')
 ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
 ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
 
@@ -50,6 +50,7 @@ Permission.find_or_create_by(entity_id: 2, action_name: 'Editar', action: 'edit'
 Permission.find_or_create_by(entity_id: 2, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: 2, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: 2, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: 2, action_name: 'Editar Todas as Senhas', action: 'update_all_passwords')
 
 Permission.find_or_create_by(entity_id: 3, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 3, action_name: 'Criar', action: 'new')
