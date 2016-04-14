@@ -54,12 +54,9 @@
   window.addEventListener('load', function(){
     $('[name="request[client_id]"]').on('change', function(){
         $.ajax({
-          url: 'addresses/get_client_addresses/' + $('[name="request[client_id]"] option:selected').val(),
+          url: '/admin/addresses/get_client_addresses/' + $('[name="request[client_id]"] option:selected').val(),
           type: 'GET',
-          dataType: 'json',
-          data: {
-            client_id: $('[name="request[client_id]"] option:selected').val()
-          }, 
+          dataType: 'json', 
         })
         .done(function(data){
           $('[name="request[client_address_id]"]').empty();
