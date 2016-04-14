@@ -136,7 +136,9 @@ $('.colorpicker-rgba').colorpicker();
 
     $('#my_multi_select1').multiSelect();
     $('#my_multi_select2').multiSelect({
-        selectableOptgroup: true
+        selectableOptgroup: true,
+        selectableHeader: "<div class='custom-header text-center'>Permissões Não selecionadas</div>",
+        selectionHeader: "<div class='custom-header text-center'>Permissões Selecionadas</div>",       
     });
 
     $('#my_multi_select3').multiSelect({
