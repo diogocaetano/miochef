@@ -22,7 +22,7 @@ end
 
 ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-cogs')
 ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
-ModulesCategory.find_or_create_by(name: 'Chefes', icon: 'fa fa-coffee')
+ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
 
 Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false, visible: true)
@@ -31,7 +31,7 @@ Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: '
 Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true, visible: true)
 Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Chefs', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
 

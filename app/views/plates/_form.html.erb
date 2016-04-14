@@ -53,12 +53,11 @@
 
           <div class="form-group">
             <%= f.label "Badges" %><br>
-            <% @badges.each do |badge| %>
-              <div class="col-xs-6 col-sm-6 col-md-3 col-lg-1">
-                <%= image_tag badge.image.url(:thumb) %>
-                <%= check_box_tag "plate[plate_badge_ids][]", badge.id, @plate.plate_badges.include?(badge), {class: ''} %>
+              <div class="row">
+                <% @badges.each do |badge| %>
+                    <%= render '/plate_badges/plate_badges', b: badge, input: true  %>
+                <% end %>
               </div>
-            <% end %>
           </div>
     </div>
   </section>
