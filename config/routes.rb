@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     root 'home#index', as: :authenticated_client
   end
 
-  get 'home' => 'home#index'
-  # get 'about/index', :to => 'about/index', :as => :about
+  get 'home' => 'home#index', as: :home
+  get 'about', :to => 'about#index', as: :about
   # get 'about' => 'about#index'
 
   scope '/admin' do
