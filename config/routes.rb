@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   get 'home' => 'home#index'
+  # get 'about/index', :to => 'about/index', :as => :about
+  # get 'about' => 'about#index'
 
   scope '/admin' do
     resources :chef_types

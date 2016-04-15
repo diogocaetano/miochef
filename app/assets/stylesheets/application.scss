@@ -1,5 +1,7 @@
 // Utils
-@import "variables";
+@import "applications/ultils/variables";
+@import "applications/ultils/class";
+@import "applications/ultils/general";
 
 // Project Folders
 @import "applications/*";

@@ -1,174 +1,180 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  	<title>Miochef</title>
-	  	<%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/bootstrap-reset', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/font-awesome', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/jquery.easy-pie-chart', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/slidebars', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/style', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag    'template/style-responsive', media: 'all', 'data-turbolinks-track' => true %>
+<head>
+  <title>Miochef</title>
+  <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/bootstrap-reset', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/font-awesome', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/jquery.easy-pie-chart', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/owl.carousel', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/slidebars', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/style', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'template/style-responsive', media: 'all', 'data-turbolinks-track' => true %>
 
-	  	<!-- Advanced Form Components -->
-	  	<%= stylesheet_link_tag 'template/bootstrap-fileupload', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/datepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/timepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/colorpicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/daterangepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
-    	<%= stylesheet_link_tag 'template/summernote', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Advanced Form Components -->
+  <%= stylesheet_link_tag 'template/bootstrap-fileupload', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/datepicker', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/timepicker', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/colorpicker', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/daterangepicker', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/datetimepicker', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'template/summernote', media: 'all', 'data-turbolinks-track' => true %>
 
-	  	<%= stylesheet_link_tag	'template/multi-select', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag	'template/digg_pagination', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= stylesheet_link_tag	'template/flag-icon', media: 'all', 'data-turbolinks-track' => true %>
-	  	<%= csrf_meta_tags %>
+  <%= stylesheet_link_tag	'template/multi-select', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag	'template/digg_pagination', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag	'template/flag-icon', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
-	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <%= favicon_link_tag 'content/favicons/favicon-192x192.png' %>
+  <%= favicon_link_tag 'content/favicons/favicon-32x32.png' %>
+  <%= favicon_link_tag 'content/favicons/favicon-16x16.png' %>
+  <%= favicon_link_tag 'content/favicons/favicon.png' %>
+  <!-- Favicon -->
 
 
-	  	<!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
 	    	<!--[if lt IE 9]>
 	      	<script src="js/html5shiv.js"></script>
 	      	<script src="js/respond.min.js"></script>
-	    <![endif]-->
-	</head>
-	<body>
-		<% if user_signed_in? %>
-		<section id="container">
-			      <!--header start-->
-	      	<header class="header white-bg">
-	            <div class="sidebar-toggle-box">
-	                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu"></div>
-	            </div>
-	            <!--logo start-->
-	            <a href="/admin" class="logo">Mio<span> Chef</span></a>
+         <![endif]-->
+       </head>
+       <body>
+        <% if user_signed_in? %>
+        <section id="container">
+         <!--header start-->
+         <header class="header white-bg">
+           <div class="sidebar-toggle-box">
+             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu"></div>
+           </div>
+           <!--logo start-->
+           <a href="/admin" class="logo">Mio<span> Chef</span></a>
 
-	            <!--logo end-->
+           <!--logo end-->
 
-	            <div class="top-nav ">
-	                <!--search & user info start-->
-	                <ul class="nav pull-right top-menu">
-	                    <li style="line-height: 37px;">
-	                        <i class="fa fa-laptop"></i>
-	                        <%= version %>
-	                    </li>
-	                    <!-- user login dropdown start-->
-	                    <li class="dropdown">
-	                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-	                            <!-- <img alt="" src="img/avatar1_small.jpg"> -->
-	                            <span class="username"><%= current_user.name %></span>
-	                            <b class="caret"></b>
-	                        </a>
-	                        <ul class="dropdown-menu extended logout">
-	                            <div class="log-arrow-up"></div>
-	                            <li>
-	                            	<%= link_to raw("<i class='fa fa-user'></i> Perfil"), edit_users_admin_path(current_user) %>
-	                            </li>
-	                            <li><%= link_to raw("<i class='fa fa-key'></i>Editar Senha"), '#modal-change-password', :'data-toggle' => 'modal' %></li>
+           <div class="top-nav ">
+             <!--search & user info start-->
+             <ul class="nav pull-right top-menu">
+               <li style="line-height: 37px;">
+                 <i class="fa fa-laptop"></i>
+                 <%= version %>
+               </li>
+               <!-- user login dropdown start-->
+               <li class="dropdown">
+                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                   <!-- <img alt="" src="img/avatar1_small.jpg"> -->
+                   <span class="username"><%= current_user.name %></span>
+                   <b class="caret"></b>
+                 </a>
+                 <ul class="dropdown-menu extended logout">
+                   <div class="log-arrow-up"></div>
+                   <li>
+                    <%= link_to raw("<i class='fa fa-user'></i> Perfil"), edit_users_admin_path(current_user) %>
+                  </li>
+                  <li><%= link_to raw("<i class='fa fa-key'></i>Editar Senha"), '#modal-change-password', :'data-toggle' => 'modal' %></li>
 	                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
 	                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li> -->
-	                           	<li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
-	                        </ul>
-	                    </li>
+                             <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+                           </ul>
+                         </li>
 	                    <!-- <li class="sb-toggle-right">
 	                        <i class="fa  fa-align-right"></i>
-	                    </li> -->
-	                    <!-- user login dropdown end -->
-	                </ul>
-	                <!--search & user info end-->
-	            </div>
-	        </header>
-	        <!--header end-->
-	      <!--sidebar start-->
-	      <aside>
-	          <div id="sidebar"  class="nav-collapse ">
-	              <!-- sidebar menu start-->
-	              	<ul class="sidebar-menu" id="nav-accordion">
-	              		<li>
-	              			<% if @module_active == 'dashboard' %>
-	              				<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path, class: 'active' %>
-                      		<% else %>
-                      			<%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path %>
-                      		<% end %>
-                  		</li>
-	                  	<% @categories.each do |category| %>
-		                  	<% if category.entities.any? %>
-		                  		<% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
-				                  	<li class="sub-menu">
-				                      	<a class="<%= MenuHelper::is_active_menu(category,nil,@module_active)%>" href="javascript:;" >
-				                          	<i class="<%= category.icon %>"></i>
-				                          	<span><%= category.name %></span>
-				                      	</a>
-				                      	<% category.entities.each do |entity| %>
-				                      		<% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
-					                      		<ul class="sub">
-					                          		<li class="<%= MenuHelper::is_active_menu(category,entity,@module_active)%>" >
-					                          			<% if entity.slug == "users_admin" %>
-					                          				<%= link_to entity.name, users_admin_index_path %>
-					                          			<% else %>
-					                          				<%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
-					                          			<% end %>
-					                          		</li>
-					                      		</ul>
-					                      	<% end %>
-					                    <% end %>
-				                  	</li>
-			                	<% end %>
-			                <% end %>
-			            <% end %>
-	              	</ul>
-	              <!-- sidebar menu end-->
-	          	</div>
-	      	</aside>
-	      	<!--sidebar end-->
-	      	<!--main content start-->
-	      	<section id="main-content">
-	          	<section class="wrapper">
-	          		<%= render 'layouts/messages' %>
-	              	<%= yield %>
-	          	</section>
-	      	</section>
-	      	<!--main content end-->
-	      	<!-- Right Slidebar start -->
-      		<!-- Right Slidebar end -->
-		</section>
-		<% else %>
-			<%= render 'layouts/messages' %>
-			<%= yield %>
-		<% end %>
-	</body>
+                       </li> -->
+                       <!-- user login dropdown end -->
+                     </ul>
+                     <!--search & user info end-->
+                   </div>
+                 </header>
+                 <!--header end-->
+                 <!--sidebar start-->
+                 <aside>
+                   <div id="sidebar"  class="nav-collapse ">
+                     <!-- sidebar menu start-->
+                     <ul class="sidebar-menu" id="nav-accordion">
+                       <li>
+                        <% if @module_active == 'dashboard' %>
+                        <%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path, class: 'active' %>
+                        <% else %>
+                        <%= link_to raw("<i class='fa fa-dashboard'></i><span>Dashboard</span>"), root_path %>
+                        <% end %>
+                      </li>
+                      <% @categories.each do |category| %>
+                      <% if category.entities.any? %>
+                      <% if MenuHelper::userHasPermissionToAnyModuleFromCategory?(current_user,category) %>
+                      <li class="sub-menu">
+                       <a class="<%= MenuHelper::is_active_menu(category,nil,@module_active)%>" href="javascript:;" >
+                         <i class="<%= category.icon %>"></i>
+                         <span><%= category.name %></span>
+                       </a>
+                       <% category.entities.each do |entity| %>
+                       <% if MenuHelper::userHasPermissionToModule?(current_user,entity) %>
+                       <ul class="sub">
+                         <li class="<%= MenuHelper::is_active_menu(category,entity,@module_active)%>" >
+                          <% if entity.slug == "users_admin" %>
+                          <%= link_to entity.name, users_admin_index_path %>
+                          <% else %>
+                          <%= link_to entity.name, Rails.application.routes.url_helpers.send("#{entity.slug}_path") %>
+                          <% end %>
+                        </li>
+                      </ul>
+                      <% end %>
+                      <% end %>
+                    </li>
+                    <% end %>
+                    <% end %>
+                    <% end %>
+                  </ul>
+                  <!-- sidebar menu end-->
+                </div>
+              </aside>
+              <!--sidebar end-->
+              <!--main content start-->
+              <section id="main-content">
+                <section class="wrapper">
+                 <%= render 'layouts/messages' %>
+                 <%= yield %>
+               </section>
+             </section>
+             <!--main content end-->
+             <!-- Right Slidebar start -->
+             <!-- Right Slidebar end -->
+           </section>
+           <% else %>
+           <%= render 'layouts/messages' %>
+           <%= yield %>
+           <% end %>
+         </body>
 
-	<% if not current_user.nil? %>
-		<%= render partial: 'users/change_password', locals: {current_user: current_user} %>
-	<% end %>
+         <% if not current_user.nil? %>
+         <%= render partial: 'users/change_password', locals: {current_user: current_user} %>
+         <% end %>
 
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-  	<script>
+         <script>
 
       //owl carousel
 
-      	$(document).ready(function() {
-          $("#owl-demo").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true,
-			  autoPlay:true
+      $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+          navigation : true,
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem : true,
+          autoPlay:true
 
-          });
-      	});
+        });
+      });
 
       //custom select box
 
       $(function(){
-          $('select.styled').customSelect();
+        $('select.styled').customSelect();
       });
-	</script>
-</html>
+    </script>
+    </html>
 
 
 
