@@ -1,7 +1,7 @@
-class AboutController < ActionController::Base
+class PageController < ActionController::Base
 
   layout 'front/front'
-  def index
+  def about
   end
   def view
     # render "view"
