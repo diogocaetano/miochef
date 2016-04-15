@@ -42,7 +42,24 @@
             <%= f.label 'Status do Pedido*' %><br>
             <%= f.select :request_status_id, @statuses.collect {|status| [ status.name, status.id]}, {:prompt => 'Selecione o Status'}, {:class => 'form-control'} %>
           </div>
-            </div>
+          <div class="form-group">
+            <%= f.label 'Pratos' %><br>
+            <table class="table table-bmoduleed table-striped table-condensed" id="plates-table">
+              <thead>
+                <th>Prato</th>
+                <th>Preço Un.</th>
+                <th>Quantidade</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>feijão</td>
+                  <td>R$ 15,00</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
   </section>
   <div class="form-group">
       <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
@@ -69,5 +86,27 @@
           console.log('erro');
         });
     }).trigger('change');
+
+
+    $('[name="request[delivery_date]"]').on('change', function(){
+      var deliveryDate = $('[name="request[delivery_date]"]').val().split('/');
+      deliveryDate = deliveryDate[2] + '-' + deliveryDate[1] + '-' + deliveryDate[0];
+      $.ajax({
+        url: '/admin/daily_menus/get_plates_from_date/' + deliveryDate,
+        type: 'GET',
+        dataType: 'json'
+      })
+      .done(function(data) {
+        $('#plates-table tbody').empty();
+        for (var i = 0; i < data.length; i++) {
+          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request[request_plates][quantity][]">' + '</td></tr>')
+          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][2] + '" name="request[request_plates][id][]" >');
+          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][1] + '" name="request[request_plates][price][]" >');
+        }
+      })
+      .fail(function() {
+        console.log('get_plates_from_date -> error');
+      });
+    });
   });
 </script>

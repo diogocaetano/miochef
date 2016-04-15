@@ -55,6 +55,7 @@ class RequestsController < ApplicationController
     @statuses = RequestStatus.all
 
     if @request.save
+
       redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
     else
       render :new
@@ -97,6 +98,7 @@ class RequestsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def request_params
-      params.require(:request).permit(:client_id, :client_address_id, :payment_code, :request_date, :delivery_date, :delivery_window, :request_status_id)
+      params.require(:request).permit(:client_id, :client_address_id, :payment_code, :request_date, :delivery_date, :delivery_window, 
+        :request_status_id, :request_plate => [:id => [], :price => [], :quantity => []])
     end
 end
