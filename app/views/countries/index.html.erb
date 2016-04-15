@@ -23,6 +23,7 @@
               <tr>
                 <th>Nome</th>
                 <th>Iniciais</th>
+                <th>Bandeira</th>
                 <th colspan='3'>Ações</th>
               </tr>
             </thead>
@@ -31,6 +32,7 @@
                 <tr>
                   <td><%= country.name %></td>
                   <td><%= country.initials %></td>
+                  <td><span class="<%= country.flag %>"></span></td>
                   <td>
                     <%= link_to raw("<i class='fa fa-eye'></i>"), country, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
                     <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_country_path(country), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
@@ -38,8 +40,7 @@
                   </td>
                 </tr>
                 <div class="modal fade modal-dialog-center in" id="delete_country_<%= country.id.to_s %>"
-                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;">
-                </div>
+                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog ">
                   <div class="modal-content-wrap">
                     <div class="modal-content">

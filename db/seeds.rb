@@ -20,9 +20,9 @@ User.find_or_create_by(name: 'Teste') do |user|
 	user.role_id = 2
 end
 
-ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-cogs')
+ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-user')
 ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
-ModulesCategory.find_or_create_by(name: 'Chefes', icon: 'fa fa-coffee')
+ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
 
 Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false, visible: true)
@@ -31,7 +31,7 @@ Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: '
 Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true, visible: true)
 Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Chefes', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Chefs', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
 
@@ -50,6 +50,7 @@ Permission.find_or_create_by(entity_id: 2, action_name: 'Editar', action: 'edit'
 Permission.find_or_create_by(entity_id: 2, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: 2, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: 2, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: 2, action_name: 'Editar Todas as Senhas', action: 'update_all_passwords')
 
 Permission.find_or_create_by(entity_id: 3, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 3, action_name: 'Criar', action: 'new')

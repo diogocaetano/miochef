@@ -77,6 +77,7 @@ Rails.application.config.assets.precompile += %w(
   template/bootstrap-tagsinput.css
   template/bootstrap-tagsinput-typeahead.css
   template/digg_pagination.css
+  template/flag-icon.css
 
   application.scss
 )

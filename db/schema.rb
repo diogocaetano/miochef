@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412221308) do
+ActiveRecord::Schema.define(version: 20160414134913) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20160412221308) do
     t.string   "initials",   limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "flag",       limit: 255
   end
 
   create_table "daily_menus", force: :cascade do |t|
