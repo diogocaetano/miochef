@@ -99,9 +99,9 @@
       .done(function(data) {
         $('#plates-table tbody').empty();
         for (var i = 0; i < data.length; i++) {
-          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request[request_plates][quantity][]">' + '</td></tr>')
-          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][2] + '" name="request[request_plates][id][]" >');
-          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][1] + '" name="request[request_plates][price][]" >');
+          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request_plates[quantity][]">' + '</td></tr>')
+          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][2] + '" name="request_plates[id][]" >');
+          $('#plates-table tbody').append('<input type="hidden" value="' + data[i][1] + '" name="request_plates[price][]" >');
         }
       })
       .fail(function() {

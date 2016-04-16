@@ -4,7 +4,7 @@ class CreateRequestPlates < ActiveRecord::Migration
 			t.references :plate
 			t.references :request
 			t.integer :quantity
-			t.decimal :price
+			t.decimal :price, precision: 10, scale: 2
 			t.timestamps null: false
     	end
   	end

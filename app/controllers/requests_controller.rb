@@ -55,6 +55,7 @@ class RequestsController < ApplicationController
     @statuses = RequestStatus.all
 
     if @request.save
+      save_request_plates @request.id
 
       redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
     else
@@ -65,6 +66,8 @@ class RequestsController < ApplicationController
   # PATCH/PUT /requests/1
   def update
     if @request.update(request_params)
+      RequestPlate.destroy_all(request_id: params[:id])
+      save_request_plates params[:id]
       redirect_to requests_path, :flash =>{:success => 'Pedido foi atualizado com sucesso.' }
     else
       render :edit
@@ -100,5 +103,22 @@ class RequestsController < ApplicationController
     def request_params
       params.require(:request).permit(:client_id, :client_address_id, :payment_code, :request_date, :delivery_date, :delivery_window, 
         :request_status_id, :request_plate => [:id => [], :price => [], :quantity => []])
+    end
+
+    def request_plates_params
+      params.require(:request_plates).permit(:id => [], :price => [], :quantity => [])
+    end
+
+    def save_request_plates request_id
+      i = 0
+      while i < request_plates_params[:id].length do 
+        @request_plate = RequestPlate.new
+        @request_plate.quantity = request_plates_params[:quantity][i]
+        @request_plate.plate_id = request_plates_params[:id][i]
+        @request_plate.price = request_plates_params[:price][i]
+        @request_plate.request_id = request_id
+        @request_plate.save
+        i += 1
+      end
     end
 end
