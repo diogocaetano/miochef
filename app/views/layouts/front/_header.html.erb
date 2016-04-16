@@ -1,16 +1,23 @@
 <header id="header-default">
-  <div class="col-md-12">
+  <div id="wrap-menu-logo" class="container-fluid">
+    <!-- Menu -->
+    <nav id="nav-header" class="col-md-4">
+      <%= render 'layouts/front/menu_links' %>
+    </nav>
+    <!-- Menu -->
     <!-- Logo -->
-    <h1 id="logo-header">
+    <h1 id="logo-header" class="col-md-4">
       <%= link_to home_path do %>
-        <%= image_tag 'content/miochef.png', alt: "Miochef" %>
+      <%= image_tag 'content/miochef.png', alt: "Miochef" %>
       <% end %>
     </h1>
     <!-- Logo -->
     <!-- Menu -->
-    <nav id="nav-header">
-      <%= render 'layouts/front/menu_links' %>
-    </nav>
+    <div id="wrap-user-info-header" class="col-md-4">
+      <nav id="user-link">
+        <a href="#">Luiz Valença</a>
+      </nav>
+    </div>
     <!-- Menu -->
   </div>
 </header>

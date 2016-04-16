@@ -1,16 +1,60 @@
 #header-default{
-  padding-top:20px;
   position:relative;
   z-index:10;
+  @extend .clearfix;
+  #wrap-menu-logo{
+    display:block;
+    border-bottom:1px solid $white-2;
+    padding-top:20px;
+    padding-bottom:20px;
+    position:relative;
+  }
   #logo-header{
-    width:85px;
-    margin:0 auto 20px;
+    text-align:center;
+    margin:0;
     position:relative;
     a{
-      display:block;
+      display:inline-block;
+      margin:0 auto;
     }
     img{
       height:62px;
+    }
+  }
+  #nav-header{
+    position:relaltive;
+    ul{
+      margin:$top-menus-header 0 0;
+      padding:0;
+      li{
+        display:inline-block;
+        list-style:none;
+        margin-right:$size-margin-links-header;
+        a{
+          font-size: 12px;
+          color:$gray-3;
+          letter-spacing:1px;
+          &:hover{
+            color:$red;
+          }
+        }
+      }
+    }
+  }
+  #wrap-user-info-header{
+    #user-link{
+      text-align:right;
+      margin:$top-menus-header 0 0;
+      a{
+        font-size: 12px;
+        color:$gray-3;
+        letter-spacing:1px;
+        display:inline-block;
+        margin-left:$size-margin-links-header;
+        &:hover{
+          color:$red;
+        }
+      }
     }
   }
 }

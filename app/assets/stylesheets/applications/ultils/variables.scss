@@ -3,6 +3,7 @@ $font-default:'Raleway', sans-serif;
 $font-secundary:'Open Sans', sans-serif;
 
 // Colours Primary
+$white: #ffffff;
 $red:#E94E4F;
 $yellow:#FABE28;
 $green:#00C176;
@@ -10,8 +11,15 @@ $blue:#212328;
 $gray:#515151;
 
 // Colours Secundary
+$white-2:#E8EBE9;
 $red-2:#E50035;
 $yellow-2:#E0AA23;
 $green-2:#00AD69;
 $blue-2:#23262b;
 $gray-2:#636363;
+$gray-3:#79776B;
+
+// Sizes
+$size-padding-fluid:2.8rem;
+$top-menus-header:48px;
+$size-margin-links-header:1.5rem;
