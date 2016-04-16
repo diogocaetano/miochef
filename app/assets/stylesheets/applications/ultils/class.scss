@@ -10,3 +10,19 @@
 .clearfix {
   zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
+
+// noclick
+.click-off{
+  pointer-events: none;
+  cursor: default;
+}
+.click-on{
+  pointer-events: painted;
+  cursor: pointer;
+}
+
+// centralize
+.centralize{
+  margin:0 auto;
+  float:none!important;
+}

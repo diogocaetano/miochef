@@ -1,23 +1,151 @@
 <header id="header-default">
-  <div id="wrap-menu-logo" class="container-fluid">
+  <div id="nav-header" class="col-md-12">
     <!-- Menu -->
-    <nav id="nav-header" class="col-md-4">
+    <nav class="container-fluid">
       <%= render 'layouts/front/menu_links' %>
     </nav>
     <!-- Menu -->
-    <!-- Logo -->
-    <h1 id="logo-header" class="col-md-4">
-      <%= link_to home_path do %>
-      <%= image_tag 'content/miochef.png', alt: "Miochef" %>
-      <% end %>
-    </h1>
-    <!-- Logo -->
-    <!-- Menu -->
-    <div id="wrap-user-info-header" class="col-md-4">
-      <nav id="user-link">
-        <a href="#">Luiz Valença</a>
-      </nav>
-    </div>
-    <!-- Menu -->
   </div>
+  <div id="wrap-menu-logo">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <h1 id="logo-header" class="col-md-3">
+        <%= link_to home_path do %>
+        <%= image_tag 'content/miochef.png', alt: "Miochef" %>
+        <% end %>
+      </h1>
+      <!-- Logo -->
+      <div id="wrap-select-date-food" class="col-md-6">
+        <div class="col-md-12">
+          <span>Segunda, 15 de Abr</span>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div id="wrap-user-info-cart-header" class="col-md-3">
+        <nav id="user-link">
+          <a href="#" id="name-user">Luiz Valença</a>
+          <a href="#" id="logof">Sair</a>
+        </nav>
+      </div>
+      <!-- Menu -->
+    </div>
+  </div>
+  <div id="wrap-cep-select-filter">
+    <div class="container-fluid">
+      <div id="cep-show" class="col-md-3 block-info-list-prod left">
+        <h4>Exibindo para para o CEP:</h4>
+        <span id="cep-this">52061-200 (Recife-PE)</span>
+      </div>
+      <div id="filter-select" class="col-md-7 block-info-list-prod center">
+        <!-- <h4 class="col-md-12">Filtros:</h4> -->
+        <!-- block -->
+        <div class="col-md-4">
+          <div class="select-filter">
+            <span class="filter-title">Chef</span>
+            <div class="drop">
+              <span class="active" data-text="luiz paulo valenca">Luiz Paulo Valença</span>
+              <span data-text="educardo cavalcante">Eduardo Cavalcante</span>
+              <span data-text="luiz paulo valenca">Luiz Paulo Valença</span>
+              <span data-text="educardo cavalcante">Eduardo Cavalcante</span>
+              <span data-text="luiz paulo valenca">Luiz Paulo Valença</span>
+              <span data-text="educardo cavalcante">Eduardo Cavalcante</span>
+            </div>
+          </div>
+        </div>
+        <!-- block -->
+        <!-- block -->
+        <div class="col-md-4">
+          <div class="select-filter">
+            <span class="filter-title">Ingradientes</span>
+            <div class="drop">
+              <span data-text="pimenta">Pimenta</span>
+              <span data-text="cebola">Cebola</span>
+              <span data-text="pimenta">Pimenta</span>
+              <span data-text="cebola">Cebola</span>
+              <span data-text="pimenta">Pimenta</span>
+              <span data-text="cebola">Cebola</span>
+              <span data-text="pimenta">Pimenta</span>
+              <span data-text="cebola">Cebola</span>
+            </div>
+          </div>
+        </div>
+        <!-- block -->
+        <!-- block -->
+        <div class="col-md-4">
+          <div class="select-filter">
+            <span class="filter-title">Características</span>
+            <div class="drop">
+              <span data-text="sem gluten">Sem Glûten</span>
+              <span data-text="vegetariano">Vegetariano</span>
+              <span data-text="sem gluten">Sem Glûten</span>
+              <span data-text="vegetariano">Vegetariano</span>
+              <span data-text="sem gluten">Sem Glûten</span>
+              <span data-text="vegetariano">Vegetariano</span>
+            </div>
+          </div>
+        </div>
+        <!-- block -->
+      </div>
+      <div id="cart-bar" class="col-md-2 block-info-list-prod right">
+        <%= render 'layouts/front/cart' %>
+      </div>
+    </div>
+  </div>
+
+  <div id="wrap-food-timeline">
+    <div class="container-fluid">
+      <div class="col-md-10 centralize">
+        <h3>Selecione uma Data</h3>
+        <div id="wrap-dates-food">
+          <ul>
+            <li class="active">
+              <a href="#" class="date">
+                <div class="week">Seg</div>
+                <div class="day-week">15</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Ter</div>
+                <div class="day-week">16</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Qua</div>
+                <div class="day-week">17</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Qui</div>
+                <div class="day-week">18</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Sex</div>
+                <div class="day-week">19</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Sab</div>
+                <div class="day-week">20</div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="date">
+                <div class="week">Dom</div>
+                <div class="day-week">21</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </header>
+
