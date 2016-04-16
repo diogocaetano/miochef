@@ -72,9 +72,9 @@ ApplicationHeader = {
 
 			// verification if quant item > 0
 			if (quantItemActive > 0) {
-				elem.closest('.select-filter').find('.quant-itens-show').text(' - ' + quantItemActive);
+				elem.closest('.select-filter').find('.quant-itens-show').text(quantItemActive).addClass('active');
 			} else {
-				elem.closest('.select-filter').find('.quant-itens-show').text('');
+				elem.closest('.select-filter').find('.quant-itens-show').text('').removeClass('active');
 			}
 
 			// verification if elem has class active

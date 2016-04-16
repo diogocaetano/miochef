@@ -216,11 +216,33 @@
           font-size:14px;
           display:block;
           padding:29px 10px;
+          position:relative;
           &:before{
             font-family:FontAwesome;
             content:'\f096';
             display:inline-block;
             margin-right:10px;
+          }
+          .quant-itens-show{
+            text-align:center;
+            font-size:12px;
+            color:$gray-4;
+            line-height:20px;
+            background:$white;
+            border:1px solid $white-2;
+            width:20px;
+            height:20px;
+            position:absolute;
+            top:38%;
+            right:-5%;
+            opacity:0;
+            @include transition(0.2s);
+            @include radius(50%);
+            &.active{
+              opacity:1;
+              right:10%;
+              @include transition(0.4s);
+            }
           }
         }
         &:hover,
@@ -241,15 +263,23 @@
       .drop{
         background:$white;
         width:190px;
+        max-height:300px;
         display:none;
         border:1px solid $white-3;
         border-top:0;
-        padding:6px 10px;
+        padding:6px 10px 55px;
         position:absolute;
         top:79px;
         left:0;
+        overflow:hidden;
         box-shadow:0 7px 4px rgba(0, 0, 0, 0.1);
         -webkit-box-shadow:0 7px 4px rgba(0, 0, 0, 0.1);
+        .wrap-itens-drop{
+          max-height:237px;
+          position:relative;
+          white-space:nowrap;
+          overflow-y:auto;
+        }
         span,
         strong{
           text-align:center;
@@ -269,11 +299,21 @@
           }
         }
         strong{
+          text-transform:uppercase;
+          font-weight:normal;
+          font-size:11px;
           color:$red-2;
+          background:none;
+          width:90%;
+          padding-left:0;
+          padding-right:0;
           opacity:0.5;
           border-bottom:0;
+          position:absolute;
+          bottom:0;
           &:hover{
             opacity:0.9;
+            background:none;
           }
         }
       }
