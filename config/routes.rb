@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'home' => 'home#index', as: :home
   get 'about' => 'page#about', as: :about
+  get 'about/view' => 'page#about_view', as: :about_view
   # get 'about' => 'about#index'
 
   scope '/admin' do
