@@ -33,10 +33,50 @@
               </div>
             </div>
           </div>
-          <h4 >Nome do Prato</h4>
+          <h4><%= link_to "Nome do Prato", about_path %></h4>
         </div>
         <div class="wrap-price-buy">
-          Lorem ipsum
+          <div class="price-show"><i>R$</i><span data-price="9.90">9,90</span></div>
+          <div class="wrap-button-buy">
+            <button class="more-product">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <span>Adiciona</span>
+            </button>
+            <button class="less-product hidden"><i class="fa fa-minus" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <!-- list-item -->
+
+      <!-- list-item -->
+      <div class="list-item col-md-3 col-sm-4 col-xs-12">
+        <figure class="wrap-image-prod">
+          <%= link_to "", about_path, :class => "img-prod", :style => "background:url(http://41.media.tumblr.com/e11f229dbcbc2b2bb91b421a5df027d0/tumblr_o4ujjey1No1st5lhmo1_1280.jpg) no-repeat center center / auto 100%;" %>
+        </figure>
+        <div class="title-prod">
+          <div class="wrap-chef-info">
+            <div class="avatar-chef">
+              Chef: <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %>
+            </div>
+            <div class="wrap-box-info-chef">
+              <div class="info-chef">
+                <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %>
+                <span>Luiz Valença</span>
+                <%= link_to "Perfil do Chef", about_path %>
+              </div>
+            </div>
+          </div>
+          <h4><%= link_to "Nome do Prato", about_path %></h4>
+        </div>
+        <div class="wrap-price-buy">
+          <div class="price-show"><i>R$</i><span data-price="9.90">9,90</span></div>
+          <div class="wrap-button-buy">
+            <button class="more-product">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <span>Adiciona</span>
+            </button>
+            <button class="less-product hidden"><i class="fa fa-minus" aria-hidden="true"></i></button>
+          </div>
         </div>
       </div>
       <!-- list-item -->
