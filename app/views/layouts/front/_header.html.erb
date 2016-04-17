@@ -1,5 +1,5 @@
 <header id="header-default">
-  <div id="nav-header" class="col-md-12">
+  <div id="nav-header" class="col-md-12 hidden-xs hidden-sm visible-md visible-lg">
     <!-- Menu -->
     <nav class="container-fluid">
       <%= render 'layouts/front/menu_links' %>
@@ -9,37 +9,48 @@
   <div id="wrap-menu-logo">
     <div class="container-fluid">
       <!-- Logo -->
-      <h1 id="logo-header" class="col-md-3">
-        <%= link_to home_path do %>
+      <h1 id="logo-header" class="col-md-3 col-sm-12">
+        <%= link_to home_path, :class => "" do %>
         <%= image_tag 'content/miochef.png', alt: "Miochef" %>
+        <% end %>
+        <%= link_to home_path, :class => "hidden-md hidden-lg" do %>
+        <%= image_tag 'content/miochef-name.png', alt: "Miochef" %>
         <% end %>
       </h1>
       <!-- Logo -->
-      <div id="wrap-select-date-food" class="col-md-6">
+      <div id="wrap-select-date-food" class="col-md-6 col-sm-12">
         <div class="col-md-12">
           <span>Segunda, 15 de Abr</span>
         </div>
       </div>
       <!-- Menu -->
-      <div id="wrap-user-info-cart-header" class="col-md-3">
+      <div id="wrap-user-info-cart-header" class="col-md-3 hidden-sm hidden-xs visible-md visible-lg">
         <nav id="user-link">
           <a href="#" id="name-user">Luiz Valença</a>
           <a href="#" id="logof">Sair</a>
         </nav>
       </div>
       <!-- Menu -->
+      <div id="cart-bar-responsive" class="visible-sm visible-xs hidden-md hidden-lg">
+        <%= render 'layouts/front/cart' %>
+      </div>
     </div>
   </div>
   <div id="wrap-cep-select-filter">
     <div class="container-fluid">
-      <div id="cep-show" class="col-md-3 block-info-list-prod left">
+      <div id="cep-show" class="col-md-3 col-sm-12 block-info-list-prod left hidden-sm hidden-xs">
         <h4>Exibindo para para o CEP:</h4>
         <span id="cep-this">52061-200 (Recife-PE)</span>
       </div>
-      <div id="filter-select" class="col-md-7 block-info-list-prod center">
+
+      <div id="active-filter-menu-xs" class="col-xs-12 visible-xs hidden-sm hidden-md hidden-lg">
+        <span>Filtros</span>
+      </div>
+
+      <div id="filter-select" class="col-md-7 col-sm-12 block-info-list-prod center">
         <!-- <h4 class="col-md-12">Filtros:</h4> -->
         <!-- block -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="select-filter">
             <span class="filter-title">Chef <span class="quant-itens-show"></span></span>
             <div class="drop">
@@ -52,7 +63,7 @@
         </div>
         <!-- block -->
         <!-- block -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="select-filter">
             <span class="filter-title">Ingradientes <span class="quant-itens-show"></span></span>
             <div class="drop">
@@ -71,7 +82,7 @@
         </div>
         <!-- block -->
         <!-- block -->
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4 col-xs-12">
           <div class="select-filter">
             <span class="filter-title">Características <span class="quant-itens-show"></span></span>
             <div class="drop">
@@ -88,9 +99,11 @@
         </div>
         <!-- block -->
       </div>
-      <div id="cart-bar" class="col-md-2 block-info-list-prod right">
+
+      <div id="cart-bar" class="col-md-2 col-sm-12 block-info-list-prod right hidden-xs hidden-sm visible-md visible-lg">
         <%= render 'layouts/front/cart' %>
       </div>
+
     </div>
   </div>
 

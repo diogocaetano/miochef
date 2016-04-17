@@ -2,6 +2,7 @@ ApplicationHeader = {
 	init: function () {
 		this.dateSelect();
 		this.dropFilterList();
+		this.filterXs();
 	},
 
 	// dateSelect
@@ -15,13 +16,13 @@ ApplicationHeader = {
 				self.removeClass('active');
 				// hide select week
 				$('#wrap-food-timeline').css({
-					'bottom': '10%'
+					'top': '0%'
 				});
 			} else {
 				self.addClass('active');
 				// show select week
 				$('#wrap-food-timeline').css({
-					'bottom': '-89%'
+					'top': $('#header-default').outerHeight() + 'px'
 				});
 			}
 		});
@@ -102,7 +103,42 @@ ApplicationHeader = {
 				checkDropItem(self);
 			}
 		});
+	},
 
+	// filterXs
+	filterXs: function () {
+		function visibleFilter() {
+			// verification if elem is block
+			if ($('#active-filter-menu-xs').css('display') == 'block') {
+				$('#filter-select').hide();
+			} else {
+				$('#active-filter-menu-xs').removeClass('active');
+				$('#filter-select').show();
+			}
+		}
+		// call function
+		visibleFilter();
+
+		// resize call function
+		$(window).bind({
+			resize: function () {
+				visibleFilter();
+			}
+		});
+
+		// click event
+		$(document).on('click', '#active-filter-menu-xs', function () {
+			var self = $(this);
+
+			// if active or not
+			if (self.hasClass('active')) {
+				self.removeClass('active');
+				$('#filter-select').stop(true, true).fadeOut(200);
+			} else {
+				self.addClass('active');
+				$('#filter-select').stop(true, true).fadeIn(300);
+			}
+		});
 
 	}
 
