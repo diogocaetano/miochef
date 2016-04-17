@@ -36,7 +36,7 @@
     }
   }
 
-  #wrap-select-date-food{
+  .wrap-select-date-food{
     border-top:1px solid $white-2;
     &:before,
     &:after{
@@ -53,6 +53,29 @@
     &:after{
       display:none;
     }
+    #cep-show{
+      text-align:left;
+      background:$white;
+      width:100%;
+      border-top:1px solid $white-2;
+      padding-top:10px;
+      padding-bottom:10px;
+      position:fixed;
+      bottom:0;
+      left:0;
+      h4{
+        display:none;
+      }
+      #cep-this{
+        font-size:14px;
+        color:$gray;
+        font-weight:lighter;
+        i{
+          font-size:18px;
+          margin-right:5px;
+        }
+      }
+    }
   }
 
   #cart-bar-responsive{
@@ -60,6 +83,10 @@
     top:17%;
     right:$size-padding-fluid;
     z-index:10;
+  }
+
+  #footer-default{
+    padding-bottom:50px;
   }
 
 }

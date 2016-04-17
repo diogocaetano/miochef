@@ -4,26 +4,27 @@ ApplicationHeader = {
 		this.dropFilterList();
 		this.filterXs();
 		this.menuResponsive();
+		this.scrollPage();
 	},
 
 	// dateSelect
 	dateSelect: function () {
 		// click active select week
-		$(document).on('click', '#wrap-select-date-food', function () {
-			var self = $(this);
+		$(document).on('click', '.wrap-select-date-food', function () {
+			var self = $('.wrap-select-date-food');
 
 			// if active or not
 			if (self.hasClass('active')) {
 				self.removeClass('active');
 				// hide select week
 				$('#wrap-food-timeline').css({
-					'top': '0%'
+					'top': '-340%'
 				});
 			} else {
 				self.addClass('active');
 				// show select week
 				$('#wrap-food-timeline').css({
-					'top': $('#header-default').outerHeight() + 'px'
+					'top': $('#wrap-cep-info').outerHeight() + 1 + 'px'
 				});
 			}
 		});
@@ -153,6 +154,37 @@ ApplicationHeader = {
 		$(document).on('click', '#close-menu-responsive', function () {
 			$('#menu-responsive').removeClass('active');
 			$('#wrap-site').removeClass('blur');
+		});
+	},
+
+	// scrollPage
+	scrollPage: function () {
+		// set position initial
+		var positionWrapCep = $('#wrap-cep-select-filter').offset().top;
+
+		// function validate position menu
+		function scrollValidate() {
+			$(window).scroll(function () {
+				// verification if > position
+				if ($(this).scrollTop() >= $('#wrap-cep-select-filter').offset().top) {
+					$('#wrap-cep-select-filter').addClass('scroll-active');
+				}
+				if ($(this).scrollTop() <= positionWrapCep || $(window).width() < 980) {
+					$('#wrap-cep-select-filter').removeClass('scroll-active');
+				}
+			});
+		}
+		// veridicarion size window and call functino
+		if ($(window).width() > 980) {
+			scrollValidate();
+		}
+		// verification size window
+		$(window).bind({
+			resize: function () {
+				if ($(window).width() > 980) {
+					scrollValidate();
+				}
+			}
 		});
 	}
 
