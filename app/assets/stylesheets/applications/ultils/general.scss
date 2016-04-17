@@ -105,6 +105,11 @@ ul{
   }
 }
 
+#wrap-content{
+  background:$white-4;
+  @extend .clearfix;
+}
+
 
 // // FontFace
 // @font-face {

@@ -26,9 +26,13 @@
 @import "applications/ultils/mixin";
 @import "applications/ultils/class";
 @import "applications/ultils/general";
+@import "applications/ultils/titles";
 
 // Project Folders
 @import "applications/*";
+
+// Pages
+@import "applications/pages/*";
 
 // Responsive
 @import "applications/ultils/responsive";
