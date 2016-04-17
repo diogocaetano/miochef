@@ -26,13 +26,15 @@
       <!-- Menu -->
       <div id="wrap-user-info-cart-header" class="col-md-3 hidden-sm hidden-xs visible-md visible-lg">
         <nav id="user-link">
-          <a href="#" id="name-user">Luiz Valença</a>
-          <a href="#" id="logof">Sair</a>
+          <%= render 'layouts/front/menu_links' %>
         </nav>
       </div>
       <!-- Menu -->
       <div id="cart-bar-responsive" class="visible-sm visible-xs hidden-md hidden-lg">
         <%= render 'layouts/front/cart' %>
+      </div>
+      <div id="active-menu-responsive" class="visible-sm visible-xs hidden-md hidden-lg">
+        <i class="fa fa-bars" aria-hidden="true"></i>
       </div>
     </div>
   </div>
@@ -160,7 +162,5 @@
       </div>
     </div>
   </div>
-
-
 </header>
 
