@@ -28,11 +28,11 @@
           </div>
                   <div class="form-group">
             <%= f.label 'Data do Pedido*' %><br>
-            <%= f.text_field :request_date, :class => 'form-control input-medium default-date-picker' %>
+            <%= f.text_field :request_date, :value => get_formated_date(@request.request_date), :class => 'form-control input-medium default-date-picker' %>
           </div>
                   <div class="form-group">
             <%= f.label 'Data da Entrega*' %><br>
-            <%= f.text_field :delivery_date, :class => 'form-control input-medium default-date-picker' %>
+            <%= f.text_field :delivery_date, :value => get_formated_date(@request.delivery_date), :class => 'form-control input-medium default-date-picker' %>
           </div>
                   <div class="form-group">
             <%= f.label 'Janela da Entrega*' %><br>
@@ -51,11 +51,15 @@
                 <th>Quantidade</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>feijão</td>
-                  <td>R$ 15,00</td>
-                  <td>1</td>
-                </tr>
+                <% @daily_plates.each do |p| %>
+                  <tr>
+                    <td><%= p.title %></td>
+                    <td>R$ <%= get_plate_price(@request.id, p) %></td>
+                    <td><input class="form-control" type="number" name="request_plates[quantity][]" value="<%= get_plate_request_quantity(@request.id, p.id) %>"></td>
+                    <input type="hidden" value="<%= p.id %>" name="request_plates[id][]" >
+                    <input type="hidden" value="<%= p.price %>" name="request_plates[price][]" >
+                  </tr>
+                <% end %>
               </tbody>
             </table>
           </div>

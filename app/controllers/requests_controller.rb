@@ -44,7 +44,14 @@ class RequestsController < ApplicationController
   end
 
   # GET /requests/1/edit
+  def get_today_plate_tag day
+    tags = [:sunday_available, :monday_available, :tuesday_available, :wednesday_available,
+      :thursday_available, :friday_available, :saturday_available]
+    tags[day]
+  end
+
   def edit
+    @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
   end
 
   # POST /requests

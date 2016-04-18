@@ -230,6 +230,7 @@ Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Ed
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Buscar Endereços', action: 'get_client_addresses')
 
 
 ModulesCategory.find_or_create_by(name: 'Cardápio do Dia', icon: 'fa fa-list')
@@ -251,6 +252,7 @@ Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Edit
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Pegar Pratos do Dia', action: 'get_plates_from_date')
 
 usersCategory = Entity.find_by(name: 'Usuários')
 Permission.find_or_create_by(entity_id: usersCategory.id, action_name: 'Alterar Senha', action: 'update_password')
