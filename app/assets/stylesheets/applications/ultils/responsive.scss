@@ -16,15 +16,25 @@
 @media screen and (max-width: 980px){
   // Header
   #wrap-menu-logo{
+    padding-top:0;
     padding-bottom:0;
     .container-fluid{
       padding:0;
     }
   }
   #logo-header{
+    background:$white;
     text-align:center;
-    margin-bottom:20px;
+    padding-top:10px;
+    padding-bottom:10px;
     clear:both;
+    &.scroll-active{
+      border-bottom:1px solid $white-2;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:100;
+    }
     a{
       display:inline-block;
       &:first-of-type{
@@ -80,9 +90,12 @@
 
   #cart-bar-responsive{
     position:absolute;
-    top:17%;
+    top:38%;
     right:$size-padding-fluid;
     z-index:10;
+    a{
+      display:block!important;
+    }
   }
 
   #footer-default{

@@ -4,7 +4,8 @@ ApplicationHeader = {
 		this.dropFilterList();
 		this.filterXs();
 		this.menuResponsive();
-		this.scrollPage();
+		this.scrollFilterPage();
+		this.scrollLogoMenu();
 	},
 
 	// dateSelect
@@ -18,13 +19,13 @@ ApplicationHeader = {
 				self.removeClass('active');
 				// hide select week
 				$('#wrap-food-timeline').css({
-					'top': '-340%'
+					'top': '-130px'
 				});
 			} else {
 				self.addClass('active');
 				// show select week
 				$('#wrap-food-timeline').css({
-					'top': $('#wrap-cep-info').outerHeight() + 1 + 'px'
+					'top': $('#wrap-cep-info').outerHeight() + 'px'
 				});
 			}
 		});
@@ -157,23 +158,30 @@ ApplicationHeader = {
 		});
 	},
 
-	// scrollPage
-	scrollPage: function () {
+	// scrollFilterPage
+	scrollFilterPage: function () {
+		// reset scroll page
+		$('html, body').scrollTop('0');
+
 		// set position initial
 		var positionWrapCep = $('#wrap-cep-select-filter').offset().top;
 
 		// function validate position menu
 		function scrollValidate() {
+			// set height wrap-cep-select-filter
 			$(window).scroll(function () {
 				// verification if > position
 				if ($(this).scrollTop() >= $('#wrap-cep-select-filter').offset().top) {
-					$('#wrap-cep-select-filter').addClass('scroll-active');
+					$('#wrap-cep-info').addClass('scroll-active');
+					$('#wrap-food-timeline').addClass('fixed');
 				}
 				if ($(this).scrollTop() <= positionWrapCep || $(window).width() < 980) {
-					$('#wrap-cep-select-filter').removeClass('scroll-active');
+					$('#wrap-cep-info').removeClass('scroll-active');
+					$('#wrap-food-timeline').removeClass('fixed');
 				}
 			});
 		}
+
 		// veridicarion size window and call functino
 		if ($(window).width() > 980) {
 			scrollValidate();
@@ -183,6 +191,41 @@ ApplicationHeader = {
 			resize: function () {
 				if ($(window).width() > 980) {
 					scrollValidate();
+				}
+			}
+		});
+	},
+
+	// scrollLogoMenu
+	scrollLogoMenu: function () {
+		// set position initial
+		var positionWrapLogo = $('#logo-header').offset().top;
+
+		// function validate position menu
+		function scrollValidateLogo() {
+			// set height wrap-cep-select-filter
+			$(window).scroll(function () {
+				// verification if > position
+				if ($(this).scrollTop() >= $('#wrap-menu-logo').offset().top) {
+					$('#logo-header').addClass('scroll-active');
+					$('#wrap-menu-logo').addClass('fixed');
+				}
+				if ($(this).scrollTop() <= positionWrapLogo || $(window).width() > 980) {
+					$('#logo-header').removeClass('scroll-active');
+					$('#wrap-menu-logo').removeClass('fixed');
+				}
+			});
+		}
+
+		// veridicarion size window and call functino
+		if ($(window).width() <= 980) {
+			scrollValidateLogo();
+		}
+		// verification size window
+		$(window).bind({
+			resize: function () {
+				if ($(window).width() <= 980) {
+					scrollValidateLogo();
 				}
 			}
 		});

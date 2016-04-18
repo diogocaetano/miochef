@@ -19,3 +19,4 @@
 //= require link-hover
 //= require jquery.fancybox.pack
 //= require ./front/header
+//= require ./front/filterList

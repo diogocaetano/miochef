@@ -13,6 +13,9 @@
   position:relative;
   z-index:8;
   clear:both;
+  &.fixed{
+    padding-top:60px;
+  }
 }
 
 #logo-header{
@@ -233,30 +236,32 @@
 
 #wrap-cep-select-filter{
   background:$white;
+  min-height:80px;
   border-bottom:1px solid $white-2;
   position:relative;
   top:0;
   left:0;
   z-index:5;
   @extend .clearfix;
-  &.scroll-active{
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    .wrap-select-date-food{
-      top:7px;
-      opacity:1;
-      @include transition(0.4s);
-    }
-    #cep-show{
-      opacity:0;
-    }
-  }
   #wrap-cep-info{
     background:$white;
     position:relative;
     z-index:10;
+    &.scroll-active{
+      width:100%;
+      border-bottom:1px solid $white-2;
+      position:fixed;
+      top:0;
+      left:0;
+      .wrap-select-date-food{
+        top:4px;
+        opacity:1;
+        @include transition(0.4s);
+      }
+      #cep-show{
+        opacity:0;
+      }
+    }
   }
   .wrap-select-date-food{
     opacity:1;
@@ -448,12 +453,15 @@
     padding-top:30px;
     padding-bottom:30px;
     position:absolute;
-    top:-340%;
+    top:-130px;
     left:0;
     z-index:0;
     box-shadow:0 0 6px rgba(0,0,0,0.1);
     -webkit-box-shadow:0 0 6px rgba(0,0,0,0.1);
     @include transition(0.5s);
+    &.fixed{
+      position:fixed;
+    }
     h3{
       text-transform:uppercase;
       font-size:12px;
@@ -517,7 +525,7 @@
     display:inline-block;
     padding:5px 5px 5px 0;
     position:absolute;
-    top:12%;
+    top:33%;
     left:$size-padding-fluid;
     z-index:10px;
     cursor:pointer;
