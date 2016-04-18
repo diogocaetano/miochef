@@ -55,7 +55,7 @@ ApplicationHeader = {
 				'html': 'limpar filtro'
 			});
 
-			clearList.appendTo($(this));
+			// clearList.appendTo($(this));
 		});
 
 		// clear filter list
