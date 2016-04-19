@@ -7,6 +7,7 @@ ApplicationFilter = {
 	filterList: function () {
 		// create array filter
 		var arrayFilter = [];
+
 		// add data in array filter
 		$(document).on('click', '.drop span', function () {
 			var self = $(this),
@@ -34,8 +35,6 @@ ApplicationFilter = {
 					arrayLenght = parseInt(selfListFilter.length),
 					quantElem = parseInt($(selfListFilter).not(arrayFilter).get().length);
 
-
-				// console.log(quantElem + " - " + arrayLenght);
 				if (quantElem === arrayLenght) {
 					self.hide();
 					if (arrayFilter.length === 0) {
@@ -45,24 +44,7 @@ ApplicationFilter = {
 					// alert(0)
 					self.show();
 				}
-				// $.grep(selfListFilter, function (el) {
-
-				// });
-				// if ($.inArray(filterInput, selfListFilter) > -1) {
-				// 	self.show();
-				// } else {
-				// 	if (filterInput.length === 0 || filterInput.length === 0) {
-				// 		self.show();
-				// 	} else {
-				// 		self.hide();
-				// 	}
-				// }
-
-				//     for (var i = arrayFilter.length - 1; i >= 0; i--) {
-				// }
-
 			});
-
 		});
 
 	}
