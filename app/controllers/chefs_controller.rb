@@ -37,6 +37,7 @@ class ChefsController < ApplicationController
   def create
     badges = Badge.where(id: params[:badge_ids])
     @chef = Chef.new(chef_params)
+    @chef.badges.clear
     @chef.badges << badges
     respond_to do |format|
       if @chef.save
@@ -53,6 +54,7 @@ class ChefsController < ApplicationController
   # PATCH/PUT /chefs/1.json
   def update
     badges = Badge.where(id: params[:badge_ids])
+    @chef.badges.clear
     @chef.badges << badges
     respond_to do |format|
       if @chef.update(chef_params)
