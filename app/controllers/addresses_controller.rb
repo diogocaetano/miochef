@@ -63,8 +63,8 @@ class AddressesController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to chef_addresses_path, :flash =>{:warning => @address.errors.full_messages.join('<br>') } } if not params[:chef_id].blank?
-        format.html { redirect_to client_addresses_path, :flash =>{:warning => @address.errors.full_messages.join('<br>') } } if not params[:client_id].blank?
+        format.html { redirect_to chef_addresses_path, :flash =>{:danger => @address.errors.full_messages.join('<br>') } } if not params[:chef_id].blank?
+        format.html { redirect_to client_addresses_path, :flash =>{:danger => @address.errors.full_messages.join('<br>') } } if not params[:client_id].blank?
         format.json { head :no_content }
       end
     end
