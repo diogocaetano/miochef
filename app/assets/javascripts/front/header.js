@@ -206,7 +206,7 @@ ApplicationHeader = {
 			// set height wrap-cep-select-filter
 			$(window).scroll(function () {
 				// verification if > position
-				if ($(this).scrollTop() >= $('#wrap-menu-logo').offset().top) {
+				if ($(this).scrollTop() >= 0) {
 					$('#logo-header').addClass('scroll-active');
 					$('#wrap-menu-logo').addClass('fixed');
 				}
