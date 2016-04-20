@@ -4,7 +4,7 @@ body{
 
 a{
   outline:0!important;
-  @include transition(0.4s);
+  @include transition(0.3s);
   &:hover,
   &:focus,
   &:active{
