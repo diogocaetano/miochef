@@ -8,6 +8,9 @@
    <%= yield %>
    <%= render 'layouts/front/footer' %>
  </div>
+ <script type="text/javascript">
+   var base_url = '<%= request.base_url %>';
+ </script>
  <%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>
 </body>
 </html>

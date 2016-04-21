@@ -336,6 +336,7 @@
         display:block;
         padding:29px 10px;
         position:relative;
+        overflow:hidden;
         &:before{
           font-family:FontAwesome;
           content:'\f096';

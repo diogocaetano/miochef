@@ -24,10 +24,9 @@ ApplicationFilter = {
 			// add arry in value input id filtar-base
 			$('#filter-base').attr('value', arrayFilter);
 
+			// check itens in list
 			var selfList = $('.list-item');
-
-			var filterArray = new Array();
-
+			// loop in list
 			selfList.each(function () {
 				var self = $(this),
 					selfListFilter = self.data('filter').split(','),
@@ -35,6 +34,7 @@ ApplicationFilter = {
 					arrayLenght = parseInt(selfListFilter.length),
 					quantElem = parseInt($(selfListFilter).not(arrayFilter).get().length);
 
+				// check if quant itens is igual quant elem in array
 				if (quantElem === arrayLenght) {
 					self.hide();
 					if (arrayFilter.length === 0) {

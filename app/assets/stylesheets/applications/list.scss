@@ -159,6 +159,7 @@
       position:relative;
       overflow:hidden;
       @include transition(0.1s);
+      @include radius(2px);
       i{
         font-size:14px;
         letter-spacing:-2px;
