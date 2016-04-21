@@ -1,8 +1,35 @@
+#highlight-home{
+  max-height:350px;
+  overflow:hidden;
+}
+
 #home-page{
+  min-height:400px;
   position:relative;
   padding-bottom:60px;
   z-index:0;
+  position:relative;
+  &:before{
+    content:'carregando';
+    display:block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+  }
+  .container-fluid{
+    display:none;
+  }
   .title{
     padding:60px 0;
+  }
+  &.active{
+    &:before{
+      display:none;
+    }
+    .container-fluid{
+      display:block;
+    }
   }
 }

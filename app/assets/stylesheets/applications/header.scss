@@ -155,7 +155,7 @@
   }
 }
 
-#cart-show{
+.cart-show{
   position:relative;
   @extend .click-off;
   i{
@@ -165,7 +165,7 @@
     z-index:0;
     @include transition(0.3s);
   }
-  #quant-itens-cart{
+  .quant-itens-cart{
     text-align:center;
     color:$white;
     line-height:23px;
@@ -188,7 +188,7 @@
       left:-10px;
       @include transition(0.3s);
     }
-    #quant-itens-cart{
+    .quant-itens-cart{
       opacity:1;
       @include transition(0.5s);
     }
@@ -441,7 +441,7 @@
     #cart-bar{
       text-align:center;
       padding:25px;
-      #cart-show{
+      .cart-show{
         top:7px;
       }
     }

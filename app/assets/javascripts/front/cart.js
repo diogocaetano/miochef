@@ -5,6 +5,9 @@ ApplicationCart = {
 
 	// filterList
 	addCartButton: function () {
+		// variable quant prod cart
+		var quantItensCart = 0;
+
 		// function success
 		function callActionEventCart(elem, fatherThis, figure, status, event) {
 			var elemParent = elem.closest(fatherThis).find(figure),
@@ -47,8 +50,10 @@ ApplicationCart = {
 
 				if (event === 'plus') {
 					cont += 1;
+					quantItensCart += 1;
 				} else if (event === 'less') {
 					cont -= 1;
+					quantItensCart -= 1;
 				}
 
 				// elem.parent().find('.less-product').attr('data-quantinit', cont);
@@ -56,7 +61,6 @@ ApplicationCart = {
 				elemParent.find('.wrap-quant-block .quant-prod-cart').text(cont);
 
 				// if condictions
-				console.log(cont);
 				if (cont === total) {
 					elem.removeClass('active').addClass('inactive');
 				} else if (cont < total) {
@@ -67,6 +71,22 @@ ApplicationCart = {
 					elem.parent().removeClass('active');
 					elemParent.find('.wrap-quant-block').remove();
 					elemParent.removeClass('active');
+					// show rest-itens
+					elem.parent().parent().find('.rest-itens').stop(false, true).fadeIn('fast');
+				} else {
+					//hide rest-itens
+					elem.parent().parent().find('.rest-itens').stop(false, true).fadeOut('fast');
+				}
+
+				// add value input and item view cart
+				$('.cart-show').find('.quant-itens-cart').text(quantItensCart);
+				$('.cart-show').find('input').attr('value', quantItensCart);
+
+				// add class active in cart icon
+				if ($('.cart-show').find('input').attr('value') == 0) {
+					$('.cart-show').removeClass('active');
+				} else {
+					$('.cart-show').addClass('active');
 				}
 
 			}
