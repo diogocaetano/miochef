@@ -43,6 +43,7 @@ class PlatesController < ApplicationController
   # POST /plates.json
   def create
     @plate = Plate.new(plate_params_with_ingredients_and_accompaniments)
+    @plate.plate_badges.clear
     @types = PlateType.all
     @badges = PlateBadge.all
     @chefs = Chef.where('active = 1')
@@ -62,6 +63,7 @@ class PlatesController < ApplicationController
   # PATCH/PUT /plates/1
   # PATCH/PUT /plates/1.json
   def update
+    @plate.plate_badges.clear
     respond_to do |format|
       if @plate.update(plate_params_with_ingredients_and_accompaniments)
         format.html { redirect_to plates_url, :flash =>{:success => 'O prato foi atualizado com sucesso.' } }

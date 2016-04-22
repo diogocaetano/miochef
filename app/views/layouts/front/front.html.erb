@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<%= render 'layouts/front/head' %>
-  <body>
-  	<%= render 'layouts/front/header' %>
-    	<%= yield %>
-  	<%= render 'layouts/front/footer' %>
-  	<%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>	 
-  </body>
+<%= render 'layouts/front/head' %>
+<body>
+ <%= render 'layouts/front/responsive_menu' %>
+ <div id="wrap-site" class="">
+   <% if current_page?('/home') %>
+    <%= render 'layouts/front/header_home' %>
+   <% else %>
+    <%= render 'layouts/front/header_internal' %>
+   <% end %>
+   <!-- Content -->
+   <%= yield %>
+   <!-- Content -->
+   <%= render 'layouts/front/footer' %>
+ </div>
+ <script type="text/javascript">
+   var base_url = '<%= request.base_url %>';
+ </script>
+ <%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>
+</body>
 </html>

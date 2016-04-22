@@ -24,7 +24,7 @@
 //= require jquery.quicksearch
 
 //= require bootstrap.min
-//= require bootstrap-fileupload	
+//= require bootstrap-fileupload
 //= require bootstrap-datepicker
 //= require bootstrap-datetimepicker
 //= require bootstrap-colorpicker
@@ -50,4 +50,3 @@
 //= require advanced-form-components
 
 //= require call
-

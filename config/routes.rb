@@ -6,7 +6,14 @@ Rails.application.routes.draw do
     root 'home#index', as: :authenticated_client
   end
 
-  get 'home' => 'home#index'
+  # Home
+  get 'home' => 'home#index', as: :home
+  # About
+  get 'about' => 'page#about', as: :about
+  get 'about/view' => 'page#about_view', as: :about_view
+  # user
+  get 'user' => 'page#user', as: :user
+
 
   scope '/admin' do
     get 'addresses/get_client_addresses/:client_id' => 'addresses#get_client_addresses'

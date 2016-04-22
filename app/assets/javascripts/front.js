@@ -18,4 +18,7 @@
 //= require jquery.easing.min
 //= require link-hover
 //= require jquery.fancybox.pack
-
+//= require ./front/header
+//= require ./front/filterList
+//= require ./front/cart
+//= require ./front/home

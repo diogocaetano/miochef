@@ -1,0 +1,183 @@
+/* =============================================================================
+1920px
+========================================================================== */
+@media screen and (max-width: 2000px){
+
+}
+/* =============================================================================
+1280px
+========================================================================== */
+@media screen and (max-width: 1280px){
+
+}
+/* =============================================================================
+980px
+========================================================================== */
+@media screen and (max-width: 980px){
+  // Header
+  #wrap-menu-logo{
+    padding-top:0;
+    padding-bottom:0;
+    .container-fluid{
+      padding:0;
+    }
+  }
+  #logo-header{
+    background:$white;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    clear:both;
+    &.scroll-active{
+      width:100%;
+      border-bottom:1px solid $white-2;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:100;
+    }
+    a{
+      display:inline-block;
+      &:first-of-type{
+        display:none;
+      }
+    }
+    img{
+      height:24px;
+    }
+  }
+
+  .wrap-select-date-food{
+    border-top:1px solid $white-2;
+    &:before,
+    &:after{
+      display:none;
+    }
+  }
+
+  #wrap-cep-select-filter{
+    text-align:center;
+    .container-fluid{
+      padding:0;
+    }
+    &:before,
+    &:after{
+      display:none;
+    }
+    #cep-show{
+      text-align:left;
+      background:$white;
+      width:100%;
+      border-top:1px solid $white-2;
+      padding-top:10px;
+      padding-bottom:10px;
+      position:fixed;
+      bottom:0;
+      left:0;
+      h4{
+        display:none;
+      }
+      #cep-this{
+        font-size:14px;
+        color:$gray;
+        font-weight:lighter;
+        i{
+          font-size:18px;
+          margin-right:5px;
+        }
+      }
+    }
+  }
+
+  #cart-bar-responsive{
+    position:absolute;
+    top:38%;
+    right:$size-padding-fluid;
+    z-index:10;
+    a{
+      display:block!important;
+    }
+  }
+
+  #footer-default{
+    padding-bottom:50px;
+  }
+
+}
+/* =============================================================================
+800px
+========================================================================== */
+@media screen and (max-width: 800px){
+
+
+}
+/* =============================================================================
+768px
+========================================================================== */
+@media screen and (max-width: 768px){
+
+}
+/* =============================================================================
+600px
+========================================================================== */
+@media screen and (max-width: 640px){
+  .container-fluid{
+    &.no-padd-xs{
+      padding-left:0;
+      padding-right:0;
+    }
+  }
+
+  #wrap-cep-select-filter{
+    .container-fluid{
+      padding:0;
+    }
+    #filter-select{
+      padding:0;
+      .select-filter{
+        border-bottom:1px solid $white-2;
+        .filter-title{
+          padding:10px;
+          .quant-itens-show{
+            top:25%;
+          }
+        }
+      }
+      .drop{
+        position:relative;
+        top:0;
+        box-shadow:none;
+        -webkit-box-shadow:none;
+      }
+    }
+  }
+  #footer-default{
+    display:none;
+  }
+}
+/* =============================================================================
+568px
+========================================================================== */
+@media screen and (max-width: 568px){
+
+}
+/* =============================================================================
+480px
+========================================================================== */
+@media screen and (max-width: 480px){
+
+}
+/* =============================================================================
+360px
+========================================================================== */
+@media screen and (max-width: 360px){
+  #menu-responsive{
+    width:80%;
+  }
+}
+/* =============================================================================
+320px
+========================================================================== */
+@media screen and (max-width: 320px){
+
+}

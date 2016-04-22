@@ -1,0 +1,106 @@
+#footer-default{
+  background:$white;
+  border-top:1px solid $white-2;
+  padding:30px 0;
+  .container-fluid{
+    display:flex;
+    display:-webkit-flex;
+    display:-moz-flex;
+  }
+  h4{
+    text-transform:uppercase;
+    font-size:12px;
+    color:$red;
+    margin-bottom:18px;
+  }
+  #menu-footer{
+    ul{
+      li{
+        list-style:none;
+        margin-bottom:10px;
+        &.no-menu-footer{
+          display:none;
+        }
+        &:last-of-type{
+          margin-bottom:0;
+        }
+        a{
+          font-size:13px;
+          font-weight:lighter;
+          color:$gray;
+          &:hover,
+          &.active{
+            color:$red;
+            border-left:3px solid $red;
+            padding-left:5px;
+          }
+        }
+      }
+    }
+  }
+  .center{
+    text-align:center;
+    border-right:1px solid $white-2;
+    border-left:1px solid $white-2;
+    [class*='col-']{
+      margin-bottom:20px;
+      padding:0;
+    }
+    a{
+      font-size:13px;
+      font-weight:lighter;
+      color:$gray;
+      border-left:3px solid transparent;
+      border-right:3px solid transparent;
+      padding:0 10px;
+      &:hover,
+      &.active{
+        color:$red;
+        border-color:$red;
+      }
+      &#email-contact{
+        i{
+          margin-right:5px;
+        }
+      }
+    }
+    #social{
+      a{
+        font-size:20px;
+      }
+    }
+  }
+  .app-button{
+    font-size:14px;
+    color:$gray;
+    background:$white-3;
+    display:block;
+    margin-bottom:10px;
+    padding:12px;
+    span{
+      font-weight:lighter;
+      display:inline-block;
+      margin-left:10px;
+      position:relative;
+      top:-5px;
+    }
+    i{
+      font-size:32px;
+    }
+    &:hover{
+      color:$white;
+      background:$red;
+    }
+  }
+}
+
+#id-developer{
+  background:$white-3;
+  text-align:center;
+  padding:10px 0;
+  address{
+    font-size:12px;
+    color:$gray-4;
+    margin-bottom:0;
+  }
+}

@@ -1,0 +1,25 @@
+<ul>
+  <li class="no-menu-cart">
+    <%= link_to "Cardápio do Dia", home_path %>
+  </li>
+  <li class="no-menu-cart">
+    <%= link_to "Sobre", about_path %>
+  </li>
+  <li class="no-menu-cart">
+    <%= link_to "Como Funciona", about_path %>
+  </li>
+  <li class="no-menu-cart">
+    <%= link_to "Contato", about_path %>
+  </li>
+  <li class="no-menu-header no-menu-cart">
+    <%= link_to "Minha Conta", about_path %>
+  </li>
+  <li class="no-menu-header no-menu-responsive no-menu-footer">
+    <%= link_to user_path, :id => "name-user" do %>
+    <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %> Luiz Valença
+    <% end %>
+  </li>
+  <li class="no-menu-header">
+    <%= link_to "Sair", about_path %>
+  </li>
+</ul>

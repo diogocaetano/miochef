@@ -13,10 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  #username: <%= ENV['BASE_DATABASE_USER'] %>
-  #password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
+  # username: <%= ENV['BASE_DATABASE_USER'] %>
+  # password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
   username: root
-  password: root
+  password: 1320
 
 development:
   <<: *default
@@ -25,8 +25,8 @@ development:
 teste:
   <<: *default
   database: miochef_teste
-  username: deployer
-  password: hpQNnA8DY8zSMPFc
+  username: <%= ENV['BASE_DATABASE_USER'] %>
+  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
 
 
 # Warning: The database defined as "test" will be erased and

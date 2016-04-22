@@ -50,6 +50,7 @@ Rails.application.config.assets.precompile += %w(
   bootstrap3-typeahead.js
   jquery.maskMoney.min.js
   front.js
+  front/main.js
 
   template/theme.css
   template/jquery.fancybox.css
