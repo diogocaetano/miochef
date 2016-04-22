@@ -6,10 +6,14 @@ Rails.application.routes.draw do
     root 'home#index', as: :authenticated_client
   end
 
+  # Home
   get 'home' => 'home#index', as: :home
+  # About
   get 'about' => 'page#about', as: :about
   get 'about/view' => 'page#about_view', as: :about_view
-  # get 'about' => 'about#index'
+  # user
+  get 'user' => 'page#user', as: :user
+
 
   scope '/admin' do
     resources :chef_types
