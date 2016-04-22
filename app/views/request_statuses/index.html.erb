@@ -36,25 +36,25 @@
                   </td>
                 </tr>
                 <div class="modal fade modal-dialog-center in" id="delete_request_status_<%= request_status.id.to_s %>"
-                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"><div class="modal-backdrop fade in" style="height: 749px;">
-                </div>
-                <div class="modal-dialog ">
-                  <div class="modal-content-wrap">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                          <h4 class="modal-title">Remover Status do Pedido</h4>
-                      </div>
-                      <div class="modal-body">
-                        <div class="text-center">
-                          Deseja Realmente Remover o Status do Pedido
+                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog ">
+                    <div class="modal-content-wrap">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Remover Status do Pedido</h4>
                         </div>
-                      </div>
-                      <div class="modal-footer">
-                        <div class="pull-left">
-                          <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                        <div class="modal-body">
+                          <div class="text-center">
+                            Deseja Realmente Remover o Status do Pedido
+                          </div>
                         </div>
-                        <%= link_to raw("Confirmar"), request_status, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        <div class="modal-footer">
+                          <div class="pull-left">
+                            <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                          </div>
+                          <%= link_to raw("Confirmar"), request_status, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        </div>
                       </div>
                     </div>
                   </div>

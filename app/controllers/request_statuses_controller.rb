@@ -54,7 +54,15 @@ class RequestStatusesController < ApplicationController
   # DELETE /request_statuses/1
   def destroy
     @request_status.destroy
-    redirect_to request_statuses_path, :flash =>{:success => 'Status do Pedido foi removido com sucesso.' }
+    respond_to do |format|
+      if not @request_status.errors.any?
+        format.html { redirect_to :back, :flash =>{:success => 'O Status do Pedido foi removido com sucesso.' } }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to :back, alert: @request_status.errors.full_messages.join('<br>') }
+        format.json { head :no_content }
+      end
+    end
   end
 
   private
