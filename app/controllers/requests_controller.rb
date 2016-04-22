@@ -41,6 +41,7 @@ class RequestsController < ApplicationController
     @windows = WindowRequest.all
     @clients = Client.all
     @statuses = RequestStatus.all
+    @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
   end
 
   # GET /requests/1/edit
@@ -60,6 +61,7 @@ class RequestsController < ApplicationController
     @windows = WindowRequest.all
     @clients = Client.all
     @statuses = RequestStatus.all
+    @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
 
     if @request.save
       save_request_plates @request.id
@@ -104,6 +106,7 @@ class RequestsController < ApplicationController
       @windows = WindowRequest.all
       @clients = Client.all
       @statuses = RequestStatus.all
+      @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
     end
 
     # Only allow a trusted parameter "white list" through.

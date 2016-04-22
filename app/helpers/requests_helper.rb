@@ -10,7 +10,7 @@ module RequestsHelper
 	end
 
 	def get_plate_request request_id, plate_id
-		plate_request = RequestPlate::where('request_id = ' + request_id.to_s).where('plate_id = ' + plate_id.to_s).first
+		plate_request = RequestPlate::where(request_id: request_id.to_s).where(plate_id: plate_id.to_s).first
 	end
 
 	def get_plate_request_quantity request_id, plate_id
@@ -28,5 +28,14 @@ module RequestsHelper
 			return plate_request.price
 		end
 		plate.price
+	end
+
+	def get_order_date_range
+		range = Setting::where(key: 'order_date_ranger').first
+		if range.nil?
+			return 3
+		end
+
+		range.value
 	end
 end
