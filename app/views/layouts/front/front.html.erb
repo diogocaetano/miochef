@@ -4,8 +4,14 @@
 <body>
  <%= render 'layouts/front/responsive_menu' %>
  <div id="wrap-site" class="">
-   <%= render 'layouts/front/header' %>
+   <% if current_page?('/home') %>
+    <%= render 'layouts/front/header_home' %>
+   <% else %>
+    <%= render 'layouts/front/header_internal' %>
+   <% end %>
+   <!-- Content -->
    <%= yield %>
+   <!-- Content -->
    <%= render 'layouts/front/footer' %>
  </div>
  <script type="text/javascript">

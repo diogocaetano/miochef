@@ -1,0 +1,14 @@
+#header-internal{
+  border-bottom:1px solid $white-2;
+  padding:10px 0;
+  position:relative;
+  z-index:10;
+  @extend .clearfix;
+}
+
+#wrap-menu-logo-int{
+  text-align:center;
+  img{
+    max-height:62px;
+  }
+}
