@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414134913) do
+ActiveRecord::Schema.define(version: 20160422123758) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "chef_id",      limit: 4
@@ -55,6 +55,17 @@ ActiveRecord::Schema.define(version: 20160414134913) do
 
   add_index "badges_chefs", ["badge_id"], name: "index_badges_chefs_on_badge_id", using: :btree
   add_index "badges_chefs", ["chef_id"], name: "index_badges_chefs_on_chef_id", using: :btree
+
+  create_table "chef_ratings", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.integer  "chef_id",    limit: 4
+    t.integer  "score",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "chef_ratings", ["chef_id"], name: "index_chef_ratings_on_chef_id", using: :btree
+  add_index "chef_ratings", ["client_id"], name: "index_chef_ratings_on_client_id", using: :btree
 
   create_table "chef_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -211,6 +222,17 @@ ActiveRecord::Schema.define(version: 20160414134913) do
     t.integer "plate_badge_id", limit: 4
   end
 
+  create_table "plate_ratings", force: :cascade do |t|
+    t.integer  "client_id",  limit: 4
+    t.integer  "plate_id",   limit: 4
+    t.integer  "score",      limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "plate_ratings", ["client_id"], name: "index_plate_ratings_on_client_id", using: :btree
+  add_index "plate_ratings", ["plate_id"], name: "index_plate_ratings_on_plate_id", using: :btree
+
   create_table "plate_types", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -245,6 +267,49 @@ ActiveRecord::Schema.define(version: 20160414134913) do
   add_index "plates", ["chef_id"], name: "index_plates_on_chef_id", using: :btree
   add_index "plates", ["nutritional_table_id"], name: "index_plates_on_nutritional_table_id", using: :btree
   add_index "plates", ["plate_type_id"], name: "index_plates_on_plate_type_id", using: :btree
+
+  create_table "portal_banners", force: :cascade do |t|
+    t.string   "title",              limit: 255
+    t.string   "image",              limit: 255
+    t.string   "link",               limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+  end
+
+  create_table "request_plates", force: :cascade do |t|
+    t.integer  "plate_id",   limit: 4
+    t.integer  "request_id", limit: 4
+    t.integer  "quantity",   limit: 4
+    t.decimal  "price",                precision: 10
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "request_statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "client_id",         limit: 4
+    t.integer  "client_address_id", limit: 4
+    t.string   "payment_code",      limit: 255
+    t.datetime "request_date"
+    t.datetime "delivery_date"
+    t.string   "delivery_window",   limit: 255
+    t.integer  "request_status_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "requests", ["client_address_id"], name: "index_requests_on_client_address_id", using: :btree
+  add_index "requests", ["client_id"], name: "index_requests_on_client_id", using: :btree
+  add_index "requests", ["request_status_id"], name: "index_requests_on_request_status_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -283,6 +348,13 @@ ActiveRecord::Schema.define(version: 20160414134913) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
+
+  create_table "window_requests", force: :cascade do |t|
+    t.time     "initial_time"
+    t.time     "final_time"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   add_foreign_key "addresses", "chefs"
   add_foreign_key "badges_chefs", "badges"

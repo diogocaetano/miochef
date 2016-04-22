@@ -1,0 +1,35 @@
+<div class="col-lg-12">
+  <%= form_for(@chef_rating) do |f| %>  
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), chef_ratings_path %>
+  <div class="panel"></div>
+  <section class="panel">
+    <header class="panel-heading">
+       Rating de Chefe
+    </header>
+    <% if @chef_rating.errors.any? %>
+      <div class="alert alert-danger">
+        <% @chef_rating.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="panel-body">
+                  <div class="form-group">
+            <%= f.label 'Cliente*' %><br>
+            <%= f.select :client_id, @clients.collect {|client| [ client.name, client.id]}, {:prompt => 'Selecione o Cliente'}, {:class => 'form-control'} %>
+          </div>
+                  <div class="form-group">
+            <%= f.label 'Chefe*' %><br>
+            <%= f.select :chef_id, @chefs.collect {|type| [ type.name, type.id]}, {:prompt => 'Selecione o Chefe'}, {:class => 'form-control'} %>
+          </div>
+                  <div class="form-group">
+            <%= f.label 'Score*' %><br>
+            <%= f.number_field :score, :class => 'form-control' %>
+          </div>
+            </div>
+  </section>
+  <div class="form-group">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+  <% end -%>
+</div>

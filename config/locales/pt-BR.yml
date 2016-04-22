@@ -222,6 +222,12 @@ pt-BR:
       plate: 'Prato'
       nutritional_table: 'Tabela Nutricional'
       daily_menu: 'Menu do Dia'
+      request: 'Pedido'
+      window_request: 'Janela de Entrega'
+      request_status: 'Status do Pedido'
+      chef_rating: 'Rating de Chefe'
+      plate_rating: 'Rating de Prato'
+      portal_banner: 'Rating de Prato'
       chef: 'Chefe'
       client: 'Cliente'
       address: 'Endereço'
@@ -322,6 +328,36 @@ pt-BR:
         sodium: "Sódio"
         iron: "Ferro"
         dietary_fiber: "Fibra alimentar"
+      address:
+        public_place: "Logradouro"
+        number: "Número"
+        neighborhood: "Bairro"
+        city: "Cidade"
+        state: "Estado"
+        zip_code: "CEP"
+        complement: "Complemento"
+      request:
+        client_id: "Cliente"
+        client_address_id: "Endereço do Cliente"
+        payment_code: "Código de Pagamento"
+        request_date: "Data do Pedido"
+        delivery_date: "Data da Entrega"
+        delivery_window: "Janela da Entrega"
+        request_status_id: "Status do Pedido"
+      request_status:
+        name: 'Nome'
+      window_request:
+        initial_time: 'Horário Inicial'
+        final_time: 'Horário Final'
+      chef_rating:
+        client_id: 'Cliente'
+        chef_id: 'Chefe'
+      plate_rating:
+        client_id: 'Cliente'
+        plate_id: 'Prato'
+      portal_banner:
+        image: 'Imagem'
+        title: 'Título'
       client:
         name: "Nome"
         last_name: "Sobre Nome"

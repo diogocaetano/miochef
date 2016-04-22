@@ -231,6 +231,7 @@ Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Ed
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: chefAddressCategory.id, action_name: 'Buscar Endereços', action: 'get_client_addresses')
 
 
 ModulesCategory.find_or_create_by(name: 'Cardápio do Dia', icon: 'fa fa-list')
@@ -252,9 +253,133 @@ Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Edit
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: dailyMenuCategory.id, action_name: 'Pegar Pratos do Dia', action: 'get_plates_from_date')
 
 usersCategory = Entity.find_by(name: 'Usuários')
 Permission.find_or_create_by(entity_id: usersCategory.id, action_name: 'Alterar Senha', action: 'update_password')
+
+# PEDIDOS
+ModulesCategory.find_or_create_by(name: 'Pedidos', icon: 'fa fa-shopping-cart')
+requestModule = ModulesCategory.find_by(name: 'Pedidos')
+Entity.find_or_create_by(controller: 'requests') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Pedidos'
+	requestEntity.slug = 'requests'
+	requestEntity.controller = 'requests'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+requestsCategory = Entity.find_by(controller: 'requests')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Remover', action: 'destroy')
+
+# Status dos Pedidos
+Entity.find_or_create_by(controller: 'request_statuses') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Status do Pedido'
+	requestEntity.slug = 'request_statuses'
+	requestEntity.controller = 'request_statuses'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+requestStatusesCategory = Entity.find_by(controller: 'request_statuses')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: requestStatusesCategory.id, action_name: 'Remover', action: 'destroy')
+
+# Janela de Entrega
+Entity.find_or_create_by(controller: 'window_requests') do |requestEntity|
+	requestEntity.modules_category_id = requestModule.id
+	requestEntity.name = 'Janela de Entrega'
+	requestEntity.slug = 'window_requests'
+	requestEntity.controller = 'window_requests'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+windowRequestsCategory = Entity.find_by(controller: 'window_requests')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 'Remover', action: 'destroy')
+
+# CHEFS
+# Rating de Chefs
+chefsModule = ModulesCategory.find_by(name: 'Chefes')
+Entity.find_or_create_by(controller: 'chef_ratings') do |requestEntity|
+	requestEntity.modules_category_id = chefsModule.id
+	requestEntity.name = 'Rating de Chefe'
+	requestEntity.slug = 'chef_ratings'
+	requestEntity.controller = 'chef_ratings'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+chefsCategory = Entity.find_by(controller: 'chef_ratings')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: chefsCategory.id, action_name: 'Remover', action: 'destroy')
+
+# PRATOS
+# Rating de Pratos
+platesModule = ModulesCategory.find_by(name: 'Pratos')
+Entity.find_or_create_by(controller: 'plate_ratings') do |requestEntity|
+	requestEntity.modules_category_id = platesModule.id
+	requestEntity.name = 'Rating de Pratos'
+	requestEntity.slug = 'plate_ratings'
+	requestEntity.controller = 'plate_ratings'
+	requestEntity.is_dev = false
+	requestEntity.visible = true
+end
+
+platesCategory = Entity.find_by(controller: 'plate_ratings')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: platesCategory.id, action_name: 'Remover', action: 'destroy')
+
+# BANNERS
+# Portal
+ModulesCategory.find_or_create_by(name: 'Banners', icon: 'fa fa-file-image-o')
+bannersCategory = ModulesCategory.find_by(name: 'Banners')
+
+Entity.find_or_create_by(controller: 'portal_banners') do |entity|
+	entity.modules_category_id = bannersCategory.id
+	entity.controller = 'portal_banners'
+	entity.name = 'Portal'
+	entity.slug = 'portal_banners'
+	entity.is_dev = false
+end
+
+portalBannerCategory = Entity.find_by(slug: 'portal_banners')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Listar', action: 'index')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Criar', action: 'new')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Salvar', action: 'create')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Editar', action: 'edit')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Atualizar', action: 'update')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Visualizar', action: 'show')
+Permission.find_or_create_by(entity_id: portalBannerCategory.id, action_name: 'Remover', action: 'destroy')
 
 
 

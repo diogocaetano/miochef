@@ -5,14 +5,13 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus.json
   def index
     @daily_menus = DailyMenu.all.paginate(:page => params[:page], :per_page => 10)
-    @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1)
-    
+    #@plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
+
     @term = params[:term]
     @where = []    
     @where << "plates.title LIKE :term"
     @where = @where.join(" OR ")
-    @plates = Plate.where(active: 1).where(get_today_plate_tag.to_s, 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
-
+    @plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1).where(@where, term: "%#{params[:term]}%").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /daily_menus/1
@@ -69,16 +68,25 @@ class DailyMenusController < ApplicationController
     end
   end
 
+  def get_plates_from_date
+    date = Date.parse(params['date'])
+    @plates = Plate.where(active: 1).where(get_today_plate_tag(date.wday).to_s, 1)
+
+    respond_to do |format|
+      format.json { render json: @plates.collect{ |plate| [ plate.title, plate.price, plate.id ] } }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_daily_menu
       @daily_menu = DailyMenu.find(params[:id])
     end
 
-    def get_today_plate_tag
+    def get_today_plate_tag day
       tags = [:sunday_available, :monday_available, :tuesday_available, :wednesday_available,
         :thursday_available, :friday_available, :saturday_available]
-      tags[Date.today.wday]
+      tags[day]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

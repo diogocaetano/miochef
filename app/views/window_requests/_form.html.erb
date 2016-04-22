@@ -1,0 +1,38 @@
+<div class="col-lg-12">
+  <%= form_for(@window_request) do |f| %>  
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), window_requests_path %>
+  <div class="panel"></div>
+  <section class="panel">
+    <header class="panel-heading">
+       Janela de Entrega
+    </header>
+    <% if @window_request.errors.any? %>
+      <div class="alert alert-danger">
+        <% @window_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="panel-body">
+                  <div class="form-group">
+            <%= f.label 'Horário Inicial*' %><br>
+            <%= f.text_field :initial_time, :class => 'form-control input-medium timepicker-24 initial_pick' %>
+          </div>
+                  <div class="form-group">
+            <%= f.label 'Horário Final*' %><br>
+            <%= f.text_field :final_time, :class => 'form-control input-medium timepicker-24 final_pick' %>
+          </div>
+            </div>
+  </section>
+  <div class="form-group">
+      <%= f.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+  <% end -%>
+</div>
+
+<script type="text/javascript">
+  window.addEventListener('load', function(){
+    $('.initial_pick').data('timepicker').setTime('<%= get_initial_timepicker_value @window_request %>');
+    $('.final_pick').data('timepicker').setTime('<%= get_final_timepicker_value@window_request %>');
+  });
+</script>

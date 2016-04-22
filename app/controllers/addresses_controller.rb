@@ -70,6 +70,14 @@ class AddressesController < ApplicationController
     end
   end
 
+  def get_client_addresses
+    set_addresses
+    
+    respond_to do |format|
+      format.json { render json: @addresses.collect{ |address| [ address.public_place, address.id ] } }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_address

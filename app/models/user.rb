@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          
   belongs_to :role
 
+  has_many :addresses
+
   validates_presence_of :role_id, :name
 
   def access_token_expired?  	

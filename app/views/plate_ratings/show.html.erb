@@ -1,0 +1,29 @@
+<div class="col-lg-12">  
+  <%= link_to raw("<button type='button' class='btn btn-default'>Voltar</button>"), plate_ratings_path %>
+  <div class="panel"></div>
+	<section class="panel">
+    <div class="panel-heading">
+        <div class="panel-title">Detalhes</div>
+    </div>
+    <div class="panel-body form-horizontal">
+    		      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Cliente</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @plate_rating.client.name %></label>
+          </div>
+	      </div>
+	    	      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Prato</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @plate_rating.plate.title %></label>
+          </div>
+	      </div>
+	    	      <div class="form-group">
+          <label for="number" class="control-label col-lg-3">Score</label>
+          <div class="col-lg-9">
+            <label for="number" class="form-control-static"><%= @plate_rating.score %></label>
+          </div>
+	      </div>
+	        </div>
+  </section>
+</div>

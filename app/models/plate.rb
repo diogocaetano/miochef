@@ -6,6 +6,9 @@ class Plate < ActiveRecord::Base
 	has_and_belongs_to_many :plate_badges
 	has_and_belongs_to_many  :ingredients, dependent: :restrict_with_error
 	has_and_belongs_to_many  :plate_accompaniments
+	
+	has_many :request_plates, :inverse_of => :plate
+	has_many :requests, :through => :request_plates
 
 	validates :title, presence: true, uniqueness: true
 	validates :plate_type_id, presence: true
@@ -20,4 +23,6 @@ class Plate < ActiveRecord::Base
 	accepts_nested_attributes_for :ingredients
 	accepts_nested_attributes_for :plate_badges
 	accepts_nested_attributes_for :plate_accompaniments
+	accepts_nested_attributes_for :requests
+	accepts_nested_attributes_for :request_plates
 end

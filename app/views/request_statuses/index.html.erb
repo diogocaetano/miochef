@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-lg-12">    
+    <%= link_to raw("<button type='button' class='btn btn-primary'>Adicionar Status do Pedido</button>"), new_request_status_path %>
+    <div class="panel"></div>
+    <section class="panel">
+      <header class="panel-heading">
+          Status do Pedido
+          <% if @term %>
+            <div class="pull-right">
+              <%= link_to raw("<i class='fa fa-times'></i>"), request_statuses_path, :class => 'btn btn-xs btn-shadow btn-danger tooltips', 'data-toggle': 'tooltip', 'data-placement': 'top', title: 'Remover termo da pesquisa' %>
+            </div>
+          <% end %>
+      </header>
+      <div class="panel-body">
+        <div class="pull-right">
+            <%= form_tag(request_statuses_path, method: 'GET') do -%>
+                <input type="text" value=""name="term" class="form-control search" placeholder="Digite o termo...">
+            <% end %>
+        </div>
+        <section id="unseen">
+          <table class="table table-bmoduleed table-striped table-condensed">
+            <thead>
+              <tr>
+                                  <th>Nome</th>
+                                <th colspan='3'>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @request_statuses.each do |request_status| %>
+                <tr>
+                                      <td><%= request_status.name %></td>
+                                    <td>
+                    <%= link_to raw("<i class='fa fa-eye'></i>"), request_status, :class => 'btn btn-primary tooltips', 'data-placement': 'top', title: 'Visualizar' %>
+                    <%= link_to raw("<i class='fa fa-pencil'></i>"), edit_request_status_path(request_status), :class => 'btn btn-info tooltips', 'data-placement': 'top', title: 'Editar' %>
+                    <%= link_to raw("<i class='fa fa-trash-o '></i>"), '#delete_request_status_'+request_status.id.to_s, :class => 'btn btn-danger tooltips', 'data-placement': 'top', title: 'Deletar', :'data-toggle' => 'modal'  %>
+                  </td>
+                </tr>
+                <div class="modal fade modal-dialog-center in" id="delete_request_status_<%= request_status.id.to_s %>"
+                  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                  <div class="modal-dialog ">
+                    <div class="modal-content-wrap">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Remover Status do Pedido</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="text-center">
+                            Deseja Realmente Remover o Status do Pedido
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <div class="pull-left">
+                            <button data-dismiss="modal" class="btn btn-default" type="button">Fechar</button>
+                          </div>
+                          <%= link_to raw("Confirmar"), request_status, :class => 'btn btn-primary', :'data-method' => 'delete' %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end -%>
+            </tbody>
+          </table>
+          <div class="apple_pagination">
+              <div class="page_info">
+                  <%= page_entries_info @request_statuses %>
+              </div>
+              <%= will_paginate @request_statuses %>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</div>
