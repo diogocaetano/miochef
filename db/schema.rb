@@ -284,9 +284,9 @@ ActiveRecord::Schema.define(version: 20160422123758) do
     t.integer  "plate_id",   limit: 4
     t.integer  "request_id", limit: 4
     t.integer  "quantity",   limit: 4
-    t.decimal  "price",                precision: 10
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "price",                precision: 10, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "request_statuses", force: :cascade do |t|
