@@ -1,0 +1,23 @@
+form{
+  .form-control{
+    border-color:$gray-4;
+    @include radius(0px);
+    &:focus{
+      border-color:$red-2;
+    }
+  }
+  .wrap-submit{
+    padding-top:20px;
+    [type=submit]{
+      color:$white;
+      background:$red;
+      border-color:$red-2;
+      @include radius(0px);
+      &:hover{
+        background:$red-2;
+        border-color:$red;
+
+      }
+    }
+  }
+}

@@ -1,20 +1,84 @@
 <div id="pages-int" class="wrap-content bg-white-3">
-<div class="container-fluid int">
+  <div class="container-fluid int">
     <div class="row">
-      <div class="title s-left col-sm-6 col-md-6">
+      <div class="title s-left col-sm-10 col-md-10 col-xs-9">
         <h2>Sua Conta</h2>
       </div>
-      <div class="title s-left col-sm-6 col-md-6">
-        <h2>Sua Conta</h2>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to user_path do %>
+          Sair
+          <% end %>
+        </div>
       </div>
-      <div class="col-md-12">
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
         <div class="row">
-          <div class="col-md-3 col-sm-4">
-            <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença", class: "img-responsive" %>
+          <!-- aside -->
+          <%= render 'layouts/front/aside_user' %>
+          <!-- aside -->
+          <div id="info-user-block" class="col-md-9 col-sm-9">
+            <div id="wrap-banner-user" style="background:url(<%= asset_path"content/temp/banner-user.jpg" %>) no-repeat top center / cover;">
+              <h4>Seja Bem Vindo</h4>
+            </div>
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <!-- block-link -->
+                <div class="block-link col-md-6 col-sm-6">
+                  <h4>Configurações da Conta</h4>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <%= link_to "Editar Perfil", user_edit_profile_path %>
+                    </li>
+                    <li>
+                      <a href="#">Mudar Email</a>
+                    </li>
+                    <li>
+                      <a href="#">Mudar senha</a>
+                    </li>
+                    <li>
+                      <a href="#">Preferências de email</a>
+                    </li>
+                  </ul>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <a href="#">Gerencias endereços</a>
+                    </li>
+                    <li>
+                      <a href="#">Gerencias Metodos de  Pagamentos</a>
+                    </li>
+                    <li>
+                      <a href="#">Mudar senha</a>
+                    </li>
+                    <li>
+                      <a href="#">Preferências de email</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- block-link -->
+                <!-- block-link -->
+                <div class="block-link col-md-6 col-sm-6">
+                  <h4>Pedidos</h4>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <a href="#">Histórico de Pedidos</a>
+                    </li>
+                  </ul>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <a href="#">Seus Reviews</a>
+                    </li>
+                    <li>
+                      <a href="#">Escreva um Review</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- block-link -->
+              </div>
+              <!-- row  -->
+            </div>
           </div>
-          <div class="col-md-9 col-sm-9">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt ipsam sed accusamus quidem quaerat dolor animi hic illo facere modi temporibus quam, libero, minus facilis in asperiores atque repellat culpa!
-          </div>
+          <!-- info-user-block -->
         </div>
       </div>
     </div><!-- row -->

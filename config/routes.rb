@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'about/view' => 'page#about_view', as: :about_view
   # user
   get 'user' => 'page#user', as: :user
+  get 'user_edit_profile' => 'page#user_edit_profile', as: :user_edit_profile
 
 
   scope '/admin' do
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
     resources :requests do
       post :update_status
     end
-    
+
     resources :chef_types
     resources :daily_menus
     resources :settings

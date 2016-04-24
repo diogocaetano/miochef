@@ -84,7 +84,7 @@
     position:relative;
     h2{
       text-transform:none;
-      font-size:26px;
+      font-size:24px;
       color:$gray-2;
       font-weight:lighter;
       letter-spacing:1px;
@@ -109,5 +109,31 @@
       font-weight:lighter;
       font-size: 25px;
     }
+  }
+  &.int-user{
+    border-bottom:1px solid $gray-4;
+    margin-bottom:20px;
+    padding:30px 0 10px;
+    h2{
+      text-transform:none;
+      font-size:20px;
+      color:$gray;
+    }
+  }
+}
+
+.title-border{
+  font-size:16px;
+  color:$gray-2;
+  font-weight:bold;
+  position:relative;
+  &:after{
+    content:'';
+    background:$gray-2;
+    width:20%;
+    height:1px;
+    display:block;
+    margin:20px 0;
+    position:relative;
   }
 }
