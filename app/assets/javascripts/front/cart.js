@@ -1,13 +1,16 @@
 ApplicationCart = {
 	init: function () {
 		this.addCartButton();
+		this.checkCartItem();
 	},
 
 	// filterList
 	addCartButton: function () {
 		// variable quant prod cart
 		var quantItensCart = 0;
+		const cartQuantActual = $('.cart-show input').val();
 
+		console.log(cartQuantActual);
 		// function success
 		function callActionEventCart(elem, fatherThis, figure, status, event) {
 			var elemParent = elem.closest(fatherThis).find(figure),
@@ -79,8 +82,9 @@ ApplicationCart = {
 				}
 
 				// add value input and item view cart
-				$('.cart-show').find('.quant-itens-cart').text(quantItensCart);
-				$('.cart-show').find('input').attr('value', quantItensCart);
+				var cartValueView = parseInt(quantItensCart) + parseInt(cartQuantActual);
+				$('.cart-show').find('.quant-itens-cart').text(cartValueView);
+				$('.cart-show').find('input').attr('value', cartValueView);
 
 				// add class active in cart icon
 				if ($('.cart-show').find('input').attr('value') == 0) {
@@ -180,6 +184,13 @@ ApplicationCart = {
 			});
 
 		});
+	},
+
+	// checkCartItem
+	checkCartItem: function () {
+		if ($('.quant-itens-cart').text().length > 0) {
+			$('.cart-show').addClass('active');
+		}
 	}
 
 };
@@ -187,5 +198,4 @@ ApplicationCart = {
 
 $(document).on("ready", function () {
 	ApplicationCart.init();
-
 });

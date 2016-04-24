@@ -1,9 +1,11 @@
 <header id="header-internal">
   <div class="container-fluid">
-    <div class="col-md-4">
-      asdfasd
+    <div class="col-md-4 col-sm-4">
+    <div class="menu-int left">
+      <%= render 'layouts/front/menu_links' %>
     </div>
-    <div id="wrap-menu-logo-int" class="col-md-4">
+    </div>
+    <div id="wrap-menu-logo-int" class="col-md-4 col-sm-4">
       <h1>
         <%= link_to home_path, :class => "" do %>
         <%= image_tag 'content/miochef.png', alt: "Miochef" %>
@@ -13,8 +15,11 @@
         <% end %>
       </h1>
     </div>
-    <div class="col-md-4">
-      asdfasd
+    <div class="col-md-4 col-sm-4">
+      <div class="menu-int right">
+        <%= render 'layouts/front/menu_links' %>
+        <%= render 'layouts/front/cart' %>
+      </div>
     </div>
   </div>
 </header>

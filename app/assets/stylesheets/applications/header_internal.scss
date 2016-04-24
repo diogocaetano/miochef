@@ -12,3 +12,58 @@
     max-height:62px;
   }
 }
+
+.menu-int{
+  margin-top:34px;
+  ul{
+    display:inline-block;
+    li{
+      display:inline-block;
+      list-style:none;
+      a{
+        font-size: 12px;
+        color:$gray-3;
+        letter-spacing:1px;
+        border-bottom:1px solid transparent;
+        display:inline-block;
+        margin-left:$size-margin-links-header;
+        &:hover,
+        &.active{
+          color:$red;
+          border-color:$red-2;
+        }
+        &#name-user{
+          img{
+            width:22px;
+            height:22px;
+            display:inline-block;
+            position:relative;
+            top:-2px;
+            @include radius(50%);
+          }
+          &:hover,
+          &.active{
+            border-color:transparent;
+          }
+        }
+      }
+    }
+  }
+  &.left{
+    .no-menu-int-left{
+      display:none;
+    }
+    ul{
+      margin-top:4px;
+    }
+  }
+  &.right{
+    text-align:right;
+    .no-menu-int-right{
+      display:none;
+    }
+    ul{
+      margin-right:$size-margin-links-header;
+    }
+  }
+}

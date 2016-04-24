@@ -235,5 +235,7 @@ ApplicationHeader = {
 
 
 $(document).on("ready", function () {
-	ApplicationHeader.init();
+	if ($('#header-default').length > 0) {
+		ApplicationHeader.init();
+	}
 });
