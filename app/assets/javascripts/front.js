@@ -21,5 +21,5 @@
 //= require ./front/header
 //= require ./front/filterList
 //= require ./front/cart
-//= require ./front/home
+//= require ./front/pages
 //= require ./front/menu-responsive

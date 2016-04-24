@@ -26,7 +26,7 @@
         letter-spacing:1px;
         border-bottom:1px solid transparent;
         display:inline-block;
-        margin-left:$size-margin-links-header;
+        margin-right:$size-margin-links-header;
         &:hover,
         &.active{
           color:$red;
@@ -64,6 +64,9 @@
     }
     ul{
       margin-right:$size-margin-links-header;
+      a{
+        margin-left:$size-margin-links-header;
+      }
     }
   }
 }

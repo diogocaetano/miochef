@@ -32,6 +32,9 @@ ul{
   padding-left: $size-padding-fluid;
   padding-right: $size-padding-fluid;
   position:relative;
+  &.int{
+    max-width:1130px;
+  }
 }
 
 #wrap-site{
@@ -184,34 +187,3 @@ ul{
   @extend .clearfix;
 }
 
-
-// // FontFace
-// @font-face {
-//   font-family: 'Webtype - web use only';
-//   src: url('../../fonts/Munged-L07Vk1bcLl.eot');
-//   src: url('../../fonts/Munged-L07Vk1bcLl.eot?#iefix') format('embedded-opentype'),
-//     url('../../fonts/Munged-L07Vk1bcLl.woff') format('woff'),
-//     url('../../fonts/Munged-L07Vk1bcLl.ttf') format('truetype');
-//   font-weight: 300;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: 'Webtype - web use only';
-//   src: url('../../fonts/Munged-wJWNU0pE83.eot');
-//   src: url('../../fonts/Munged-wJWNU0pE83.eot?#iefix') format('embedded-opentype'),
-//     url('../../fonts/Munged-wJWNU0pE83.woff') format('woff'),
-//     url('../../fonts/Munged-wJWNU0pE83.ttf') format('truetype');
-//   font-weight: bold;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: 'Webtype - web use only';
-//   src: url('../../fonts/Munged-NNMZlpM6Mv.eot');
-//   src: url('../../fonts/Munged-NNMZlpM6Mv.eot?#iefix') format('embedded-opentype'),
-//     url('../../fonts/Munged-NNMZlpM6Mv.woff') format('woff'),
-//     url('../../fonts/Munged-NNMZlpM6Mv.ttf') format('truetype');
-//   font-weight: 500;
-//   font-style: normal;
-// }

@@ -1,4 +1,4 @@
-ApplicationHome = {
+ApplicationPages = {
 	init: function () {
 		this.loadingPage();
 	},
@@ -6,7 +6,9 @@ ApplicationHome = {
 	// loadingPage
 	loadingPage: function () {
 		$(document).ready(function () {
-			$('#home-page').addClass('active');
+			var self = $('#home-page, #pages-int');
+
+			self.addClass('active');
 		});
 	}
 
@@ -14,5 +16,5 @@ ApplicationHome = {
 
 
 $(document).on("ready", function () {
-	ApplicationHome.init();
+	ApplicationPages.init();
 });
