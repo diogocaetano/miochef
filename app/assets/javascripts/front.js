@@ -22,3 +22,4 @@
 //= require ./front/filterList
 //= require ./front/cart
 //= require ./front/home
+//= require ./front/menu-responsive

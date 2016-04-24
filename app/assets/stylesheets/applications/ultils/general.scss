@@ -4,12 +4,12 @@ body{
 
 a{
   outline:0!important;
-  @include transition(0.3s);
+  @include transition(0.1s);
   &:hover,
   &:focus,
   &:active{
     outline:0!important;
-    @include transition(0.2s);
+    @include transition(0.1s);
   }
 }
 
@@ -43,65 +43,138 @@ ul{
 }
 
 #menu-responsive{
-  background:$white;
+  background:$blue;
   width:60%;
   height:100%;
   position:fixed;
   top:0;
   left:-100%;
   z-index:100;
-  box-shadow:2px 0 5px rgba(0,0,0,0.1);
-  -webkit-box-shadow:2px 0 5px rgba(0,0,0,0.1);
+  box-shadow:-5px 0 10px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow:-5px 0 10px rgba(0, 0, 0, 0.7);
   @include transition(0.2s);
   &.active{
     left:0;
     @include transition(0.4s);
+    &:before{
+      display:block;
+      opacity:1;
+      @include transition(0.3s);
+    }
+  }
+  &:before{
+    content:'';
+    background:rgba(0,0,0,0.6);
+    width:100%;
+    height:100%;
+    display:none;
+    position:fixed;
+    top:0;
+    right:0;
+    opacity:0;
+    z-index:-1;
+    @include transition(0.1s);
   }
   #wrap-menu-responsive{
     width:100%;
     height:100vh;
     display:block;
-    padding:60px 0;
-  }
-  ul{
-    height:100%;
+    padding:0 0 60px;
     white-space:nowrap;
     overflow-y:auto;
+  }
+  ul{
+    padding-top:20px;
+    // height:60%;
     li{
       display:block;
-      margin-bottom:20px;
       list-style:none;
       &.no-menu-responsive{
         display:none;
       }
       a{
-        font-size:25px;
+        font-size:18px;
+        color:$white;
         font-weight:lighter;
-        border-left:5px solid transparent;
+        display:block;
+        border-color:transparent;
         padding:10px 20px;
         @include transition(0.2s);
-        &:hover{
-          border-color:$red;
+        &:hover,
+        &.active{
+          background:$black;
+          border-left:5px solid $red-2;
           @include transition(0.4s);
         }
       }
     }
   }
+  #info-user-menu-responsive{
+    background-color:$black;
+    width:100%;
+    height:auto;
+    position:relative;
+    top:0;
+    left:0;
+    overflow:hidden;
+    #wrap-user-info-menu-responsive{
+      width:100%;
+      height:0;
+      padding-top:45%;
+      display:block;
+      position:relative;
+      #user-menu-responsive{
+        width:100%;
+        padding:15px;
+        position:absolute;
+        bottom:0;
+        left:0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+18,000000+100&0+0,0.23+100 */
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 18%, rgba(0,0,0,0.23) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 18%,rgba(0,0,0,0.23) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 18%,rgba(0,0,0,0.23) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#3b000000',GradientType=0 ); /* IE6-9 */
+        a{
+          display:block;
+          color:$white;
+          img{
+            width:48px;
+            height:48px;
+            display:block;
+            margin-bottom:5px;
+            @include radius(50%);
+            @include transition(0.1s);
+          }
+          &:hover{
+            color: $white;
+            img{
+              box-shadow:0px 0px 0px 3px rgba(255, 255, 255, 1);
+              -webkit-box-shadow:0px 0px 0px 3px rgba(255, 255, 255, 1);
+              @include transition(0.3s);
+            }
+          }
+        }
+      }
+    }
+  }
   #close-menu-responsive{
-    background:$white;
+    // background:$white;
     padding:15px 20px;
     position:absolute;
     top:0;
     right:-56px;
     cursor:pointer;
-    box-shadow:4px 2px 5px rgba(0,0,0,0.1);
-    -webkit-box-shadow:4px 2px 5px rgba(0,0,0,0.1);
     i{
-      color: $red-2;
-      font-size: 20px;
+      color: $white;
+      font-size: 32px;
       position: relative;
       z-index: 0;
       @include transition(0.3s);
+    }
+    &:hover{
+      i{
+        color:$red;
+      }
     }
   }
 }

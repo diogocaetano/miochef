@@ -22,7 +22,8 @@
       padding:0;
     }
   }
-  #logo-header{
+  #logo-header,
+  #wrap-menu-logo-int{
     background:$white;
     text-align:center;
     padding-top:10px;
@@ -45,6 +46,9 @@
     img{
       height:24px;
     }
+  }
+  #wrap-menu-logo-int{
+    padding:0;
   }
 
   .wrap-select-date-food{
@@ -91,8 +95,8 @@
 
   #cart-bar-responsive{
     position:absolute;
-    top:38%;
-    right:$size-padding-fluid;
+    top:39%;
+    right:$size-padding-fluid + $size-padding-fluid;
     z-index:10;
     a{
       display:block!important;

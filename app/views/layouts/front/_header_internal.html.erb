@@ -1,11 +1,18 @@
 <header id="header-internal">
+  <div id="cart-bar-responsive" class="visible-sm visible-xs hidden-md hidden-lg">
+    <%= render 'layouts/front/cart' %>
+  </div>
+  <div id="active-menu-responsive" class="visible-sm visible-xs hidden-md hidden-lg">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+
   <div class="container-fluid">
-    <div class="col-md-4 col-sm-4">
-    <div class="menu-int left">
-      <%= render 'layouts/front/menu_links' %>
+    <div class="col-md-4 col-sm-4 hidden-xs hidden-sm visible-md visible-lg">
+      <div class="menu-int left">
+        <%= render 'layouts/front/menu_links' %>
+      </div>
     </div>
-    </div>
-    <div id="wrap-menu-logo-int" class="col-md-4 col-sm-4">
+    <div id="wrap-menu-logo-int" class="col-md-4 col-sm-12">
       <h1>
         <%= link_to home_path, :class => "" do %>
         <%= image_tag 'content/miochef.png', alt: "Miochef" %>
@@ -15,7 +22,7 @@
         <% end %>
       </h1>
     </div>
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-sm-4 hidden-xs hidden-sm visible-md visible-lg">
       <div class="menu-int right">
         <%= render 'layouts/front/menu_links' %>
         <%= render 'layouts/front/cart' %>

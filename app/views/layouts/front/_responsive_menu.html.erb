@@ -3,6 +3,15 @@
     <i class="fa fa-times" aria-hidden="true"></i>
   </span>
   <div id="wrap-menu-responsive">
+    <div id="info-user-menu-responsive">
+      <div id="wrap-user-info-menu-responsive" style="background:url(<%= asset_path"content/temp/banner-user.jpg" %>) no-repeat center center / cover;">
+        <div id="user-menu-responsive">
+          <%= link_to user_path, :id => "name-user-menu-responsive" do %>
+          <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %> Luiz Valença
+          <% end %>
+        </div>
+      </div>
+    </div>
     <%= render 'layouts/front/menu_links' %>
   </div>
 </div>
