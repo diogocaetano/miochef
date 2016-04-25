@@ -278,6 +278,7 @@ Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Edita
 Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Atualizar', action: 'update')
 Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Visualizar', action: 'show')
 Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Remover', action: 'destroy')
+Permission.find_or_create_by(entity_id: requestsCategory.id, action_name: 'Atualizar Status', action: 'update_status')
 
 # Status dos Pedidos
 Entity.find_or_create_by(controller: 'request_statuses') do |requestEntity|

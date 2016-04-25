@@ -16,7 +16,7 @@ default: &default
   # username: <%= ENV['BASE_DATABASE_USER'] %>
   # password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
   username: root
-  password: 1320
+  password: root
 
 development:
   <<: *default
