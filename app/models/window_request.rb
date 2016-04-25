@@ -5,14 +5,16 @@ class WindowRequest < ActiveRecord::Base
 
 	validate :is_initial_time_before_final_time?
 
-	validate :is_clone?, on: :create
+	validate :is_clone?
 
 	def is_initial_time_before_final_time?
 		errors.add('Horário Inicial', 'deve ser menor que o Horário Final') unless self.initial_time < self.final_time
 	end
 
 	def is_clone?
-		window = WindowRequest::where(initial_time: self.initial_time).where(final_time: self.final_time).first
-		errors.add('Já existe', 'Janela de Entrega com esses horários') unless window.nil?
+		if self.changed?
+			window = WindowRequest::where(initial_time: self.initial_time).where(final_time: self.final_time).first
+			errors.add('Já existe', 'Janela de Entrega com esses horários') unless window.nil?
+		end
 	end
 end
