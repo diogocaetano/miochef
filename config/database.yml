@@ -13,10 +13,10 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  # username: <%= ENV['BASE_DATABASE_USER'] %>
-  # password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
-  username: root
-  password: 1320
+  #username: <%= ENV['BASE_DATABASE_USER'] %>
+  #password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
+  username: homestead
+  password: secret
 
 development:
   <<: *default

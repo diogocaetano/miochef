@@ -20,7 +20,7 @@
           </div>
                   <div class="form-group">
             <%= f.label 'Endereço do Cliente*' %><br>
-             <%= f.select :client_address_id, [], {:prompt => 'Selecione o Endereço'}, {:class => 'form-control'} %>
+             <%= f.select :client_address_id, [], {:prompt => 'Selecione o Endereço'}, {:class => 'form-control', 'data-selected' => @request.client_address_id} %>
           </div>
                   <div class="form-group">
             <%= f.label 'Código de Pagamento*' %><br>
@@ -90,7 +90,9 @@
           $('[name="request[client_address_id]"]').empty();
           $('[name="request[client_address_id]"]').append('<option value="">Selecione o Endereço</option>');
           for (var i = 0; i < data.length; i++) {
-            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + '>' + data[i][0] + '</option>');
+            var selected_text = '';
+            if ($('[name="request[client_address_id]"]').data('selected') == data[i][1]) selected_text = 'selected';
+            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + ' selected="' + selected_text + '" >' + data[i][0] + '</option>');
           }
         })
         .fail(function(){
