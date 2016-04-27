@@ -187,3 +187,22 @@ ul{
   @extend .clearfix;
 }
 
+
+// breadcrumb
+.breadcrumb{
+  padding-top:30px;
+  padding-bottom:30px;
+  li{
+    font-size:13px;
+    padding-top:12px;
+    &.active{
+      color:$gray-3;
+    }
+    a{
+      color:$red;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+  }
+}

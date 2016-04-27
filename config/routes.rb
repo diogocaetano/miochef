@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # user
   get 'user' => 'page#user', as: :user
   get 'user_edit_profile' => 'page#user_edit_profile', as: :user_edit_profile
+  get 'user_photo_edit' => 'page#user_photo_edit', as: :user_photo_edit
 
 
   scope '/admin' do

@@ -113,11 +113,12 @@
   &.int-user{
     border-bottom:1px solid $gray-4;
     margin-bottom:20px;
-    padding:30px 0 10px;
+    padding:0 0 10px;
     h2{
       text-transform:none;
-      font-size:20px;
+      font-size:24px;
       color:$gray;
+      letter-spacing:1px;
     }
   }
 }

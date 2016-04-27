@@ -1,4 +1,9 @@
 form{
+  label{
+    span{
+      color:$red-2;
+    }
+  }
   .form-control{
     border-color:$gray-4;
     @include radius(0px);
@@ -13,11 +18,22 @@ form{
       background:$red;
       border-color:$red-2;
       @include radius(0px);
+      @include transition(0.2s);
       &:hover{
-        background:$red-2;
         border-color:$red;
-
+        opacity:0.8;
+        @include transition(0.3s);
       }
+    }
+  }
+  .form-group{
+    position:relative;
+    .error{
+      font-size:20px;
+      color:$red-2;
+      position:absolute;
+      top:46%;
+      right:20px;
     }
   }
 }
