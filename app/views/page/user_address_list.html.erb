@@ -1,0 +1,64 @@
+<div id="pages-int" class="wrap-content bg-white-3">
+  <div class="container-fluid int">
+    <div class="row">
+      <ol class="breadcrumb col-sm-10 col-md-10 col-xs-9">
+        <li><%= link_to "Seu Conta", user_path %></li>
+        <li class="active">Lista de endereços</li>
+      </ol>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to user_path do %>
+          Sair
+          <% end %>
+        </div>
+      </div>
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+          <!-- aside -->
+          <%= render 'layouts/front/aside_user' %>
+          <!-- aside -->
+          <div id="info-user-block" class="int col-md-9 col-sm-9">
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <div class="title int-user">
+                  <h2>Lista de endereços</h2>
+                  <%= link_to "Adicionar Endereço", user_add_address_path, class: 'more btn btn-default' %>
+                </div>
+
+                <div class="not-item-list hidden">
+                  <span>Nenhum endereço cadastrado.</span>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <tr>
+                      <td align="left"><b>Trabalho</b></td>
+                      <td align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, reprehenderit?</td>
+                      <td align="right">
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left"><b>Casa</b></td>
+                      <td align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+                      <td align="right">
+                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+              </div>
+              <!-- row  -->
+            </div>
+          </div>
+          <!-- info-user-block -->
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</div>
+<!-- pages-int -->

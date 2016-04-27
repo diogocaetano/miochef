@@ -1,7 +1,23 @@
 form{
   label{
+    font-size:14px;
+    font-weight:normal;
+    color:$black;
+    margin-bottom:10px;
     span{
       color:$red-2;
+    }
+  }
+  .m-bottom-group{
+    margin-bottom:40px;
+  }
+  .description{
+    font-size:15px;
+    font-weight:normal;
+    color:$black-2;
+    display:block;
+    &.pad-top{
+      padding-top:10px;
     }
   }
   .form-control{
@@ -34,6 +50,20 @@ form{
       position:absolute;
       top:46%;
       right:20px;
+    }
+  }
+}
+
+.wrap-img-show{
+  margin-bottom:15px;
+  overflow:hidden;
+  a{
+    font-size:13px;
+    color:$red-2;
+    display:inline-block;
+    padding:5px 0;
+    &:hover{
+      opacity:0.8;
     }
   }
 }

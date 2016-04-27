@@ -1,0 +1,22 @@
+table{
+  tbody > tr > td, tbody > tr > th, tfoot > tr > td, tfoot > tr > th, thead > tr > td, thead > tr > th{
+    border-top:0!important;
+    border-bottom:1px solid $gray-6;
+  }
+  tr{
+    td{
+      a{
+        display:inline-block;
+        margin-top:1px;
+        margin-left:5px;
+        color:$black-2;
+        i{
+          font-size:16px!important;
+        }
+        &:hover{
+          color:$red-2;
+        }
+      }
+    }
+  }
+}

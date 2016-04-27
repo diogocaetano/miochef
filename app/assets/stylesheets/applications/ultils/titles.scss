@@ -121,6 +121,19 @@
       letter-spacing:1px;
     }
   }
+  .more{
+    color:$white;
+    background:$red;
+    border-color:$red-2;
+    position:absolute;
+    top:10px;
+    right:0;
+    @include radius(0px);
+    &:hover{
+      border-color:$red;
+      opacity:0.8;
+    }
+  }
 }
 
 .title-border{
