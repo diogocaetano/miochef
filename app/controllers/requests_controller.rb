@@ -63,13 +63,27 @@ class RequestsController < ApplicationController
     @statuses = RequestStatus.all
     @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
 
-    if @request.save
-      save_request_plates @request.id
+    @has_plates = true
 
-      redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
+    begin
+      teste = params.fetch(:request_plates) { raise RuntimeError.new('has_plates') }
+    rescue RuntimeError => e
+      @request.errors.add('É necessário ter', 'pelo menos 1 prato cadastrado')
+      @has_plates = false
+    end
+
+    if @has_plates
+      if @request.save
+        save_request_plates @request.id
+
+        redirect_to requests_path, :flash =>{:success => 'Pedido foi criado com sucesso.' }
+      else
+        render :new
+      end
     else
       render :new
     end
+    
   end
 
   # PATCH/PUT /requests/1

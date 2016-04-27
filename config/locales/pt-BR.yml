@@ -344,6 +344,7 @@ pt-BR:
         delivery_date: "Data da Entrega"
         delivery_window: "Janela da Entrega"
         request_status_id: "Status do Pedido"
+        request_plates: "Pratos do Pedido"
       request_status:
         name: 'Nome'
       window_request:
