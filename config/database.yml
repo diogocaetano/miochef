@@ -15,8 +15,8 @@ default: &default
   pool: 5
   #username: <%= ENV['BASE_DATABASE_USER'] %>
   #password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
-  username: homestead
-  password: secret
+  username: root
+  password: root
 
 development:
   <<: *default

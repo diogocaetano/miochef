@@ -88,10 +88,21 @@ class RequestsController < ApplicationController
 
   # PATCH/PUT /requests/1
   def update
-    if @request.update(request_params)
-      RequestPlate.destroy_all(request_id: params[:id])
-      save_request_plates params[:id]
-      redirect_to requests_path, :flash =>{:success => 'Pedido foi atualizado com sucesso.' }
+    begin
+      teste = params.fetch(:request_plates) { raise RuntimeError.new('has_plates') }
+    rescue RuntimeError => e
+      @request.errors.add('É necessário ter', 'pelo menos 1 prato cadastrado')
+      @has_plates = false
+    end
+
+    if @has_plates
+      if @request.update(request_params)
+        RequestPlate.destroy_all(request_id: params[:id])
+        save_request_plates params[:id]
+        redirect_to requests_path, :flash =>{:success => 'Pedido foi atualizado com sucesso.' }
+      else
+        render :edit
+      end
     else
       render :edit
     end

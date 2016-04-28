@@ -13,6 +13,8 @@
         <% end %>
       </div>
     <% end %>
+    <%  @request_id = (@request.id.nil?) ? '0' : @request.id.to_s %>
+    <%  @client_address_id = (@request.client_address_id.nil?) ? '0' : @request.client_address_id.to_s %>
     <div class="panel-body">
                   <div class="form-group">
             <%= f.label 'Cliente*' %><br>
@@ -94,7 +96,7 @@
           for (var i = 0; i < data.length; i++) {
             var selected_text = '';
             if ($('[name="request[client_address_id]"]').data('selected') == data[i][1]) selected_text = 'selected';
-            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + ' selected="' + selected_text + '" >' + data[i][0] + '</option>');
+            $('[name="request[client_address_id]"]').append('<option value="' + data[i][1] + '" ' + selected_text + ' >' + data[i][0] + '</option>');
           }
         })
         .fail(function(){
@@ -107,7 +109,7 @@
       var deliveryDate = $('[name="request[delivery_date]"]').val().split('/');
       deliveryDate = deliveryDate[2] + '-' + deliveryDate[1] + '-' + deliveryDate[0];
       $.ajax({
-        url: '/admin/daily_menus/get_plates_from_date/' + deliveryDate + '/' + <%= @request.id.to_s %>,
+        url: '/admin/daily_menus/get_plates_from_date/' + deliveryDate + '/' + <%= @request_id %>,
         type: 'GET',
         dataType: 'json'
       })
