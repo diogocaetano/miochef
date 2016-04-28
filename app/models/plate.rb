@@ -1,4 +1,6 @@
 class Plate < ActiveRecord::Base
+
+	attr_accessor :quantity
 	# belongs_to :chef
 	belongs_to :plate_type
 	belongs_to :chef

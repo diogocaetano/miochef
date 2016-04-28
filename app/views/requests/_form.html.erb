@@ -20,7 +20,7 @@
           </div>
                   <div class="form-group">
             <%= f.label 'Endereço do Cliente*' %><br>
-             <%= f.select :client_address_id, [], {:prompt => 'Selecione o Endereço'}, {:class => 'form-control'} %>
+             <%= f.select :client_address_id, [], {:prompt => 'Selecione o Endereço'}, {:class => 'form-control', 'data-selected' => @request.client_address_id} %>
           </div>
                   <div class="form-group">
             <%= f.label 'Código de Pagamento*' %><br>
@@ -73,10 +73,12 @@
 
 <script type="text/javascript">
   window.addEventListener('load', function(){
-    var StartDate = new Date();
+    var requestDate = $('[name="request[request_date]"]').val().split('/');
+    requestDate = requestDate[2] + '-' + requestDate[1] + '-' + requestDate[0];
+    var StartDate = new Date(requestDate);
     var EndDate = new Date();
     var range = <%= get_order_date_range %>;
-    EndDate.setDate(EndDate.getDate() + range);
+    EndDate.setDate(StartDate.getDate() + range);
     $('[name="request[delivery_date]"]').datepicker('setStartDate', StartDate);
     $('[name="request[delivery_date]"]').datepicker('setEndDate', EndDate);
 
@@ -90,7 +92,9 @@
           $('[name="request[client_address_id]"]').empty();
           $('[name="request[client_address_id]"]').append('<option value="">Selecione o Endereço</option>');
           for (var i = 0; i < data.length; i++) {
-            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + '>' + data[i][0] + '</option>');
+            var selected_text = '';
+            if ($('[name="request[client_address_id]"]').data('selected') == data[i][1]) selected_text = 'selected';
+            $('[name="request[client_address_id]"]').append('<option value=' + data[i][1] + ' selected="' + selected_text + '" >' + data[i][0] + '</option>');
           }
         })
         .fail(function(){
@@ -103,14 +107,14 @@
       var deliveryDate = $('[name="request[delivery_date]"]').val().split('/');
       deliveryDate = deliveryDate[2] + '-' + deliveryDate[1] + '-' + deliveryDate[0];
       $.ajax({
-        url: '/admin/daily_menus/get_plates_from_date/' + deliveryDate,
+        url: '/admin/daily_menus/get_plates_from_date/' + deliveryDate + '/' + <%= @request.id.to_s %>,
         type: 'GET',
         dataType: 'json'
       })
       .done(function(data) {
         $('#plates-table tbody').empty();
         for (var i = 0; i < data.length; i++) {
-          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request_plates[quantity][]">' + '</td></tr>')
+          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request_plates[quantity][]" value="' + data[i][3] + '">' + '</td></tr>')
           $('#plates-table tbody').append('<input type="hidden" value="' + data[i][2] + '" name="request_plates[id][]" >');
           $('#plates-table tbody').append('<input type="hidden" value="' + data[i][1] + '" name="request_plates[price][]" >');
         }
@@ -118,6 +122,6 @@
       .fail(function() {
         console.log('get_plates_from_date -> error');
       });
-    });
+    }).trigger('change');
   });
 </script>
