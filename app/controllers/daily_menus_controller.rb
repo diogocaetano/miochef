@@ -70,10 +70,20 @@ class DailyMenusController < ApplicationController
 
   def get_plates_from_date
     date = Date.parse(params['date'])
+    request_id = params['request_id']
     @plates = Plate.where(active: 1).where(get_today_plate_tag(date.wday).to_s, 1)
+    @plates.each do |p|
+      plate_request = RequestPlate::where(request_id: request_id.to_s).where(plate_id: p.id.to_s).first
+      if not plate_request.nil?
+        p.quantity = plate_request.quantity
+      else
+        p.quantity = 0
+      end
+    end
 
     respond_to do |format|
-      format.json { render json: @plates.collect{ |plate| [ plate.title, plate.price, plate.id ] } }
+      format.html { render json: @plates.collect{ |plate| [ plate.title, plate.price, plate.id, plate.quantity ] } }
+      format.json { render json: @plates.collect{ |plate| [ plate.title, plate.price, plate.id, plate.quantity ] } }
     end
   end
 

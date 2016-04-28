@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   scope '/admin' do
     get 'addresses/get_client_addresses/:client_id' => 'addresses#get_client_addresses'
-    get 'daily_menus/get_plates_from_date/:date' => 'daily_menus#get_plates_from_date'
+    get 'daily_menus/get_plates_from_date/:date/:request_id' => 'daily_menus#get_plates_from_date'
 
     resources :portal_banners
     resources :plate_ratings
