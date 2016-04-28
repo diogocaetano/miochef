@@ -21,4 +21,11 @@
 //= require ./front/header
 //= require ./front/filterList
 //= require ./front/cart
-//= require ./front/home
+//= require ./front/pages
+//= require ./front/form
+//= require ./front/menu-responsive
+//= require ./front/meio.mask/jquery.meio.mask.min
+//= require ./front/meio.mask/jquery.meio.mask.init
+//= require ./front/validate/jquery.validate.min
+//= require ./front/validate/jquery.validate.init
+//= require ./front/validate/validation

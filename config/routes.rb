@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   get 'about/view' => 'page#about_view', as: :about_view
   # user
   get 'user' => 'page#user', as: :user
+  get 'user_edit_profile' => 'page#user_edit_profile', as: :user_edit_profile
+  get 'user_edit_photo' => 'page#user_edit_photo', as: :user_edit_photo
+  get 'user_edit_email' => 'page#user_edit_email', as: :user_edit_email
+  get 'user_edit_password' => 'page#user_edit_password', as: :user_edit_password
+  get 'user_edit_preference_email' => 'page#user_edit_preference_email', as: :user_edit_preference_email
+  get 'user_address_list' => 'page#user_address_list', as: :user_address_list
+  get 'user_add_address' => 'page#user_add_address', as: :user_add_address
 
 
   scope '/admin' do
@@ -28,7 +35,7 @@ Rails.application.routes.draw do
     resources :requests do
       post :update_status
     end
-    
+
     resources :chef_types
     resources :daily_menus
     resources :settings

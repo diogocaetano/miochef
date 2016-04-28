@@ -1,0 +1,78 @@
+<div id="pages-int" class="wrap-content bg-white-3">
+  <div class="container-fluid int">
+    <div class="row">
+      <ol class="breadcrumb col-sm-10 col-md-10 col-xs-9">
+        <li><%= link_to "Seu Conta", user_path %></li>
+        <li class="active">Editar Perfil</li>
+      </ol>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to user_path do %>
+          Sair
+          <% end %>
+        </div>
+      </div>
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+          <!-- aside -->
+          <%= render 'layouts/front/aside_user' %>
+          <!-- aside -->
+          <div id="info-user-block" class="int col-md-9 col-sm-9">
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <div class="title int-user">
+                  <h2>Editar Perfil</h2>
+                </div>
+                <form action="" class="form-validate">
+                  <div class="row">
+                    <div class="col-md-12 row">
+                      <div class="form-group col-md-4 col-sm-5">
+                        <label for="first-name">Primeiro Nome <span>*</span></label>
+                        <input type="text" value="Luiz" class="form-control required" id="first-name">
+                      </div>
+                      <div class="form-group col-md-4 col-sm-5">
+                        <label for="last-name">Sobrenome <span>*</span></label>
+                        <input type="text" value="Valença" class="form-control required" id="last-name">
+                      </div>
+                    </div>
+                    <div class="col-md-12 row">
+                      <div class="form-group col-md-4 col-sm-5">
+                        <label for="mobile-phone">Número do Celular <span>*</span></label>
+                        <input type="text" value="(81) 9999-9999" class="form-control required" id="mobile-phone" alt="(99) 99999-9999">
+                      </div>
+                    </div>
+                    <div class="col-md-12 row">
+                      <div class="checkbox">
+                        <label for="notification"><b>Notificação</b></label><br />
+                        <label>
+                          <input type="checkbox" name="notification"> Receber notificações de SMS (mudanças de ordem, progresso de entrega, etc.)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-12 row">
+                      <div class="checkbox">
+                        <label for="privacity"><b>Controle de Privadidade</b></label><br />
+                        <label>
+                          <input type="checkbox" name="privacity"> Use o seu nome completo e avatar para fins de avaliação.
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-12 row wrap-submit">
+                      <div class="col-md-4">
+                        <button type="submit" class="btn btn-default">Atualizar Perfil</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- row  -->
+            </div>
+          </div>
+          <!-- info-user-block -->
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</div>
+<!-- pages-int -->

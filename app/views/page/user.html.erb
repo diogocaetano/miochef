@@ -1,3 +1,87 @@
-<%= link_to "User", user_path %>
-
-<%= link_to "Ir para a view", about_view_path %>
+<div id="pages-int" class="wrap-content bg-white-3">
+  <div class="container-fluid int">
+    <div class="row">
+      <div class="title s-left col-sm-10 col-md-10 col-xs-9">
+        <h2>Sua Conta</h2>
+      </div>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to user_path do %>
+          Sair
+          <% end %>
+        </div>
+      </div>
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+          <!-- aside -->
+          <%= render 'layouts/front/aside_user' %>
+          <!-- aside -->
+          <div id="info-user-block" class="col-md-9 col-sm-9">
+            <div id="wrap-banner-user" style="background:url(<%= asset_path"content/temp/banner-user.jpg" %>) no-repeat top center / cover;">
+              <h4>Seja Bem Vindo</h4>
+            </div>
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <!-- block-link -->
+                <div class="block-link col-md-6 col-sm-6">
+                  <h4>Configurações da Conta</h4>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <%= link_to "Editar Perfil", user_edit_profile_path %>
+                    </li>
+                    <li>
+                      <%= link_to "Mudar Email", user_edit_email_path %>
+                    </li>
+                    <li>
+                      <%= link_to "Mudar Senha", user_edit_password_path %>
+                    </li>
+                    <li>
+                      <%= link_to "Preferências de email", user_edit_preference_email_path %>
+                    </li>
+                  </ul>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <%= link_to "Gerencias endereços", user_address_list_path %>
+                    </li>
+                    <li>
+                      <a href="#">Gerencias Metodos de  Pagamentos</a>
+                    </li>
+                    <li>
+                      <a href="#">Mudar senha</a>
+                    </li>
+                    <li>
+                      <a href="#">Preferências de email</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- block-link -->
+                <!-- block-link -->
+                <div class="block-link col-md-6 col-sm-6">
+                  <h4>Pedidos</h4>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <a href="#">Histórico de Pedidos</a>
+                    </li>
+                  </ul>
+                  <ul class="col-md-6 col-sm-6 col-xs-6">
+                    <li>
+                      <a href="#">Seus Reviews</a>
+                    </li>
+                    <li>
+                      <a href="#">Escreva um Review</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- block-link -->
+              </div>
+              <!-- row  -->
+            </div>
+          </div>
+          <!-- info-user-block -->
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</div>
+<!-- pages-int -->
