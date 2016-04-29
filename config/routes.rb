@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'user_edit_preference_email' => 'page#user_edit_preference_email', as: :user_edit_preference_email
   get 'user_address_list' => 'page#user_address_list', as: :user_address_list
   get 'user_add_address' => 'page#user_add_address', as: :user_add_address
+  get 'user_historical_list' => 'page#user_historical_list', as: :user_historical_list
 
 
   scope '/admin' do

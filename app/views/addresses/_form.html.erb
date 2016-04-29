@@ -9,7 +9,7 @@
   <div class="panel"></div>
   <section class="panel">
     <header class="panel-heading">
-      Endereço do <%= @chef ? 'Chefe' : 'Cliente' %> - <%= @chef ? @chef.name : @client.name %>
+      Endereço do <%= @chef ? 'Chef' : 'Cliente' %> - <%= @chef ? @chef.name : @client.name %>
     </header>
     <% if @address.errors.any? %>
       <div class="alert alert-danger">

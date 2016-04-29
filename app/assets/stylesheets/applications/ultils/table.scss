@@ -5,6 +5,7 @@ table{
   }
   tr{
     td{
+      vertical-align:middle!important;
       a{
         display:inline-block;
         margin-top:1px;
@@ -18,5 +19,18 @@ table{
         }
       }
     }
+  }
+}
+
+#table-historical{
+  span{
+    display:block;
+  }
+  img{
+    max-height:45px;
+    margin-right:5px;
+  }
+  .t-right{
+    text-align:right!important;
   }
 }

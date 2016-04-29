@@ -32,7 +32,7 @@ class ChefTypesController < ApplicationController
 
     respond_to do |format|
       if @chef_type.save
-        format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de chefe foi criado com sucesso.' } } 
+        format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de Chef foi criado com sucesso.' } } 
         format.json { render :show, status: :created, location: @chef_type }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ChefTypesController < ApplicationController
   def update
     respond_to do |format|
       if @chef_type.update(chef_type_params)
-        format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de chefe foi atualizado com sucesso.' } } 
+        format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de Chef foi atualizado com sucesso.' } } 
         format.json { render :show, status: :ok, location: @chef_type }
       else
         format.html { render :edit }
@@ -60,12 +60,12 @@ class ChefTypesController < ApplicationController
   def destroy
     @chef_type.destroy
     respond_to do |format|
-      format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de chefe foi removido com sucesso.' } } 
+      format.html { redirect_to chef_types_url, :flash =>{:success => 'O tipo de Chef foi removido com sucesso.' } } 
       format.json { head :no_content }
     end
   rescue
     respond_to do |format|
-      format.html { redirect_to chef_types_url, :flash =>{:danger =>  'O tipo de chefe não foi removido. Existem associações para o registro.' } }
+      format.html { redirect_to chef_types_url, :flash =>{:danger =>  'O tipo de Chef não foi removido. Existem associações para o registro.' } }
       format.json { head :no_content }
     end
   end

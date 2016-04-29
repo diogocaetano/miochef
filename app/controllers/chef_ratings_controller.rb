@@ -44,7 +44,7 @@ class ChefRatingsController < ApplicationController
     @clients = Client.all
 
     if @chef_rating.save
-      redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chefe foi criado com sucesso.' }
+      redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chef foi criado com sucesso.' }
     else
       render :new
     end
@@ -53,7 +53,7 @@ class ChefRatingsController < ApplicationController
   # PATCH/PUT /chef_ratings/1
   def update
     if @chef_rating.update(chef_rating_params)
-      redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chefe foi atualizado com sucesso.' }
+      redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chef foi atualizado com sucesso.' }
     else
       render :edit
     end
@@ -62,7 +62,7 @@ class ChefRatingsController < ApplicationController
   # DELETE /chef_ratings/1
   def destroy
     @chef_rating.destroy
-    redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chefe foi removido com sucesso.' }
+    redirect_to chef_ratings_path, :flash =>{:success => 'Rating de Chef foi removido com sucesso.' }
   end
 
   private

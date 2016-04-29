@@ -1,0 +1,87 @@
+<div id="pages-int" class="wrap-content bg-white-3">
+  <div class="container-fluid int">
+    <div class="row">
+      <ol class="breadcrumb col-sm-10 col-md-10 col-xs-9">
+        <li><%= link_to "Seu Conta", user_path %></li>
+        <li class="active">Histórico de Pedidos</li>
+      </ol>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to user_path do %>
+          Sair
+          <% end %>
+        </div>
+      </div>
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+          <!-- aside -->
+          <%= render 'layouts/front/aside_user' %>
+          <!-- aside -->
+          <div id="info-user-block" class="int col-md-9 col-sm-9">
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+                <div class="title int-user">
+                  <h2>Histórico de Pedidos</h2>
+                </div>
+
+                <div class="not-item-list hidden">
+                  <span>Você não efetuou nenhuma compra.</span>
+                </div>
+
+                <div class="table-responsive">
+                  <table id="table-historical" class="table table-hover">
+                    <tr>
+                      <th colspan="2">
+                        Compras
+                      </th>
+                      <th colspan="2" class="t-right">
+                        Total de compras: <b class="total-prod-hist">4 itens</b>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td align="left">
+                        <span>Chef:</span>
+                        <i>nome do chef</i>
+                      </td>
+                      <td align="left">
+                        <%= image_tag 'http://67.media.tumblr.com/6ea825190937122a23779f2a931209bc/tumblr_o432klipv91st5lhmo1_1280.jpg', alt: "Nome do prato" %> <b>Nome do Prato</b>
+                      </td>
+                      <td align="left">
+                        <span><b>5</b> <i>unidades</i></span>
+                        <span><b>R$150,00</b> <i>total</i></span>
+                      </td>
+                      <td align="right">
+                        <a href="#">Ver detalhe</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left">
+                        <span>Chef:</span>
+                        <i>nome do chef</i>
+                      </td>
+                      <td align="left">
+                        <b>Nome do Prato</b>
+                      </td>
+                      <td align="left">
+                        <span><b>5</b> <i>unidades</i></span>
+                        <span><b>R$150,00</b> <i>total</i></span>
+                      </td>
+                      <td align="right">
+                        <a href="#">Ver detalhe</a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+              </div>
+              <!-- row  -->
+            </div>
+          </div>
+          <!-- info-user-block -->
+        </div>
+      </div>
+    </div><!-- row -->
+  </div><!-- container-fluid -->
+</div>
+<!-- pages-int -->
