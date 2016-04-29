@@ -48,6 +48,12 @@
             <label for="number" class="form-control-static"><%= @request.request_status.name %></label>
           </div>
 	      </div>
+        <div class="form-group">
+            <label for="number" class="control-label col-lg-3">Pratos</label>
+            <div class="col-lg-9">
+              <label for="number" class="form-control-static"><%= @request.request_plates.collect {|i| i.quantity.to_s + ' ' + i.plate.title }.join(', ') %></label>
+            </div>
+        </div>
 	        </div>
   </section>
 </div>

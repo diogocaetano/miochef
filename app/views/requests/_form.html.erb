@@ -57,7 +57,7 @@
                   <tr>
                     <td><%= p.title %></td>
                     <td>R$ <%= get_plate_price(@request.id, p) %></td>
-                    <td><input class="form-control" type="number" name="request_plates[quantity][]" value="<%= get_plate_request_quantity(@request.id, p.id) %>"></td>
+                    <td><input class="form-control" type="number" min="0" name="request_plates[quantity][]" value="<%= get_plate_request_quantity(@request.id, p.id) %>"></td>
                     <input type="hidden" value="<%= p.id %>" name="request_plates[id][]" >
                     <input type="hidden" value="<%= p.price %>" name="request_plates[price][]" >
                   </tr>
@@ -116,7 +116,7 @@
       .done(function(data) {
         $('#plates-table tbody').empty();
         for (var i = 0; i < data.length; i++) {
-          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>' + data[i][1] + '</td><td>' + '<input class="form-control" type="number" name="request_plates[quantity][]" value="' + data[i][3] + '">' + '</td></tr>')
+          $('#plates-table tbody').append('<tr><td>' + data[i][0] + '</td><td>R$ ' + (data[i][1] || '0,00') + '</td><td>' + '<input class="form-control" type="number" min="0" name="request_plates[quantity][]" value="' + data[i][3] + '">' + '</td></tr>')
           $('#plates-table tbody').append('<input type="hidden" value="' + data[i][2] + '" name="request_plates[id][]" >');
           $('#plates-table tbody').append('<input type="hidden" value="' + data[i][1] + '" name="request_plates[price][]" >');
         }
