@@ -1,3 +1,282 @@
+Version 0.3.1:
+
+
+Version 0.3.0:
+ - ajuste no texto de ingredientes
+ - ajuste no endereço selecionado
+ - Merge branch 'develop' of https://bitbucket.org/implystudio/miochef into develop
+ - Merge branch 'requests' into develop
+ - Merge branch 'develop' into requests
+ - ajustando picker de datas e quantidade dos itens ja cadastrados no pedido
+ - carregando o endereço no editar
+ - validação de pelo menos um prato no pedido
+ - Paginas do Usuario -  em desenvolvimento
+ - Paginas do Usuario -  em desenvolvimento
+ - ação de udar status no seed
+ - ajuste no titulo do banner
+ - modal de deletar do banner
+ - ajuste no modal de ratings
+ - ajuste na validação de window request
+ - validação para não deixar salvar janelas com horários iguais
+ - colocando time pickers como readlonçy
+ - ajuste no modal de deletar
+ - Pagina do usuario - em andamento
+ - Pagina usurario - em andamento
+ - ajuste no layout do menu responsivo
+ - Header - Pagina internas
+ - ajuste
+ - fix height header
+ - ajuste na logo
+ - Merge branch 'requests' into develop
+ - merge
+ - merge
+ - block child de request status
+ - ajuste para limitar o dia do pedido
+ - adicionando migration para adiciona configuração de order_date_ranger
+ - Criacao do novo header
+ - ajuste na logo do header
+ - ajuste gerais
+ - Ajustes no botão de adicionar ao carrinho
+ - Carrinho - implementacao do botao de adicao e remocao
+ - Implementacao do botao de compra
+ - Footer - Finalizado
+ - ajuste no css do header
+ - ajuste no filtro
+ - Corrige bug que nao desassociava badges para pratos e chefs na edição.
+ - Adiciona tooltips em editar e remover endereços; Trocar warning por danger na mensagem de proibido remover endereço principal;
+ - colocando os pratos do dia ao abrir tela de pedidos
+ - Home - ajustes de bugs no header
+ - Home - Listagem em andamento / ajustes bugs header
+ - Home - Listagem em andamento
+ - Home - Listagem em andamento
+ - Home - Ajuste no Header e implementacao do Footer
+ - Home - Header finalizado
+ - Home - Header em andamento
+ - Home - Header em andamento
+ - Home - Header em andamento
+ - Home - em andamento
+ - Home - em andamento
+ - salvando pratos do pedido
+ - Home - em andamento
+ - colocando relacionemto de pratos e pedidos
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Home - em andamento
+ - rename controler about to page
+ - fix
+ - fix
+ - fix
+ - ajuste nas rotas do front
+ - Home - em andamento
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Ajuste na estrutura para front-end
+ - ajuste na rota de pegar endereços do cliente
+ - ajustes nos modais de pedidos
+ - ajuste no seed
+ - Merge branch 'develop' into requests
+ - fix font-style
+ - ajuste template badges
+ - adicionado bandeira ao modulo pais
+ - retirado conflitos
+ - adicionado title a select do permissionamento
+ - adicionado tooltips nos badges e logo no sigin
+ - ação de mudar status[verificar modal]
+ - ajax para pegar os endereços do cliente
+ - adicionado selects no form de pedidos
+ - adicionado cliente em rating de prato
+ - merge com develop
+ - mudança para o overlay modal funcionar atualizacao do bootstrap.css
+ - merge com o base
+ - ajuste no template e no modal
+ - ajuste overlay modal
+ - atualizado template no base
+ - ajustado overlay  do modal
+ - Ajuste no path da chamada dos styles
+ - Ajuste na url dos styles na pagina admin
+ - Ajuste na estrutura para front-end
+ - Ajuste na estrutura para front-end
+ - Traduz heads da index de clients.
+ - Adiciona devise para client.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Ajuste na estrutura para front-end
+ - Implementa modulo de configurações.
+ - Traduz mensagens do modulo de clients.
+ - Implementa modulo de clientes.
+ - Ajusta redirect para endereço com erro de validação.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Troca mecanica de endereços de chef para nested.
+ - Merge branch 'develop' into requests
+ - Merge branch 'develop' of https://bitbucket.org/implystudio/miochef into develop
+ - listando apenas os chegfes ativos
+ - Inicio da home front
+ - Resolve bug de referencia de endereço principal.
+ - Resolve bugs de mecanica de endereços.
+ - Resolve bugs de mecanica de endereços.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Resolve bug de edição de endereço
+ - ajuste no redirect ao desativar prato
+ - - módulo de banner do portal
+ - - validações de rating
+ - - módulo de rating de pratos
+ - - scaffold de rating de chefes
+ - - validação de hora para janela de entrega
+ - - ajustes em janela de entrega
+ - - scaffold de janela de entrega
+ - - ajustes nas views de pedidos
+ - - crud de status do pedido
+ - - correções no scaffold de pedidos
+ - - scaffold de pedidos
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Adiciona validação para impedir remoção de endereço principal; remove campo de endereço principal no formulário de endereços; adiciona ação de tornar endereço principal na lista de endereços.
+ - correções no módulo de cardápio do dia
+ - retirado o /admin do seed e ajuste de cores em botoes na listagem do chef
+ - removendo fritas
+ - removendo date-tottle
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Ajusta logica de endereço principal; Adiciona tooltips que estavam faltando; Substitui notice e alert por flash messages; substitui rotas de create, update para redirecionar para index.
+ - ajustes nas colunas das badges
+ - Merge branch 'develop' of https://bitbucket.org/implystudio/miochef into develop
+ - ajustes de layout de pratos e redirect back de ativar/desativar
+ - resolvendo conflitos com o merge base
+ - removendo atributo desnecessario do tootilps para evitar confusoes
+ - Merge branch 'master' of bitbucket.org:implystudio/rails_base
+ - implementado testes basicos module roles
+ - Remove form de busca duplicado em chefs.
+ - Filtra lista de endereços pelo chefe selecionado.
+ - resolve conflitos de paginação
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Adiciona busca e paginação em todos os módulos
+ - ajustes no menu diario
+ - correção na função de alterar senha
+ - colocando ação para editar todasas senhas
+ - ajustes nas telas d prato
+ - ajustes no salvar prato
+ - tirando tags html na exibição da descrição do prato
+ - adicionando permissões que estava faltando no módulo de pratos ao seed
+ - ajustes de busca
+ - Version bump to 0.2.0
+ - log
+ - busca no módulo de acompanhamentos
+ - busca no módulo de pratos
+ - busca no módulo de plate badges
+ - busca no módulo de ingredientes
+ - sem fritas
+ - inicio de teste
+ - Ajusta atualização de endereço.
+ - retirado conflitos do merge com o base
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - mudado icone no seed do modulo de pratos
+ - Revert "Version bump to 0.2.0"
+ - Ajusta todos os links para /admin.
+ - Adiciona coluna de endereço principal no cadastro de endereço. Agora pode ser editado normalmente no formulário.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - ajustes de layout dos forms
+ - ajustes de campos requeridos
+ - validações de block child de pratos
+ - ajustes em tipos de prato e no show de prato
+ - ajustes de layout, de mudança de senha
+ - retirando user da conexao padrão
+ - Corrige link do dashboard no menu.
+ - Adiciona scope admin as rotas
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Altera mecanica de endereços de chefe. Agora é possível realizar todas as ações de CRUD.
+ - sem fritas
+ - adicionado sumernote
+ - Adiciona campo de visibilidade para modulos.
+ - retorno dos teste, basicamente ajustes de interface
+ - mudança de cor bota ativar/desativar chef
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - merge com o base
+ - ajustes nas mensagens dos controllers de pratos
+ - Adiciona badge checado no edit de chef, caso o badge pertença ao chefe.
+ - Resolve retornos do modulo de perfis.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Resolve retornos da sprint 1 referente aos modulos de chefs, tipos de chefes e países.
+ - mudanca sozinha no db/schema.rb
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - retirando fritas do merge com o base
+ - exibindo notice das badges do chef
+ - Merge branch 'develop' of https://bitbucket.org/implystudio/miochef into develop
+ - ajuste no seed
+ - correções no módulo de badge de chefs
+ - correção no seed
+ - ajustes diversos
+ - Adiciona erros de validação de endereços na lista de chefs.
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Adiciona badges no modulo de chef.
+ - troca para o nome miochef
+ - adicionado puma retirado css applicaiton
+ - Merge branch 'develop' of https://bitbucket.org/implystudio/miochef into develop
+ - adicionado segredo de teste
+ - Resolve conflitos da rota
+ - Merge branch 'master' of ssh://45.55.202.108:/home/rails/miochef into develop
+ - Implementa tipos de chefe, ação de ativar e desativar chefe.
+ - adiciona redirect back para ação de atualizar prato do dia
+ - Merge branch 'daily_menu' into develop
+ - Merge branch 'develop' into daily_menu
+ - ação para editar as tags do prato do dia
+ - index do cardápio do dia
+ - seed de menu do dia
+ - Merge branch 'daily_menu' into develop
+ - gemfile
+ - correção para erro de tabela nutricional
+ - database production
+ - adicionando chave no initializer do devise
+ - adicionando arquivo do ambiente de teste
+ - adicionando gem unicorn para o ambiente de teste
+ - adicionando configuracoes do banco de teste
+ - Merge branch 'nutritional_table' into develop
+ - ação de adicionar tabela nutricional a um prato
+ - Merge branch 'daily_menu' into develop
+ - salvando quantidade disponível do prato
+ - aidiocnando ação de adicionar os dia a um prato
+ - Merge branch 'activate_plate' into develop
+ - Merge branch 'develop' into activate_plate
+ - ações de ativar e desativar o prato
+ - Merge branch 'develop' of bitbucket.org:implystudio/miochef into develop
+ - Inicia implementação do form de endereços na lista de chefs.
+ - Merge branch 'plates' into develop
+ - Merge branch 'develop' into plates
+ - migration que adiciona as flags de disponibilidade do prato
+ - ajustes nas views de pratos
+ - adiciona chef_id ao prato e mudanças no layoput do _form
+ - validação no form para só exibir imagem se existir
+ - tagsinputs para ingredientes e acompanhamentos
+ - Merge branch 'plates' into develop
+ - Merge branch 'develop' into plates
+ - ajuste em nome da tabela em arquivo de migração
+ - Implementa backend de chefes e endereços de chefes.
+ - Adiciona secret do ambiente de teste.
+ - Ajusta config do ambiente de test.
+ - Remove rotas inválidas (dogs) e adiciona secret key do ambiente de test.
+ - Comenta migração(Última migração) a ser revisada por Pedro Gabriel.
+ - Adiciona a gem therubyracer
+ - Adiciona pedro gabriel ao contributors.
+ - Ajusta database de teste.
+ - adicionando tags
+ - Merge branch 'plates' into develop
+ - adicionando relacionamentos no módulo de pratos
+ - ajustes nos labels das views de pratos
+ - migrations para criar tabelas de relacionamento dos pratos
+ - ajustes na migração de criar tabela de pratos
+ - colocando valores defaults no migration de prato
+ - scaffold do módulo de pratos
+ - seed do menu de pratos
+ - Merge branch 'plates_menu' into develop
+ - Merge branch 'develop' into plates_menu
+ - módulo de badges do prato
+ - módulo de acompanhamento
+ - Merge branch 'plates_menu' into develop
+ - módulo de tipo de prato; ajustes no seed
+ - módulo de ingredientes
+ - mudança no seed pára usar find_or_create
+ - ajuste no relacionamento de badges e chefs
+ - Merge branch 'chef_badge' into develop
+ - retirando arquivo de log do server
+ - mudança no tamanho do thumbnail da badge e na exibição na index
+ - adicionado módulo de badges
+ - Altera nome da aplicação de Rails Base para Chefs Market
+ - Adiciona modulo de países.
+
 Version 0.2.0:
 
 
