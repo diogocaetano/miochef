@@ -3,7 +3,7 @@ class Request < ActiveRecord::Base
   belongs_to :client_address, class_name: 'Address'
   belongs_to :request_status
 
-  has_many :request_plates
+  has_many :request_plates, -> (object) { where("quantity > 0") }
   has_many :plates, :through => :request_plates
 
   accepts_nested_attributes_for :plates

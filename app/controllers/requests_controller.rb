@@ -63,13 +63,11 @@ class RequestsController < ApplicationController
     @statuses = RequestStatus.all
     @daily_plates = Plate.where(active: 1).where(get_today_plate_tag(Date.today.wday).to_s, 1)
 
-    @has_plates = true
+    @has_plates = false
+    tmp = params[:request_plates][:quantity] - ['0']
 
-    begin
-      teste = params.fetch(:request_plates) { raise RuntimeError.new('has_plates') }
-    rescue RuntimeError => e
-      @request.errors.add('É necessário ter', 'pelo menos 1 prato cadastrado')
-      @has_plates = false
+    if tmp.length > 0
+      @has_plates = true
     end
 
     if @has_plates
@@ -81,18 +79,17 @@ class RequestsController < ApplicationController
         render :new
       end
     else
-      render :new
+      redirect_to new_request_path, :flash =>{:alert => 'É necessário ter pelo menos 1 prato cadastrado' }
     end
     
   end
 
   # PATCH/PUT /requests/1
   def update
-    begin
-      teste = params.fetch(:request_plates) { raise RuntimeError.new('has_plates') }
-    rescue RuntimeError => e
-      @request.errors.add('É necessário ter', 'pelo menos 1 prato cadastrado')
-      @has_plates = false
+    @has_plates = false
+    tmp = params[:request_plates][:quantity] - ['0']
+    if tmp.length > 0
+      @has_plates = true
     end
 
     if @has_plates
@@ -104,7 +101,8 @@ class RequestsController < ApplicationController
         render :edit
       end
     else
-      render :edit
+       redirect_to edit_request_path, :flash =>{:alert => 'É necessário ter pelo menos 1 prato cadastrado' }
+      # render :edit
     end
   end
 
@@ -125,6 +123,7 @@ class RequestsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
@@ -146,7 +145,11 @@ class RequestsController < ApplicationController
 
     def save_request_plates request_id
       i = 0
-      while i < request_plates_params[:id].length do 
+      while i < request_plates_params[:quantity].length do 
+        if request_plates_params[:quantity][i] == '0'
+          i += 1
+          next
+        end
         @request_plate = RequestPlate.new
         @request_plate.quantity = request_plates_params[:quantity][i]
         @request_plate.plate_id = request_plates_params[:id][i]
