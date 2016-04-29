@@ -21,7 +21,7 @@ User.find_or_create_by(name: 'Teste') do |user|
 end
 
 m_control = ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-user')
-n_locale = ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
+m_locale = ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
 m_chef = ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
 
 Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
