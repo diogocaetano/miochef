@@ -225,10 +225,10 @@ pt-BR:
       request: 'Pedido'
       window_request: 'Janela de Entrega'
       request_status: 'Status do Pedido'
-      chef_rating: 'Rating de Chefe'
+      chef_rating: 'Rating de Chef'
       plate_rating: 'Rating de Prato'
       portal_banner: 'Rating de Prato'
-      chef: 'Chefe'
+      chef: 'Chef'
       client: 'Cliente'
       address: 'Endereço'
       settings: 'Configurações'
@@ -304,7 +304,7 @@ pt-BR:
         academic_education: "Formação Acadêmica"
         university: "Universidade"
         active: 'Ativo'
-        chef_type_id: 'Tipo do Chefe'
+        chef_type_id: 'Tipo do Chef'
         photo: 'Foto'
       chef_type:
         name: "Nome"
@@ -316,7 +316,7 @@ pt-BR:
         state: "Estado"
         zip_code: "CEP"
         complement: "Complemento"
-        chef_id: "Chefe"
+        chef_id: "Chef"
         client_id: "Cliente"
       nutritional_table:
         energetic_value: "Valor energético"
@@ -352,7 +352,7 @@ pt-BR:
         final_time: 'Horário Final'
       chef_rating:
         client_id: 'Cliente'
-        chef_id: 'Chefe'
+        chef_id: 'Chef'
       plate_rating:
         client_id: 'Cliente'
         plate_id: 'Prato'

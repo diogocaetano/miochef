@@ -7,6 +7,6 @@ class ChefRating < ActiveRecord::Base
   validate :client_already_rated_the_chef?
 
   def client_already_rated_the_chef?
-  	errors.add('Cliente', 'já deu nota para este Chefe') unless ChefRating::where('client_id = ? AND chef_id = ?', self.client_id, self.chef_id).first.nil?
+  	errors.add('Cliente', 'Você já deu uma nota para este Chef') unless ChefRating::where('client_id = ? AND chef_id = ?', self.client_id, self.chef_id).first.nil?
   end
 end

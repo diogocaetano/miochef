@@ -32,8 +32,8 @@ Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', 
 Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
 Entity.find_or_create_by(modules_category_id: 3, name: 'Chefs', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chefe', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chefe', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chef', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
+Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chef', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
 
 Permission.find_or_create_by(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 1, action_name: 'Criar', action: 'new')
