@@ -32,8 +32,8 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Chefe*" %><br>
-            <%= f.select :chef_id, @chefs.collect {|type| [ type.name, type.id]}, {:prompt => 'Selecione o Chefe'}, {:class => 'form-control'} %>
+            <%= f.label "Chef*" %><br>
+            <%= f.select :chef_id, @chefs.collect {|type| [ type.name, type.id]}, {:prompt => 'Selecione o Chef'}, {:class => 'form-control'} %>
           </div>
 
           <div class="form-group">

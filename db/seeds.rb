@@ -320,10 +320,10 @@ Permission.find_or_create_by(entity_id: windowRequestsCategory.id, action_name: 
 
 # CHEFS
 # Rating de Chefs
-chefsModule = ModulesCategory.find_by(name: 'Chefes')
+chefsModule = ModulesCategory.find_by(name: 'Chefs')
 Entity.find_or_create_by(controller: 'chef_ratings') do |requestEntity|
 	requestEntity.modules_category_id = chefsModule.id
-	requestEntity.name = 'Rating de Chefe'
+	requestEntity.name = 'Rating de Chef'
 	requestEntity.slug = 'chef_ratings'
 	requestEntity.controller = 'chef_ratings'
 	requestEntity.is_dev = false

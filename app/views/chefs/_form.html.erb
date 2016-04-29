@@ -16,7 +16,7 @@
     <div class="panel-body">
           <div class="col-md-6">
             <div class="form-group">
-              <%= f.label 'Tipo do Chefe*' %><br>
+              <%= f.label 'Tipo do Chef*' %><br>
               <%= f.select :chef_type_id, ChefType.all.collect {|chef_type| [ chef_type.name, chef_type.id ] }, { prompt: 'Selecione o Tipo do Chef' }, :class => 'form-control m-bot15' %>
             </div>
             <div class="form-group">
