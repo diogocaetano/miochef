@@ -20,20 +20,20 @@ User.find_or_create_by(name: 'Teste') do |user|
 	user.role_id = 2
 end
 
-ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-user')
-ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
-ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
+m_control = ModulesCategory.find_or_create_by(name: 'Controle de Acesso', icon: 'fa fa-user')
+n_locale = ModulesCategory.find_or_create_by(name: 'Localização', icon: 'fa fa-flag')
+m_chef = ModulesCategory.find_or_create_by(name: 'Chefs', icon: 'fa fa-coffee')
 
-Entity.find_or_create_by(modules_category_id: 1, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Permissões', controller: 'permissions', slug: 'permissions',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 1, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true, visible: true)
-Entity.find_or_create_by(modules_category_id: 2, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Chefs', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Endereços de Chef', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
-Entity.find_or_create_by(modules_category_id: 3, name: 'Tipos de Chef', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Perfis', controller: 'roles', slug: 'roles',is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Usuários', controller: 'users', slug: 'users_admin',is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Permissões', controller: 'permissions', slug: 'permissions',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Módulos', controller: 'entities', slug: 'entities',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: m_control.id, name: 'Categoria de Módulos', controller: 'modules_categories', slug: 'modules_categories',is_dev: true, visible: true)
+Entity.find_or_create_by(modules_category_id: m_locale.id, name: 'Países', controller: 'countries', slug: 'countries', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_chef.id, name: 'Badges', controller: 'badges', slug: 'badges', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_chef.id, name: 'Chefs', controller: 'chefs', slug: 'chefs', is_dev: false, visible: true)
+Entity.find_or_create_by(modules_category_id: m_chef.id, name: 'Endereços de Chef', controller: 'addresses', slug: 'addresses', is_dev: false, visible: false)
+Entity.find_or_create_by(modules_category_id: m_chef.id, name: 'Tipos de Chef', controller: 'chef_types', slug: 'chef_types', is_dev: false, visible: true)
 
 Permission.find_or_create_by(entity_id: 1, action_name: 'Listar', action: 'index')
 Permission.find_or_create_by(entity_id: 1, action_name: 'Criar', action: 'new')
