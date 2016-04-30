@@ -3,9 +3,6 @@ $(function () {
 
 	form.validate({
 		rules: {
-			field: {
-				required: true
-			},
 			password: {
 				required: true
 			},
@@ -14,5 +11,9 @@ $(function () {
 			}
 		}
 	});
+	$.validator.addClassRules("validate-signup", {
+		required: true
+	});
+
 
 });

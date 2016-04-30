@@ -1,4 +1,5 @@
-#header-internal{
+#header-internal,
+#header-outside{
   border-bottom:1px solid $white-2;
   padding:10px 0;
   position:relative;
@@ -88,3 +89,17 @@
   }
 }
 
+#header-outside{
+  .menu-int{
+    &.left{
+      .no-menu-outside-left{
+        display:none;
+      }
+    }
+    &.right{
+      .no-menu-outside-right{
+        display:none;
+      }
+    }
+  }
+}

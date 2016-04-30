@@ -1,0 +1,43 @@
+<div id="pages-int" class="wrap-content bg-white-3 no-padding-bottom">
+<div id="wrap-login" style="background:url(<%= asset_path 'content/login.jpg' %>) no-repeat center center / cover;" class="load-cont">
+    <div class="container">
+      <div class="col-md-6 col-sm-12 col-xs-12 centralize" id="wrap-box-login">
+        <div id="wrap-form-signup" class="col-md-12 col-sm-12 col-xs-12">
+          <!-- title -->
+          <div class="col-md-12">
+            <div class="title s-center clearfix">
+              <h2>Fazer Login</h2>
+            </div>
+          </div>
+          <!-- title -->
+          <form action="" id="form-signup">
+            <div class="col-md-12">
+              <div class="form-group col-md-12 col-sm-12">
+                <input type="text" value="" placeholder="Email" class="form-control validate-signup email" id="email-signup">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group col-md-12 col-sm-12">
+                <input type="password" value="" placeholder="Senha" name="password" class="form-control validate-signup" id="password">
+              </div>
+            </div>
+            <div class="col-md-12 wrap-submit">
+              <div class="form-group col-md-7 col-sm-7 col-xs-12">
+                <button type="submit" class="btn">Entrar</button>
+              </div>
+              <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                <%= link_to "Esqueceu a senha?", about_path, class: 'btn btn-link' %>
+              </div>
+            </div>
+            <div class="col-md-12 wrap-submit informative t-center">
+              <div class="form-group col-md-10 col-sm-10 col-xs-12 centralize">
+                <span>Ainda não possui conta? <%= link_to "Cadastre-se", signup_path %></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- pages-int -->
+

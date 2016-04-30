@@ -1,5 +1,5 @@
 <ul>
-  <li class="no-menu-cart no-menu-int-right">
+  <li class="no-menu-cart no-menu-int-right show-menu-outside-left no-menu-outside-right">
     <%= link_to "Cardápio do Dia", home_path %>
   </li>
   <li class="no-menu-cart no-menu-int-right">
@@ -8,18 +8,18 @@
   <li class="no-menu-cart no-menu-int-right">
     <%= link_to "Como Funciona", about_path %>
   </li>
-  <li class="no-menu-cart no-menu-int-right no-menu-int-left">
+  <li class="no-menu-cart no-menu-int-right no-menu-int-left no-menu-outside-right show-menu-outside-left">
     <%= link_to "Contato", about_path %>
   </li>
-  <li class="no-menu-header no-menu-cart no-menu-int-left no-menu-int-right">
+  <li class="no-menu-header no-menu-cart no-menu-int-left no-menu-int-right no-menu-outside-right">
     <%= link_to "Minha Conta", user_path %>
   </li>
-  <li class="no-menu-header no-menu-responsive no-menu-footer no-menu-int-left">
+  <li class="no-menu-header no-menu-responsive no-menu-footer no-menu-int-left no-menu-outside-right">
     <%= link_to user_path, :id => "name-user" do %>
     <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %> Luiz Valença
     <% end %>
   </li>
-  <li class="no-menu-header no-menu-int-left no-menu-int-right">
-    <%= link_to "Sair", about_path %>
+  <li class="no-menu-header no-menu-int-left no-menu-int-right no-menu-outside-right">
+    <%= link_to "Sair", login_path %>
   </li>
 </ul>

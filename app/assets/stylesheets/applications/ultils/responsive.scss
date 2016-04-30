@@ -107,6 +107,26 @@
     padding-bottom:50px;
   }
 
+  #wrap-box-login{
+    padding-left:0px;
+    padding-right:0px;
+    .title{
+      &.s-center{
+        &:before,
+        &:after{
+          width:27%;
+        }
+      }
+    }
+  }
+
+  .informative{
+    h4{
+      font-size:23px;
+      line-height:32px;
+    }
+  }
+
 }
 /* =============================================================================
 800px

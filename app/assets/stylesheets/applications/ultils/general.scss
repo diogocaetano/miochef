@@ -187,6 +187,37 @@ ul{
   @extend .clearfix;
 }
 
+#pages-int{
+  min-height:400px;
+  padding-bottom:60px;
+  position:relative;
+  overflow:hidden;
+  &:before{
+    content:'carregando';
+    display:block;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    -webkit-transform:translate(-50%, -50%);
+  }
+  .container-fluid,
+  .load-cont{
+    display:none;
+  }
+  &.active{
+    &:before{
+      display:none;
+    }
+    .container-fluid,
+    .load-cont{
+      display:block;
+    }
+  }
+  &.no-padding-bottom{
+    padding-bottom:0;
+  }
+}
 
 // breadcrumb
 .breadcrumb{
@@ -215,6 +246,86 @@ ul{
     @include radius(3px);
     &:focus{
       border-color:$green;
+    }
+  }
+}
+
+// wrap-box-login
+#wrap-box-login{
+  background:rgba(255,255,255,0.97);
+  padding:60px 40px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 17px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow:0 0 17px rgba(0, 0, 0, 0.3);
+  &:before{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    border: 1px solid $white-2;
+    pointer-events: none;
+  }
+  form{
+    .form-group{
+      padding-left:5px;
+      padding-right:5px;
+      .error{
+        top:3px;
+      }
+    }
+    [type=submit]{
+      width:100%;
+    }
+    .wrap-submit{
+      padding-top:0;
+    }
+    .btn-link{
+      font-size:13px;
+      color:$gray-2;
+      &:hover{
+        color:$red-2;
+      }
+    }
+  }
+}
+
+.informative{
+  &.t-center{
+    text-align:center;
+  }
+  h4{
+    font-family:$font-secundary-cond;
+    font-weight:lighter;
+    font-size:27px;
+    color:$blue;
+    letter-spacing:1px;
+    line-height:37px;
+    margin-bottom:20px;
+  }
+  ul{
+    margin-bottom:20px;
+    padding-left:10px;
+    li{
+      list-style:square;
+      font-size:12px;
+      color:$blue;
+      margin-bottom:3px;
+    }
+  }
+  span{
+    font-family:$font-secundary;
+    font-size:14px;
+    color:$blue;
+  }
+  a{
+    text-decoration:underline;
+    color:$red;
+    &:hover{
+      color:$red-2;
     }
   }
 }

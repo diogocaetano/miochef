@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'home' => 'home#index', as: :home
   # About
   get 'about' => 'page#about', as: :about
+  # login
+  get 'login' => 'page#login', as: :login
+  # signup
+  get 'signup' => 'page#signup', as: :signup
   # user
   get 'user' => 'page#user', as: :user
   get 'user_edit_profile' => 'page#user_edit_profile', as: :user_edit_profile

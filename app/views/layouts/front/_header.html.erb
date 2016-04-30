@@ -1,0 +1,7 @@
+<% if current_page?('/home') %>
+  <%= render 'layouts/front/header_home' %>
+<% elsif current_page?('/login') || current_page?('/signup') %>
+  <%= render 'layouts/front/header_outside' %>
+<% else %>
+  <%= render 'layouts/front/header_internal' %>
+<% end %>

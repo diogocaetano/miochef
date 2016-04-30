@@ -5,13 +5,19 @@
   <div id="wrap-menu-responsive">
     <div id="info-user-menu-responsive">
       <div id="wrap-user-info-menu-responsive" style="background:url(<%= asset_path"content/temp/banner-user.jpg" %>) no-repeat center center / cover;">
-        <div id="user-menu-responsive">
-          <%= link_to user_path, :id => "name-user-menu-responsive" do %>
-          <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %> Luiz Valença
-          <% end %>
-        </div>
+        <% unless current_page?('/login') || current_page?('/signup') %>
+          <div id="user-menu-responsive">
+            <%= link_to user_path, :id => "name-user-menu-responsive" do %>
+            <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença" %> Luiz Valença
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
+    <% if current_page?('/login') || current_page?('/signup') %>
+    <%= render 'layouts/front/menu_links_outside' %>
+    <% else %>
     <%= render 'layouts/front/menu_links' %>
+    <% end %>
   </div>
 </div>

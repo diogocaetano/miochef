@@ -6,9 +6,7 @@
       </div>
       <div class="title s-left col-sm-2 col-md-2 col-xs-3">
         <div id="wrap-logoff">
-          <%= link_to user_path do %>
-          Sair
-          <% end %>
+          <%= link_to "Sair", login_path %>
         </div>
       </div>
       <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
@@ -45,7 +43,7 @@
                       <%= link_to "Gerencias endereços", user_address_list_path %>
                     </li>
                     <li>
-                      <a href="#">Gerencias Metodos de  Pagamentos</a>
+                      <%= link_to "Preferências de email", user_edit_preference_email_path %>
                     </li>
                   </ul>
                 </div>
