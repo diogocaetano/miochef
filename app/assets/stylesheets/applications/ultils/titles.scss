@@ -129,8 +129,10 @@
     top:10px;
     right:0;
     @include radius(0px);
-    &:hover{
-      border-color:$red;
+    &:hover,
+    &:focus,
+    &:active{
+      border-color:$red!important;
       opacity:0.8;
     }
   }
