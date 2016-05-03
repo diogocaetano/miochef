@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.printElement.min
 //= require bootstrap.min
 //= require jquery.flexslider
 //= require superfish
@@ -23,6 +24,7 @@
 //= require ./front/cart
 //= require ./front/pages
 //= require ./front/form
+//= require ./front/table
 //= require ./front/menu-responsive
 //= require ./front/meio.mask/jquery.meio.mask.min
 //= require ./front/meio.mask/jquery.meio.mask.init

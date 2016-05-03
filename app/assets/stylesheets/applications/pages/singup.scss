@@ -1,0 +1,31 @@
+#wrap-singup{
+  padding:$padding-wrap-box;
+  &.container-fluid{
+    width:100%;
+    padding:0;
+  }
+}
+
+#wrap-form-signup{
+  .title{
+    margin-bottom:20px;
+    h2{
+      font-family:$font-secundary-cond;
+      font-weight:lighter;
+      font-size:20px;
+      color:$blue;
+      letter-spacing:1px;
+      line-height:37px;
+      background:none;
+    }
+    &.s-center{
+      &:before{
+        width:32%;
+      }
+      &:after{
+        width:32%;
+        display:block;
+      }
+    }
+  }
+}

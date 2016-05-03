@@ -19,18 +19,51 @@ table{
         }
       }
     }
+    .t-left{
+      text-align:left;
+    }
+    .t-center{
+      text-align:center;
+    }
+    .t-right{
+      text-align:right;
+    }
   }
 }
 
 #table-historical{
   span{
     display:block;
+    &.inline{
+      display:inline-block;
+    }
   }
   img{
     max-height:45px;
     margin-right:5px;
   }
-  .t-right{
-    text-align:right!important;
+  .warning{
+    color:$red;
+    &:after{
+     font-family:FontAwesome;
+     content:'\f06a';
+     margin-left:5px;
+   }
+ }
+ .ok{
+  color:$green;
+  &:after{
+    font-family:FontAwesome;
+    content:'\f058';
+    margin-left:5px;
   }
+}
+.waiting{
+  color:$orange;
+  &:after{
+    font-family:FontAwesome;
+    content:'\f21c';
+    margin-left:5px;
+  }
+}
 }

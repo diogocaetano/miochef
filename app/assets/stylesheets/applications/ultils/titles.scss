@@ -57,6 +57,17 @@
       left:0;
       z-index:0;
     }
+    &:after{
+      content:'';
+      background:$gray-5;
+      width:100%;
+      height:1px;
+      display:none;
+      position: absolute;
+      top:50%;
+      right:0;
+      z-index:0;
+    }
     h2{
       font-size:26px;
       color:$gray-2;
@@ -129,8 +140,10 @@
     top:10px;
     right:0;
     @include radius(0px);
-    &:hover{
-      border-color:$red;
+    &:hover,
+    &:focus,
+    &:active{
+      border-color:$red!important;
       opacity:0.8;
     }
   }

@@ -10,7 +10,6 @@ ApplicationCart = {
 		var quantItensCart = 0;
 		const cartQuantActual = $('.cart-show input').val();
 
-		console.log(cartQuantActual);
 		// function success
 		function callActionEventCart(elem, fatherThis, figure, status, event) {
 			var elemParent = elem.closest(fatherThis).find(figure),

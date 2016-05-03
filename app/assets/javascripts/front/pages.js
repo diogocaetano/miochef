@@ -1,6 +1,7 @@
 ApplicationPages = {
 	init: function () {
 		this.loadingPage();
+		this.printPage();
 	},
 
 	// loadingPage
@@ -9,6 +10,13 @@ ApplicationPages = {
 			var self = $('#home-page, #pages-int');
 
 			self.addClass('active');
+		});
+	},
+
+	// printPage
+	printPage: function () {
+		$('.print-link').click(function () {
+      $("#info-user-block").printElement();
 		});
 	}
 

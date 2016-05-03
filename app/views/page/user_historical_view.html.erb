@@ -1,0 +1,84 @@
+<div id="pages-int" class="wrap-content bg-white-3">
+  <div class="container-fluid int">
+    <div class="row">
+      <ol class="breadcrumb col-sm-10 col-md-10 col-xs-9">
+        <li><%= link_to "Seu Conta", user_path %></li>
+        <li><%= link_to "Histórico de Pedidos", user_historical_list_path %></li>
+        <li class="active">Nome do prato</li>
+      </ol>
+      <div class="title s-left col-sm-2 col-md-2 col-xs-3">
+        <div id="wrap-logoff">
+          <%= link_to "Sair", login_path %>
+        </div>
+      </div>
+      <div id="user-links-general" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+          <!-- aside -->
+          <%= render 'layouts/front/aside_historical' %>
+          <!-- aside -->
+          <div id="info-user-block" class="int col-md-9 col-sm-9">
+            <!-- wrap-banner-user -->
+            <div id="links-user" class="col-md-12 col-sm-12 col-xs-12">
+              <div class="row">
+
+               <div id="miochef-print-title" class="hidden">
+                <%= image_tag 'content/miochef.png', alt: "Miochef" %>
+              </div>
+              <div class="title int-user">
+                <h2>Detalhes da compra</h2>
+                <a href="#" class="more btn print-link"><i class="fa fa-print" aria-hidden="true"></i> Imprimir</a>
+              </div>
+
+              <div class="block-order col-md-12">
+                <h3>Nome do prato</h3>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                  <p>Macarrão com camarão</p>
+                </div>
+              </div>
+
+              <div class="block-order col-md-12">
+                <h3>Chef</h3>
+                <div class="wrap-img-chef-historical col-md-2 col-sm-2 col-xs-4">
+                  <%= image_tag 'content/avatar.jpg', alt: "Luiz Valença", class: "img-responsive img-chef-historical" %>
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-8">
+                  <p><b>Bartolomeu</b></p>
+                  <p>Naturalidade: <b>Brasileiro</b></p>
+                  <p>Restaurante: <b>La Grange</b></p>
+                </div>
+              </div>
+
+              <div class="block-order col-md-12">
+                <h3>Pagamento</h3>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                  <p>Status: <b>Pago</b></p>
+                  <p>Tipo de pagamento: <b>Pagseguro</b></p>
+                  <p>Quantidade: <b>5 itens</b></p>
+                  <p>Valor Unitátio: <b>R$25,00</b></p>
+                  <p>Valor Total da compra: <b>R$125,00</b></p>
+                </div>
+              </div>
+
+              <div class="block-order col-md-12">
+                <h3>Entrega</h3>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                  <p>Status: <b>Entregue</b></p>
+                  <p>CEP: <b>99999-999</b></p>
+                  <p>Rua: <b>Rua Fulano de tal</b></p>
+                  <p>Complemento: <b>Bloco:12, Apartamento:409</b></p>
+                  <p>Estado: <b>Pernambuco</b></p>
+                  <p>Cidade: <b>Jaboatão dos Guararapes</b></p>
+                </div>
+              </div>
+
+            </div>
+            <!-- row  -->
+          </div>
+        </div>
+        <!-- info-user-block -->
+      </div>
+    </div>
+  </div><!-- row -->
+</div><!-- container-fluid -->
+</div>
+<!-- pages-int -->

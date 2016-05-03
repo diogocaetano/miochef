@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get 'home' => 'home#index', as: :home
   # About
   get 'about' => 'page#about', as: :about
-  get 'about/view' => 'page#about_view', as: :about_view
+  # login
+  get 'login' => 'page#login', as: :login
+  # signup
+  get 'signup' => 'page#signup', as: :signup
   # user
   get 'user' => 'page#user', as: :user
   get 'user_edit_profile' => 'page#user_edit_profile', as: :user_edit_profile
@@ -21,6 +24,7 @@ Rails.application.routes.draw do
   get 'user_address_list' => 'page#user_address_list', as: :user_address_list
   get 'user_add_address' => 'page#user_add_address', as: :user_add_address
   get 'user_historical_list' => 'page#user_historical_list', as: :user_historical_list
+  get 'user_historical_view' => 'page#user_historical_view', as: :user_historical_view
 
 
   scope '/admin' do
